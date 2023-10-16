@@ -25,6 +25,7 @@ TestResults.xml
 target/*.class/
 out/
 bin/
+target/
 .settings/
 *.project
 *.classpath
