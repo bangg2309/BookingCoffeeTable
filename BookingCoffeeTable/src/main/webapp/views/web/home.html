@@ -11,6 +11,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
     <title>Klassy Cafe - Restaurant HTML Template</title>
     <!--
@@ -31,6 +32,78 @@
 
     <link rel="stylesheet" href="../template/assets/css/lightbox.css">
     <link rel="stylesheet" href="../template/assets/css/stylle.css">
+    <link rel="stylesheet" href="../template/custom/css/home.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .autoplay-progress {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--swiper-theme-color);
+        }
+
+        .autoplay-progress svg {
+            --progress: 0;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            stroke-width: 4px;
+            stroke: var(--swiper-theme-color);
+            fill: none;
+            stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+            stroke-dasharray: 125.6;
+            transform: rotate(-90deg);
+        }
+    </style>
+
 
 </head>
 
@@ -48,26 +121,21 @@
 
 
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
+<nav class="header-area sticky-top">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
+            <div class="col-9">
+                <nav class="main-nav" style="display: flex">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="../template/assets/images/klassy-logo.png" align="klassy cafe html template">
+                        <img src="../template/custom/image/logo2.png" style="width: 60px;" align="klassy cafe html template">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section" ><a href="#"><span class="user_icon" style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Login</a></li>
-                    </ul>
 
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#about">About</a></li>
+
+
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Trang chủ</a></li>
+                        <li class="scroll-to-section"><a href="#about">Giới thiệu</a></li>
 
                         <!--
                             <li class="submenu">
@@ -79,11 +147,12 @@
                                 </ul>
                             </li>
                         -->
-                        <li class="scroll-to-section"><a href="#menu">Menu</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Thực đơn</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Bàn</a></li>
 
                         <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                        <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
-                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#reservation">Liên hệ</a></li>
+
 
 
                     </ul>
@@ -96,56 +165,59 @@
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
+            <div class="col-3">
+                <nav class="main-nav">
+
+                    <ul class="nav">
+                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user"
+                                aria-hidden="true"></i></span>Đăng nhập</a></li>
+                    </ul>
+
+
+                </nav>
+            </div>
         </div>
     </div>
-</header>
+</nav>
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Main Banner Area Start ***** -->
 <div id="top">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="left-content">
-                    <div class="inner-content">
-                        <h4>KlassyCafe</h4>
-                        <h6>THE BEST EXPERIENCE</h6>
-                        <div class="main-white-button scroll-to-section">
-                            <a href="#reservation">Make A Reservation</a>
-                        </div>
-                    </div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../template/custom/image/background1.jpg">
                 </div>
+                <div class="swiper-slide">
+                    <img src="../template/custom/image/background2.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../template/custom/image/background3.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../template/custom/image/background1.jpg">
+                </div>
+
             </div>
-            <div class="col-lg-8">
-                <div class="main-banner header-text">
-                    <div class="Modern-Slider">
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="img-fill">
-                                <img src="../template/assets/images/background1.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- // Item -->
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="img-fill">
-                                <img src="../template/assets/images/background2.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- // Item -->
-                        <!-- Item -->
-                        <div class="item">
-                            <div class="img-fill">
-                                <img src="../template/assets/images/background3.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- // Item -->
-                    </div>
-                </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
             </div>
         </div>
-    </div>
+
 </div>
+</div>
+
+
 <!-- ***** Main Banner Area End ***** -->
 
 <!-- ***** About Area Starts ***** -->
@@ -801,6 +873,37 @@
 <script src="../template/assets/js/popper.js"></script>
 <script src="../template/assets/js/bootstrap.min.js"></script>
 
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+</script>
+
 <!-- Plugins -->
 <script src="../template/assets/js/owl-carousel.js"></script>
 <script src="../template/assets/js/accordions.js"></script>
@@ -824,13 +927,46 @@
             $("#portfolio").fadeTo(50, 0.1);
             $("#portfolio div").not("." + selectedClass).fadeOut();
             setTimeout(function () {
-                $("." + selectedClass).fadeIn();
+                $("." + selectedClxass).fadeIn();
                 $("#portfolio").fadeTo(50, 1);
             }, 500);
 
         });
     });
 
+    <script src="../template/custom/js/home.js"></script>
+
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
