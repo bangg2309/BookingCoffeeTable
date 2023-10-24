@@ -4,54 +4,43 @@
     margin-left: 100px;
 }
 
-.main_content .container_table input {
+.main_content .container input {
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: hidden;
-    background-color: #fbe9e7;
 }
-.main_content .container_table .justify-content-end {
-    padding: 20px;
-    border: lightgrey 1px solid;
-    border-radius: 30px;
-    background-color: #fbe9e7;
-}
-.main_content .container_table .form_reservation select{
+.main_content .container .form_reservation select{
     border-style: none;
-    background-color: #fbe9e7;
+    background-color:white;
 }
-.main_content .container_table .form_reservation textarea{
+.main_content .container .form_reservation textarea{
     border-style: none;
-    background-color: #fbe9e7;
 }
-.main_content .container_table .form_reservation label{
-    font-size: 15px;
+.main_content .container .form_reservation label{
+    font-size: 20px;
     font-weight: bolder;
     font-family: Arial;
 }
-.main_content .container_table .title-booking {
+.main_content .container .title-booking {
     color: #fb5849;
     font-family: Arial;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 50px;
 }
-.main_content .container_table .row .col-6{
+.main_content .container .row .col-6{
     border-bottom: 2px #fb5849 solid ;
 
 }
-.main_content .container_table .row .col-5{
+.main_content .container .row .col-5{
     border-bottom: 2px #fb5849 solid ;
 }
-.main_content .container_table .row .col-md-11{
+.main_content .container .row .col-md-11{
     border-bottom: 2px #fb5849 solid ;
 }
-.main_content .container_table .checkbox{
+.main_content .container .checkbox{
     height: 40px;
     width: 40px;
     /*margin-top: 10px;*/
-}
-.main_content .container_table .text-accpect{
-    margin-top: 10px;
 }
 
