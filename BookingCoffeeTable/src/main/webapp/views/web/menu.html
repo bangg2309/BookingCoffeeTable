@@ -29,32 +29,27 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/menu.css">
+    <link rel="stylesheet" href="../template/custom/css/menu.css">
 
 </head>
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
+<nav class="header-area sticky-top">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
+            <div class="col-9">
+                <nav class="main-nav" style="display: flex">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="../template/assets/images/klassy-logo.png" align="klassy cafe html template">
+                        <img src="../template/custom/image/logo2.png" style="width: 60px;" align="klassy cafe html template">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Login</a></li>
-                    </ul>
 
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#about">About</a></li>
+
+
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Trang chủ</a></li>
+                        <li class="scroll-to-section"><a href="#about">Giới thiệu</a></li>
 
                         <!--
                             <li class="submenu">
@@ -66,11 +61,12 @@
                                 </ul>
                             </li>
                         -->
-                        <li class="scroll-to-section"><a href="#menu">Menu</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Thực đơn</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Bàn</a></li>
 
                         <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                        <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
-                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#reservation">Liên hệ</a></li>
+
 
 
                     </ul>
@@ -79,12 +75,26 @@
                     </a>
 
 
+
                     <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+            <div class="col-3">
+                <nav class="main-nav">
+
+                    <ul class="nav">
+                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user"
+                                aria-hidden="true"></i></span>Đăng nhập</a></li>
+                    </ul>
+
+
                 </nav>
             </div>
         </div>
     </div>
-</header>
+</nav>
 <!-- ***** Header Area End ***** -->
 
 <div class="main_content">
@@ -93,7 +103,7 @@
     <main class="mb-6">
         <div class="container">
             <div class="row gx-lg-5">
-                <div class="col-lg-3 d-none d-lg-block">
+                <div class="col-lg-3 d-none d-lg-block mt-2">
                     <!-- Section: Filters -->
                     <section class="">
                         <!-- Section: Search -->
@@ -123,24 +133,24 @@
 
                         <!-- Section: Categories -->
                         <section class="mb-5">
-                            <h5 class="fw-bold mb-4">Subcategories</h5>
+                            <h5 class="fw-bold mb-4">Danh mục</h5>
 
-                            <div class="text-muted small text-uppercase">
+                            <div class="text-muted small text-Lớn hơnpercase">
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Dresses</a>
+                                    <a href="#!" class="text-reset">Cà phê</a>
                                 </p>
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tops, Tees & Blouses</a>
+                                    <a href="#!" class="text-reset">Nước ép</a>
                                 </p>
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Sweaters</a>
+                                    <a href="#!" class="text-reset">Sinh tố</a>
                                 </p>
                                 <p class="mb-3">
                                     <a href="#!" class="text-reset"
-                                    >Fashion Hoodies & Sweatshirts</a
+                                    >Thức uống có cồn</a
                                     >
                                 </p>
-                                <p class="mb-3"><a href="#!" class="text-reset">Jeans</a></p>
+                                <p class="mb-3"><a href="#!" class="text-reset">Bánh ngọt</a></p>
 
                             </div>
                         </section>
@@ -149,7 +159,7 @@
 
                         <!-- Section: Avg. Customer Review -->
                         <section class="mb-5">
-                            <h5 class="fw-bold mb-4">Avg. Customer Review</h5>
+                            <h5 class="fw-bold mb-4">Đánh giá</h5>
 
                             <a href="" class="d-flex align-items-center mb-3">
                                 <ul
@@ -174,7 +184,7 @@
                                         <i class="far fa-star fa-sm text-primary"></i>
                                     </li>
                                 </ul>
-                                <small class="text-muted">& UP</small>
+                                <small class="text-muted">& Lớn hơn</small>
                             </a>
 
                             <a href="" class="d-flex align-items-center mb-3">
@@ -200,7 +210,7 @@
                                         <i class="far fa-star fa-sm text-primary"></i>
                                     </li>
                                 </ul>
-                                <small class="text-muted">& UP</small>
+                                <small class="text-muted">& Lớn hơn</small>
                             </a>
 
                             <a href="" class="d-flex align-items-center mb-3">
@@ -226,7 +236,7 @@
                                         <i class="far fa-star fa-sm text-primary"></i>
                                     </li>
                                 </ul>
-                                <small class="text-muted">& UP</small>
+                                <small class="text-muted">& Lớn hơn</small>
                             </a>
 
                             <a href="" class="d-flex align-items-center mb-3">
@@ -252,14 +262,14 @@
                                         <i class="far fa-star fa-sm text-primary"></i>
                                     </li>
                                 </ul>
-                                <small class="text-muted">& UP</small>
+                                <small class="text-muted">& Lớn hơn</small>
                             </a>
                         </section>
                         <!-- Section: Avg. Customer Review -->
 
                         <!-- Section: Price - radio -->
                         <section class="mb-5">
-                            <h5 class="fw-bold mb-4">Price radio</h5>
+                            <h5 class="fw-bold mb-4">Giá</h5>
 
                             <div class="form-check mb-3">
                                 <input
@@ -270,7 +280,7 @@
                                         checked
                                 />
                                 <label class="form-check-label" for="radioCondition1">
-                                    Under $25
+                                    Dưới 25.000đ
                                 </label>
                             </div>
 
@@ -282,7 +292,7 @@
                                         id="radioCondition2"
                                 />
                                 <label class="form-check-label" for="radioCondition2">
-                                    $25 to $50
+                                    25.000đ - 50.000đ
                                 </label>
                             </div>
 
@@ -294,7 +304,7 @@
                                         id="radioCondition2"
                                 />
                                 <label class="form-check-label" for="radioCondition2">
-                                    $50 to $100
+                                    50.000đ - 100.000đ
                                 </label>
                             </div>
 
@@ -306,21 +316,11 @@
                                         id="radioCondition2"
                                 />
                                 <label class="form-check-label" for="radioCondition2">
-                                    $100 to $200
+                                    100.000đ - 200.000đ
                                 </label>
                             </div>
 
-                            <div class="form-check mb-3">
-                                <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="radioForm"
-                                        id="radioCondition2"
-                                />
-                                <label class="form-check-label" for="radioCondition2">
-                                    $200 & Above
-                                </label>
-                            </div>
+                            
                         </section>
                         <!-- Section:  Price - radio -->
 
@@ -331,8 +331,8 @@
                 <div class="col-lg-9">
                     <!--Section: Sorting-->
                     <section class="mb-6">
-                        <div class="row">
-                            <div class="col-4 col-lg-3 text-center text-lg-start">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-4 col-lg-3 text-center text-lg-start mt-2">
                                 <button
                                         class="btn btn-link btn-floating text-reset btn-lg active"
                                 >
@@ -343,13 +343,13 @@
                                 </button>
                             </div>
 
-                            <div class="col-8 col-lg-6 d-flex justify-content-center">
+                            <div class="col-8 col-lg-6 d-flex justify-content-end mt-2">
                                 <select class="select">
-                                    <option value="1">Best rating</option>
-                                    <option value="2">Lowest price first</option>
-                                    <option value="3">Highest price first</option>
+                                    <option value="1">Bán chạy nhất</option>
+                                    <option value="2">Giá thấp nhất</option>
+                                    <option value="3">Giá cao nhất</option>
                                 </select>
-                                <label class="form-label select-label">Sort</label>
+                                <label class="form-label select-label">Sắp xếp</label>
                             </div>
 
 
@@ -377,7 +377,7 @@
                                     >
                                         <img
 
-                                        src="../template/custom/image%20cut%20336x224/lemon.jpg"
+                                        src="../template/custom/image336x224/lemon.jpg"
                                         class="w-100"
                                         alt=""/>
 
@@ -449,14 +449,14 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <s class="text-muted me-2 small align-middle">$119</s
-                                            ><span class="align-middle">$101</span>
+                                            <s class="text-muted me-2 small align-middle">20.000đ</s
+                                            ><span class="align-middle">15.000đ</span>
                                         </h5>
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -480,7 +480,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image%20cut%20336x224/martini.jpg"
+                                                src="../template/custom/image336x224/martini.jpg"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -554,13 +554,13 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <span class="align-middle">$19</span>
+                                            <span class="align-middle">20.000đ</span>
                                         </h5>
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -583,7 +583,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image%20cut%20336x224/vodka.jpg"
+                                                src="../template/custom/image336x224/vodka.jpg"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -650,14 +650,14 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <span class="align-middle">$49</span>
+                                            <span class="align-middle">20.000đ</span>
                                         </h5>
 
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -679,7 +679,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image%20cut%20336x224/mojito.jpg"
+                                                src="../template/custom/image336x224/mojito.jpg"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -746,14 +746,14 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <span class="align-middle">$49</span>
+                                            <span class="align-middle">35.000đ</span>
                                         </h5>
 
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -775,7 +775,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image%20cut%20336x224/strawberry.jpg"
+                                                src="../template/custom/image336x224/strawberry.jpg"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -842,14 +842,14 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <span class="align-middle">$49</span>
+                                            <span class="align-middle">59.000đ</span>
                                         </h5>
 
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -871,7 +871,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image%20cut%20336x224/champagne.jpg"
+                                                src="../template/custom/image336x224/champagne.jpg"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -938,14 +938,14 @@
                                             </li>
                                         </ul>
                                         <h5 class="mb-3">
-                                            <span class="align-middle">$49</span>
+                                            <span class="align-middle">49.000đ</span>
                                         </h5>
 
                                         <button
                                                 type="button"
                                                 class="btn btn-primary btn-rounded w-100"
                                         >
-                                            <i class="fas fa-cart-plus me-2"></i>Add to cart
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
                                     </div>
                                     <!-- Product content -->
@@ -956,7 +956,7 @@
                         </div>
                     </section>
                     <!-- Section: Products -->
-                    <div class="col-lg-3 d-none d-lg-flex justify-content-center justify-content-lg-end">
+                    <div class="d-none d-lg-flex justify-content-center justify-content-lg-end">
                         <nav aria-label="...">
                             <ul class="pagination pagination-circle mb-0">
                                 <li class="page-item">
@@ -965,7 +965,7 @@
                                             href="#"
                                             tabindex="-1"
                                             aria-disabled="true"
-                                    >Previous</a
+                                    >Trước</a
                                     >
                                 </li>
                                 <li class="page-item">
@@ -980,7 +980,7 @@
                                     <a class="page-link" href="#">3</a>
                                 </li>
                                 <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
+                                    <a class="page-link" href="#">Tiếp theo</a>
                                 </li>
                             </ul>
                         </nav>
@@ -1032,40 +1032,12 @@
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="../template/assets/js/popper.js"></script>
 <script src="../template/assets/js/bootstrap.min.js"></script>
 
-<!-- Plugins -->
-<!--<script src="../template/assets/js/owl-carousel.js"></script>-->
-<!--<script src="../template/assets/js/accordions.js"></script>-->
-<!--<script src="../template/assets/js/datepicker.js"></script>-->
-<!--<script src="../template/assets/js/scrollreveal.min.js"></script>-->
-<!--<script src="../template/assets/js/waypoints.min.js"></script>-->
-<!--<script src="../template/assets/js/jquery.counterup.min.js"></script>-->
-<!--<script src="../template/assets/js/imgfix.min.js"></script>-->
-<!--<script src="../template/assets/js/slick.js"></script>-->
-<!--<script src="../template/assets/js/lightbox.js"></script>-->
-<!--<script src="../template/assets/js/isotope.js"></script>-->
+
 
 <!-- Global Init -->
 <script src="../template/assets/js/custom.js"></script>
-<script>
-
-    $(function () {
-        var selectedClass = "";
-        $("p").click(function () {
-            selectedClass = $(this).attr("data-rel");
-            $("#portfolio").fadeTo(50, 0.1);
-            $("#portfolio div").not("." + selectedClass).fadeOut();
-            setTimeout(function () {
-                $("." + selectedClass).fadeIn();
-                $("#portfolio").fadeTo(50, 1);
-            }, 500);
-
-        });
-    });
-
-</script>
 
 <script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
 <!-- MDB PLUGINS -->

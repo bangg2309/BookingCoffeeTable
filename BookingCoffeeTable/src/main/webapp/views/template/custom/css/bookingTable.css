@@ -1,0 +1,43 @@
+.table_booking {
+    text-align: center;
+    background-color: #c9c9c9;
+    padding-right: 10px;
+}
+
+.table_main {
+    position: relative;
+    width: 100%; /* Điều chỉnh kích thước cho phù hợp */
+}
+
+
+.hover-overlay {
+    position: absolute;
+     /* Bắt đầu với chiều cao là 0 */
+    background-color: rgba(232, 232, 232, 0.8); /* Màu nền overlay khi hover */
+    transition: height 1s ease; /* Chuyển đổi chiều cao trong 3 giây */
+    pointer-events: none;
+}
+
+.hover-overlay.table_alpha{
+    top: 0;
+    left: 25%;
+    width: 50%;
+    border-radius: 10px;
+    opacity: 0;
+    text-align: center;
+}
+.hover-overlay.table_omega{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+}
+
+.table_main:hover .hover-overlay.table_alpha {
+    height: 25%;
+    opacity: 100;
+
+}
+.table_main:hover .hover-overlay.table_omega {
+    height: 50%;
+}
