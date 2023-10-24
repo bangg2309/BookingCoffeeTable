@@ -29,33 +29,28 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/reservation.css">
+    <link rel="stylesheet" href="../template/custom/css/reservation.css">
 
 
 </head>
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
+<nav class="header-area sticky-top">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
+            <div class="col-9">
+                <nav class="main-nav" style="display: flex">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="../template/assets/images/klassy-logo.png" align="klassy cafe html template">
+                        <img src="../template/custom/image/logo2.png" style="width: 60px;" align="klassy cafe html template">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Login</a></li>
-                    </ul>
 
-                    <ul class="nav" style="margin-right: 50px">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#about">About</a></li>
+
+
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Trang chủ</a></li>
+                        <li class="scroll-to-section"><a href="#about">Giới thiệu</a></li>
 
                         <!--
                             <li class="submenu">
@@ -67,11 +62,12 @@
                                 </ul>
                             </li>
                         -->
-                        <li class="scroll-to-section"><a href="#menu">Menu</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Thực đơn</a></li>
+                        <li class="scroll-to-section"><a href="#menu">Bàn</a></li>
 
                         <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                        <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
-                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#reservation">Liên hệ</a></li>
+
 
 
                     </ul>
@@ -80,12 +76,26 @@
                     </a>
 
 
+
                     <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+            <div class="col-3">
+                <nav class="main-nav">
+
+                    <ul class="nav">
+                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user"
+                                aria-hidden="true"></i></span>Đăng nhập</a></li>
+                    </ul>
+
+
                 </nav>
             </div>
         </div>
     </div>
-</header>
+</nav>
 <!-- ***** Header Area End ***** -->
 <div class="main_content row">
     <!--Main layout-->
