@@ -36,6 +36,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <!-- MDB PLUGINS -->
+    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+
+
     <style>
         html,
         body {
@@ -983,27 +988,29 @@
 
 <!-- Global Init -->
 <script src="../template/assets/js/custom.js"></script>
-<script>
+<!--<script>-->
 
-    $(function () {
-        var selectedClass = "";
-        $("p").click(function () {
-            selectedClass = $(this).attr("data-rel");
-            $("#portfolio").fadeTo(50, 0.1);
-            $("#portfolio div").not("." + selectedClass).fadeOut();
-            setTimeout(function () {
-                $("." + selectedClxass).fadeIn();
-                $("#portfolio").fadeTo(50, 1);
-            }, 500);
+<!--    $(function () {-->
+<!--        var selectedClass = "";-->
+<!--        $("p").click(function () {-->
+<!--            selectedClass = $(this).attr("data-rel");-->
+<!--            $("#portfolio").fadeTo(50, 0.1);-->
+<!--            $("#portfolio div").not("." + selectedClass).fadeOut();-->
+<!--            setTimeout(function () {-->
+<!--                $("." + selectedClxass).fadeIn();-->
+<!--                $("#portfolio").fadeTo(50, 1);-->
+<!--            }, 500);-->
 
-        });
-    });
+<!--        });-->
+<!--    });-->
 
-    <script src="../template/custom/js/home.js"></script>
+<!--    <script src="../template/custom/js/home.js"></script>-->
 
-</script>
-
+<!--</script>-->
+<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="../template/assets/js/popper.js"></script>
+<script src="../template/assets/js/bootstrap.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -1032,6 +1039,8 @@
         }
     });
 </script>
+<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
+<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
 
 </body>
 </html>
