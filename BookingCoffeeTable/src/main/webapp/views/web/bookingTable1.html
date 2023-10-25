@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/menu.css">
     <link rel="stylesheet" href="../template/custom/css/bookingTable.css">
 
 </head>
@@ -43,7 +42,7 @@
                 <nav class="main-nav" style="display: flex">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="../template/custom/image/logo2.png" style="width: 60px;" align="klassy cafe html template">
+                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;" align="klassy cafe html template">
                     </a>
 
 
@@ -113,7 +112,7 @@
                                 <input
                                         type="search"
                                         class="form-control rounded me-1"
-                                        placeholder="Search"
+                                        placeholder="Tìm kiếm"
                                         aria-label="Search"
                                         aria-describedby="search-addon"
                                 />
@@ -134,17 +133,17 @@
 
                         <!-- Section: Categories -->
                         <section class="mb-5">
-                            <h5 class="fw-bold mb-4">Floor</h5>
+                            <h5 class="fw-bold mb-4">Tầng</h5>
 
                             <div class="text-muted small text-uppercase">
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Floor 1</a>
+                                    <a href="#!" class="text-reset">Tầng 1</a>
                                 </p>
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Floor 2</a>
+                                    <a href="#!" class="text-reset">Tầng 2</a>
                                 </p>
                                 <p class="mb-3">
-                                    <a href="#!" class="text-reset">Floor 3</a>
+                                    <a href="#!" class="text-reset">Tầng 3</a>
                                 </p>
 
 
@@ -161,6 +160,16 @@
                     <!-- Section: Filters -->
                 </div>
                 <div class="col-lg-10">
+                    <div class="d-flex justify-content-end mb-5">
+                        <select class="select" >
+                            <option value="1" selected>Chọn vị trí</option>
+                            <option value="2">Trong nhà</option>
+                            <option value="3">Ban công</option>
+                            <option value="3">Cửa sổ</option>
+                            <option value="3">Sân vườn</option>
+                            <option value="3">Máy lạnh</option>
+                        </select>
+                    </div>
                     <div class="row gx-xl-5 justify-content-center">
                         <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
@@ -168,12 +177,15 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                            <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
-                                            <h4>Số lượng: 10</h4>
+                                    <img src="../template/custom/image/table/table.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                            <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
+                                        <br>
+                                        <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
+                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn bàn</a>
                                     </div>
                                 </div>
                             </div>
@@ -186,12 +198,13 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table1.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table1.jpg" class="w-100 h-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
                                     </div>
                                 </div>
                             </div>
@@ -204,162 +217,132 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/background4.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table2.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table1.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table3.jpeg" class="w-100 h-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table4.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: trong nhà</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table5.jpg" class="w-100" alt=""/>
+
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: sân vườn</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table6.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: tầng thượng</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table9.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
+                        <div class="col-lg-4 col-6 mb-4">
                             <!-- Product card -->
                             <div>
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
+                                    <img src="../template/custom/image/table/table8.jpg" class="w-100" alt=""/>
+<!--                                    <div class="hover-overlay table_alpha">-->
+<!--                                        <h3>Table</h3>-->
+<!--                                    </div>-->
+                                    <div class="hover-overlay table_omega text-center">
                                         <h4>Số lượng: 10</h4>
+                                        <h4>Vị trí: cửa sổ</h4>
                                     </div>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="col-lg-3 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
-                                        <h4>Số lượng: 10</h4>
-                                    </div>
-                                </div>
-                            </div>
 
-
-                        </div>
-                        <div class="col-lg-3 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="../template/custom/image/table.jpg"class="w-100" alt=""/>
-                                    <div class="hover-overlay table_alpha">
-                                        <h3>Table</h3>
-                                    </div>
-                                    <div class="hover-overlay table_omega">
-                                        <h4>Số lượng: 10</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
 <!--                        <div class="col-lg-3 col-6 mb-4">-->
 <!--                            &lt;!&ndash; Product card &ndash;&gt;-->
 <!--                            <div>-->
@@ -381,8 +364,10 @@
 
 
                     </div>
-
-                        </div>
+                    <div class="next_button col-8 col-lg-6 d-flex justify-content-end mt-2 ml-5">
+                        <a style="text-transform: uppercase; font-family: Roboto" href="">Xem thêm</a>
+                    </div>
+                </div>
 
 
                     </div>
@@ -390,7 +375,7 @@
 
 
             </div>
-        </div>
+
 
     </main>
     <!--Main layout-->
@@ -450,24 +435,6 @@
     <!--<script src="../template/assets/js/isotope.js"></script>-->
 
     <!-- Global Init -->
-    <script src="../template/assets/js/custom.js"></script>
-    <script>
-
-        $(function () {
-            var selectedClass = "";
-            $("p").click(function () {
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("." + selectedClass).fadeOut();
-                setTimeout(function () {
-                    $("." + selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
-
-            });
-        });
-
-    </script>
 
     <script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
     <!-- MDB PLUGINS -->
