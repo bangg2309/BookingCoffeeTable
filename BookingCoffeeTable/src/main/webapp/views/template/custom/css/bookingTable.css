@@ -1,11 +1,8 @@
 
-
-.table_booking {
-    text-align: center;
-    background-color: #c9c9c9;
-    padding-right: 10px;
-
+.header-area.sticky-top{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
 
 .table_main {
     position: relative;
@@ -17,9 +14,10 @@
 .hover-overlay {
     position: absolute;
      /* Bắt đầu với chiều cao là 0 */
-    background-color: rgba(232, 232, 232, 0.8); /* Màu nền overlay khi hover */
+    background-color: rgba(141, 110, 99, 0.8); /* Màu nền overlay khi hover */
     transition: height 1s ease; /* Chuyển đổi chiều cao trong 3 giây */
     pointer-events: none;
+    color: #E0E0E0;
 }
 
 .hover-overlay.table_alpha{
@@ -43,5 +41,5 @@
 
 }
 .table_main:hover .hover-overlay.table_omega {
-    height: 50%;
+    height: 100%;
 }
