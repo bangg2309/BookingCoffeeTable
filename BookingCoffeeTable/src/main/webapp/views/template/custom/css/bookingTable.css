@@ -1,12 +1,16 @@
+
+
 .table_booking {
     text-align: center;
     background-color: #c9c9c9;
     padding-right: 10px;
+
 }
 
 .table_main {
     position: relative;
     width: 100%; /* Điều chỉnh kích thước cho phù hợp */
+    font-family: Roboto;
 }
 
 
