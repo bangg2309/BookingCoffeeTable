@@ -43,3 +43,14 @@
 .table_main:hover .hover-overlay.table_omega {
     height: 100%;
 }
+
+.table_main:hover btn.btn-primary{
+    /*display: block;*/
+}
+
+.btn.btn-primary{
+    /*position: absolute;*/
+    transition: height 1s ease; /* Chuyển đổi chiều cao trong 3 giây */
+    pointer-events: auto;
+
+}
