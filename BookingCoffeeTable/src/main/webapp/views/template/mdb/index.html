@@ -24,363 +24,175 @@
 
   <body>
     <!-- Start your project here-->
-    <div class="container">
-      <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="text-center">
+    <!-- Sidenav -->
+    <nav
+            id="full-screen-example"
+            class="sidenav bg-light"
+            data-mdb-color="dark"
+            data-mdb-mode="side"
+            data-mdb-hidden="false"
+            data-mdb-scroll-container="#scrollContainer"
+    >
+      <div class="mt-4">
+        <div id="header-content" class="ps-3">
           <img
-            class="mb-4"
-            src="https://mdbootstrap.com/img/logo/mdb-transparent-250px.png"
-            style="width: 250px; height: 90px;"
+                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                  alt="Avatar"
+                  class="rounded-circle img-fluid mb-3"
+                  style="max-width: 50px;"
           />
-          <h5 class="mb-3">Thank you for using our product. We're glad you're with us.</h5>
-          <p class="mb-3">MDB Team</p>
-          <a
-            class="btn btn-primary btn-lg"
-            href="https://mdbootstrap.com/docs/standard/getting-started/"
-            target="_blank"
-            role="button"
-            >Start MDB tutorial</a
-          >
+
+          <h4>
+            <span style="white-space: nowrap;">Ann Smith</span>
+          </h4>
+          <p>ann_s@mdbootstrap.com</p>
         </div>
+        <hr class="mb-0" />
+      </div>
+      <div id="scrollContainer">
+        <ul class="sidenav-menu">
+          <li class="sidenav-item">
+            <a class="sidenav-link" href="/">
+              <i class="fas fa-envelope fa-fw me-3"></i>Inbox</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-paper-plane fa-fw me-3"></i>Outbox</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-address-book fa-fw me-3"></i>Contacts</a
+            >
+            <ul class="sidenav-collapse">
+              <li class="sidenav-item">
+                <a class="sidenav-link">Family</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link" href="/previews/mdb-ui-kit/sidenav/2.html">Friends</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-file fa-fw me-3"></i>Drafts</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-heart fa-fw me-3"></i>Favourites</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-star fa-fw me-3"></i>Starred</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-trash fa-fw me-3"></i>Trash</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-ban fa-fw me-3"></i>Spam</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link"
+            ><i class="fas fa-tag fa-fw me-3"></i>Categories</a
+            >
+            <ul class="sidenav-collapse">
+              <li class="sidenav-item">
+                <a class="sidenav-link">Social</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Notifications</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Recent</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Uploads</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Backups</a>
+              </li>
+              <li class="sidenav-item">
+                <a class="sidenav-link">Offers</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-sticky-note fa-fw me-3"></i>Notes</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-user-circle fa-fw me-3"></i>Personal</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-ellipsis-h fa-fw me-3"></i>More</a
+            >
+          </li>
+        </ul>
+        <hr class="m-0" />
+        <ul class="sidenav-menu">
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-cogs fa-fw me-3"></i>Settings</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-user fa-fw me-3"></i>Profile</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-shield-alt fa-fw me-3"></i>Privacy</a
+            >
+          </li>
+          <li class="sidenav-item">
+            <a class="sidenav-link">
+              <i class="fas fa-user-astronaut fa-fw me-3"></i>Log out</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="text-center" style="height: 100px;">
+        <hr class="mb-4 mt-0" />
+        <p>MDBootstrap.com</p>
+      </div>
+    </nav>
+    <!-- Sidenav -->
+
+    <!-- Content -->
+    <div class="mdb-page-content text-center page-intro bg-light">
+      <div class="text-center py-5">
+        <h3 class="my-5">Resize to change the mode</h3>
+        <div>
+          <img class="rounded" src="https://mdbcdn.b-cdn.net/img/Photos/Others/img%20(53).webp" />
+        </div>
+        <button
+                id="toggler"
+                class="btn btn-dark mt-5"
+                data-mdb-toggle="sidenav"
+                data-mdb-target="#full-screen-example"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
+    <!-- Content -->
     <!-- End your project here-->
-    <!-- Container for demo purpose -->
-    <div class="container my-5 py-5">
-
-      <!-- Section: Product details -->
-      <section class="mb-9">
-        <div class="row gx-lg-5">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <!-- Gallery -->
-            <div
-                    class="ecommerce-gallery vertical"
-                    data-mdb-zoom-effect="true"
-                    data-mdb-auto-height="true"
-            >
-              <div class="row gx-2 gx-lg-3">
-                <div class="col-2 col-lg-3">
-                  <div
-                          class="multi-carousel vertical"
-                          data-mdb-breakpoint="false"
-                          data-mdb-items="4"
-                          style="height: 500px"
-                  >
-                    <div class="multi-carousel-inner">
-                      <div class="multi-carousel-item active mb-2">
-                        <img
-                                src="https://mdbootstrap.com/img/new/ecommerce/vertical/068.jpg"
-                                data-mdb-img="https://mdbootstrap.com/img/new/ecommerce/vertical/068.jpg"
-                                alt="Gallery image 1"
-                                class="active w-100 rounded"
-                        />
-                      </div>
-                      <div class="multi-carousel-item mb-2">
-                        <img
-                                src="https://mdbootstrap.com/img/new/ecommerce/vertical/009.jpg"
-                                data-mdb-img="https://mdbootstrap.com/img/new/ecommerce/vertical/009.jpg"
-                                alt="Gallery image 2"
-                                class="w-100 rounded"
-                        />
-                      </div>
-                      <div class="multi-carousel-item mb-2">
-                        <img
-                                src="https://mdbootstrap.com/img/new/ecommerce/vertical/086.jpg"
-                                data-mdb-img="https://mdbootstrap.com/img/new/ecommerce/vertical/086.jpg"
-                                alt="Gallery image 3"
-                                class="w-100 rounded"
-                        />
-                      </div>
-                      <div class="multi-carousel-item mb-2">
-                        <img
-                                src="https://mdbootstrap.com/img/new/ecommerce/vertical/087.jpg"
-                                data-mdb-img="https://mdbootstrap.com/img/new/ecommerce/vertical/087.jpg"
-                                alt="Gallery image 4"
-                                class="w-100 rounded"
-                        />
-                      </div>
-                    </div>
-                    <button
-                            class="carousel-control-prev"
-                            tabindex="0"
-                            type="button"
-                            data-mdb-slide="prev"
-                    >
-                  <span
-                          class="carousel-control-prev-icon"
-                          aria-hidden="true"
-                  ></span>
-                    </button>
-                    <button
-                            class="carousel-control-next"
-                            tabindex="0"
-                            type="button"
-                            data-mdb-slide="next"
-                    >
-                  <span
-                          class="carousel-control-next-icon"
-                          aria-hidden="true"
-                  ></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-10 col-lg-9">
-                  <div class="lightbox">
-                    <img
-                            src="https://mdbootstrap.com/img/Photos/Slides/1.jpg"
-                            alt="Gallery image 1"
-                            class="
-                            ecommerce-gallery-main-img
-                            active
-                            w-100
-                            rounded-4
-                            "
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Gallery -->
-          </div>
-
-          <div class="col-md-6 mb-4 mb-md-0">
-            <!-- Details -->
-            <div>
-              <h1 class="fw-bold mb-3 h5">Sophisticated dress</h1>
-              <a href="" class="text-muted mb-3"
-              ><p class="mb-2 text-uppercase small">Dresses</p></a
-              >
-
-              <div class="d-flex text-primary">
-                <ul
-                        class="rating mb-3 me-2"
-                        data-mdb-toggle="rating"
-                        data-mdb-readonly="true"
-                        data-mdb-value="4"
-                >
-                  <li>
-                    <i
-                            class="far fa-star fa-sm text-primary ps-0"
-                            title="Bad"
-                    ></i>
-                  </li>
-                  <li>
-                    <i
-                            class="far fa-star fa-sm text-primary"
-                            title="Poor"
-                    ></i>
-                  </li>
-                  <li>
-                    <i class="far fa-star fa-sm text-primary" title="OK"></i>
-                  </li>
-                  <li>
-                    <i
-                            class="far fa-star fa-sm text-primary"
-                            title="Good"
-                    ></i>
-                  </li>
-                  <li>
-                    <i
-                            class="far fa-star fa-sm text-primary"
-                            title="Excellent"
-                    ></i>
-                  </li>
-                </ul>
-                <a href=""><strong class="me-2">4/5</strong>(2 reviews)</a>
-              </div>
-
-              <h5 class="mb-3">
-                <s class="text-muted me-2 small align-middle">$119</s
-                ><span class="align-middle">$101</span>
-              </h5>
-
-              <p class="text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ratione accusantium harum repellendus illo mollitia similique
-                atque vitae repudiandae animi dolor? Rem eveniet saepe
-                deserunt aliquam. Enim incidunt quas voluptatibus perferendis.
-              </p>
-
-              <div class="table-responsive">
-                <table class="table table-sm table-borderless mb-0">
-                  <tbody>
-                  <tr>
-                    <th class="ps-0 w-25" scope="row">
-                      <strong>Model</strong>
-                    </th>
-                    <td>Shirt 5407X</td>
-                  </tr>
-                  <tr>
-                    <th class="ps-0 w-25" scope="row">
-                      <strong>Material</strong>
-                    </th>
-                    <td>Cotton 80%</td>
-                  </tr>
-                  <tr>
-                    <th class="ps-0 w-25" scope="row">
-                      <strong>Delivery</strong>
-                    </th>
-                    <td>USA, Europe</td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <hr class="my-5" />
-
-              <form action="">
-                <div class="row">
-                  <!-- Quantity -->
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input
-                              type="number"
-                              id="typeNumber"
-                              class="form-control"
-                              value="1"
-                              min="1"
-                      />
-                      <label class="form-label" for="typeNumber"
-                      >Quantity</label
-                      >
-                    </div>
-                  </div>
-                  <!-- Size -->
-                  <div class="col-md-6 mb-4">
-                    <select class="select">
-                      <option value="1">XS</option>
-                      <option value="2">S</option>
-                      <option value="3">M</option>
-                      <option value="4">L</option>
-                      <option value="5">XL</option>
-                    </select>
-                    <label class="form-label select-label">Size</label>
-                  </div>
-
-                  <!-- Colors -->
-                  <div class="col-md-6 mb-4">
-                    <div class="">
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-primary"
-                              autocomplete="off"
-                              checked
-                      />
-                      <label
-                              class="
-                                btn btn-primary btn-floating
-                                me-2
-                                mb-2
-                                shadow-0
-                                "
-                              for="color-primary"
-                      ></label>
-
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-danger"
-                              autocomplete="off"
-                      />
-                      <label
-                              class="btn btn-danger btn-floating me-2 mb-2 shadow-0"
-                              for="color-danger"
-                      ></label>
-
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-secondary"
-                              autocomplete="off"
-                      />
-                      <label
-                              class="
-                                btn btn-secondary btn-floating
-                                me-2
-                                mb-2
-                                shadow-0
-                                "
-                              for="color-secondary"
-                      ></label>
-
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-success"
-                              autocomplete="off"
-                      />
-                      <label
-                              class="
-                                btn btn-success btn-floating
-                                me-2
-                                mb-2
-                                shadow-0
-                                "
-                              for="color-success"
-                      ></label>
-
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-warning"
-                              autocomplete="off"
-                      />
-                      <label
-                              class="
-                                btn btn-warning btn-floating
-                                me-2
-                                mb-2
-                                shadow-0
-                                "
-                              for="color-warning"
-                      ></label>
-
-                      <input
-                              type="radio"
-                              class="btn-check"
-                              name="options"
-                              id="color-info"
-                              autocomplete="off"
-                      />
-                      <label
-                              class="btn btn-info btn-floating me-2 mb-2 shadow-0"
-                              for="color-info"
-                      ></label>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                        type="button"
-                        class="btn btn-primary btn-rounded me-2"
-                >
-                  <i class="fas fa-cart-plus me-2"></i>Add to cart
-                </button>
-                <button
-                        href="#!"
-                        type="button"
-                        class="btn btn-danger btn-floating"
-                        data-mdb-toggle="tooltip"
-                        title="Add to wishlist"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
-              </form>
-            </div>
-            <!-- Details -->
-          </div>
-        </div>
-      </section>
-      <!-- Section: Product details -->
-
-    </div>
-    <!-- Container for demo purpose -->
   </body>
 
   <!-- MDB ESSENTIAL -->
