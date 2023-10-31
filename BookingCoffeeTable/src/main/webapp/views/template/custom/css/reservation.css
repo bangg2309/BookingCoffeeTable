@@ -1,7 +1,14 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 .main_content{
-    background-image: url("../image/login/background.jpg");
+    background-image: url("../image/reservation/coffee shop (1).png");
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 100px;
+    margin: 0px;
 }
 .main_content .main-list-product .border-bottom .fw-bold{
     color: brown;
@@ -17,12 +24,9 @@
     background-color: transparent;
 }
 .main_content .container .form_reservation select{
-    /*border-style: none;*/
-    /*background-color:white;*/
     background-color: transparent;
 }
 .main_content .container .form_reservation textarea{
-    /*border-style: none;*/
     background-color: transparent;
 }
 .main_content .container .form_reservation label{
@@ -36,37 +40,37 @@
     font-weight: bolder;
     font-size: 20px;
 }
-/*.main_content .container .row .col-6{*/
-/*    border-bottom: 2px #fb5849 solid ;*/
-
-/*}*/
-/*.main_content .container .row .col-5{*/
-/*    border-bottom: 2px #fb5849 solid ;*/
-/*}*/
-/*.main_content .container .row .col-md-11{*/
-/*    border-bottom: 2px #fb5849 solid ;*/
-/*}*/
-/*.main_content .container .row .col-12{*/
-/*    border-bottom: 2px #fb5849 solid ;*/
-/*}*/
 .main_content .container .checkbox{
     height: 40px;
     width: 40px;
-    /*margin-top: 10px;*/
 }
 .main_content .main-list-product{
     background-color: rgba(255, 255, 255, 0.91);
     padding-top: 50px;
     padding-right: 50px;
     padding-left: 50px;
-    border-radius: 20px;
+}
+.main_content .main-list-product .bill{
+    margin-top: 30px;
+}
+.main_content .main-list-product .row .money{
+    color: orangered;
+    font-size: 20px;
+    font-weight: bolder;
 }
 .main_content .container {
     background-color: rgba(255, 255, 255, 0.91);
     padding-top: 50px;
-    /*padding-right: 50px;*/
     padding-left: 60px;
-    border-radius: 20px;
+}
+.main_content .container .justify-content-end button{
+    background-color: orangered;
+    font-size: 20px;
+    color: white;
+    border: 1px white solid;
+}
+footer{
+    margin-top: 0px;
 }
 
 
