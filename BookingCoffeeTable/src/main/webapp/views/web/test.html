@@ -10,103 +10,168 @@
 
   <!-- Demo styles -->
   <style>
-    html,
     body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200vh;
       margin: 0;
-      padding: 0;
+      background-color: #f0f0f0;
+
     }
 
-    .swiper {
-      width: 100%;
-      height: 100%;
+    .container {
+      position: relative;
     }
 
-    .swiper-slide {
+    .box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: #3498db;
+      color: #fff;
       text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      line-height: 200px;
+      cursor: pointer;
     }
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .autoplay-progress {
+    .overlay {
       position: absolute;
-      right: 16px;
-      bottom: 16px;
-      z-index: 10;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: var(--swiper-theme-color);
-    }
-
-    .autoplay-progress svg {
-      --progress: 0;
-      position: absolute;
+      top: 0;
       left: 0;
-      top: 0px;
-      z-index: 10;
       width: 100%;
       height: 100%;
-      stroke-width: 4px;
-      stroke: var(--swiper-theme-color);
-      fill: none;
-      stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-      stroke-dasharray: 125.6;
-      transform: rotate(-90deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .overlay-content {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px 20px;
+      margin: 10px;
+      transform: translateX(-100%);
+      transition: all 0.3s;
+    }
+
+    .box:hover .overlay {
+      opacity: 1;
+    }
+
+    .box:hover .overlay-content {
+      transform: translateX(0);
+    }
+
+    .alpha{
+      opacity: 0.6;
+      top: 0;
+      left: -10%;
+      position: absolute;
+      width: 0px; /* Độ rộng của hình thang */
+      height: 300px; /* Độ cao của hình thang */
+      background-color: #ff0000; /* Màu nền */
+      color: #fff; /* Màu chữ */
+      text-align: center;
+      line-height: 100px; /* Đảm bảo văn bản nằm giữa hình thang */
+      transform: skewX(-30deg); /* Biến đổi skewX để tạo hình thang */
+      transition: width 1s ease;
+    }
+
+    .beta{
+      opacity: 0.6;
+      bottom: 0;
+      left: -10%;
+      position: absolute;
+      width: 0px; /* Độ rộng của hình thang */
+      height: 300px; /* Độ cao của hình thang */
+      background-color: #ff0000; /* Màu nền */
+      color: #fff; /* Màu chữ */
+      text-align: center;
+      line-height: 100px; /* Đảm bảo văn bản nằm giữa hình thang */
+      transform: skewX(-30deg); /* Biến đổi skewX để tạo hình thang */
+      transition: width 1s ease;
+    }
+
+    .omega{
+      opacity: 0.6;
+      top: 0;
+      right: -10%;
+      position: absolute;
+      width: 0px; /* Độ rộng của hình thang */
+      height: 600px; /* Độ cao của hình thang */
+      background-color: #ff0000; /* Màu nền */
+      color: #fff; /* Màu chữ */
+      text-align: center;
+      line-height: 100px; /* Đảm bảo văn bản nằm giữa hình thang */
+      transform: skewX(-30deg); /* Biến đổi skewX để tạo hình thang */
+      transition: width 1s ease;
+    }
+
+    .swiper-slide:hover .alpha{
+      width: 650px;
+    }
+    .swiper-slide:hover .beta{
+      width: 650px;
+    }
+    .swiper-slide:hover .omega{
+      width: 650px;
+    }
+
+
+    .swiper-slide{
+      position: relative;
     }
   </style>
+  <link rel="stylesheet" href="../template/custom/css/home.css">
+
 </head>
 
 <body>
 <!-- Swiper -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 4</div>
-    <div class="swiper-slide">Slide 5</div>
-    <div class="swiper-slide">Slide 6</div>
-    <div class="swiper-slide">Slide 7</div>
-    <div class="swiper-slide">Slide 8</div>
-    <div class="swiper-slide">Slide 9</div>
-  </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
-  <div class="autoplay-progress">
-    <svg viewBox="0 0 48 48">
-      <circle cx="24" cy="24" r="20"></circle>
-    </svg>
-    <span></span>
+<div id="top" style="width: 70%">
+  <div class="container-fluid">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../template/custom/image/drink/background1.jpg">
+          <div class="alpha"></div>
+          <div class="beta"></div>
+          <div class="omega"> </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../template/custom/image/drink/background2.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="../template/custom/image/drink/background3.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="../template/custom/image/drink/background1.jpg">
+        </div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+      <div class="autoplay-progress" style="display: none">
+        <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span></span>
+      </div>
+    </div>
+
   </div>
 </div>
-
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="../template/assets/js/popper.js"></script>
+<script src="../template/assets/js/bootstrap.min.js"></script>
 
-<!-- Initialize Swiper -->
+ Initialize Swiper
 <script>
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
