@@ -1,204 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Material Design for Bootstrap</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"/>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <!-- Google Fonts Roboto -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/mdb.min.css"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="plugins/css/all.min.css" />
+    <link rel="stylesheet" href="plugins/css/all.min.css"/>
     <!-- Custom styles -->
-    <style></style>
-  </head>
+</head>
 
-  <body>
-    <!-- Start your project here-->
-    <!-- Sidenav -->
-    <nav
-            id="full-screen-example"
-            class="sidenav bg-light"
-            data-mdb-color="dark"
-            data-mdb-mode="side"
-            data-mdb-hidden="false"
-            data-mdb-scroll-container="#scrollContainer"
-    >
-      <div class="mt-4">
-        <div id="header-content" class="ps-3">
-          <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
-                  alt="Avatar"
-                  class="rounded-circle img-fluid mb-3"
-                  style="max-width: 50px;"
-          />
+<body>
 
-          <h4>
-            <span style="white-space: nowrap;">Ann Smith</span>
-          </h4>
-          <p>ann_s@mdbootstrap.com</p>
+<div class="container my-5 py-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+        <style>
+            .map-container {
+                height: 200px;
+                position: relative;
+            }
+
+            .map-container iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+        </style>
+
+        <!--Google map-->
+        <div id="map-container-google-1" class="z-depth-1 map-container mb-5">
+            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    style="border:0" allowfullscreen></iframe>
         </div>
-        <hr class="mb-0" />
-      </div>
-      <div id="scrollContainer">
-        <ul class="sidenav-menu">
-          <li class="sidenav-item">
-            <a class="sidenav-link" href="/">
-              <i class="fas fa-envelope fa-fw me-3"></i>Inbox</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-paper-plane fa-fw me-3"></i>Outbox</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-address-book fa-fw me-3"></i>Contacts</a
-            >
-            <ul class="sidenav-collapse">
-              <li class="sidenav-item">
-                <a class="sidenav-link">Family</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link" href="/previews/mdb-ui-kit/sidenav/2.html">Friends</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Work</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-file fa-fw me-3"></i>Drafts</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-heart fa-fw me-3"></i>Favourites</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-star fa-fw me-3"></i>Starred</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-trash fa-fw me-3"></i>Trash</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-ban fa-fw me-3"></i>Spam</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link"
-            ><i class="fas fa-tag fa-fw me-3"></i>Categories</a
-            >
-            <ul class="sidenav-collapse">
-              <li class="sidenav-item">
-                <a class="sidenav-link">Social</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Notifications</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Recent</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Uploads</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Backups</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link">Offers</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-sticky-note fa-fw me-3"></i>Notes</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-user-circle fa-fw me-3"></i>Personal</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-ellipsis-h fa-fw me-3"></i>More</a
-            >
-          </li>
-        </ul>
-        <hr class="m-0" />
-        <ul class="sidenav-menu">
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-cogs fa-fw me-3"></i>Settings</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-user fa-fw me-3"></i>Profile</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-shield-alt fa-fw me-3"></i>Privacy</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link">
-              <i class="fas fa-user-astronaut fa-fw me-3"></i>Log out</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="text-center" style="height: 100px;">
-        <hr class="mb-4 mt-0" />
-        <p>MDBootstrap.com</p>
-      </div>
-    </nav>
-    <!-- Sidenav -->
+        <!--Google Maps-->
 
-    <!-- Content -->
-    <div class="mdb-page-content text-center page-intro bg-light">
-      <div class="text-center py-5">
-        <h3 class="my-5">Resize to change the mode</h3>
-        <div>
-          <img class="rounded" src="https://mdbcdn.b-cdn.net/img/Photos/Others/img%20(53).webp" />
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+
+                <h3 class="font-weight-bold">Contact Us</h3>
+
+                <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+                    molestiae
+                    numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+
+                <p><span class="font-weight-bold mr-2">Email:</span><a href="">contact@mycompany.com</a></p>
+                <p><span class="font-weight-bold mr-2">Phone:</span><a href="">+48 123 456 789</a></p>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+
+                        <!-- Material outline input -->
+                        <div class="md-form md-outline mb-0">
+                            <input type="text" id="form-first-name" class="form-control">
+                            <label for="form-first-name">First name</label>
+                        </div>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+
+                        <!-- Material outline input -->
+                        <div class="md-form md-outline mb-0">
+                            <input type="text" id="form-last-name" class="form-control">
+                            <label for="form-last-name">Last name</label>
+                        </div>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!-- Material outline input -->
+                <div class="md-form md-outline mt-3">
+                    <input type="email" id="form-email" class="form-control">
+                    <label for="form-email">E-mail</label>
+                </div>
+
+                <!-- Material outline input -->
+                <div class="md-form md-outline">
+                    <input type="text" id="form-subject" class="form-control">
+                    <label for="form-subject">Subject</label>
+                </div>
+
+                <!--Material textarea-->
+                <div class="md-form md-outline mb-3">
+                    <textarea id="form-message" class="md-textarea form-control" rows="3"></textarea>
+                    <label for="form-message">How we can help?</label>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-sm ml-0">Submit<i class="far fa-paper-plane ml-2"></i></button>
+
+            </div>
+            <!--Grid column-->
+
         </div>
-        <button
-                id="toggler"
-                class="btn btn-dark mt-5"
-                data-mdb-toggle="sidenav"
-                data-mdb-target="#full-screen-example"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    <!-- Content -->
-    <!-- End your project here-->
-  </body>
+        <!--Grid row-->
 
-  <!-- MDB ESSENTIAL -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- MDB PLUGINS -->
-  <script type="text/javascript" src="plugins/js/all.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>
+
+
+
+</body>
+<!-- MDB ESSENTIAL -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- MDB PLUGINS -->
+<script type="text/javascript" src="plugins/js/all.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
 </html>
