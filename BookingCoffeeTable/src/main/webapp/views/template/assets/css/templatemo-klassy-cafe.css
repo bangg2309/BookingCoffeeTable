@@ -648,7 +648,7 @@ banner
 */
 
 #top {
-  padding-top: 100px;
+  /*padding-top: 100px;*/
 }
 
 #top .col-lg-4,
@@ -849,7 +849,7 @@ about
 
 #about {
   margin-top: 20px;
-  padding: 100px 0px 0px 0px;
+  /*padding: 100px 0px 0px 0px;*/
   position: relative;
   z-index: 9;
 }
