@@ -1,13 +1,174 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
 
-#menu{
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 70%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+}
+
+
+
+.alpha{
+    top: -15%;
+    left: 0;
+    position: absolute;
+    width: 50%; /* Độ rộng của hình thang */
+    height: 0px; /* Độ cao của hình thang */
+    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-align: center;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 10%px;
+    /*transform: skewX(-30deg); !* Biến đổi skewX để tạo hình thang *!*/
+    transition: height 1s ease;
+}
+
+.slide_booking{
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*transform: skewX(30deg);*/
+}
+
+.slide_booking a{
+    display: block;
+    color: #F57F48;
+    text-decoration: none;
+
+    background: #fff;
+    border-radius: 50px;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+
+.beta{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 50%; /* Độ rộng của hình thang */
+    height: 0; /* Độ cao của hình thang */
+    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-align: center;
+    line-height: 10%; /* Đảm bảo văn bản nằm giữa hình thang */
+
+    transition: height 1s ease;
+}
+
+.beta h5{
+    font-size: 2vw;
+}
+
+.beta h6{
+    font-size: 1vw;
+}
+
+.omega{
+    top: 0;
+    right: 0%;
+    position: absolute;
+    width: 0px; /* Độ rộng của hình thang */
+    height: 800px; /* Độ cao của hình thang */
+    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    color: #fff; /* Màu chữ */
+    text-align: center;
+    line-height: 100px; /* Đảm bảo văn bản nằm giữa hình thang */
+    /*transform: skewX(-28deg); !* Biến đổi skewX để tạo hình thang *!*/
+    transition: width 2s ease;
+}
+
+.swiper-slide:hover .alpha{
+    height: 50%;
+}
+.swiper-slide:hover .beta{
+    height: 45%;
+}
+.swiper-slide:hover .omega{
+    width: 55%;
+}
+
+
+.swiper-slide {
+    position: relative;
+}
+
+#menu {
     background-color: #f4f4f482;
 }
 
-.header-area.sticky-top{
+.header-area.sticky-top {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.image_contain{
+.image_contain {
     position: absolute;
     width: 20%;
     top: 0;
@@ -25,19 +186,20 @@
     right: 0;
     width: 50%;
     height: 10%;
-    background: rgba(164,130,37,0.75);
+    background: rgba(164, 130, 37, 0.75);
     transform-origin: 25% -100%;
     transform: skewY(40deg);
     text-align: center;
 
 }
-.text_contain{
+
+.text_contain {
     transform: skewY(3deg);
     padding-left: 30px;
     padding-top: 5px;
 }
 
-.text_menu_contain{
+.text_menu_contain {
     position: relative;
 }
 
@@ -70,6 +232,174 @@
     background-color: #fb5849;
 }
 
+/* Reservation
+
+ */
+#reservation .section-heading h1 {
+    font-size: 32px;
+    color: #fb5849;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.main_content {
+    background-image: url("../image/login/background.jpg");
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.main_content .main-list-product .border-bottom .fw-bold {
+    color: brown;
+!important;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.main_content .main-list-product .border-bottom img {
+    border: brown 1px solid;
+    border-radius: 20px;
+}
+
+.main_content .container input {
+    background-color: transparent;
+}
+
+.main_content .container .form_reservation select {
+    /*border-style: none;*/
+    /*background-color:white;*/
+    background-color: transparent;
+}
+
+.main_content .container .form_reservation textarea {
+    /*border-style: none;*/
+    background-color: transparent;
+}
+
+.main_content .container .form_reservation label {
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: Arial;
+}
+
+.main_content .container .title-booking {
+    color: #fb5849;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/*.main_content .container .row .col-6{*/
+/*    border-bottom: 2px #fb5849 solid ;*/
+
+/*}*/
+/*.main_content .container .row .col-5{*/
+/*    border-bottom: 2px #fb5849 solid ;*/
+/*}*/
+/*.main_content .container .row .col-md-11{*/
+/*    border-bottom: 2px #fb5849 solid ;*/
+/*}*/
+/*.main_content .container .row .col-12{*/
+/*    border-bottom: 2px #fb5849 solid ;*/
+/*}*/
+.main_content .container .checkbox {
+    height: 40px;
+    width: 40px;
+    /*margin-top: 10px;*/
+}
+
+.main_content .main-list-product {
+    background-color: rgba(255, 255, 255, 0.91);
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-radius: 20px;
+}
+
+.main_content .container {
+    background-color: rgba(255, 255, 255, 0.91);
+    padding-top: 50px;
+    /*padding-right: 50px;*/
+    padding-left: 60px;
+    border-radius: 20px;
+}
+
+/* Menu */
+.farm-cate-v3 {
+    padding-top: 100px;
+    margin-bottom: 30px;
+    background: url('../image/home/background_menu.jpg') no-repeat center top;
+}
+
+.text_favorite{
+    text-transform: uppercase;
+    margin: auto;
+    text-align: center;
+    color: rgba(229,109,0,0.75);
+    font-weight: bold;
+    border-color: #eeeeee;
+    border-width: 10px;
+}
+
+.container_menu{
+    width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: #f9f9f9 0 -30px, #f9f9f9 -15px -30px, #f9f9f9 15px -30px;
+    background: #f9f9f9;
+}
+
+.farm-cate-v3 .content-farm {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.farm-cate-v3 .content-farm:hover .desc-farm {
+    opacity: 1;
+}
+
+.farm-cate-v3 .content-farm .desc-farm {
+    background: rgba(245, 127, 72, 0.7);
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 300ms ease-in-out;
+}
+
+.farm-cate-v3 .content-farm .desc-farm span:after {
+    display: block;
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: #fff;
+    margin: 20px auto;
+}
+
+.farm-cate-v3 .content-farm .desc-farm a {
+    display: block;
+    color: #F57F48;
+    text-decoration: none;
+    width: 140px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 40px;
+    margin: 0 auto;
+}
 
 
 
