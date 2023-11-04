@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Material Design for Bootstrap</title>
+    <title>Quản lý người dùng</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -27,44 +27,94 @@
 <!--Main Navigation-->
 <header>
     <!-- Sidenav -->
-    <nav id="main-sidenav" class="sidenav sidenav-sm shadow-1" data-mdb-hidden="false">
+    <nav id="main-sidenav" class="sidenav sidenav-sm shadow-1" data-mdb-mode="side"
+         data-mdb-hidden="false">
         <a class="ripple d-flex justify-content-center pt-4 pb-2" href="#!" data-mdb-ripple-color="primary">
-            <img id="MDB-logo" src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.webp"
+            <img id="MDB-logo" src="../template/custom/image/drink/logo2.png" style="width: 60px"
                  alt="MDB Logo" draggable="false"/>
         </a>
+
         <hr class="hr">
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
-                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Thống kê</span></a>
+                    <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
                 <span class="sidenav-subheading text-muted text-uppercase fw-bold">Quản lý</span>
             </li>
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="">
+                <a class="sidenav-link text-primary ">
                     <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý người dùng</span></a>
+                <ul class="sidenav-collapse">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm người dùng</a>
+                    </li>
+                    <li class="sidenav-item text-primary">
+                        <a class="sidenav-link">Danh sách người dùng</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a class="sidenav-link ">
+                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý vai trò</span></a>
+                <ul class="sidenav-collapse">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm vai trò</a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách vai trò</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidenav-item">
+                <a class="sidenav-link ">
+                    <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link ">Thêm món</a>
+                    </li>
+                    <li class="sidenav-item ">
+                        <a class="sidenav-link">Danh sách món</a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link " href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý món</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link " href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
+                    <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm danh mục</a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách danh mục</a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link " href="">
                     <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý bàn</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm bàn</a>
+                    </li>
+                    <li class="sidenav-item ">
+                        <a class="sidenav-link">Danh sách bàn</a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý đặt bàn</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý đặt bàn</span></a>
+                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý đơn đặt bàn</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm đơn đặt bàn</a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách đơn đặt bàn</a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
@@ -84,7 +134,7 @@
         <div class="container-fluid">
             <!-- Toggler -->
             <button data-mdb-toggle="sidenav" data-mdb-target="#main-sidenav"
-                    class="btn shadow-0 p-0 me-3 d-block d-xxl-none" aria-controls="#main-sidenav" aria-haspopup="true">
+                    class="btn shadow-0 p-0 me-3 d-block " aria-controls="#main-sidenav" aria-haspopup="true">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
 
@@ -97,26 +147,10 @@
 
             <!-- Right links -->
             <ul class="navbar-nav ms-auto d-flex flex-row">
-                <!-- Notification dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                       role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bell link-secondary"></i>
-                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Some news</a></li>
-                        <li><a class="dropdown-item" href="#">Another news</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
-                    </ul>
-                </li>
-
                 <!-- Avatar -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
-                       id="" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                       id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="22"
                              alt="Avatar"
                              loading="lazy"/>
@@ -134,7 +168,7 @@
     <!-- Navbar -->
 
     <!-- Heading -->
-    <section class="mb-5 mb-lg-8 text-center text-md-start">
+    <section class="mb-5 text-center text-md-start">
         <!-- Background gradient -->
         <div class="p-5" style="height: 200px;
                             background: linear-gradient(
@@ -156,9 +190,9 @@
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="" class="text-muted">Home</a>
+                                    <a href="home.html" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>UserManagement</u></a>
+                                    <a href="" class="text-muted"><u>Danh sách người dùng</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -170,6 +204,17 @@
                             </button>
 
                             <div class="row justify-content-center justify-content-lg-end">
+
+                                <div class="col-md-4 mb-4 mb-md-0">
+                                    <select class="select">
+                                        <option value="1" selected>All products</option>
+                                        <option value="2">Product 1</option>
+                                        <option value="3">Product 2</option>
+                                        <option value="4">Product 3</option>
+                                        <option value="5">Product 4</option>
+                                    </select>
+                                    <label class="form-label select-label">Date</label>
+                                </div>
 
                                 <div class="col-md-4 mb-4 mb-md-0">
                                     <select class="select">
@@ -193,7 +238,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -206,69 +250,70 @@
 <!--Main layout-->
 <main class="mb-5">
 
-
     <!-- Container for demo purpose -->
-    <div class="container px-4 ">
-        <div class="mb-5">
-            <a class="btn btn-primary" href="addUser.html">
+    <div class="container  px-4 ">
+        <div class="mb-3 d-flex justify-content-end px-4">
+            <a class="btn btn-primary" href="userAddition.html">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm người dùng</span>
             </a>
         </div>
-        <table class="table align-middle mb-0 bg-white">
-            <thead class="bg-light">
-            <tr>
-                <th>Id</th>
-                <th>Tên người dùng</th>
-                <th>Số điện thoại</th>
-                <th>email</th>
-                <th>Xác thực Email</th>
-                <th>Trạng thái</th>
-                <th>Hoạt động</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <img
-                                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                                alt=""
-                                style="width: 45px; height: 45px"
-                                class="rounded-circle"
-                        />
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">bangg2309</p>
-                            <p class="fw-bold mb-1">Trần Quí Bằng</p>
+        <div class="datatable">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Tên người dùng</th>
+                    <th>Số điện thoại</th>
+                    <th>email</th>
+                    <th>Xác thực Email</th>
+                    <th>Trạng thái</th>
+                    <th>Hoạt động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <span>1</span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img
+                                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                    alt=""
+                                    style="width: 45px; height: 45px"
+                                    class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">bangg2309</p>
+                                <p class="fw-bold mb-1">Trần Quí Bằng</p>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>
-                    <span>0842314569</span>
-                </td>
-                <td>
-                    <p class="fw-normal mb-1">bangg2309@gmail.com</p>
-                </td>
-                <td>
-                    <span class="badge badge-success rounded-pill d-inline">đã xác thực</span>
-                </td>
-                <td>
-                    <span class="badge badge-danger rounded-pill d-inline">ngưng hoạt động</span>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary btn-floating">
-                        <i class="far fa-pen-to-square"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-floating">
-                        <i class="far fa-trash-can"></i>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                    </td>
+                    <td>
+                        <span>0842314569</span>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">bangg2309@gmail.com</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">đã xác thực</span>
+                    </td>
+                    <td>
+                        <span class="badge badge-danger rounded-pill d-inline">ngưng hoạt động</span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-floating">
+                            <i class="far fa-pen-to-square"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-floating">
+                            <i class="far fa-trash-can"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
     <!-- Container for demo purpose -->
