@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Quản lý loại món</title>
+    <title>Material Design for Bootstrap</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -30,45 +30,21 @@
     <nav id="main-sidenav" class="sidenav sidenav-sm shadow-1" data-mdb-hidden="false">
         <a class="ripple d-flex justify-content-center pt-4 pb-2" href="#!" data-mdb-ripple-color="primary">
             <img id="MDB-logo" src="https://mdbcdn.b-cdn.net/wp-content/uploads/2018/06/logo-mdb-jquery-small.webp"
-                 alt="MDB Logo" draggable="false" />
+                 alt="MDB Logo" draggable="false"/>
         </a>
         <hr class="hr">
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
-                    <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Thống kê</span></a>
+                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Thống kê</span></a>
             </li>
             <li class="sidenav-item pt-3">
                 <span class="sidenav-subheading text-muted text-uppercase fw-bold">Quản lý</span>
             </li>
             <li class="sidenav-item">
-                <a class="sidenav-link " href="UserManagement.html">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý người dùng</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link " href="productManagement.html">
-                    <i class="fas fa-mug-saucer fa-fw me-3 "></i><span>Quản lý món</span></a>
-            </li>
-            <li class="sidenav-item text-primary">
-                <a class="sidenav-link " href="">
-                    <i class="fas fa-bars fa-fw me-3 text-primary"></i><span>Quản lý loại món</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link " href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý bàn</span></a>
-            </li>
-            <li class="sidenav-item">
                 <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý đặt bàn</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý trang giới thiệu</span></a>
+                    <i class="fas fa-users fa-fw me-3"></i><span>Quản lý người dùng</span></a>
             </li>
         </ul>
     </nav>
@@ -148,45 +124,22 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Quản lý món</h1>
+                            <h1 class="">Thêm người dùng</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
                                     <a href="" class="text-muted">Home</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>CategoryManagement</u></a>
+                                    <a href="" class="text-muted">UserManagement</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>AddUser</u></a>
                                 </h6>
                             </nav>
+
                             <!-- Breadcrumb -->
                         </div>
 
-                        <div class="col-lg-6 text-center text-lg-end">
-                            <button type="button" class="btn btn-link mb-4 px-2 px-md-3" data-ripple-color="primary">
-                                Export<i class="fas fa-download ms-2"></i>
-                            </button>
 
-                            <div class="row justify-content-center justify-content-lg-end">
-
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <select class="select">
-                                        <option value="1">Today</option>
-                                        <option value="2">Yesterday</option>
-                                        <option value="3" selected>Last 7 days</option>
-                                        <option value="4">Last 28 days</option>
-                                        <option value="5">Last 90 days</option>
-                                    </select>
-                                    <label class="form-label select-label">Date</label>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-outline datepicker" data-mdb-inline="true">
-                                        <input type="text" class="form-control" id="exampleDatepicker1"
-                                               data-toggle="datepicker"
-                                               value="Custom date"/>
-                                        <label for="exampleDatepicker1" class="form-label">Date</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -204,75 +157,97 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="addProduct.html">
-                <i class="far fa-square-plus"></i>
-                <span>Thêm loại món</span>
-            </a>
+        <a href="userManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
+        <div class="mb-3 bg-primary p-2">
+            <span class="text-white">Thông tin người dùng</span>
         </div>
-        <table class="table align-middle mb-0 bg-white">
-            <thead class="bg-light">
-            <tr>
-                <th>Id</th>
-                <th>Tên loại món</th>
-                <th>Hoạt động</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-
-
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1">Cà phê</p>
+        <form class="border p-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><b>Tên đăng nhập</b></label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Nhập UserName..." required>
                     </div>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary btn-floating">
-                        <i class="far fa-pen-to-square"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-floating">
-                        <i class="far fa-trash-can"></i>
-                    </button>
-                </td>
-            </tr>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><b>Mật khẩu</b></label>
+                        <i class="fas fa-key"></i>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Nhập Password..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label"><b>Tên đầy đủ</b></label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="fullname" name="fullname"
+                               placeholder="Nhập FullName..." required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập Email..."
+                               required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label"><b>Số điện thoại</b></label>
+                        <i class="fas fa-phone"></i>
+                        <input type="number" class="form-control" id="phone" name="phone"
+                               placeholder="Nhập PhoneNumber..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="role" class="form-label"><b>Vai trò</b></label>
+                    <i class="fas fa-user-tag"></i>
+                    <select class="form-select" id="role" name="role" required>
+                        <option value="" disabled selected>Chọn vai trò</option>
+                        <option value="1">Quản trị</option>
+                        <option value="2">Người dùng</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label"><b>Trạng thái</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <label class="form-check-label" for="active">Hoạt động</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <label class="form-check-label" for="inactive">Ngừng hoạt động</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="avatar" class="form-label"><b>Ảnh đại diện</b></label>
+                        <i class="fas fa-image"></i>
+                        <input class="form-control" type="file" id="avatar" name="avatar">
+                    </div>
+                </div>
+            </div>
 
-            </tbody>
-        </table>
-        <div class=" p-2 d-flex bg-white justify-content-end">
-            <nav aria-label="...">
-                <ul class="pagination pagination-circle mb-0">
-                    <li class="page-item">
-                        <a
-                                class="page-link"
-                                href="#"
-                                tabindex="-1"
-                                aria-disabled="true"
-                        >Trước</a
-                        >
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#"
-                        >2 <span class="sr-only">(current)</span></a
-                        >
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Tiếp theo</a>
-                    </li>
-                </ul>
-            </nav>
+            <!-- Repeat the pattern for other form elements -->
 
-        </div>
-
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+        </form>
 
     </div>
     <!-- Container for demo purpose -->
