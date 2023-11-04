@@ -39,7 +39,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<nav class="header-area sticky-top shadow p-3  bg-white rounded">
+<nav class="header-area sticky-top">
     <div class="container">
         <div class="row">
             <div class="col-9">
@@ -52,8 +52,8 @@
 
 
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="#about">Giới thiệu</a></li>
+                        <li class="scroll-to-section"><a id="trangchu" href="home.html" class="active">Trang chủ</a></li>
+                        <li class="scroll-to-section"><a id="gioithieu" href="home.html">Giới thiệu</a></li>
 
                         <!--
                             <li class="submenu">
@@ -65,11 +65,11 @@
                                 </ul>
                             </li>
                         -->
-                        <li class="scroll-to-section"><a href="#menu">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a href="#menu">Bàn</a></li>
+                        <li class="scroll-to-section"><a href="home.html">Thực đơn</a></li>
+                        <li class="scroll-to-section"><a href="home.html">Bài viết</a></li>
 
                         <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                        <li class="scroll-to-section"><a href="#reservation">Liên hệ</a></li>
+                        <li class="scroll-to-section"><a href="home.html">Liên hệ</a></li>
 
 
                     </ul>
@@ -85,8 +85,8 @@
                 <nav class="main-nav">
 
                     <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="#datban">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="#"><span class="user_icon" style="padding-right: 10px"><i
+                        <li class="scroll-to-section order_table"><a href="bookingTable1.html">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
                                 class="fa fa-user"
                                 aria-hidden="true"></i></span>Đăng nhập</a></li>
                     </ul>
@@ -150,34 +150,101 @@
 <!--Main layout-->
 
 <!-- ***** Footer Start ***** -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-xs-12">
-                <div class="right-text-content">
-                    <ul class="social-icons">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="logo">
-                    <a href="home.html"><img src="../template/assets/images/white-logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-xs-12">
-                <div class="left-text-content">
-                    <p>© Copyright Klassy Cafe Co.
+<footer class="text-white text-center text-lg-start" style="background-color: #4e342e;">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">About company</h5>
 
-                        <br>Design: TemplateMo</p>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                    voluptatum deleniti atque corrupti.
+                </p>
+
+                <p>
+                    Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                    molestias.
+                </p>
+
+                <div class="mt-4">
+                    <!-- Facebook -->
+                    <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+                    <!-- Dribbble -->
+                    <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+                    <!-- Twitter -->
+                    <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+                    <!-- Google + -->
+                    <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+                    <!-- Linkedin -->
                 </div>
             </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="formControlLg" class="form-control form-control-lg"/>
+                    <label class="form-label" for="formControlLg">Search</label>
+                </div>
+
+                <ul class="fa-ul" style="margin-left: 1.65em;">
+                    <li class="mb-3">
+                        <span class="fa-li"><i class="fas fa-home"></i></span><span
+                            class="ms-2">New York, NY 10012, US</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                            class="ms-2">info@example.com</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+                <table class="table text-center text-white">
+                    <tbody class="font-weight-normal">
+                    <tr>
+                        <td>Mon - Thu:</td>
+                        <td>8am - 9pm</td>
+                    </tr>
+                    <tr>
+                        <td>Fri - Sat:</td>
+                        <td>8am - 1am</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday:</td>
+                        <td>9am - 10pm</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--Grid column-->
         </div>
+        <!--Grid row-->
     </div>
-</footer>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>s
 
 <!-- jQuery -->
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
