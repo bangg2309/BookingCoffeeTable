@@ -576,4 +576,13 @@ footer{
 .main-login .container-login100 .wrap-login100 .flex-sb-m .txt1{
   padding-left: 25px;
 }
+.header-area.sticky-top {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+#rester :hover{
+  background-color: red;
+}
+#login :hover{
+  background-color: forestgreen;
+}
 
