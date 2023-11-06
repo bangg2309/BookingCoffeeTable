@@ -39,7 +39,7 @@
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
                 <a class="sidenav-link text-primary" href="">
-                    <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Thống kê</span></a>
+                    <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
                 <span class="sidenav-subheading text-muted text-uppercase fw-bold">Quản lý</span>
@@ -77,6 +77,9 @@
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link">Danh sách món</a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách đánh giá</a>
                     </li>
                 </ul>
             </li>
@@ -119,10 +122,23 @@
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
                     <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách liên hệ</a>
+                    </li>
+                </ul>
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link" href="">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý trang giới thiệu</span></a>
+                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
+                <ul class="sidenav-collapse ">
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Thêm bài viết</a>
+                    </li>
+                    <li class="sidenav-item">
+                        <a class="sidenav-link">Danh sách bài viết</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -186,25 +202,10 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">eCommerce Dashboard</h1>
-                            <!-- Breadcrumb -->
-                            <nav class="d-flex justify-content-center justify-content-lg-start">
-                                <h6 class="mb-0">
-                                    <a href="" class="text-muted">Home</a>
-                                    <span>/</span>
-                                    <a href="" class="text-muted">Analytics</a>
-                                    <span>/</span>
-                                    <a href="" class="text-muted"><u>eCommerce</u></a>
-                                </h6>
-                            </nav>
-                            <!-- Breadcrumb -->
+                            <h1 class="">Trang chủ</h1>
                         </div>
 
                         <div class="col-lg-6 text-center text-lg-end">
-                            <button type="button" class="btn btn-link me-1 mb-4 px-2 px-md-3"
-                                    data-ripple-color="primary">
-                                Customize<i class="fas fa-cogs ms-2"></i>
-                            </button>
                             <button type="button" class="btn btn-link mb-4 px-2 px-md-3" data-ripple-color="primary">
                                 Export<i class="fas fa-download ms-2"></i>
                             </button>
@@ -258,91 +259,137 @@
 <main class="mb-5">
     <!-- Container for demo purpose -->
     <div class="container px-4">
+        <div>
+            <div class="row">
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="hover_container"></div>
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Tổng đơn đặt bàn
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">648</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="hover_container"></div>
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Doanh thu
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">542.254.000đ</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="hover_container"></div>
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Tổng số
+                                        khách hàng
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">3.200</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Requests Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="hover_container"></div>
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Tổng sản phẩm
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-mug-saucer fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Section: Sales Performance KPIs -->
         <section class="mb-8">
-
             <div class="card shadow-0">
                 <div class="card-header border-0 p-3">
-                    <strong>Sales Performance KPIs</strong>
+                    <strong>Thống kê chi tiết</strong>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="table-responsive datatable">
                         <table class="table table-hover table-borderless table-striped text-nowrap">
                             <thead>
                             <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Product Detail Views</th>
-                                <th scope="col">Unique Purchases</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Product Revenue</th>
-                                <th scope="col">Avg. Price</th>
+                                <th scope="col">Tên khách hàng</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Đơn đã đặt</th>
+                                <th scope="col">Số sản phẩm</th>
+                                <th scope="col">Số tiền</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">Value</th>
-                                <td>$18,492</td>
-                                <td>228</td>
-                                <td>350</td>
-                                <td>$4,787.64</td>
-                                <td>$13.68</td>
+                                <th scope="row"></th>
+                                <td>Trần Quí Bằng</td>
+                                <td>0842314569</td>
+                                <td>bangg2309@gmail.com</td>
+                                <td>23</td>
+                                <td>68</td>
+                                <td>3.200.000đ</td>
                             </tr>
                             <tr>
-                                <th scope="row">Percentage change</th>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-48.8%%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>14.0%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>46.4%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>29.6%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-11.5%</span>
-                    </span>
-                                </td>
+                                <th scope="row"></th>
+                                <td>Trần Quí Bằng</td>
+                                <td>0842314569</td>
+                                <td>bangg2309@gmail.com</td>
+                                <td>23</td>
+                                <td>68</td>
+                                <td>3.200.000đ</td>
                             </tr>
                             <tr>
-                                <th scope="row">Absolute change</th>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-$17,654</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>28</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>111</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>$1,092.72</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>$-1.78</span>
-                    </span>
-                                </td>
+                                <th scope="row"></th>
+                                <td>Trần Quí Bằng</td>
+                                <td>0842314569</td>
+                                <td>bangg2309@gmail.com</td>
+                                <td>23</td>
+                                <td>68</td>
+                                <td>3.200.000đ</td>
                             </tr>
                             </tbody>
                         </table>
@@ -353,52 +400,6 @@
         </section>
         <!-- Section: Sales Performance KPIs -->
 
-        <!--Section: Shopping Funnel & Product revenue-->
-        <section class="mb-4">
-            <div class="row gx-xl-5">
-                <div class="col-md-5 mb-4">
-                    <div class="card shadow-0 h-100">
-                        <div class="card-header border-0 py-3">
-                            <strong>Shopping Funnel</strong>
-                        </div>
-                        <div class="card-body">
-                            <div id="chart-shopping-funnel"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7 mb-4">
-                    <div class="card shadow-0 shadow-0">
-                        <div class="card-body">
-                            <div id="chart-product-revenue"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Section: Shopping Funnel & Product revenue-->
-
-        <!--Section: Content-->
-        <section>
-            <div class="card shadow-0">
-                <div class="card-header border-0 p-3">
-                    <strong>Revenue sources</strong>
-                </div>
-                <div class="card-body">
-                    <div class="row gx-xl-5 align-items-center">
-                        <div class="col-md-4 mb-4">
-                            <div id="chart-revenue-sources" class="mb-7"></div>
-                            <div id="chart-marketing-sources" class="px-5"></div>
-                        </div>
-
-                        <div class="col-md-8 mb-4">
-                            <div id="datatable"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Section: Content-->
 
     </div>
     <!-- Container for demo purpose -->

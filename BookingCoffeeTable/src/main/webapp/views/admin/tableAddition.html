@@ -168,7 +168,7 @@
     <!-- Navbar -->
 
     <!-- Heading -->
-    <section class="mb-5 mb-lg-8 text-center text-md-start">
+    <section class="mb-5 text-center text-md-start">
         <!-- Background gradient -->
         <div class="p-5" style="height: 200px;
                             background: linear-gradient(
@@ -186,25 +186,21 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">eCommerce Dashboard</h1>
+                            <h1 class="">Thêm bàn</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="" class="text-muted">Home</a>
+                                    <a href="" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted">Analytics</a>
+                                    <a href="" class="text-muted">Quản lý bàn</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>eCommerce</u></a>
+                                    <a href="" class="text-muted"><u>Thêm bàn</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
                         </div>
 
                         <div class="col-lg-6 text-center text-lg-end">
-                            <button type="button" class="btn btn-link me-1 mb-4 px-2 px-md-3"
-                                    data-ripple-color="primary">
-                                Customize<i class="fas fa-cogs ms-2"></i>
-                            </button>
                             <button type="button" class="btn btn-link mb-4 px-2 px-md-3" data-ripple-color="primary">
                                 Export<i class="fas fa-download ms-2"></i>
                             </button>
@@ -256,149 +252,90 @@
 
 <!--Main layout-->
 <main class="mb-5">
+
+
     <!-- Container for demo purpose -->
-    <div class="container px-4">
-
-        <!-- Section: Sales Performance KPIs -->
-        <section class="mb-8">
-
-            <div class="card shadow-0">
-                <div class="card-header border-0 p-3">
-                    <strong>Sales Performance KPIs</strong>
+    <div class="container px-4 ">
+        <a href="tableManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
+        <div class="mb-3 bg-primary p-2">
+            <span class="text-white">Thông tin bàn</span>
+        </div>
+        <form class="border p-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><b>Số bàn</b></label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Nhập UserName..." required>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover table-borderless table-striped text-nowrap">
-                            <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Product Detail Views</th>
-                                <th scope="col">Unique Purchases</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Product Revenue</th>
-                                <th scope="col">Avg. Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">Value</th>
-                                <td>$18,492</td>
-                                <td>228</td>
-                                <td>350</td>
-                                <td>$4,787.64</td>
-                                <td>$13.68</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Percentage change</th>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-48.8%%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>14.0%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>46.4%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>29.6%</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-11.5%</span>
-                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Absolute change</th>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>-$17,654</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>28</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>111</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-success">
-                      <i class="fas fa-caret-up me-1"></i><span>$1,092.72</span>
-                    </span>
-                                </td>
-                                <td>
-                    <span class="text-danger">
-                      <i class="fas fa-caret-down me-1"></i><span>$-1.78</span>
-                    </span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><b>Chỗ ngồi</b></label>
+                        <i class="fas fa-key"></i>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Nhập Password..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label"><b>Khu vực</b></label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="fullname" name="fullname"
+                               placeholder="Nhập FullName..." required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><b>Vị trí</b></label>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập Email..."
+                               required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label"><b>Trạng thái</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <label class="form-check-label" for="active">Hoạt động</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <label class="form-check-label" for="inactive">Ngừng hoạt động</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="avatar" class="form-label"><b>Ảnh minh họa</b></label>
+                        <i class="fas fa-image"></i>
+                        <input class="form-control" type="file" id="avatar" name="avatar">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label class="form-label"><b>Mô tả</b></label>
+                        <textarea class="form-control" id="description" name="description" rows="7"
+                                  placeholder="Mô tả..."></textarea>
                     </div>
                 </div>
             </div>
 
-        </section>
-        <!-- Section: Sales Performance KPIs -->
+            <!-- Repeat the pattern for other form elements -->
 
-        <!--Section: Shopping Funnel & Product revenue-->
-        <section class="mb-4">
-            <div class="row gx-xl-5">
-                <div class="col-md-5 mb-4">
-                    <div class="card shadow-0 h-100">
-                        <div class="card-header border-0 py-3">
-                            <strong>Shopping Funnel</strong>
-                        </div>
-                        <div class="card-body">
-                            <div id="chart-shopping-funnel"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7 mb-4">
-                    <div class="card shadow-0 shadow-0">
-                        <div class="card-body">
-                            <div id="chart-product-revenue"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Section: Shopping Funnel & Product revenue-->
-
-        <!--Section: Content-->
-        <section>
-            <div class="card shadow-0">
-                <div class="card-header border-0 p-3">
-                    <strong>Revenue sources</strong>
-                </div>
-                <div class="card-body">
-                    <div class="row gx-xl-5 align-items-center">
-                        <div class="col-md-4 mb-4">
-                            <div id="chart-revenue-sources" class="mb-7"></div>
-                            <div id="chart-marketing-sources" class="px-5"></div>
-                        </div>
-
-                        <div class="col-md-8 mb-4">
-                            <div id="datatable"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Section: Content-->
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+        </form>
 
     </div>
     <!-- Container for demo purpose -->
