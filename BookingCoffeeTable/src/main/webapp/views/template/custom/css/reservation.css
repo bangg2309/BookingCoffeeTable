@@ -63,12 +63,7 @@ html, body {
     padding-top: 50px;
     padding-left: 60px;
 }
-.main_content .container .justify-content-end button{
-    background-color: orangered;
-    font-size: 20px;
-    color: white;
-    border: 1px white solid;
-}
+
 footer{
     margin-top: 0px;
 }
