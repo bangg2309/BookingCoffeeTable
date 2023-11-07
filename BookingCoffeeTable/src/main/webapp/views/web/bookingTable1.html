@@ -35,7 +35,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<nav class="header-area sticky-top" >
+<nav class="header-area sticky-top">
     <div class="container">
         <div class="row">
             <div class="col-9">
@@ -48,16 +48,32 @@
 
 
                     <ul class="nav">
-                        <li class="scroll-to-section"><a id="trangchu" href="#top" class="active">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="bookingTable1.html">Bàn</a></li>
-                        <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
-                        <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
-                        <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
+                        <li class="scroll-to-section"><a id="trangchu" href="home.html" class="active">Trang chủ</a></li>
+                        <li class="scroll-to-section"><a id="gioithieu" href="home.html">Giới thiệu</a></li>
+
+                        <!--
+                            <li class="submenu">
+                                <a href="javascript:;">Drop Down</a>
+                                <ul>
+                                    <li><a href="#">Drop Down Page 1</a></li>
+                                    <li><a href="#">Drop Down Page 2</a></li>
+                                    <li><a href="#">Drop Down Page 3</a></li>
+                                </ul>
+                            </li>
+                        -->
+                        <li class="scroll-to-section"><a href="home.html">Thực đơn</a></li>
+                        <li class="scroll-to-section"><a href="home.html">Bài viết</a></li>
+
+                        <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
+                        <li class="scroll-to-section"><a href="home.html">Liên hệ</a></li>
+
+
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
+
+
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
@@ -422,54 +438,30 @@
 
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-xs-12">
-                    <div class="right-text-content">
-                        <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="logo">
-                        <a href="home.html"><img src="../template/assets/images/white-logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-12">
-                    <div class="left-text-content">
-                        <p>© Copyright Klassy Cafe Co.
 
-                            <br>Design: TemplateMo</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 </div>
-<footer class="text-white text-center text-lg-start" style="background-color: #4e342e;">
+<footer class="text-white text-center text-lg-start" style="background-color: #7E644B;">
     <!-- Grid container -->
     <div class="container p-4">
         <!--Grid row-->
-        <div class="row mt-4">
+        <div class="row">
             <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4">About company</h5>
+            <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 ">Về chúng tôi</h5>
 
-                <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                    voluptatum deleniti atque corrupti.
-                </p>
+                <div>
+                    <img src="../template/custom/image/drink/logo2.png" style="width: 60px;" class="mb-4" alt="">
 
-                <p>
-                    Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                    molestias.
-                </p>
+                    <p class="text-white">
+                        Coffee Shop, là điểm hẹn lý tưởng cho những buổi gặp gỡ, những cuộc trò chuyện và những khoảnh
+                        khắc
+                        thư giãn.
+                    </p>
+
+                    <p class="text-white">
+                        Chúng tôi mong được phục vụ và làm hài lòng bạn, mỗi khi bạn đặt bàn tại đây.
+                    </p>
+                </div>
 
                 <div class="mt-4">
                     <!-- Facebook -->
@@ -486,18 +478,34 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Tính năng nổi bật</h5>
 
-                <div class="form-outline form-white mb-4">
-                    <input type="text" id="formControlLg" class="form-control form-control-lg"/>
-                    <label class="form-label" for="formControlLg">Search</label>
-                </div>
+                <ul class="fa-ul" style="margin-left: 1.65em;">
+                    <li class="mb-3">
+                        <span class="ms-2">Trang chủ</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="ms-2">Khám phá thực đơn</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="ms-2">Xem danh sách bàn</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="ms-2">Đặt bàn ngay</span>
+                    </li>
+
+                </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">Liên hệ</h5>
 
                 <ul class="fa-ul" style="margin-left: 1.65em;">
                     <li class="mb-3">
                         <span class="fa-li"><i class="fas fa-home"></i></span><span
-                            class="ms-2">New York, NY 10012, US</span>
+                            class="ms-2">Trường ĐH Nông Lâm TP.HCM</span>
                     </li>
                     <li class="mb-3">
                         <span class="fa-li"><i class="fas fa-envelope"></i></span><span
@@ -512,27 +520,29 @@
                 </ul>
             </div>
             <!--Grid column-->
-
             <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4">Opening hours</h5>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Giờ mở cửa</h5>
 
-                <table class="table text-center text-white">
+                <table class="table  text-white">
                     <tbody class="font-weight-normal">
                     <tr>
-                        <td>Mon - Thu:</td>
-                        <td>8am - 9pm</td>
+                        <td>Thứ 2 - Thứ 6:</td>
+                        <td>6h00 - 22h30</td>
                     </tr>
                     <tr>
-                        <td>Fri - Sat:</td>
-                        <td>8am - 1am</td>
+                        <td>Thứ 7 - Chủ nhật:</td>
+                        <td>6h00 - 23h00</td>
                     </tr>
-                    <tr>
-                        <td>Sunday:</td>
-                        <td>9am - 10pm</td>
-                    </tr>
+
                     </tbody>
                 </table>
+                <tr>
+                    <a href="http://online.gov.vn/" target="_blank" rel="nofollow noreferrer">
+                        <img src="https://file.hstatic.net/1000300454/file/logo_bct_019590229b4c4dfda690236b67f7aff4.png"
+                             alt="Bộ Công Thương">
+                    </a>
+                </tr>
             </div>
             <!--Grid column-->
         </div>
@@ -540,13 +550,7 @@
     </div>
     <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-</footer>s
+</footer>
 <!-- jQuery -->
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
 
