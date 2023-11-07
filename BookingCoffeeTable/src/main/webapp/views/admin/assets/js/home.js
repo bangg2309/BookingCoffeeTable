@@ -23,5 +23,3 @@ const setMode = (e) => {
 setMode();
 // Event listeners
 window.addEventListener("resize", setMode);
-
-
