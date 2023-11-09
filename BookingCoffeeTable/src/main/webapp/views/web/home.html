@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+
 </head>
 <body>
 
@@ -71,7 +72,7 @@
                 <nav class="main-nav">
 
                     <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
+                        <li class="scroll-to-section order_table"><a href="bookingTable1.html">Đặt bàn</a></li>
                         <li class="scroll-to-section"><a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
                                 class="fa fa-user"
                                 aria-hidden="true"></i></span>Đăng nhập</a></li>
@@ -2051,7 +2052,33 @@
 
 <!-- Global Init -->
 <script src="../template/assets/js/custom.js"></script>
-
+<script src="../template/custom/js/home.js"></script>
+<script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+</script>
 
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
 
