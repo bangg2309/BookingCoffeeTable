@@ -107,6 +107,7 @@ a {
 
 .pull-right {
     float: right !important;
+
 }
 
 .pull-left {
@@ -233,4 +234,10 @@ ul.article-info-more li {
 
 .btn-group-vertical > .btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
     clear: both
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #bf9369;
 }
