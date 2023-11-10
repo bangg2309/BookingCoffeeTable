@@ -47,5 +47,25 @@
     /*position: absolute;*/
     transition: height 1s ease; /* Chuyển đổi chiều cao trong 3 giây */
     pointer-events: auto;
+    background-color: #bf9369;
 
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #bf9369;
+    border-color: #bf9369;
+}
+
+.btn:focus-visible {
+    color: #fff;;
+    background-color: #bf9369;
+}
+
+.btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
+    background-color: #bf9369;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
 }

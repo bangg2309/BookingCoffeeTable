@@ -85,3 +85,25 @@
     height: 1rem;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #bf9369;
+    border-color: #bf9369;
+}
+
+.btn:focus-visible {
+    color: #fff;;
+     background-color: #bf9369;
+}
+
+.btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
+    box-shadow: var(--mdb-btn-box-shadow-state);
+    background-color: #bf9369;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #bf9369;
+}
+
