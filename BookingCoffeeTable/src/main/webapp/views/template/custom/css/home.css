@@ -412,7 +412,7 @@
 
 #new .box-latest-news .content-ln a {
     font-size: 16px;
-    color:#bf9369;
+    color: #bf9369;
     text-decoration: none;
 }
 
@@ -1125,25 +1125,40 @@ footer {
     color: white;
 }
 
-.btn.btn-primarybtn-roundedw-100.color_btn{
+.btn.btn-primarybtn-roundedw-100.color_btn {
     background-color: #bf9369;
 }
 
-.color_btn{
+
+
+.color_btn {
     background-color: #bf9369;
 }
 
-.color_btn:hover{
+.color_btn:hover {
     color: #bf9369;
     border-color: #bf9369;
     background: #fff;
 }
 
-.color_far{
+.color_far {
     color: #bf9369;
 }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #bf9369;
+    border-color: #bf9369;
+}
 
+.btn:focus-visible {
+    color: #fff;;
+    background-color: #bf9369;
+}
 
+.btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
+    box-shadow: var(--mdb-btn-box-shadow-state);
+    background-color: #bf9369;
+}
 
 
 
