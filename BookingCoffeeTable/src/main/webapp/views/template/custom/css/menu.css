@@ -99,6 +99,7 @@
 .btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
     box-shadow: var(--mdb-btn-box-shadow-state);
     background-color: #bf9369;
+    color: white;
 }
 
 .page-item.active .page-link {

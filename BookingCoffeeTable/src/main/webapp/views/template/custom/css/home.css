@@ -56,7 +56,7 @@
     position: absolute;
     width: 50%; /* Độ rộng của hình thang */
     height: 0px; /* Độ cao của hình thang */
-    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    background-color: rgba(191, 147, 105, 0.7); /* Màu nền */
     color: #fff; /* Màu chữ */
     text-align: center;
     display: flex;
@@ -99,7 +99,7 @@
     position: absolute;
     width: 50%; /* Độ rộng của hình thang */
     height: 0; /* Độ cao của hình thang */
-    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    background-color: rgba(191, 147, 105, 0.7); /* Màu nền */
     color: #fff; /* Màu chữ */
     text-align: center;
     line-height: 10%; /* Đảm bảo văn bản nằm giữa hình thang */
@@ -121,7 +121,7 @@
     position: absolute;
     width: 0px; /* Độ rộng của hình thang */
     height: 800px; /* Độ cao của hình thang */
-    background-color: rgba(255, 64, 64, 0.6); /* Màu nền */
+    background-color: rgba(191, 147, 105, 0.2); /* Màu nền */
     color: #fff; /* Màu chữ */
     text-align: center;
     line-height: 100px; /* Đảm bảo văn bản nằm giữa hình thang */
@@ -1158,6 +1158,7 @@ footer {
 .btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
     box-shadow: var(--mdb-btn-box-shadow-state);
     background-color: #bf9369;
+    color: white;
 }
 
 

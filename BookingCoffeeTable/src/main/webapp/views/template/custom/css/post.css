@@ -21,7 +21,7 @@ a {
 }
 
 a:hover, a:focus {
-    color: #F57F48;
+    color: #bf9369;
     text-decoration: none;
     outline: none;
 }
@@ -241,3 +241,4 @@ ul.article-info-more li {
     color: #fff;
     background-color: #bf9369;
 }
+
