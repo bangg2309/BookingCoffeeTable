@@ -276,24 +276,30 @@
         </div>
         <form class="border p-5">
             <div class="row">
-                <div class="col-md-4">
-                    <label for="name" class="form-label"><b>Tên món</b></label>
-                    <i class="fas fa-mug-saucer"></i>
-                    <select class="select" data-mdb-filter="true" id="category" name="category" required>
-                        <option value="" disabled selected>Chọn danh mục</option>
-                        <option value="1">Cà phê</option>
-                        <option value="1">Nước ép</option>
-                        <option value="1">Sinh tố</option>
-                        <option value="1">Bánh ngọt</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
+<!--                <div class="col-md-4">-->
+<!--                    <label for="category" class="form-label"><b>Loại món</b></label>-->
+<!--                    <i class="fas fa-bars"></i>-->
+<!--                    <select class="select" data-mdb-filter="true" id="category" name="category" required>-->
+<!--                        <option value="" disabled selected>Chọn danh mục</option>-->
+<!--                        <option value="1">Cà phê</option>-->
+<!--                        <option value="1">Nước ép</option>-->
+<!--                        <option value="1">Sinh tố</option>-->
+<!--                        <option value="1">Bánh ngọt</option>-->
+<!--                        &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+<!--                    </select>-->
+<!--                </div>-->
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="name" class="form-label"><b>Tên món</b></label>
                         <i class="fas fa-mug-saucer"></i>
-                        <input type="text" class="form-control" id="name" name="name"
-                               placeholder="Nhập Tên món..." required>
+                        <select class="select" data-mdb-filter="true" id="name" name="category" required>
+                            <option value="" disabled selected>Chọn món</option>
+                            <option value="1">Cà sữa đá</option>
+                            <option value="1">Cà phê đen</option>
+                            <option value="1">Cà phê muối</option>
+                            <option value="1">Cà phê sữa</option>
+                            <!-- Add more options as needed -->
+                        </select>
                     </div>
                 </div>
 
