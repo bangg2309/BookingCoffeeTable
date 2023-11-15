@@ -1,0 +1,109 @@
+.color_btn{
+    background-color: #bf9369;
+}
+
+.color_btn:hover{
+    color: #bf9369;
+    border-color: #bf9369;
+    background: #fff;
+}
+
+.color_far{
+    color: #bf9369;
+}
+
+.form-check-input[type=radio]:checked {
+    background-image: none;
+    background-color: #fff;
+}
+
+.form-check-input[type=radio]:checked:after {
+    border-radius: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-color: #bf9369;
+    background-color: #bf9369;
+    transition: border-color;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.form-check-input:checked {
+    border-color: #bf9369;
+}
+
+.form-check-input[type=radio]:checked:after {
+    border-radius: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-color: #bf9369;
+    background-color: #bf9369;
+    transition: border-color;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.form-check-input[type=radio]:after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    z-index: 1;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.form-check-input:before {
+    content: "";
+    position: absolute;
+    box-shadow: 0 0 0 13px transparent;
+    border-radius: 50%;
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+}
+
+.form-check-input:checked:before {
+    opacity: 0;
+
+}
+
+
+
+.form-check-input[type=radio]:before {
+    width: 1rem;
+    height: 1rem;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #bf9369;
+    border-color: #bf9369;
+}
+
+.btn:focus-visible {
+    color: #fff;;
+    background-color: #bf9369;
+}
+
+.btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
+    box-shadow: var(--mdb-btn-box-shadow-state);
+    background-color: #bf9369;
+    color: white;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #bf9369;
+}
+
+.review_color a{
+    color: #bf9369;
+}
