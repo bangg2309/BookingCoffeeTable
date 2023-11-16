@@ -119,10 +119,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-::selection {
-  background: #fb5849;
-  color: #fff;
-}
+
 
 ::-moz-selection {
   background: #fb5849;
@@ -315,7 +312,7 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #fb5849!important;
+  color:  #bf9369!important;
 }
 
 .background-header .main-nav .nav li:hover a,
@@ -1015,7 +1012,7 @@ menu
 #menu .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #fb5849;
+  color:  #bf9369;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -1047,7 +1044,7 @@ menu
 #menu .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #fb5849;
+  color: #bf9369;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';

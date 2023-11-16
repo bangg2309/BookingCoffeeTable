@@ -7,3 +7,18 @@ redirectButton.addEventListener('click', function() {
     // Chuyển hướng tới đường dẫn của trang khác
     window.location.href = targetURL;
 });
+
+// window.onscroll = function() {
+//     fixDivOnScroll();
+// };
+//
+// function fixDivOnScroll() {
+//     const fixedDiv = document.querySelector('.pull-left');
+//     const scrollPosition = window.scrollY;
+//
+//     if (scrollPosition > 1000) { // Thay đổi giá trị này tùy thuộc vào chiều cao mà bạn muốn thẻ div cố định xuất hiện
+//         fixedDiv.style.position = 'fixed';
+//     } else {
+//         fixedDiv.style.position = 'static';
+//     }
+// }

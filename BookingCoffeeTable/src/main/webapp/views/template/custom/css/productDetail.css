@@ -1,7 +1,3 @@
-.main_content{
-    /*margin-top: 100px;*/
-}
-
 .color_btn{
     background-color: #bf9369;
 }
@@ -93,7 +89,7 @@
 
 .btn:focus-visible {
     color: #fff;;
-     background-color: #bf9369;
+    background-color: #bf9369;
 }
 
 .btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
@@ -108,3 +104,6 @@
     background-color: #bf9369;
 }
 
+.review_color a{
+    color: #bf9369;
+}

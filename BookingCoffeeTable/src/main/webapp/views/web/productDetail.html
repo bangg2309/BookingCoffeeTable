@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
     <!-- Custom styles -->
     <style></style>
+    <link rel="stylesheet" href="../template/custom/css/productDetail.css">
 </head>
 
 <body>
@@ -31,7 +32,8 @@
 <!-- Container for demo purpose -->
 
 <!--Main Navigation-->
-<nav class="header-area sticky-top" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+<nav class="header-area sticky-top"
+     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
     <div class="container">
         <div class="row">
             <div class="col-9">
@@ -45,7 +47,7 @@
 
                     <ul class="nav">
                         <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="bookingTable1.html">Bàn</a></li>
+                        <li class="scroll-to-section"><a href="table.html">Bàn</a></li>
                         <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
                         <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
                         <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
@@ -61,8 +63,9 @@
                 <nav class="main-nav">
 
                     <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bookingTable1.html">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
+                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
+                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon"
+                                                                                 style="padding-right: 10px"><i
                                 class="fa fa-user"
                                 aria-hidden="true"></i></span>Đăng nhập</a></li>
                     </ul>
@@ -154,7 +157,7 @@
                         ><p class="mb-2 text-uppercase small">Cà phê</p></a
                         >
 
-                        <div class="d-flex text-primary">
+                        <div class="d-flex review_color">
                             <ul
                                     class="rating mb-3 me-2"
                                     data-mdb-toggle="rating"
@@ -163,28 +166,28 @@
                             >
                                 <li>
                                     <i
-                                            class="far fa-star fa-sm text-primary ps-0"
+                                            class="far fa-star color_far fa-sm ps-0"
                                             title="Bad"
                                     ></i>
                                 </li>
                                 <li>
                                     <i
-                                            class="far fa-star fa-sm text-primary"
+                                            class="far fa-star color_far fa-sm"
                                             title="Poor"
                                     ></i>
                                 </li>
                                 <li>
-                                    <i class="far fa-star fa-sm text-primary" title="OK"></i>
+                                    <i class="far fa-star color_far fa-sm" title="OK"></i>
                                 </li>
                                 <li>
                                     <i
-                                            class="far fa-star fa-sm text-primary"
+                                            class="far fa-star color_far fa-sm"
                                             title="Good"
                                     ></i>
                                 </li>
                                 <li>
                                     <i
-                                            class="far fa-star fa-sm text-primary"
+                                            class="far fa-star color_far fa-sm"
                                             title="Excellent"
                                     ></i>
                                 </li>
@@ -196,7 +199,6 @@
                             <s class="text-muted me-2 small align-middle">$119</s
                             ><span class="align-middle">$101</span>
                         </h5>
-
 
 
                         <form action="">
@@ -229,7 +231,7 @@
                             </div>
                             <button
                                     type="button"
-                                    class="btn btn-primary btn-rounded me-2"
+                                    class="btn btn-primary btn-rounded me-2 color_btn"
                             >
                                 <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                             </button>
@@ -258,12 +260,6 @@
                 <div class="col-md-7 mb-4">
                     <!-- Single review -->
                     <div class="shadow-4 p-4 rounded-5 mb-5">
-                        <img
-                                class="shadow-1-strong rounded-circle mb-3"
-                                style="width: 40px"
-                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
-                                alt="Sample"
-                        />
                         <p class="mb-3 fw-bold">Hửu Tính</p>
 
                         <ul
@@ -273,19 +269,19 @@
                                 data-mdb-value="3"
                         >
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                         </ul>
 
@@ -309,12 +305,6 @@
 
                     <!-- Single review -->
                     <div class="shadow-4 p-4 rounded-5 mb-5">
-                        <img
-                                class="shadow-1-strong rounded-circle mb-3"
-                                style="width: 40px"
-                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg"
-                                alt="Sample"
-                        />
                         <p class="mb-3 fw-bold">Thịnh Công Tử</p>
 
                         <ul
@@ -324,24 +314,25 @@
                                 data-mdb-value="3"
                         >
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
+                                <i class="far fa-star color_far fa-sm"></i>
                             </li>
                         </ul>
 
                         <p class="mb-0">
-                            <i class="fas fa-quote-left pe-2"></i>Cà phê sữa đá ở đây rất ngon, đậm đà. Nhưng quán khá ít nhân viên nữ.
+                            <i class="fas fa-quote-left pe-2"></i>Cà phê sữa đá ở đây rất ngon, đậm đà. Nhưng quán khá
+                            ít nhân viên nữ.
                         </p>
                     </div>
                     <!-- Single review -->
@@ -357,20 +348,20 @@
                                 data-mdb-value="3"
                         >
                             <li>
-                                <i class="far fa-star fa-sm text-primary" title="Bad"></i>
+                                <i class="far fa-star color_far fa-sm" title="Bad"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary" title="Poor"></i>
+                                <i class="far fa-star color_far fa-sm" title="Poor"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary" title="OK"></i>
+                                <i class="far fa-star color_far fa-sm" title="OK"></i>
                             </li>
                             <li>
-                                <i class="far fa-star fa-sm text-primary" title="Good"></i>
+                                <i class="far fa-star color_far fa-sm" title="Good"></i>
                             </li>
                             <li>
                                 <i
-                                        class="far fa-star fa-sm text-primary"
+                                        class="far fa-star color_far fa-sm"
                                         title="Excellent"
                                 ></i>
                             </li>
@@ -389,7 +380,7 @@
                         </div>
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary mb-4">
+                        <button type="submit" class="btn btn-primary mb-4 color_btn">
                             Submit
                         </button>
                     </form>
