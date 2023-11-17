@@ -58,18 +58,6 @@
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link ">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý vai trò</span></a>
-                <ul class="sidenav-collapse">
-                    <li class="sidenav-item">
-                        <a class="sidenav-link" href="roleAddition.html">Thêm vai trò</a>
-                    </li>
-                    <li class="sidenav-item">
-                        <a class="sidenav-link" href="roleManagement.html">Danh sách vai trò</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link ">
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
@@ -143,6 +131,7 @@
         </ul>
     </nav>
     <!-- Sidenav -->
+
 
     <!-- Navbar -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1">
@@ -220,39 +209,6 @@
                                 Export<i class="fas fa-download ms-2"></i>
                             </button>
 
-                            <div class="row justify-content-center justify-content-lg-end">
-
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <select class="select">
-                                        <option value="1" selected>All products</option>
-                                        <option value="2">Product 1</option>
-                                        <option value="3">Product 2</option>
-                                        <option value="4">Product 3</option>
-                                        <option value="5">Product 4</option>
-                                    </select>
-                                    <label class="form-label select-label">Date</label>
-                                </div>
-
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <select class="select">
-                                        <option value="1">Today</option>
-                                        <option value="2">Yesterday</option>
-                                        <option value="3" selected>Last 7 days</option>
-                                        <option value="4">Last 28 days</option>
-                                        <option value="5">Last 90 days</option>
-                                    </select>
-                                    <label class="form-label select-label">Date</label>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-outline datepicker" data-mdb-inline="true">
-                                        <input type="text" class="form-control" id="exampleDatepicker1"
-                                               data-toggle="datepicker"
-                                               value="Custom date"/>
-                                        <label for="exampleDatepicker1" class="form-label">Date</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -333,6 +289,22 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label"><b>Xác thực email</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="emailVerify" id="verify" value="1" checked>
+                            <label class="form-check-label" for="verify">Đã xác thực</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="emailVerify" id="inVerify" value="0">
+                            <label class="form-check-label" for="inVerify">Chưa xác thực</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-4">
                     <div class="mb-3">
                         <div>
