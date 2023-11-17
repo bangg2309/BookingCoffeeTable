@@ -306,6 +306,22 @@ header
   letter-spacing: 1px;
 }
 
+.header-area .main-nav .nav li {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2a2a2a;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  height: 40px;
+  line-height: 40px;
+  border: transparent;
+  letter-spacing: 1px;
+}
+
 .header-area .main-nav .nav li a {
   color: #2a2a2a;
 }
@@ -314,6 +330,22 @@ header
 .header-area .main-nav .nav li a.active {
   color:  #bf9369!important;
 }
+
+.header-area .main-nav .nav .drop:hover a
+{
+  color:  #2a2a2a!important;
+}
+
+.header-area .main-nav .nav .drop .drop_content li:hover a
+{
+  color:  #bf9369!important;
+  background-color: white;
+}
+
+.header-area .main-nav .nav .drop:hover .drop_content {
+  opacity: 1;
+}
+
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
