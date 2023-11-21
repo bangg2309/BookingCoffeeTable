@@ -63,6 +63,15 @@ textarea:focus, input:focus {
     border-color: transparent !important;
 }
 
+.fas.fa-map-marker-alt.pr-2, .fas.fa-phone.pr-2, .fas.fa-envelope.pr-2{
+    padding-right: 10px;
+}
+
+.menu_content .logo {
+    opacity: 0;
+
+}
+
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }

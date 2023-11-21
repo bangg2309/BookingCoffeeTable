@@ -198,25 +198,6 @@
     text-align: center;
 }
 
-.text_menu_contain .section-heading h1:before {
-    width: 35%;
-    height: 1px;
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 15%;
-    background-color: #bf9369;
-}
-
-.text_menu_contain .section-heading h1:after {
-    width: 35%;
-    height: 1px;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 15%;
-    background-color: #bf9369;
-}
 
 /* Reservation
 
@@ -330,7 +311,6 @@
 }
 
 .container_menu {
-    width: 1200px;
     margin: auto;
     margin-top: 100px;
     box-shadow: #f9f9f9 0 -30px, #f9f9f9 -15px -30px, #f9f9f9 15px -30px;
@@ -1130,7 +1110,6 @@ footer {
 }
 
 
-
 .color_btn {
     background-color: #bf9369;
 }
@@ -1144,6 +1123,7 @@ footer {
 .color_far {
     color: #bf9369;
 }
+
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #bf9369;
@@ -1155,11 +1135,19 @@ footer {
     background-color: #bf9369;
 }
 
-.btn-check:focus+.btn-primary, .btn-check:focus-visible+.btn-primary, .btn-primary:focus {
+.btn-check:focus + .btn-primary, .btn-check:focus-visible + .btn-primary, .btn-primary:focus {
     box-shadow: var(--mdb-btn-box-shadow-state);
     background-color: #bf9369;
     color: white;
 }
+
+.menu_content .logo {
+    opacity: 0;
+
+}
+
+/* Responsive */
+
 
 
 

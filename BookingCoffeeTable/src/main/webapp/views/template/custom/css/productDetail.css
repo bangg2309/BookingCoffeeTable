@@ -107,3 +107,7 @@
 .review_color a{
     color: #bf9369;
 }
+.menu_content .logo {
+    opacity: 0;
+
+}

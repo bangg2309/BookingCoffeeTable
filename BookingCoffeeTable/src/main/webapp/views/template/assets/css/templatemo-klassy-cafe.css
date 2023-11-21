@@ -1692,3 +1692,25 @@ responsive
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .content {
+    position: relative;
+  }
+
+  .menu_content {
+    position: absolute;
+    right: 0;
+    bottom: -99px;
+
+  }
+
+  .menu_content .logo {
+    opacity: 0;
+  }
+
+  .menu_content .main-nav .nav {
+    margin: 0;
+  }
+
+}

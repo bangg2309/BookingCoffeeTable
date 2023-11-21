@@ -13,3 +13,7 @@
 footer{
     margin-top: 0px;
 }
+.menu_content .logo {
+    opacity: 0;
+
+}
