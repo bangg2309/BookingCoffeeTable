@@ -264,9 +264,6 @@ header
   line-height: 75px;
 }
 
-.background-header .nav {
-  margin-top: 20px !important;
-}
 
 .header-area .main-nav .nav {
   float: right;
@@ -1558,7 +1555,7 @@ responsive
 
 @media (max-width: 992px) {
   #top {
-    padding-top: 100px;
+    padding-top: 80px;
     height: auto;
   }
   .header-area .main-nav .nav li.submenu:after {

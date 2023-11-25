@@ -12,13 +12,9 @@
     <title>Home</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
     <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-        <link rel="stylesheet" href="../template/assets/css/lightbox.css">
+    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
     <link rel="stylesheet" href="../template/assets/css/stylle.css">
 
 
@@ -28,63 +24,82 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
     <link rel="stylesheet" href="../template/custom/css/home.css">
-    <link rel="stylesheet" href="../template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <!-- ***** Header Area Start ***** -->
-<nav class="header-area sticky-top"
-     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+<header data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top"
+        style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+    <!-- Container wrapper -->
     <div class="container">
-        <div class="row content">
-            <div class="col-lg-9 col-md-6">
-                <nav class="main-nav" style="display: flex">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="https://mdbgo.com/">
+            <img
+                    src="../template/custom/image/drink/logo2.png"
+                    height="50"
+                    alt="MDB Logo"
+                    loading="lazy"
+                    style="margin-top: -1px;"
+            />
+        </a>
 
+        <!-- Toggle button -->
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
 
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="table.html">Bàn</a></li>
-                        <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
-                        <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
-                        <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
-                    </ul>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="scroll-to-section home">
+                    <a href="home.html">Trang chủ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a href="table.html">Bàn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a href="menu.html">Thực đơn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a href="about.html">Giới thiệu</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a href="contactUS.html">Liên hệ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a href="post.html">Bài viết</a>
+                </li>
+            </ul>
+            <!-- Left links -->
 
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-            <div class="col-lg-3 col-md-6 menu_content">
-                <nav class="main-nav"  style="display: flex">
-                    <i href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </i>
-                    <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon"
-                                                                                 style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Đăng nhập</a></li>
-                    </ul>
+            <div class="login d-flex align-items-center">
+                <li class="scroll-to-section">
+                    <a href="reservation.html">Đặt bàn</a>
+                </li>
+                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
+                                                                                       style="padding-right: 10px"><i
+                        class="fa fa-user"
+                        aria-hidden="true"></i></span>Đăng nhập</a></li>
 
-
-                </nav>
             </div>
         </div>
+        <!-- Collapsible wrapper -->
     </div>
-</nav>
+    <!-- Container wrapper -->
+</header>
 <!-- ***** Header Area End ***** -->
 
 <!-- ***** Main Banner Area Start ***** -->
-<div id="top">
+<div id="top" style="margin-top: 80px">
     <div class="container-fluid">
         <!-- Swiper -->
         <div class="swiper mySwiper">
@@ -176,33 +191,96 @@
 
 <!-- ***** About Area Starts ***** -->
 <section class="section" id="about">
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <div class="left-text-content">
-                    <div class="section-heading">
-                        <h1 style="color: #ffffff; text-align: left;"><strong><span
-                                style="color: #bf9369; font-size: 36pt;">Về chúng tôi</span></strong>
-                        </h1>
-                        <span style="; font-size: 14pt; letter-spacing: 2px;">
-                            Chào mừng đến với Coffee Shop - Nơi Tận Hưởng Cảm Xúc Mỗi Góc Nhìn!</span>
-                        <br>
-                        <span style="; font-size: 14pt; letter-spacing: 2px;">
-                            Quán cà phê của chúng tôi không chỉ là không gian, nó là một câu chuyện kể về hương vị và mùi thơm của những hạt cà phê tinh tế, là âm nhạc dịu dàng trải qua từng khoảnh khắc, và là sự chân thành trong mỗi ly cà phê mà chúng tôi phục vụ..</span>
-                        <br>
-                        <span style="; font-size: 14pt; letter-spacing: 2px;">
-                            Hãy để chúng tôi, Coffee Shop, là điểm hẹn lý tưởng cho những buổi gặp gỡ, những cuộc trò chuyện và những khoảnh khắc thư giãn. Chúng tôi mong được phục vụ và làm hài lòng bạn, mỗi khi bạn đặt bàn tại đây.</span>
+    <div class="vnt-container">
+        <div id="vnt-content">
+
+
+            <div class="about bg1">
+                <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
+                        href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><img
+                        src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg" alt="NGUỒN GỐC"></a>
+                </div>
+                <div class="captionWrap">
+                    <div class="wrapper">
+                        <div class="caption">
+                            <div class="tend lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
+                                 style="animation-delay: 0.3s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html">NGUỒN GỐC</a></div>
+                            <div class="des lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
+                                 style="animation-delay: 0.5s;"><p><span style="font-size:18px;">CÂU CHUYỆN NÀY LÀ CỦA CHÚNG MÌNH</span>
+                            </p>
+
+                                <p><span style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
+                                        style="line-height:115%"><span style="line-height:115%">Highlands Coffee® được thành lập vào năm 1999, bắt nguồn từ tình yêu dành cho đất Việt cùng với cà phê và cộng đồng nơi đây.&nbsp;</span></span></span></span><span
+                                        style="font-family:Roboto,sans-serif;"><span style="font-size:16px;">Ngay từ những ngày đầu tiên, mục tiêu của chúng mình là có thể phục vụ và góp phần phát triển cộng đồng bằng cách siết chặt thêm sự kết nối và sự gắn bó giữa người với người.</span></span>
+                                </p></div>
+                            <div class="link lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
+                                 style="animation-delay: 0.7s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><span>Xem chi tiết</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-xs-12 mt-5">
-                <div class="right-content">
-                    <div class="thumb">
-                        <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a>
-                        <img src="../template/custom/image/about/coffeeshop.jpeg" alt="">
+
+            <div class="about bg2">
+                <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
+                        href="https://www.highlandscoffee.com.vn/vn/dich-vu.html"><img
+                        src="https://www.highlandscoffee.com.vn/vnt_upload/about/Highlands_4577_R3_-_Copy.jpg"
+                        alt="DỊCH VỤ"></a></div>
+                <div class="captionWrap">
+                    <div class="wrapper">
+                        <div class="caption">
+                            <div class="tend w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
+                                 style="animation-delay: 0.3s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/dich-vu.html">DỊCH VỤ</a></div>
+                            <div class="des w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
+                                 style="animation-delay: 0.5s;"><p>DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</p>
+
+                                <p><span style="font-size:16px;"><span style="font-family:Roboto,sans-serif;"><span
+                                        style="line-height:115%"><span style="line-height:115%"><span
+                                        style="color:#4f2c1c">Highlands Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.&nbsp;</span></span></span><span
+                                        style="color:#4f2c1c">Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Highlands Coffee® trở nên tuyệt vời hơn. </span></span></span>
+                                </p></div>
+                            <div class="link w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
+                                 style="animation-delay: 0.7s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/dich-vu.html"><span>Xem chi tiết</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="about bg3">
+                <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
+                        href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html"><img
+                        src="https://www.highlandscoffee.com.vn/vnt_upload/about/Highlands_5557_R3_-_Copy.jpg"
+                        alt="NGHỀ NGHIỆP"></a></div>
+                <div class="captionWrap">
+                    <div class="wrapper">
+                        <div class="caption">
+                            <div class="tend w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
+                                 style="animation-delay: 0.3s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html">NGHỀ NGHIỆP</a></div>
+                            <div class="des w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
+                                 style="animation-delay: 0.5s;"><p>CƠ HỘI NÀY LÀ CỦA CHÚNG MÌNH</p>
+
+                                <p><span style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
+                                        style="line-height:115%"><span style="line-height:115%"><span
+                                        style="color:#4f2c1c">Là điểm hội tụ của cộng đồng, Highlands Coffee® luôn tìm kiếm những thành viên mới với mong muốn không ngừng hoàn thiện một không gian dành cho tất cả mọi người.&nbsp;</span></span></span></span></span><span
+                                        style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
+                                        style="color:#4f2c1c">Chúng mình luôn chào đón bạn trở thành một phần của Highlands Coffee® để cùng nhau siết chặt thêm những kết nối và sự gắn bó giữa người với người.</span></span></span>
+                                </p></div>
+                            <div class="link w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
+                                 style="animation-delay: 0.7s;"><a
+                                    href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html"><span>Xem chi tiết</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>
@@ -1989,19 +2067,12 @@
 
 <!-- Plugins -->
 <script src="../template/assets/js/owl-carousel.js"></script>
-<script src="../template/assets/js/accordions.js"></script>
 <script src="../template/assets/js/datepicker.js"></script>
-<script src="../template/assets/js/scrollreveal.min.js"></script>
-<script src="../template/assets/js/waypoints.min.js"></script>
-<script src="../template/assets/js/jquery.counterup.min.js"></script>
-<script src="../template/assets/js/imgfix.min.js"></script>
 <script src="../template/assets/js/slick.js"></script>
-<script src="../template/assets/js/lightbox.js"></script>
 <script src="../template/assets/js/isotope.js"></script>
 
 <!-- Global Init -->
 <script src="../template/assets/js/custom.js"></script>
-<script src="../template/custom/js/home.js"></script>
 <script>
     const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");

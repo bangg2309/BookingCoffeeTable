@@ -27,57 +27,78 @@
 
 <!-- Container for demo purpose -->
 
-<!--Main Navigation-->
-<nav class="header-area sticky-top"
-     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+<!-- ***** Header Area Start ***** -->
+<header data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+    <!-- Container wrapper -->
     <div class="container">
-        <div class="row content">
-            <div class="col-lg-9 col-md-6">
-                <nav class="main-nav" style="display: flex">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="https://mdbgo.com/">
+            <img
+                    src="../template/custom/image/drink/logo2.png"
+                    height="50"
+                    alt="MDB Logo"
+                    loading="lazy"
+                    style="margin-top: -1px;"
+            />
+        </a>
 
+        <!-- Toggle button -->
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
 
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="table.html">Bàn</a></li>
-                        <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
-                        <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
-                        <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
-                    </ul>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="scroll-to-section home">
+                    <a href="#">Trang chủ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="table.html">Bàn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="menu.html">Thực đơn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="about.html">Giới thiệu</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="contactUS.html">Liên hệ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="post.html">Bài viết</a>
+                </li>
+            </ul>
+            <!-- Left links -->
 
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-            <div class="col-lg-3 col-md-6 menu_content">
-                <nav class="main-nav"  style="display: flex">
-                    <i href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </i>
-                    <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon"
-                                                                                 style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Đăng nhập</a></li>
-                    </ul>
+            <div class="login d-flex align-items-center">
+                <li class="scroll-to-section">
+                    <a href="reservation.html">Đặt bàn</a>
+                </li>
+                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
+                                                                                       style="padding-right: 10px"><i
+                        class="fa fa-user"
+                        aria-hidden="true"></i></span>Đăng nhập</a></li>
 
-
-                </nav>
             </div>
         </div>
+        <!-- Collapsible wrapper -->
     </div>
-</nav>
+    <!-- Container wrapper -->
+</header>
+<!-- ***** Header Area End ***** -->
+
 <!--Main layout-->
-<main class="mb-6 main_content mt-2">
+<main class="mb-6 main_content" style="margin-top: 100px">
     <div class="container">
         <!-- Section: Product details -->
         <section class="mb-9">
@@ -506,22 +527,13 @@
 
 </footer>
 
-<!-- Plugins -->
-<script src="../template/assets/js/owl-carousel.js"></script>
-<script src="../template/assets/js/accordions.js"></script>
-<script src="../template/assets/js/datepicker.js"></script>
-<script src="../template/assets/js/scrollreveal.min.js"></script>
-<script src="../template/assets/js/waypoints.min.js"></script>
-<script src="../template/assets/js/jquery.counterup.min.js"></script>
-<script src="../template/assets/js/imgfix.min.js"></script>
-<script src="../template/assets/js/slick.js"></script>
-<script src="../template/assets/js/lightbox.js"></script>
-<script src="../template/assets/js/isotope.js"></script>
+
 
 <!-- MDB ESSENTIAL -->
 <script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
+<script src="../template/mdb/js/mdb.umd.min.js"></script>
 <!-- Custom scripts -->
 
 
