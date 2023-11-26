@@ -7,21 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
     <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
-    <link rel="stylesheet" href="../template/assets/css/stylle.css">
 
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
@@ -36,52 +27,77 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<nav class="header-area sticky-top"
-     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+<header data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+    <!-- Container wrapper -->
     <div class="container">
-        <div class="row">
-            <div class="col-9">
-                <nav class="main-nav" style="display: flex">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="https://mdbgo.com/">
+            <img
+                    src="../template/custom/image/drink/logo2.png"
+                    height="50"
+                    alt="MDB Logo"
+                    loading="lazy"
+                    style="margin-top: -1px;"
+            />
+        </a>
 
+        <!-- Toggle button -->
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
 
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="table.html">Bàn</a></li>
-                        <li class="scroll-to-section"><a href="menu.html" style="color: #bf9369">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
-                        <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
-                        <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-            <div class="col-3">
-                <nav class="main-nav">
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="scroll-to-section home">
+                    <a href="home.html">Trang chủ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="table.html">Bàn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="menu.html">Thực đơn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="about.html">Giới thiệu</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="contactUS.html">Liên hệ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="post.html">Bài viết</a>
+                </li>
+            </ul>
+            <!-- Left links -->
 
-                    <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Đăng nhập</a></li>
-                    </ul>
+            <div class="login d-flex align-items-center">
+                <li class="scroll-to-section">
+                    <a href="reservation.html">Đặt bàn</a>
+                </li>
+                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
+                                                                                       style="padding-right: 10px"><i
+                        class="fa fa-user"
+                        aria-hidden="true"></i></span>Đăng nhập</a></li>
 
-
-                </nav>
             </div>
         </div>
+        <!-- Collapsible wrapper -->
     </div>
-</nav>
+    <!-- Container wrapper -->
+</header>
 <!-- ***** Header Area End ***** -->
 
-<div class="main_content">
+
+<div class="main_content" style="margin-top: 80px">
 
     <!--Main layout-->
     <main class="mb-6">
@@ -329,7 +345,7 @@
 
                             <div class="col-8 col-lg-6 d-flex justify-content-end mt-2">
                                 <select class="select">
-<!--                                    <option value="1">Bán chạy nhất</option>-->
+                                    <!--                                    <option value="1">Bán chạy nhất</option>-->
                                     <option value="1">Tên</option>
                                     <option value="2">Giá thấp nhất</option>
                                     <option value="3">Giá cao nhất</option>
@@ -1227,7 +1243,7 @@
                                 </div>
                                 <!-- Product card -->
                             </div>
-                            <div class="col-lg-4 col-6 mb-4 "   >
+                            <div class="col-lg-4 col-6 mb-4 ">
                                 <!-- Product card -->
                                 <div>
                                     <!-- Product image -->
@@ -1460,7 +1476,7 @@
                                     <!-- Product content -->
                                     <div class="px-3 text-reset d-block">
                                         <p class="fw-bold mb-2">Chocolate</p>
-<!--                                        <p class="text-muted mb-2">></Socola></p>-->
+                                        <!--                                        <p class="text-muted mb-2">></Socola></p>-->
                                         <ul
                                                 class="rating mb-2"
                                                 data-mdb-toggle="rating"
@@ -1494,7 +1510,7 @@
                                             <li>
                                                 <i
                                                         class="far fa-star fa-sm color_far"
-                                                      title="Excellent"
+                                                        title="Excellent"
                                                 ></i>
                                             </li>
                                         </ul>
@@ -1549,8 +1565,8 @@
                 </div>
             </div>
         </div>
-</main>
-<!--Main layout-->
+    </main>
+    <!--Main layout-->
 
 </div>
 <!-- ***** Main Banner Area Start ***** -->
@@ -1672,17 +1688,14 @@
 
 <!-- jQuery -->
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<!---->
 
-<!-- Bootstrap -->
-<script src="../template/assets/js/bootstrap.min.js"></script>
-
+<!-- Plugins -->
 
 <!-- Global Init -->
-<script src="../template/assets/js/custom.js"></script>
 
 <script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<!-- MDB PLUGINS -->
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/custom/js/header.js"></script>
+<script src="../template/mdb/js/mdb.umd.min.js"></script>
 </body>
 </html>

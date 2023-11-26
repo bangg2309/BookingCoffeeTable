@@ -69,3 +69,83 @@
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
     box-shadow: none;
 }
+
+
+a {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar-brand{
+    padding-right: 20px;
+}
+
+.navbar .scroll-to-section{
+    padding-right: 40px;
+}
+
+.navbar .login_content {
+    padding-right: 0px;
+}
+
+.navbar a{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-body-tertiary.fixed-top{
+    background-color: white;
+}
+
+.navbar div li a:hover{
+    color: #bf9369;
+}
+
+@media screen and (max-width:1200px) {
+    .navbar-brand{
+        padding-right: 10px;
+    }
+
+    .navbar .scroll-to-section{
+        padding-right: 20px;
+    }
+    #top{
+        margin-top: 0px;
+    }
+
+}
+
+@media screen and (max-width:990px) {
+    .home{
+        margin-top: 20px;
+    }
+    .login{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .login li{
+        width: 100%;
+    }
+
+    .scroll-to-section{
+        border-bottom: 1px solid;
+        margin-bottom: 20px;
+    }
+
+}
+
+.section-heading{
+    margin: 50px;
+}
