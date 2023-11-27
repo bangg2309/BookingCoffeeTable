@@ -1,3 +1,6 @@
+<%@include file="/common/taglib.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +41,7 @@
             bắt đầu. Liên kết sẽ hết hạn sau 48 giờ.
         </p>
         <div class="d-flex justify-content-center button mt-4 pb-4">
-            <a class="btn btn-primary  " href="../web/userProfile.html"
+            <a class="btn btn-primary  " href="userProfile.jsp"
                style="color: white">Xác nhận gmail của tôi</a>
         </div>
 
