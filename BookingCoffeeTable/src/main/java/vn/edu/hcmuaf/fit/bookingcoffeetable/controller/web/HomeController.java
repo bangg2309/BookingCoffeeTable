@@ -6,6 +6,7 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,18 +32,19 @@ public class HomeController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Product product = productService.findOne(1);
-        String json = gson.toJson(product);
-        System.out.println(json);
-        response.getWriter().write(json);
+//        String json = gson.toJson(product);
+//        System.out.println(json);
+//        response.getWriter().write(json);
 
         List<Category> category = categoryService.findAll();
-        String json1 = gson.toJson(category);
-        System.out.println(json1);
-        response.getWriter().write(json1);
+//        String json1 = gson.toJson(category);
+//        System.out.println(json1);
+//        response.getWriter().write(json1);
 
-//        request.setAttribute("products", productService.findOne(1));
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
-//        requestDispatcher.forward(request, response);
+        request.setAttribute("products", productService.findOne(1));
+        request.setAttribute("categories", categoryService.findAll());
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
+        requestDispatcher.forward(request, response);
 
     }
 
