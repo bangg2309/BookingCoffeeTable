@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
-    <title>Menu</title>
+    <title>Đăng Ký</title>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
@@ -25,8 +25,11 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/reservation.css">
-
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+          integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../template/custom/css/login/main.css">
+    <link rel="stylesheet" href="../template/custom/css/registerUser.css">
 
 
 </head>
@@ -89,8 +92,8 @@
                 <li class="scroll-to-section">
                     <a href="reservation.html">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
-                                                                                       style="padding-right: 10px"><i
+                <li class="scroll-to-section login_content"><a href="login.jsp"><span class="user_icon"
+                                                                                      style="padding-right: 10px"><i
                         class="fa fa-user"
                         aria-hidden="true"></i></span>Đăng nhập</a></li>
 
@@ -102,83 +105,56 @@
 </header>
 <!-- ***** Header Area End ***** -->
 
-<div class="main_content" style="margin-top: 80px">
-    <section class="h-100 bg-dark">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
-                    <div class="card card-registration my-4">
-                        <div class="row g-0">
-                            <div class="col-xl-6 d-none d-xl-block justify-content-center p-2">
-                                <img src="../template/custom/image/reservation/coffee%20shop%20(1).png"
-                                     alt="Sample photo" class="img-fluid"
-                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card-body p-md-5 text-black">
-                                    <h3 class="mb-5 text-uppercase">Thông tin đặt bàn</h3>
 
-                                    <div class="row">
-                                        <div class="col-md-12 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="name" class="form-control form-control-lg" />
-                                                <label class="form-label" for="name">Họ Và Tên Người Đặt</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="phone" class="form-control form-control-lg" />
-                                                <label class="form-label" for="phone">Số Điện Thoại</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="email" class="form-control form-control-lg" />
-                                                <label class="form-label" for="email">Email</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="note" class="form-control form-control-lg" />
-                                        <label class="form-label" for="note">Ghi Chú</label>
-                                    </div>
-
-                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                                        <h6 class="mb-0 me-4">Phương Thức Thanh Toán: </h6>
-
-                                        <select id="singleSelection" class="select">
-                                            <option value="1">Visa</option>
-                                            <option value="2">Mater Card</option>
-                                            <option value="3">Momo</option>
-                                            <option value="3">Tiền Mặt</option>
-                                        </select>
-
-                                    </div>
-
-                                    <div class="d-flex justify-content-end pt-3">
-                                        <a class="btn btn-warning btn-lg" href="bill.html">Quay lại</a>
-                                        <a class="btn btn-success btn-lg ms-2" href="bill.html">Xác nhận</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+<!--Main layout-->
+<div class="main-login limiter shadow  mb-5 bg-white rounded" style="margin-top: 80px">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 row">
+                <form class="login100-form validate-form">
+					<span class="login100-form-title p-b-43 mb-4">
+						Đăng Ký
+					</span>
+                    <div class="wrap-input100 validate-input" data-validate="Cần nhập tên đăng nhập">
+                        <input class="input100" type="text" name="name">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Tên đăng nhập</span>
                     </div>
+                    <div class="wrap-input100 validate-input" data-validate="Cần nhập số điện thoại người đăng ký">
+                        <input class="input100" type="text" name="phone">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Số điện thoại</span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Cần có email hợp lệ: ex@abc.xyz">
+                        <input class="input100" type="text" name="email">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Cần có mật khẩu">
+                        <input class="input100" type="password" name="pass">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Mật khẩu</span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Cần có mật khẩu">
+                        <input class="input100" type="password" name="pass">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Nhập lại mật khẩu</span>
+                    </div>
+
+                        <div class="">
+                            <a href="emailVerify.html" class="login100-form-btn mt-4">
+                                Đăng Ký
+                            </a>
+                        </div>
+                </form>
+
+                <div class="login100-more" style="background-image: url('../template/custom/image/registerUser/coffee shop (2).png');">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
-
-
-<!-- ***** Main Banner Area Start ***** -->
-
-<!-- ***** Main Banner Area End ***** -->
+<!--Main layout-->
 
 <!-- ***** Footer Start ***** -->
 <footer class="text-white text-center text-lg-start" style="background-color: #7E644B;">
@@ -292,7 +268,6 @@
     <!-- Grid container -->
 
 </footer>
-s
 
 <!-- jQuery -->
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
@@ -302,5 +277,9 @@ s
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
 <script src="../template/mdb/js/mdb.umd.min.js"></script>
+
+
+<!--===============================================================================================-->
+<script src="../template/custom/js/login.js"></script>
 </body>
 </html>

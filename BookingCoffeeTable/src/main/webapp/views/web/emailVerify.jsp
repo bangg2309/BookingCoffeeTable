@@ -23,7 +23,7 @@
 <body>
 <div class="main row">
     <div class="col-md-12 d-flex justify-content-center p-2">
-        <a href="home.html" class="logo">
+        <a href="home.jsp" class="logo">
             <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
                  align="klassy cafe html template">
         </a>

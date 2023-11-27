@@ -59,7 +59,7 @@
             <!-- Left links -->
             <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="scroll-to-section home">
-                    <a href="home.html">Trang chủ</a>
+                    <a href="home.jsp">Trang chủ</a>
                 </li>
                 <li class="scroll-to-section">
                     <a  href="table.html">Bàn</a>
@@ -83,8 +83,8 @@
                 <li class="scroll-to-section">
                     <a href="reservation.html">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
-                                                                                       style="padding-right: 10px"><i
+                <li class="scroll-to-section login_content"><a href="login.jsp"><span class="user_icon"
+                                                                                      style="padding-right: 10px"><i
                         class="fa fa-user"
                         aria-hidden="true"></i></span>Đăng nhập</a></li>
 

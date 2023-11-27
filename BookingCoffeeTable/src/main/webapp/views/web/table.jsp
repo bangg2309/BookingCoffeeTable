@@ -82,8 +82,8 @@
                 <li class="scroll-to-section">
                     <a href="reservation.html">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
-                                                                                       style="padding-right: 10px"><i
+                <li class="scroll-to-section login_content"><a href="login.jsp"><span class="user_icon"
+                                                                                      style="padding-right: 10px"><i
                         class="fa fa-user"
                         aria-hidden="true"></i></span>Đăng nhập</a></li>
 
@@ -220,7 +220,7 @@
                                         <h4>Số bàn: 101</h4>
                                         <h4>chỗ ngồi: 5 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
 
@@ -245,7 +245,7 @@
                                         <h4>Số bàn: 102</h4>
                                         <h4>chỗ ngồi: 2 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -268,7 +268,7 @@
                                         <h4>Số bàn: 103</h4>
                                         <h4>chỗ ngồi: 4 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@
                                         <h4>Số bàn: 104</h4>
                                         <h4>chỗ ngồi: 1 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -313,7 +313,7 @@
                                         <br>
                                         <h4>Số bàn: 105</h4>
                                         <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -334,7 +334,7 @@
                                         <h4>Số bàn: 106</h4>
                                         <h4>chỗ ngồi: 6 người</h4>
                                         <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -357,7 +357,7 @@
                                         <h4>Số bàn: 107</h4>
                                         <h4>chỗ ngồi: 4 người</h4>
                                         <h4>Vị trí: tầng thượng</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -380,7 +380,7 @@
                                         <h4>Số bàn: 108</h4>
                                         <h4>chỗ ngồi: 5 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>
@@ -403,7 +403,7 @@
                                         <h4>Số bàn: 109</h4>
                                         <h4>chỗ ngồi: 5 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
                                 </div>

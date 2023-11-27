@@ -90,8 +90,8 @@
                 <li class="scroll-to-section">
                     <a href="reservation.html">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
-                                                                                       style="padding-right: 10px"><i
+                <li class="scroll-to-section login_content"><a href="login.jsp"><span class="user_icon"
+                                                                                      style="padding-right: 10px"><i
                         class="fa fa-user"
                         aria-hidden="true"></i></span>Đăng nhập</a></li>
 
@@ -135,7 +135,7 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-file"></i>
-                                            <a href="home.html">Tin tức</a>
+                                            <a href="home.jsp">Tin tức</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -171,7 +171,7 @@
                                 </div>
                                 <div class="post-navigation">
                                     <div class="right">
-                                        <a href="home.html">Bài sau →</a>
+                                        <a href="home.jsp">Bài sau →</a>
                                     </div>
                                 </div>
                             </div>
@@ -190,18 +190,18 @@
                                 <ul class="list-news-latest layered">
                                     <li class="item-article clearfix abc">
                                         <div class="post-image">
-                                            <a href="home.html">
+                                            <a href="home.jsp">
                                                 <img src="../template/custom/image/menu/lemon.jpg"
                                                      alt="CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <h3>
-                                                <a href="home.html">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
+                                                <a href="home.jsp">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
                                                     TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE</a>
                                             </h3>
                                             <span class="author">
-                        <a href="home.html">CHUK</a>
+                        <a href="home.jsp">CHUK</a>
                       </span>
                                             <span class="date">13.07.2023</span>
 
@@ -209,18 +209,18 @@
                                     </li>
                                     <li class="item-article clearfix abc">
                                         <div class="post-image">
-                                            <a href="home.html">
+                                            <a href="home.jsp">
                                                 <img src="../template/custom/image/menu/chocolate.jpg"
                                                      alt="CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <h3>
-                                                <a href="home.html">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
+                                                <a href="home.jsp">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
                                                     TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE</a>
                                             </h3>
                                             <span class="author">
-                        <a href="home.html">CHUK</a>
+                        <a href="home.jsp">CHUK</a>
                       </span>
                                             <span class="date">13.07.2023</span>
 
@@ -228,18 +228,18 @@
                                     </li>
                                     <li class="item-article clearfix abc">
                                         <div class="post-image">
-                                            <a href="home.html">
+                                            <a href="home.jsp">
                                                 <img src="../template/custom/image/menu/strawberry.jpg"
                                                      alt="CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <h3>
-                                                <a href="home.html">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
+                                                <a href="home.jsp">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
                                                     TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE</a>
                                             </h3>
                                             <span class="author">
-                        <a href="home.html">CHUK</a>
+                        <a href="home.jsp">CHUK</a>
                       </span>
                                             <span class="date">13.07.2023</span>
 
@@ -247,18 +247,18 @@
                                     </li>
                                     <li class="item-article clearfix abc">
                                         <div class="post-image">
-                                            <a href="home.html">
+                                            <a href="home.jsp">
                                                 <img src="../template/custom/image/menu/mojito.jpg"
                                                      alt="CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE">
                                             </a>
                                         </div>
                                         <div class="post-content">
                                             <h3>
-                                                <a href="home.html">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
+                                                <a href="home.jsp">CHÍNH THỨC RA MẮT: PHẦN QUÀ TIẾP THEO CỦA CHƯƠNG
                                                     TRÌNH TÍCH ĐIỂM ĐỔI QUÀ TẠI CHUK TEA & COFFEE</a>
                                             </h3>
                                             <span class="author">
-                        <a href="home.html">CHUK</a>
+                        <a href="home.jsp">CHUK</a>
                       </span>
                                             <span class="date">13.07.2023</span>
 
