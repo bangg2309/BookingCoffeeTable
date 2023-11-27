@@ -39,7 +39,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
 
-                    <img src="/views/template/custom/image/home/background1.jpg">
+                    <img src="../template/custom/image/home/background1.jpg">
                     <div class="alpha">
                         <div class="slide_booking">
                             <div>
