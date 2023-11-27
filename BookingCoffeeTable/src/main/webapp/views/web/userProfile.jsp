@@ -14,21 +14,21 @@
     <!-- Google Fonts Roboto -->
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
-    <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
-    <link rel="stylesheet" href="../template/assets/css/stylle.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom styles -->
 
-    <link rel="stylesheet" href="../template/custom/css/userProfile.css">
-    <link rel="stylesheet" href="../template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
 
 </head>
 <body>
@@ -124,14 +124,14 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
 
 <!-- Global Init -->
 
 <!-- MDB PLUGINS -->
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

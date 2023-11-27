@@ -14,20 +14,20 @@
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
-    <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
-    <link rel="stylesheet" href="../template/assets/css/stylle.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/reservation.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/>">
 
 
 
@@ -46,7 +46,7 @@
                     <div class="card card-registration my-4">
                         <div class="row g-0">
                             <div class="col-xl-6 d-none d-xl-block justify-content-center p-2">
-                                <img src="../template/custom/image/reservation/coffee%20shop%20(1).png"
+                                <img src="<c:url value="/views/template/custom/image/reservation/coffee%20shop%20(1).png"/>"
                                      alt="Sample photo" class="img-fluid"
                                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                             </div>
@@ -121,12 +121,12 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <!-- MDB PLUGINS -->
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

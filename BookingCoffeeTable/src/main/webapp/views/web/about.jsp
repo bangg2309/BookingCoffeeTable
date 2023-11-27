@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <title>Giới thiệu</title>
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
-    <link rel="stylesheet" href="../template/custom/css/about.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> "/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> "/>
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/about.css"/> ">
 </head>
 
 <body>
@@ -92,6 +92,6 @@
 <!-- ***** Footer End ***** -->
 
 <!-- Global Init -->
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/> "></script>
 </body>
 </html>
