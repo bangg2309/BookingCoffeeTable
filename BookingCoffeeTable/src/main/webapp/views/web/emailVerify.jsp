@@ -15,19 +15,19 @@
 
     <!-- Additional CSS Files -->
 
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/emailVerify.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/emailVerify.css"/>">
 </head>
 <body>
 <div class="main row">
     <div class="col-md-12 d-flex justify-content-center p-2">
         <a href="home.jsp" class="logo">
-            <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
+            <img src="<c:url value="/views/template/custom/image/drink/logo2.png"/>" style="width: 60px;"
                  align="klassy cafe html template">
         </a>
     </div>

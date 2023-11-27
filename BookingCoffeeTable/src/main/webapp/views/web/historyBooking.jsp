@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <!-- Additional CSS Files -->
   <!-- MDB ESSENTIAL -->
-  <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+  <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
   <!-- MDB PLUGINS -->
-  <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+  <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
   <!-- Custom css-->
-  <link rel="stylesheet" href="../template/custom/css/userProfile.css">
-  <link rel="stylesheet" href="../template/custom/css/historyBooking.css">
+  <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
+  <link rel="stylesheet" href="<c:url value="/views/template/custom/css/historyBooking.css"/>">
 </head>
 
 <body>
@@ -109,7 +109,7 @@
                       <div class="bg-image ripple rounded-5 shadow-4 mb-4 ripple-surface-light"
                            data-ripple-color="light">
                         <img class="product-image img-fluid"
-                             src="../template/custom/image/drink/blueberry.jpg"
+                             src="<c:url value="/views/template/custom/image/drink/blueberry.jpg"/>"
                              alt="White T-shirt">
                         <div class="hover-overlay">
                           <div class="mask"
@@ -126,7 +126,7 @@
                       <div class="bg-image ripple rounded-5 shadow-4 mb-4 ripple-surface-light"
                            data-ripple-color="light">
                         <img class="product-image img-fluid"
-                             src="../template/custom/image/drink/coffee_cream.jpg"
+                             src="<c:url value="/views/template/custom/image/drink/coffee_cream.jpg"/>"
                              alt="Black T-shirt">
                         <div class="hover-overlay">
                           <div class="mask"
@@ -143,7 +143,7 @@
                       <div class="bg-image ripple rounded-5 shadow-4 mb-4 ripple-surface-light"
                            data-ripple-color="light">
                         <img class="product-image img-fluid"
-                             src="../template/custom/image/drink/cookie_oreo.jpg"
+                             src="<c:url value="/views/template/custom/image/drink/cookie_oreo.jpg"/>"
                              alt="Platform shoes">
                         <div class="hover-overlay">
                           <div class="mask"
@@ -174,14 +174,14 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <!---->
 
 
 <!-- Global Init -->
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

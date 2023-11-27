@@ -14,15 +14,15 @@
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/menu.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/menu.css"/>">
 
 
 </head>
@@ -237,7 +237,7 @@
                                         class="form-check-input"
                                         type="radio"
                                         name="radioForm"
-                                        id="radioCondition2"
+                                        id="radioCondition3"
                                 />
                                 <label class="form-check-label" for="radioCondition2">
                                     50.000đ - 100.000đ
@@ -249,7 +249,7 @@
                                         class="form-check-input"
                                         type="radio"
                                         name="radioForm"
-                                        id="radioCondition2"
+                                        id="radioCondition4"
                                 />
                                 <label class="form-check-label" for="radioCondition2">
                                     100.000đ - 200.000đ
@@ -314,7 +314,7 @@
                                     >
                                         <img
 
-                                                src="../template/custom/image/menu/lemon.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/lemon.jpg"/>"
 
 
                                                 class="w-100"
@@ -416,7 +416,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/drink/atiso.jpg"
+                                                src="<c:url value="/views/template/custom/image/drink/atiso.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -514,7 +514,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/cookie_cream.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/cookie_cream.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -609,7 +609,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/mojito.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/mojito.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -704,7 +704,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/strawberry.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/strawberry.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -799,7 +799,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/cream_vanila.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/cream_vanila.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -898,7 +898,7 @@
                                         <img
 
 
-                                                src="../template/custom/image/menu/coffee_cream.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
 
 
                                                 class="w-100"
@@ -1000,7 +1000,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/dalgona.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/dalgona.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -1099,7 +1099,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/kiwi2.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/kiwi2.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -1194,7 +1194,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/mango.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/mango.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -1289,7 +1289,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/kombucha.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/kombucha.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -1384,7 +1384,7 @@
                                             data-ripple-color="light"
                                     >
                                         <img
-                                                src="../template/custom/image/menu/chocolate.jpg"
+                                                src="<c:url value="/views/template/custom/image/menu/chocolate.jpg"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -1514,15 +1514,15 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <!---->
 
 <!-- Plugins -->
 
 <!-- Global Init -->
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

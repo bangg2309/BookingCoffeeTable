@@ -43,7 +43,7 @@ public class HomeController extends HttpServlet {
 
         request.setAttribute("products", productService.findOne(1));
         request.setAttribute("categories", categoryService.findAll());
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/userProfile.jsp");
         requestDispatcher.forward(request, response);
 
     }

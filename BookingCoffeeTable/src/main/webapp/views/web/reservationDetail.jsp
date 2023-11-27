@@ -15,20 +15,20 @@
     <title>Chi tiết đơn đặt bàn</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
-    <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
-    <link rel="stylesheet" href="../template/assets/css/stylle.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/reservation.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/>">
 
 
 </head>
@@ -38,7 +38,7 @@
 <%@ include file="layout/header.jsp"%>
 <!-- ***** Header Area End ***** -->
 
-<main class="mb-6" style="padding-top: 20px; margin-top: 800px">
+<main class="mb-6" style="padding-top: 20px; margin-top: 80px">
     <div class="container ">
         <!-- Section: Cart -->
         <section class="">
@@ -61,7 +61,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/coffee_cream.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -82,26 +82,26 @@
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="number"
-                                                id="typeNumber"
+                                                id="1"
                                                 class="form-control"
                                                 value="1"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="1"
                                         >Số Lượng</label
                                         >
                                     </div>
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="text"
-                                                id="typeNumber"
+                                                id="2"
                                                 class="form-control"
                                                 value="M"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="2"
                                         >Size</label
                                         >
                                     </div>
@@ -134,7 +134,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/cherry.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/cherry.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -155,26 +155,26 @@
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="number"
-                                                id="typeNumber"
+                                                id="3"
                                                 class="form-control"
                                                 value="1"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="3"
                                         >Số Lượng</label
                                         >
                                     </div>
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="text"
-                                                id="typeNumber"
+                                                id="4"
                                                 class="form-control"
                                                 value="M"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="4"
                                         >Size</label
                                         >
                                     </div>
@@ -207,7 +207,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/atiso.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/atiso.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -228,26 +228,26 @@
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="number"
-                                                id="typeNumber"
+                                                id="5"
                                                 class="form-control"
                                                 value="1"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="5"
                                         >Số Lượng</label
                                         >
                                     </div>
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="text"
-                                                id="typeNumber"
+                                                id="6"
                                                 class="form-control"
                                                 value="M"
                                                 min="1" disabled style="background-color: white"
 
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="6"
                                         >Size</label
                                         >
                                     </div>
@@ -393,13 +393,13 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
 
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <!-- MDB PLUGINS -->
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

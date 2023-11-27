@@ -13,16 +13,16 @@
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/table.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/table.css"/>">
 
 </head>
 
@@ -147,7 +147,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table.jpg" />"class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                            <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -172,7 +172,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table1.jpg" class="w-100 h-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table1.jpg"/>" class="w-100 h-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -195,7 +195,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table2.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table2.jpg"/>" class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -218,7 +218,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table3.jpeg" class="w-100 h-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table3.jpeg"/>" class="w-100 h-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -241,7 +241,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table4.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table4.jpg"/>" class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -263,7 +263,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table5.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table5.jpg" />"class="w-100" alt=""/>
 
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
@@ -284,7 +284,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table6.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table6.jpg"/>" class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -307,7 +307,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table9.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table9.jpg" />"class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -330,7 +330,7 @@
                                 <!-- Product image -->
                                 <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
                                      data-ripple-color="light">
-                                    <img src="../template/custom/image/table/table8.jpg" class="w-100" alt=""/>
+                                    <img src="<c:url value="/views/template/custom/image/table/table8.jpg" />"class="w-100" alt=""/>
                                     <!--                                    <div class="hover-overlay table_alpha">-->
                                     <!--                                        <h3>Table</h3>-->
                                     <!--                                    </div>-->
@@ -372,14 +372,14 @@
 <%@ include file="layout/footer.jsp"%>
 <!-- ***** Footer End ***** -->
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <!---->
 
 
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 
 </body>
 </html>

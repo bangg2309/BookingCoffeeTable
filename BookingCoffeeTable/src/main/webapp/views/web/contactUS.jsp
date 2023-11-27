@@ -14,14 +14,14 @@
     <title>Contact US</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/contactUS.css">
-    <link rel="stylesheet" href="../template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/contactUS.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
 </head>
 
 <body>
@@ -254,8 +254,8 @@
 
 
 <!-- Global Init -->
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
-<script src="../template/assets/js/custom.js"></script>
-<script src="../template/custom/js/login.js"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script src="<c:url value="/views/template/assets/js/custom.js"/>"></script>
+<script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
 </body>
 </html>
