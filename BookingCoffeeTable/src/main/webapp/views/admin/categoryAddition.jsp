@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Quản lý liên hệ</title>
+    <title>Thêm danh mục</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="assets/css/home.css"/>
+    <!-- Custom styles --><link rel="stylesheet" href="../admin/assets/css/home.css"/>
     <style></style>
 </head>
 
@@ -38,7 +37,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -132,6 +131,7 @@
     </nav>
     <!-- Sidenav -->
 
+
     <!-- Navbar -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1">
         <!-- Container wrapper -->
@@ -189,13 +189,15 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Danh sách liên hệ</h1>
+                            <h1 class="">Thêm loại món</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="home.html" class="text-muted">Trang chủ</a>
+                                    <a href="" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>quản lý liên hệ</u></a>
+                                    <a href="" class="text-muted">Danh sách loại món</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>Thêm loại món</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -220,92 +222,49 @@
 
 <!--Main layout-->
 <main class="mb-5">
-
     <!-- Container for demo purpose -->
-    <div class="container  px-4 mb-5">
-        <div class="datatable">
-            <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                <tr>
-                    <th>Số thứ tự</th>
-                    <th>Người liên hệ</th>
-                    <th>Số điện thoại</th>
-                    <th>Email</th>
-                    <th>Chủ đề</th>
-                    <th>Nội dung</th>
-                    <th>Hành động</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <p class="fw-bold mb-1">Trần Quí Bằng</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span>0842314569</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">bangg2309@gmail.com</p>
-                    </td>
-                    <td>
-                        <span>Đặt bàn</span>
-                    </td>
-                    <td>
-                        <span>Quán có nhận tổ chức sự kiện không</span>
-                    </td>
-                    <td>
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-danger btn-floating">
-                                <i class="far fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
     <div class="container px-4 ">
+        <a href="categoryManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
         <div class="mb-3 bg-primary p-2">
-            <span class="text-white">Trả lời tin nhắn</span>
+            <span class="text-white">Thông tin loại món</span>
         </div>
-        <form class="border p-2">
+        <form class="border p-5">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="name" class="form-label"><b>Gmail</b></label>
-                        <input type="text" class="form-control" id="name" name="name"
-                               placeholder="Nhập gmail..." required>
-                    </div>
+                    <label for="category" class="form-label"><b>Loại món</b></label>
+                    <i class="fas fa-bars"></i>
+                    <input type="text" class="form-control" id="category" name="category"
+                           placeholder="Nhập Tên loại món..." required>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="topic" class="form-label"><b>Chủ đề</b></label>
-                        <input type="text" class="form-control" id="topic" name="topic"
-                               placeholder="Nhập chủ đề..." required>
+                        <label for="avatar" class="form-label"><b>Ảnh minh họa</b></label>
+                        <i class="fas fa-image"></i>
+                        <input class="form-control" type="file" id="avatar" name="avatar">
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label class="form-label"><b>Nội dung</b></label>
-                        <textarea class="form-control" id="description" name="description" rows="7"
-                                  placeholder="Nội dung..."></textarea>
+                        <div>
+                            <label class="form-label"><b>Trạng thái</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <label class="form-check-label" for="active">Hoạt động</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <label class="form-check-label" for="inactive">Ngưng hoạt động</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
             <!-- Repeat the pattern for other form elements -->
-
-            <button type="submit" class="btn btn-primary">Trả lời</button>
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
         </form>
 
     </div>
@@ -324,6 +283,6 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
 <!-- Custom scripts -->
-<script type="text/javascript" src="assets/js/home.js"></script>
+<script type="text/javascript" src="../admin/assets/js/home.js"></script>
 <script type="text/javascript"></script>
 </html>

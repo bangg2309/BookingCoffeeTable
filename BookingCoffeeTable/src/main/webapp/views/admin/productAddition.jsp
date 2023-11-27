@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Quản lý kích thước món</title>
+    <title>Thêm món</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -38,7 +38,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -76,10 +76,10 @@
                     <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryAddition.html">Thêm danh mục</a>
+                        <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryManagement.html">Danh sách danh mục</a>
+                        <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
                     </li>
                 </ul>
             </li>
@@ -112,7 +112,7 @@
                     <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="contactManagemet.html">Danh sách liên hệ</a>
+                        <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
                     </li>
                 </ul>
             </li>
@@ -121,7 +121,7 @@
                     <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postAddition.html">Thêm bài viết</a>
+                        <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link" href="postManagement.html">Danh sách bài viết</a>
@@ -190,13 +190,15 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Quản lý kích thước món</h1>
+                            <h1 class="">Thêm món</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="home.html" class="text-muted">Trang chủ</a>
+                                    <a href="home.jsp" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>Danh sách kích thước món</u></a>
+                                    <a href="productManagement.html" class="text-muted">Danh sách món</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>Thêm món</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -220,126 +222,132 @@
 
 <!--Main layout-->
 <main class="mb-5">
-    <!-- Container for demo purpose -->
-    <div class="container px-4 ">
-        <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="productVariantAddition.html">
-                <i class="far fa-square-plus"></i>
-                <span>Thêm kích thước món</span>
-            </a>
-        </div>
-        <div class="input-group mb-4 px-4">
-            <input type="text" class="form-control" id="advanced-search-input"
-                   placeholder=""/>
-            <button class="btn btn-primary" id="advanced-search-button" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-        <div class="datatable">
-            <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                <tr>
-                    <th>STT</th>
-                    <th>Tên món</th>
-                    <th>Size</th>
-                    <th>Giá</th>
-                    <th>Hoạt động</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
+    <div class="container px-4">
+        <a href="productManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
 
-                    <td>
-                        <div class="d-flex align-items-center">
-
-                            <div class="">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>M</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-
-
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-
-                        </div>
-                    </td>
-                    <td>
-                        <span>S</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">39.000đ</p>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-
-                            <div class="">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>L</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">59.000đ</p>
-                    </td>
-
-
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="mb-3 bg-primary p-2">
+            <span class="text-white">Thông tin món</span>
         </div>
 
+        <form class="border p-5">
+            <!-- Thông tin cơ bản -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="category" class="form-label"><b>Loại món</b></label>
+                    <i class="fas fa-bars"></i>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="" disabled selected>Chọn danh mục</option>
+                        <option value="1">Cà phê</option>
+                        <option value="2">Nước ép</option>
+                        <option value="3">Sinh tố</option>
+                        <option value="4">Bánh ngọt</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
+                <div class="col-md-4">
+                    <label for="name" class="form-label"><b>Tên món</b></label>
+                    <i class="fas fa-mug-saucer"></i>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nhập Tên món..."
+                           required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="price" class="form-label"><b>Giá tiền</b></label>
+                    <i class="fas fa-coins"></i>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="VND..." required>
+                </div>
+            </div>
+
+            <!-- Khuyến mãi và Trạng thái -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="discount" class="form-label"><b>Khuyến mãi</b></label>
+                    <i class="fas fa-percent"></i>
+                    <input type="text" class="form-control" id="discount" name="discount" placeholder="%" required>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label"><b>Trạng thái</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <label class="form-check-label" for="active">Đang bán</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <label class="form-check-label" for="inactive">Ngừng bán</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mô tả và Hình ảnh -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label"><b>Mô tả</b></label>
+                    <textarea class="form-control" id="description" name="description" rows="7"
+                              placeholder="Mô tả..."></textarea>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="image" class="form-label"><b>Hình ảnh</b></label>
+                    <i class="fas fa-image"></i>
+                    <div class="file-upload-wrapper">
+                        <input id="image" type="file" class="file-upload-input" data-mdb-multiple="true"
+                               data-mdb-file-upload="file-upload"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kích thước và Giá -->
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="form-label"><b>Option</b></label>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Kích Thước</th>
+                            <th scope="col">Giá tiền cộng thêm</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody id="sizeTableBody">
+                        <!-- Dòng mẫu, có thể ẩn hoặc xóa nếu không cần -->
+                        <tr class="size-row">
+                            <td><input type="text" class="form-control" name="size[]" placeholder="Nhập kích thước..."
+                                       required></td>
+                            <td><input type="number" class="form-control" name="price[]" placeholder="VND..." required>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" onclick="removeSizeRow(this)">Xóa</button>
+                            </td>
+                        </tr>
+                        <!-- ... Các dòng khác sẽ được thêm thông qua JavaScript ... -->
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <div class="col-md-8">
+                            <button type="button" class="btn btn-success" onclick="addSizeRow()">Thêm Kích Thước
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút Submit -->
+            <div class="row mt-3">
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-primary">Thêm mới</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <!-- Container for demo purpose -->
 </main>
 <!--Main layout-->
 
@@ -355,5 +363,20 @@
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
 <!-- Custom scripts -->
 <script type="text/javascript" src="assets/js/home.js"></script>
-<script type="text/javascript"></script>
+<!-- ... Các phần form khác ... -->
+
+<script>
+    // JavaScript để thêm và xóa dòng cho kích thước
+    function addSizeRow() {
+        const sizeTableBody = document.getElementById("sizeTableBody");
+        const newRow = document.querySelector(".size-row").cloneNode(true);
+        sizeTableBody.appendChild(newRow);
+    }
+
+    function removeSizeRow(button) {
+        const sizeTableBody = document.getElementById("sizeTableBody");
+        const row = button.parentNode.parentNode;
+        sizeTableBody.removeChild(row);
+    }
+</script>
 </html>

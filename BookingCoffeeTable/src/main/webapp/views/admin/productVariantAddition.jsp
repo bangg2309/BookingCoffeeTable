@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Quản lý bàn</title>
+    <title>Thêm kích thước món</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -38,7 +38,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -61,7 +61,7 @@
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="productAddition.html">Thêm món</a>
+                        <a class="sidenav-link" href="productAddition.jsp">Thêm món</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link" href="productManagement.html">Danh sách món</a>
@@ -76,10 +76,10 @@
                     <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryAddition.html">Thêm danh mục</a>
+                        <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryManagement.html">Danh sách danh mục</a>
+                        <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
                     </li>
                 </ul>
             </li>
@@ -112,7 +112,7 @@
                     <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="contactManagemet.html">Danh sách liên hệ</a>
+                        <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
                     </li>
                 </ul>
             </li>
@@ -121,16 +121,17 @@
                     <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postAddition.html">Thêm bài viết</a>
+                        <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postManagement.html">Danh sách bài viết</a>
+                        <a class="sidenav-link" href="postManagement.jsp">Danh sách bài viết</a>
                     </li>
                 </ul>
             </li>
         </ul>
     </nav>
     <!-- Sidenav -->
+
 
     <!-- Navbar -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1">
@@ -189,13 +190,15 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Quản lý bàn</h1>
+                            <h1 class="">Thêm kích thước món</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="home.html" class="text-muted">Trang chủ</a>
+                                    <a href="home.jsp" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>Danh sách bàn</u></a>
+                                    <a href="productManagement.html" class="text-muted">Danh sách kích thước món</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>Thêm kích thước món</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -219,67 +222,67 @@
 
 <!--Main layout-->
 <main class="mb-5">
-
     <!-- Container for demo purpose -->
-    <div class="container  px-4 ">
-        <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="tableAddition.html">
-                <i class="far fa-square-plus"></i>
-                <span>Thêm bàn</span>
-            </a>
+    <div class="container px-4 ">
+        <a href="productVariantManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
+        <div class="mb-3 bg-primary p-2">
+            <span class="text-white">Thông tin kích thước món</span>
         </div>
-        <div class="input-group mb-4 px-4">
-            <input type="text" class="form-control" id="advanced-search-input"
-                   placeholder=""/>
-            <button class="btn btn-primary" id="advanced-search-button" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-        <div class="datatable">
-            <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                <tr>
-                    <th>Id</th>
-                    <th>Số bàn</th>
-                    <th>Khu vực</th>
-                    <th>Vị trí</th>
-                    <th>Trạng thái</th>
-                    <th>Hành động</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">101</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>Tầng 1</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">Gần quầy bar</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline"> hoạt động</span>
-                    </td>
-                    <td>
-                        <a href="productAddition.html" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        <form class="border p-5">
+            <div class="row">
+<!--                <div class="col-md-4">-->
+<!--                    <label for="category" class="form-label"><b>Loại món</b></label>-->
+<!--                    <i class="fas fa-bars"></i>-->
+<!--                    <select class="select" data-mdb-filter="true" id="category" name="category" required>-->
+<!--                        <option value="" disabled selected>Chọn danh mục</option>-->
+<!--                        <option value="1">Cà phê</option>-->
+<!--                        <option value="1">Nước ép</option>-->
+<!--                        <option value="1">Sinh tố</option>-->
+<!--                        <option value="1">Bánh ngọt</option>-->
+<!--                        &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+<!--                    </select>-->
+<!--                </div>-->
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="name" class="form-label"><b>Tên món</b></label>
+                        <i class="fas fa-mug-saucer"></i>
+                        <select class="select" data-mdb-filter="true" id="name" name="category" required>
+                            <option value="" disabled selected>Chọn món</option>
+                            <option value="1">Cà sữa đá</option>
+                            <option value="1">Cà phê đen</option>
+                            <option value="1">Cà phê muối</option>
+                            <option value="1">Cà phê sữa</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label"><b>Size</b></label>
+                        <input type="text" class="form-control" id="fullname" name="fullname"
+                               placeholder="" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="price" class="form-label"><b>Giá tiền</b></label>
+                        <i class="fas fa-coins"></i>
+                        <input type="number" class="form-control" id="price" name="price"
+                               placeholder="VND..." required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat the pattern for other form elements -->
+
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+        </form>
 
     </div>
     <!-- Container for demo purpose -->

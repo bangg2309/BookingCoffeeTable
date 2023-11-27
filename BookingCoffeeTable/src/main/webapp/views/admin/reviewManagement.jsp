@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Material Design for Bootstrap</title>
+    <title>Quản lý đánh giá</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/home.css"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../template/custom/css/userProfile.css">
+    <style></style>
 </head>
 
 <body>
@@ -39,7 +38,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -62,7 +61,7 @@
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="productAddition.html">Thêm món</a>
+                        <a class="sidenav-link" href="productAddition.jsp">Thêm món</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link" href="productManagement.html">Danh sách món</a>
@@ -77,10 +76,10 @@
                     <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryAddition.html">Thêm danh mục</a>
+                        <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryManagement.html">Danh sách danh mục</a>
+                        <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
                     </li>
                 </ul>
             </li>
@@ -113,7 +112,7 @@
                     <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="contactManagemet.html">Danh sách liên hệ</a>
+                        <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
                     </li>
                 </ul>
             </li>
@@ -122,10 +121,10 @@
                     <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postAddition.html">Thêm bài viết</a>
+                        <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postManagement.html">Danh sách bài viết</a>
+                        <a class="sidenav-link" href="postManagement.jsp">Danh sách bài viết</a>
                     </li>
                 </ul>
             </li>
@@ -172,89 +171,128 @@
     </nav>
     <!-- Navbar -->
 
+    <!-- Heading -->
+    <section class="mb-5 mb-lg-8 text-center text-md-start">
+        <!-- Background gradient -->
+        <div class="p-5" style="height: 200px;
+                            background: linear-gradient(
+                            to right,
+                            hsl(209, 42.2%, 65%),
+                            hsl(209, 42.2%, 85%)
+                            );">
+        </div>
+        <!-- Background gradient -->
+
+        <div class="container px-4">
+            <div class="card shadow-0" style="
+                                        margin-top: -100px;
+                                        ">
+                <div class="card-body py-5 px-5">
+                    <div class="row gx-lg-4 align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+                            <h1 class="">Danh sách đánh giá</h1>
+                            <!-- Breadcrumb -->
+                            <nav class="d-flex justify-content-center justify-content-lg-start">
+                                <h6 class="mb-0">
+                                    <a href="home.jsp" class="text-muted">Trang chủ</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>quản lý đánh giá</u></a>
+                                </h6>
+                            </nav>
+                            <!-- Breadcrumb -->
+                        </div>
+
+                        <div class="col-lg-6 text-center text-lg-end">
+                            <button type="button" class="btn btn-link mb-4 px-2 px-md-3" data-ripple-color="primary">
+                                Export<i class="fas fa-download ms-2"></i>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Heading -->
 
 </header>
 <!--Main Navigation-->
 
 <!--Main layout-->
-<main class="mb-5 mt-5">
+<main class="mb-5">
+
     <!-- Container for demo purpose -->
-    <div class="container">
-        <div class="view-account mb-5 ">
-            <section class="module">
-                <div class="module-inner">
-                    <div class="side-bar ">
-                        <div class="user-info">
-                            <img class="img-profile img-circle img-responsive center-block"
-                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                            <ul class="meta list list-unstyled">
-                                <li class="name" style="font-weight: bold; font-size: 20px">Nguyễn Hửu Tính
-                                </li>
-                                <li class="email"><a href="#">huutinh2412@gmail.com</a></li>
-                            </ul>
+    <div class="container  px-4 mb-5">
+        <div class="input-group mb-4 px-4">
+            <input type="text" class="form-control" id="advanced-search-input"
+                   placeholder=""/>
+            <button class="btn btn-primary" id="advanced-search-button" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="datatable">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                <tr>
+                    <th>Số thứ tự</th>
+                    <th>Tên món</th>
+                    <th>Người đánh giá</th>
+                    <th>Số sao</th>
+                    <th>Nội dung</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <span>1</span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <p class="fw-bold mb-1">Cà phê sữa</p>
                         </div>
-                        <nav class="side-menu">
-                            <ul class="nav">
-                                <li class="active"><a href="#"><span class="fa fa-user"></span> Thông tin</a></li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="content-panel">
-                        <form class="form-horizontal">
-                            <fieldset class="fieldset">
-                                <h3 class="fieldset-title">Thông Tin Cá Nhân</h3>
-                                <div class="form-group avatar row">
-                                    <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                        <img class="img-rounded img-responsive"
-                                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    </figure>
-                                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                        <input type="file" class="file-uploader pull-left">
-                                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Cập Nhật Hình
-                                            Ảnh
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Tên Đăng Nhập</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Rebecca" disabled>
-                                    </div>
-                                </div>
-
-                            </fieldset>
-                            <fieldset class="fieldset">
-                                <h3 class="fieldset-title mt-3">Contact Info</h3>
-                                <div class="form-group row mb-3">
-                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Và Tên</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Sanders">
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-3">
-                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" value="Rebecca@website.com">
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-3">
-                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="number" class="form-control" value="SpeedyBecky">
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <hr>
-                            <div class="form-group row">
-                                <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                    <button class="btn btn-primary" type="button">Cập Nhật</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+                    </td>
+                    <td>
+                        <span>Trần Quí Bằng</span>
+                    </td>
+                    <td>
+                        <ul
+                                class="rating mb-3"
+                                data-mdb-toggle="rating"
+                                data-mdb-readonly="true"
+                                data-mdb-value="3"
+                        >
+                            <li>
+                                <i class="far fa-star fa-sm text-primary"></i>
+                            </li>
+                            <li>
+                                <i class="far fa-star fa-sm text-primary"></i>
+                            </li>
+                            <li>
+                                <i class="far fa-star fa-sm text-primary"></i>
+                            </li>
+                            <li>
+                                <i class="far fa-star fa-sm text-primary"></i>
+                            </li>
+                            <li>
+                                <i class="far fa-star fa-sm text-primary"></i>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <span>Cà phê sữa mà sao đắng zậy</span>
+                    </td>
+                    <td>
+                        <div class="justify-content-center">
+                            <button type="button" class="btn btn-danger btn-floating">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <!-- Container for demo purpose -->

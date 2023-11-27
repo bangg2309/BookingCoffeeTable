@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Chọn món</title>
+    <title>Thêm đơn đặt bàn</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -38,7 +38,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -61,7 +61,7 @@
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="productAddition.html">Thêm món</a>
+                        <a class="sidenav-link" href="productAddition.jsp">Thêm món</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link" href="productManagement.html">Danh sách món</a>
@@ -76,10 +76,10 @@
                     <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryAddition.html">Thêm danh mục</a>
+                        <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryManagement.html">Danh sách danh mục</a>
+                        <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
                     </li>
                 </ul>
             </li>
@@ -112,7 +112,7 @@
                     <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="contactManagemet.html">Danh sách liên hệ</a>
+                        <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
                     </li>
                 </ul>
             </li>
@@ -121,10 +121,10 @@
                     <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postAddition.html">Thêm bài viết</a>
+                        <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postManagement.html">Danh sách bài viết</a>
+                        <a class="sidenav-link" href="postManagement.jsp">Danh sách bài viết</a>
                     </li>
                 </ul>
             </li>
@@ -190,13 +190,15 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Chọn món</h1>
+                            <h1 class="">Thêm đơn đặt bàn</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="home.html" class="text-muted">Trang chủ</a>
+                                    <a href="home.jsp" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>Chọn món</u></a>
+                                    <a href="reservationManagement.html" class="text-muted">Danh sách đơn đặt bàn</a>
+                                    <span>/</span>
+                                    <a href="" class="text-muted"><u>Thêm đơn đặt bàn</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -209,6 +211,7 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -224,116 +227,126 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="reservationAddition.html">
-                <i class="far fa-square-plus"></i>
-                <span>Thêm vào bàn</span>
-            </a>
+        <a href="reservationManagement.html" class="btn btn-link mb-2">
+            <i class="fas fa-angle-left"></i> Quay lại
+        </a>
+        <div class="mb-3 bg-primary p-2">
+            <span class="text-white">Thông tin đặt bàn</span>
         </div>
-        <div class="input-group mb-4 px-4">
-            <input type="text" class="form-control" id="advanced-search-input"
-                   placeholder=""/>
-            <button class="btn btn-primary" id="advanced-search-button" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-        <div class="datatable">
-            <table class="table align-middle mb-0 bg-white">
-                <thead class="bg-light">
-                <tr>
-                    <th>Chọn</th>
-                    <th>STT</th>
-                    <th>Danh mục</th>
-                    <th>Tên món</th>
-                    <th>Giá</th>
-                    <th>Khuyến mãi</th>
-                    <th>Size</th>
-                    <th>Số lượng</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                    </td>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <div class="col-md-3">
-                            L
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-md-3">
-                            <div class="">
-                                <input type="number" id="typeNumber" class="form-control" value="1" min="1"/>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                    </td>
-                    <td>
-                        1
-                    </td>
-                    <td>
+        <form class="border p-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="username" class="form-label"><b>Tên liên hệ</b></label>
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="username" name="username"
+                               placeholder="Nhập UserName..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label"><b>Số điện thoại</b></label>
+                        <i class="fas fa-phone"></i>
+                        <input type="number" class="form-control" id="phone" name="phone"
+                               placeholder="Nhập PhoneNumber..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập Email..."
+                               required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
 
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="userID" class="form-label"><b>ID người đặt</b></label>
+                        <input type="number" class="form-control" id="userID" name="userID"
+                               placeholder="Nhập ID người đặt..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="tableNum" class="form-label"><b>Số bàn</b></label>
+                        <select class="form-select" id="tableNum" name="tableNum" required>
+                            <option value="" disabled selected>Chọn bàn</option>
+                            <option value="1">101</option>
+                            <option value="2">201</option>
+                            <option value="3">301</option>
+                            <option value="4">401</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="filterDate" class="form-label "><b>Ngày Đặt:</b></label>
+                        <input type="date" class="form-control" id="filterDate">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="filterStartTime" class="form-label"><b>Thời Gian Đặt:</b></label>
+                        <input type="time" class="form-control" id="filterStartTime" min="08:00" max="18:00">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="filterEndTime" class="form-label"><b>Thời Gian Kết Thúc:</b></label>
+                        <input type="time" class="form-control" id="filterEndTime">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="role" class="form-label"><b>Phương thức thanh toán</b></label>
+                    <select class="form-select" id="role" name="role" required>
+                        <option value="" disabled selected>Chọn phương thức thanh toán</option>
+                        <option value="1">Momo</option>
+                        <option value="2">VnPay</option>
+                        <option value="2">Master Card</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <div>
+                            <label class="form-label"><b>Trạng thái</b></label>
+                            <i class="fas fa-toggle-on"></i>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <label class="form-check-label" for="active">Thành công</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <label class="form-check-label" for="inactive">Đã hủy</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="totalCost" class="form-label"><b>Tổng tiền</b></label>
+                        <input type="number" class="form-control" id="totalCost" name="totalCost"
+                               placeholder="Nhập tổng số tiền thanh toán..." required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="note" class="form-label"><b>Ghi chú</b></label>
+                        <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                    </div>
+                </div>
 
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <div class="col-md-3">
-                            M
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-md-3">
-                            <div class="">
-                                <input type="number" id="typeNumber" class="form-control" value="1" min="1"/>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+            </div>
 
+            <!-- Repeat the pattern for other form elements -->
+
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+        </form>
 
     </div>
     <!-- Container for demo purpose -->

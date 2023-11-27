@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Quản lý loại món</title>
+    <title>Quản lý đơn đặt bàn</title>
     <!-- MDB icon -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
@@ -38,7 +38,7 @@
 
         <ul class="sidenav-menu px-2 pb-5">
             <li class="sidenav-item">
-                <a class="sidenav-link text-primary" href="home.html">
+                <a class="sidenav-link text-primary" href="home.jsp">
                     <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
             </li>
             <li class="sidenav-item pt-3">
@@ -61,7 +61,7 @@
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="productAddition.html">Thêm món</a>
+                        <a class="sidenav-link" href="productAddition.jsp">Thêm món</a>
                     </li>
                     <li class="sidenav-item">
                         <a class="sidenav-link" href="productManagement.html">Danh sách món</a>
@@ -76,10 +76,10 @@
                     <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryAddition.html">Thêm danh mục</a>
+                        <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="categoryManagement.html">Danh sách danh mục</a>
+                        <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
                     </li>
                 </ul>
             </li>
@@ -112,7 +112,7 @@
                     <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="contactManagemet.html">Danh sách liên hệ</a>
+                        <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
                     </li>
                 </ul>
             </li>
@@ -121,10 +121,10 @@
                     <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postAddition.html">Thêm bài viết</a>
+                        <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
                     </li>
                     <li class="sidenav-item">
-                        <a class="sidenav-link" href="postManagement.html">Danh sách bài viết</a>
+                        <a class="sidenav-link" href="postManagement.jsp">Danh sách bài viết</a>
                     </li>
                 </ul>
             </li>
@@ -172,7 +172,7 @@
     <!-- Navbar -->
 
     <!-- Heading -->
-    <section class="mb-5 mb-lg-8 text-center text-md-start">
+    <section class="mb-5 text-center text-md-start">
         <!-- Background gradient -->
         <div class="p-5" style="height: 200px;
                             background: linear-gradient(
@@ -190,13 +190,13 @@
                 <div class="card-body py-5 px-5">
                     <div class="row gx-lg-4 align-items-center">
                         <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                            <h1 class="">Danh sách loại món</h1>
+                            <h1 class="">Quản lý đơn đặt bàn</h1>
                             <!-- Breadcrumb -->
                             <nav class="d-flex justify-content-center justify-content-lg-start">
                                 <h6 class="mb-0">
-                                    <a href="" class="text-muted">Trang chủ</a>
+                                    <a href="home.jsp" class="text-muted">Trang chủ</a>
                                     <span>/</span>
-                                    <a href="" class="text-muted"><u>Danh sách loại món</u></a>
+                                    <a href="" class="text-muted"><u>Danh sách đơn đặt bàn</u></a>
                                 </h6>
                             </nav>
                             <!-- Breadcrumb -->
@@ -209,7 +209,6 @@
 
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -222,13 +221,12 @@
 <!--Main layout-->
 <main class="mb-5">
 
-
     <!-- Container for demo purpose -->
-    <div class="container px-4 ">
+    <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="categoryAddition.html.html">
+            <a class="btn btn-primary" href="selectProduct.html">
                 <i class="far fa-square-plus"></i>
-                <span>Thêm loại món</span>
+                <span>Thêm đơn đặt bàn</span>
             </a>
         </div>
         <div class="input-group mb-4 px-4">
@@ -238,71 +236,63 @@
                 <i class="fa fa-search"></i>
             </button>
         </div>
-        <table class="table align-middle mb-0 bg-white">
-            <thead class="bg-light">
-            <tr>
-                <th>STT</th>
-                <th>Tên loại món</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1">Cà phê</p>
-                    </div>
-                </td>
-                <td>
-                    <span class="badge badge-success rounded-pill d-inline">hoạt động</span>
-                </td>
-                <td>
-                    <a href="categoryAddition.html" class="btn btn-primary btn-floating">
-                        <i class="far fa-pen-to-square"></i>
-                    </a>
-                    <button type="button" class="btn btn-danger btn-floating">
-                        <i class="far fa-trash-can"></i>
-                    </button>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
-        <div class=" p-2 d-flex bg-white justify-content-end">
-            <nav aria-label="...">
-                <ul class="pagination pagination-circle mb-0">
-                    <li class="page-item">
-                        <a
-                                class="page-link"
-                                href="#"
-                                tabindex="-1"
-                                aria-disabled="true"
-                        >Trước</a
-                        >
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <a class="page-link" href="#"
-                        >2 <span class="sr-only">(current)</span></a
-                        >
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Tiếp theo</a>
-                    </li>
-                </ul>
-            </nav>
-
+        <div class="datatable">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Khách hàng</th>
+                    <th>Ngày đặt bàn</th>
+                    <th>Thời gian đặt</th>
+                    <th>Thời gian kết thúc</th>
+                    <th>Số bàn</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <span>1</span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="">
+                                <p class="fw-bold mb-1">Trần Quí Bằng</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Mon, 14.03.2022</span>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">14:30</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">16:30</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">101</p>
+                    </td>
+                    <td>
+                        <span class="">1.500.000đ</span>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">thành công</span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-floating">
+                            <i class="far fa-pen-to-square"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-floating">
+                            <i class="far fa-trash-can"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-
 
     </div>
     <!-- Container for demo purpose -->
