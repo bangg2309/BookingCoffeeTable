@@ -14,14 +14,14 @@
     <title>Bill</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/> ">
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> "/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> "/>
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/reservation.css">
-    <link rel="stylesheet" href="../template/custom/css/bill.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/bill.css"/> ">
 
 
 </head>
@@ -54,7 +54,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/coffee_cream.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -128,7 +128,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/cherry.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/cherry.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -202,7 +202,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/atiso.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/atiso.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -276,7 +276,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/blueberry.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/blueberry.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -350,7 +350,7 @@
                                         data-ripple-color="light"
                                 >
                                     <img
-                                            src="../template/custom/image/menu/champagne.jpg"
+                                            src="<c:url value="/views/template/custom/image/menu/champagne.jpg"/>"
                                             class="w-100"
                                             alt=""
                                     />
@@ -371,7 +371,7 @@
                                     <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
                                         <input
                                                 type="number"
-                                                id="typeNumber"
+                                                id=""
                                                 class="form-control quantity"
                                                 value="1"
                                                 min="1"
@@ -535,12 +535,12 @@
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
-<script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <!-- MDB PLUGINS -->
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
-<script src="../template/custom/js/bill.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+
 </body>
 </html>
