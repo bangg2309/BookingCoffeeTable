@@ -58,18 +58,6 @@
             </li>
             <li class="sidenav-item">
                 <a class="sidenav-link ">
-                    <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý vai trò</span></a>
-                <ul class="sidenav-collapse">
-                    <li class="sidenav-item">
-                        <a class="sidenav-link" href="roleAddition.html">Thêm vai trò</a>
-                    </li>
-                    <li class="sidenav-item">
-                        <a class="sidenav-link" href="roleManagement.html">Danh sách vai trò</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidenav-item">
-                <a class="sidenav-link ">
                     <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
                 <ul class="sidenav-collapse ">
                     <li class="sidenav-item">
@@ -143,6 +131,7 @@
         </ul>
     </nav>
     <!-- Sidenav -->
+
 
     <!-- Navbar -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1">
@@ -218,39 +207,6 @@
                                 Export<i class="fas fa-download ms-2"></i>
                             </button>
 
-                            <div class="row justify-content-center justify-content-lg-end">
-
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <select class="select">
-                                        <option value="1" selected>All products</option>
-                                        <option value="2">Product 1</option>
-                                        <option value="3">Product 2</option>
-                                        <option value="4">Product 3</option>
-                                        <option value="5">Product 4</option>
-                                    </select>
-                                    <label class="form-label select-label">Date</label>
-                                </div>
-
-                                <div class="col-md-4 mb-4 mb-md-0">
-                                    <select class="select">
-                                        <option value="1">Today</option>
-                                        <option value="2">Yesterday</option>
-                                        <option value="3" selected>Last 7 days</option>
-                                        <option value="4">Last 28 days</option>
-                                        <option value="5">Last 90 days</option>
-                                    </select>
-                                    <label class="form-label select-label">Date</label>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-outline datepicker" data-mdb-inline="true">
-                                        <input type="text" class="form-control" id="exampleDatepicker1"
-                                               data-toggle="datepicker"
-                                               value="Custom date"/>
-                                        <label for="exampleDatepicker1" class="form-label">Date</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,13 +241,13 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                 <tr>
-                    <th>Id</th>
+                    <th>STT</th>
                     <th>Danh mục</th>
                     <th>Tên món</th>
                     <th>Giá</th>
                     <th>Khuyến mãi</th>
                     <th>Trạng thái</th>
-                    <th>Hoạt động</th>
+                    <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -303,19 +259,13 @@
 
 
                         <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
+                            <p class=" mb-1">Cà phê</p>
                         </div>
                     </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
+                            <div class="">
+                                <p class=" mb-1">Cà phê kem</p>
                             </div>
                         </div>
                     </td>
@@ -329,9 +279,9 @@
                         <span class="badge badge-success rounded-pill d-inline">còn bán</span>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-floating">
+                        <a href="productAddition.html" class="btn btn-primary btn-floating">
                             <i class="far fa-pen-to-square"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-floating">
                             <i class="far fa-trash-can"></i>
                         </button>
@@ -345,19 +295,13 @@
 
 
                         <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
+                            <p class=" mb-1">Sinh tố</p>
                         </div>
                     </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
+                            <div class="">
+                                <p class=" mb-1">Sinh tố dâu</p>
                             </div>
                         </div>
                     </td>
@@ -365,230 +309,21 @@
                         <p class="fw-normal mb-1">49.000đ</p>
                     </td>
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
+
                     </td>
                     <td>
                         <span class="badge badge-success rounded-pill d-inline">còn bán</span>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-floating">
+                        <a href="productAddition.html" class="btn btn-primary btn-floating">
                             <i class="far fa-pen-to-square"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-floating">
                             <i class="far fa-trash-can"></i>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
 
-
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-
-
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-
-
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-
-
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-
-
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                    src="../template/custom/image/menu/coffee_cream.jpg"
-                                    alt=""
-                                    style="width: 45px; height: 45px"
-                                    class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Cà phê kem</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>

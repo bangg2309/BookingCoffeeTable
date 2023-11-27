@@ -7,21 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
     <link rel="stylesheet" href="../template/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="../template/assets/css/lightbox.css">
-    <link rel="stylesheet" href="../template/assets/css/stylle.css">
 
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
@@ -29,58 +20,82 @@
     <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
 
     <!-- Custom css-->
-    <link rel="stylesheet" href="../template/custom/css/bookingTable.css">
+    <link rel="stylesheet" href="../template/custom/css/table.css">
 
 </head>
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<nav class="header-area sticky-top"
-     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+<header data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
+    <!-- Container wrapper -->
     <div class="container">
-        <div class="row">
-            <div class="col-9">
-                <nav class="main-nav" style="display: flex">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="home.html" class="logo">
-                        <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
-                             align="klassy cafe html template">
-                    </a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="https://mdbgo.com/">
+            <img
+                    src="../template/custom/image/drink/logo2.png"
+                    height="50"
+                    alt="MDB Logo"
+                    loading="lazy"
+                    style="margin-top: -1px;"
+            />
+        </a>
 
+        <!-- Toggle button -->
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarButtonsExample"
+                aria-controls="navbarButtonsExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
 
-                    <ul class="nav">
-                        <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
-                        <li class="scroll-to-section"><a href="table.html" style="color: #bf9369">Bàn</a></li>
-                        <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
-                        <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
-                        <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
-                        <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-            <div class="col-3">
-                <nav class="main-nav">
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="scroll-to-section home">
+                    <a href="#">Trang chủ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="table.html">Bàn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="menu.html">Thực đơn</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="about.html">Giới thiệu</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="contactUS.html">Liên hệ</a>
+                </li>
+                <li class="scroll-to-section">
+                    <a  href="post.html">Bài viết</a>
+                </li>
+            </ul>
+            <!-- Left links -->
 
-                    <ul class="nav">
-                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
-                        <li class="scroll-to-section"><a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
-                                class="fa fa-user"
-                                aria-hidden="true"></i></span>Đăng nhập</a></li>
-                    </ul>
+            <div class="login d-flex align-items-center">
+                <li class="scroll-to-section">
+                    <a href="reservation.html">Đặt bàn</a>
+                </li>
+                <li class="scroll-to-section login_content"><a href="login.html"><span class="user_icon"
+                                                                                       style="padding-right: 10px"><i
+                        class="fa fa-user"
+                        aria-hidden="true"></i></span>Đăng nhập</a></li>
 
-
-                </nav>
             </div>
         </div>
+        <!-- Collapsible wrapper -->
     </div>
-</nav>
+    <!-- Container wrapper -->
+</header>
 <!-- ***** Header Area End ***** -->
 
-<div class="main_content mt-5">
+<div class="main_content" style="margin-top: 100px">
 
     <!--Main layout-->
     <main class="mb-6">
@@ -149,7 +164,7 @@
 
                         <form class="d-flex justify-content-between flex-wrap">
                             <!-- Ngày Đặt -->
-                            <div class="col-md-2 mb-3">
+                            <div class=" col-md-2 mb-3">
                                 <label for="filterDate" class="form-label ">Ngày Đặt:</label>
                                 <input type="date" class="form-control" id="filterDate">
                             </div>
@@ -171,8 +186,7 @@
                                     <option value="2">Trong nhà</option>
                                     <option value="3">Ban công</option>
                                     <option value="3">Cửa sổ</option>
-                                    <option value="3">Sân vườn</option>
-                                    <option value="3">Máy lạnh</option>
+                                    <option value="3">Quầy bar</option>
                                 </select>
                             </div>
                             <!-- Số người -->
@@ -181,9 +195,9 @@
                                 <input type="number" class="form-control" id="filterPeople" min="1">
                             </div>
                             <!-- Nút Áp Dụng -->
-                            <div class="col-md-2 mb-3 ">
+                            <div class="col-md-2 mb-3 d-flex align-items-end pb-1 justify-content-center">
 
-                                <div style="padding-top: 22%; padding-left: 20%">
+                                <div>
                                     <button type="button" class="btn btn-primary  " onclick="applyFilter()">Tìm kiếm
                                     </button>
                                 </div>
@@ -228,7 +242,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 102</h4>
+                                        <h4>chỗ ngồi: 2 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -250,7 +265,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 103</h4>
+                                        <h4>chỗ ngồi: 4 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -272,7 +288,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 104</h4>
+                                        <h4>chỗ ngồi: 1 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -294,7 +311,7 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 105</h4>
                                         <h4>Vị trí: trong nhà</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -314,8 +331,9 @@
 
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
-                                        <h4>Vị trí: sân vườn</h4>
+                                        <h4>Số bàn: 106</h4>
+                                        <h4>chỗ ngồi: 6 người</h4>
+                                        <h4>Vị trí: trong nhà</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
                                     </div>
@@ -336,7 +354,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 107</h4>
+                                        <h4>chỗ ngồi: 4 người</h4>
                                         <h4>Vị trí: tầng thượng</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -358,7 +377,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 108</h4>
+                                        <h4>chỗ ngồi: 5 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -380,7 +400,8 @@
                                     <!--                                    </div>-->
                                     <div class="hover-overlay table_omega text-center">
                                         <br>
-                                        <h4>Số lượng: 10</h4>
+                                        <h4>Số bàn: 109</h4>
+                                        <h4>chỗ ngồi: 5 người</h4>
                                         <h4>Vị trí: cửa sổ</h4>
                                         <a href="home.html" class="btn btn-primary" style="text-transform: uppercase">Chọn
                                             bàn</a>
@@ -391,7 +412,7 @@
 
                         </div>
                     </div>
-                    <div class="next_button col-8 col-lg-6 d-flex justify-content-end mt-2 ml-5">
+                    <div class="next_button col d-flex justify-content-center mt-2">
                         <a style="text-transform: uppercase; font-family: Roboto; color: #bf9369" href="">Xem thêm</a>
                     </div>
                 </div>
@@ -524,17 +545,13 @@
 </footer>
 <!-- jQuery -->
 <script src="../template/assets/js/jquery-2.1.0.min.js"></script>
+<!---->
 
-<!-- Bootstrap -->
-<script src="../template/assets/js/popper.js"></script>
-<script src="../template/assets/js/bootstrap.min.js"></script>
+
 
 <script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
-<!-- MDB PLUGINS -->
 <script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script>
-
-</script>
+<script src="../template/mdb/js/mdb.umd.min.js"></script>
 
 </body>
 </html>
