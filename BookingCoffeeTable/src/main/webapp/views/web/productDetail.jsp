@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <!-- Google Fonts Roboto -->
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../template/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
 
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom styles -->
     <style></style>
-    <link rel="stylesheet" href="../template/custom/css/productDetail.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/productDetail.css"/>">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 <!-- Container for demo purpose -->
 
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 <!--Main layout-->
@@ -44,42 +44,42 @@
                     <div class="ecommerce-gallery">
                         <div class="mb-1 lightbox">
                             <img
-                                    src="../template/custom/image/drink/coffee/coffee1.jpg"
-                                    alt="Table full of spices"
+                                    src="<c:url value="/views/template/custom/image/drink/coffee/coffee1.jpg"
+                                    />" alt="Table full of spices"
                                     class="ecommerce-gallery-main-img active w-100"
                             />
                         </div>
-                        <div class="multi-carousel" data-mdb-breakpoint="false" data-mdb-items="3">
+                        <div class=" multi-carousel" data-mdb-breakpoint="false" data-mdb-items="3">
                             <div class="multi-carousel-inner">
                                 <div class="multi-carousel-item active">
                                     <img
-                                            src="../template/custom/image/drink/coffee/coffee1.jpg"
-                                            data-mdb-img="../template/custom/image/drink/coffee/coffee1.jpg"
-                                            alt="Table full of spices"
+                                            src="<c:url value="/views/template/custom/image/drink/coffee/coffee1.jpg"
+                                            />" data-mdb-img="<c:url value="/views/template/custom/image/drink/coffee/coffee1.jpg"
+                                            />" alt="Table full of spices"
                                             class="active w-100"
                                     />
                                 </div>
                                 <div class="multi-carousel-item ">
                                     <img
-                                            src="../template/custom/image/drink/coffee/coffee2.jpg"
-                                            data-mdb-img="../template/custom/image/drink/coffee/coffee2.jpg"
-                                            alt="Winter Landscape"
+                                            src="<c:url value="/views/template/custom/image/drink/coffee/coffee2.jpg"
+                                           />" data-mdb-img="<c:url value="/views/template/custom/image/drink/coffee/coffee2.jpg"
+                                            />" alt="Winter Landscape"
                                             class="w-100"
                                     />
                                 </div>
                                 <div class="multi-carousel-item">
                                     <img
-                                            src="../template/custom/image/drink/coffee/coffee3.jpg"
-                                            data-mdb-img="../template/custom/image/drink/coffee/coffee3.jpg"
-                                            alt="View of the City in the Mountains"
+                                            src="<c:url value="/views/template/custom/image/drink/coffee/coffee3.jpg"
+                                            />" data-mdb-img="<c:url value="/views/template/custom/image/drink/coffee/coffee3.jpg"
+                                            />" alt="View of the City in the Mountains"
                                             class="w-100"
                                     />
                                 </div>
                                 <div class="multi-carousel-item">
                                     <img
-                                            src="../template/custom/image/drink/coffee/coffee4.jpg"
-                                            data-mdb-img="../template/custom/image/drink/coffee/coffee4.jpg"
-                                            alt="Place Royale Bruxelles"
+                                            src="<c:url value="/views/template/custom/image/drink/coffee/coffee4.jpg"
+                                            />" data-mdb-img="<c:url value="/views/template/custom/image/drink/coffee/coffee4.jpg"
+                                            />" alt="Place Royale Bruxelles"
                                             class="w-100"
                                     />
                                 </div>
@@ -351,16 +351,17 @@
 
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
 
-
 <!-- MDB ESSENTIAL -->
-<script type="text/javascript" src="../template/mdb/js/mdb.min.js"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <!-- MDB PLUGINS -->
-<script type="text/javascript" src="../template/mdb/plugins/js/all.min.js"></script>
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script type=" text
+/javascript" src="
+<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 <!-- Custom scripts -->
 
 

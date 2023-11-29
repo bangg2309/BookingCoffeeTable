@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="../template/assets/css/templatemo-klassy-cafe.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="../template/mdb/css/mdb.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="../template/mdb/plugins/css/all.min.css"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom styles -->
-    <link rel="stylesheet" href="../template/custom/css/userProfile.css">
-    <link rel="stylesheet" href="../template/custom/css/changePassword.css">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/changePassword.css"/>">
 
 </head>
 <body>
@@ -95,6 +95,6 @@
 
 
 <!-- Global Init -->
-<script src="../template/mdb/js/mdb.umd.min.js"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

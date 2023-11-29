@@ -1,43 +1,44 @@
-<%@include file="/common/taglib.jsp" %>
+<%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Material Design for Bootstrap</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <!-- Google Fonts Roboto -->
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
-
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
     <!-- MDB ESSENTIAL -->
-    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> ">
     <!-- MDB PLUGINS -->
-    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> ">
     <!-- Custom styles -->
-
-    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
-
+    <link rel="stylesheet" href="<c:url value="/views/admin/assets/css/home.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/> ">
+    <style></style>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../template/custom/css/userProfile.css">
 </head>
+
 <body>
-<!-- ***** Header Area Start ***** -->
+<!-- Start your project here-->
+<!--Main Navigation-->
 <%@ include file="layout/header.jsp" %>
-<!-- ***** Header Area End ***** -->
-<div class="main-content" style="margin-top: 80px">
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mb-5 mt-5">
+    <!-- Container for demo purpose -->
     <div class="container">
-        <div class="view-account">
+        <div class="view-account mb-5 ">
             <section class="module">
                 <div class="module-inner">
                     <div class="side-bar ">
@@ -53,9 +54,7 @@
                         <nav class="side-menu">
                             <ul class="nav">
                                 <li class="active"><a href="#"><span class="fa fa-user"></span> Thông tin</a></li>
-                                <li><a href="changePassword.jsp"><span class="fa fa-cog"></span> Thay đổi mật khẩu</a>
-                                </li>
-                                <li><a href="historyBooking.jsp"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>
+
                             </ul>
                         </nav>
                     </div>
@@ -78,27 +77,26 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Tên Đăng Nhập</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="huutinh" disabled>
+                                        <input type="text" class="form-control" value="Rebecca" disabled>
                                     </div>
                                 </div>
 
-
                             </fieldset>
                             <fieldset class="fieldset">
-                                <h3 class="fieldset-title">Contact Info</h3>
-                                <div class="form-group row">
+                                <h3 class="fieldset-title mt-3">Contact Info</h3>
+                                <div class="form-group row mb-3">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Và Tên</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
                                         <input type="text" class="form-control" value="Sanders">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row mb-3">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
                                         <input type="email" class="form-control" value="Rebecca@website.com">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group row mb-3">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
                                         <input type="number" class="form-control" value="SpeedyBecky">
@@ -108,8 +106,7 @@
                             <hr>
                             <div class="form-group row">
                                 <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                    <input class="btn text-white" style="background-color: #bf9369" type="submit"
-                                           value="Update Profile" style="background-color: #bf9369; color: white">
+                                    <button class="btn btn-primary" type="button">Cập Nhật</button>
                                 </div>
                             </div>
                         </form>
@@ -118,20 +115,20 @@
             </section>
         </div>
     </div>
-</div>
-<!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp" %>
-<!-- ***** Footer End ***** -->
+    <!-- Container for demo purpose -->
+</main>
+<!--Main layout-->
 
-<!-- jQuery -->
-<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
-
-
-<!-- Global Init -->
-
-<!-- MDB PLUGINS -->
-<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
-<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<!--Footer-->
+<footer></footer>
+<!--Footer-->
+<!-- End your project here-->
 </body>
+
+<!-- MDB ESSENTIAL -->
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
+<!-- Custom scripts -->
+<script type="text/javascript" src="<c:url value="/views/admin/assets/js/home.js"/> "></script>
 </html>

@@ -38,8 +38,7 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-
-                    <img src="../template/custom/image/home/background1.jpg">
+                    <img src="<c:url value="/views/template/custom/image/home/background1.jpg"/>">
                     <div class="alpha">
                         <div class="slide_booking">
                             <div>
@@ -60,7 +59,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <img src="../template/custom/image/home/background2.jpg">
+                    <img src="<c:url value="/views/template/custom/image/home/background2.jpg"/>">
                     <div class="alpha">
                         <div class="slide_booking">
                             <div>
@@ -82,7 +81,7 @@
 
                 </div>
                 <div class="swiper-slide">
-                    <img src="../template/custom/image/home/background3.jpg">
+                    <img src="<c:url value="/views/template/custom/image/home/background3.jpg"/>">
                     <div class="alpha">
                         <div class="slide_booking">
                             <div>
@@ -1630,7 +1629,7 @@
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="../template/custom/image/home/new/2.jpg" alt="">
+                            <img src="<c:url value="/views/template/custom/image/home/new/2.jpg" />" alt="">
                         </a>
                         <div class="content-ln">
                             <span>07/09/2023</span>
@@ -1654,7 +1653,7 @@
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="../template/custom/image/home/new/1.jpg" alt="">
+                            <img src="<c:url value="/views/template/custom/image/home/new/1.jpg" />" alt="">
                         </a>
                         <div class="content-ln">
                             <span>07/09/2023</span>
@@ -1678,7 +1677,7 @@
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="../template/custom/image/home/new/3.jpg" alt="">
+                            <img src="<c:url value="/views/template/custom/image/home/new/3.jpg"/>" alt="">
                         </a>
                         <div class="content-ln">
                             <span>07/09/2023</span>
