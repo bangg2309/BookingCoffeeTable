@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Image {
+import java.io.Serializable;
+
+public class Image implements Serializable {
     private int id;
     private int productId;
     private String url;

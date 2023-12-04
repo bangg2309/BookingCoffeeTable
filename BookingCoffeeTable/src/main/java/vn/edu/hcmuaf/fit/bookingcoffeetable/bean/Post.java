@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
 }

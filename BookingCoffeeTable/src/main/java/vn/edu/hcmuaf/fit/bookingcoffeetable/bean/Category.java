@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
     private int id;
     private String name;
     private int status;

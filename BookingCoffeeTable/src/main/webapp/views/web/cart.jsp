@@ -1,4 +1,5 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 <main class="mb-6" style="padding-top: 20px; margin-top: 80px">
@@ -38,82 +39,71 @@
             <div class="row gx-lg-5">
                 <div class="col-lg-8 mb-4 mb-md-0 ">
                     <!-- Section: Product list -->
-                    <section class="mb-5 product_list" data-mdb-perfect-scrollbar="true" data-mdb-suppress-scroll-x="true"
+                    <section class="mb-5 product_list" data-mdb-perfect-scrollbar="true"
+                             data-mdb-suppress-scroll-x="true"
                              style="position: sticky; height: 600px">
-                        <div class="row border-bottom mb-4 product_item">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Cà phê kem</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="1"
-                                                class="form-control quantity"
-                                                value="1"
-                                                min="1"
-                                                onchange="calculatePrice()"
-
+                        <c:forEach items="${cart.products}" var="entry">
+                            <div class="row border-bottom mb-4 product_item">
+                                <div class="col-md-3 mb-4 mb-md-0 mt-2">
+                                    <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
+                                         data-ripple-color="light">
+                                        <img
+                                                src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
+                                                class="w-100"
+                                                alt=""
                                         />
-                                        <label class="form-label" for="1"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px" >
-                                        <select class="select size" onchange="calculatePrice()" >
-                                            <option value="1" >S</option>
-                                            <option value="2 " selected>M</option>
-                                            <option value="3">L</option>
-                                        </select>
-                                        <label class="form-label select-label">Size</label>
+                                        <a href="#!">
+                                            <div class="hover-overlay">
+                                                <div class="mask"
+                                                     style="background-color: hsla(0, 0%, 98.4%, 0.2)"></div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
+
+                                <div class="col-md-4 mb-4 mb-md-0">
+                                    <p class="fw-bold">${entry.value.name}</p>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
+                                            <input type="number" id="${entry.value.id}" class="form-control quantity"
+                                                   value="${entry.value.quantity}"
+                                                   min="1"/>
+                                            <label class="form-label" for="${entry.value.id}"
+                                            >Số Lượng</label
+                                            >
+                                        </div>
+                                        <div class=" mb-4 col-md-4" style="width: 110px">
+                                            <select class="select size">
+                                                <option value="1">S</option>
+                                                <option value="2" selected>M</option>
+                                                <option value="3">L</option>
+                                            </select>
+                                            <label class="form-label select-label">Size</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5 mb-4 mb-md-0">
+
+
+                                    <h5 class="mb-2">
+                                        <s class="text-muted me-2 small align-middle price">${entry.value.totalPrice}.000
+                                            đ</s
+                                        ><span class="align-middle totalPrice">100.000 đ</span>
+                                    </h5>
+                                    <p class="text-danger"><small>Khuyến mãi 15%</small></p>
+                                    <p class="mb-4">
+                                        <a href="<c:url value="/remove-cart?id=${entry.value.id}"/> "
+                                           class="text-muted pe-3"
+                                        ><small
+                                        ><i class="fas fa-trash me-2"></i>Xóa</small
+                                        ></a
+                                        >
+                                    </p>
+                                </div>
                             </div>
+                        </c:forEach>
 
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle price">190.000 đ</s
-                                    ><span class="align-middle totalPrice">100.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                                <p class="mb-4">
-                                    <a href="" class="text-muted pe-3"
-                                    ><small
-                                    ><i class="fas fa-trash me-2"></i>Xóa</small
-                                    ></a
-                                    >
-                                </p>
-                            </div>
-                        </div>
                         <div class="row border-bottom mb-4 product_item">
                             <div class="col-md-3 mb-4 mb-md-0 mt-2">
                                 <div
@@ -160,9 +150,9 @@
                                         >Số Lượng</label
                                         >
                                     </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px" >
-                                        <select class="select size" onchange="calculatePrice()" >
-                                            <option value="1" >S</option>
+                                    <div class=" mb-4 col-md-4" style="width: 110px">
+                                        <select class="select size" onchange="calculatePrice()">
+                                            <option value="1">S</option>
                                             <option value="2 " selected>M</option>
                                             <option value="3">L</option>
                                         </select>
@@ -235,8 +225,8 @@
                                         >
                                     </div>
                                     <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()" >
-                                            <option value="1" >S</option>
+                                        <select class="select size" onchange="calculatePrice()">
+                                            <option value="1">S</option>
                                             <option value="2 " selected>M</option>
                                             <option value="3">L</option>
                                         </select>
@@ -309,8 +299,8 @@
                                         >
                                     </div>
                                     <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()" >
-                                            <option value="1" >S</option>
+                                        <select class="select size" onchange="calculatePrice()">
+                                            <option value="1">S</option>
                                             <option value="2 " selected>M</option>
                                             <option value="3">L</option>
                                         </select>
@@ -383,8 +373,8 @@
                                         >
                                     </div>
                                     <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()" >
-                                            <option value="1" >S</option>
+                                        <select class="select size" onchange="calculatePrice()">
+                                            <option value="1">S</option>
                                             <option value="2 " selected>M</option>
                                             <option value="3">L</option>
                                         </select>
@@ -505,23 +495,23 @@
                     <!-- Section: Summary -->
 
                     <!-- Section: Summary -->
-<!--                    <section class="shadow-4 p-4 rounded-5">-->
-<!--                        <h5 class="mb-4">Áp dụng mã khuyến mãi</h5>-->
+                    <!--                    <section class="shadow-4 p-4 rounded-5">-->
+                    <!--                        <h5 class="mb-4">Áp dụng mã khuyến mãi</h5>-->
 
-<!--                        <div class="d-flex align-items-center">-->
-<!--                            <input-->
-<!--                                    type="text"-->
-<!--                                    class="form-control rounded me-1"-->
-<!--                                    placeholder="Mã khuyến mại"-->
-<!--                            />-->
-<!--                            <button-->
-<!--                                    type="button"-->
-<!--                                    class="btn btn-link btn-rounded overflow-visible"-->
-<!--                            >-->
-<!--                                Áp dụng-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </section>-->
+                    <!--                        <div class="d-flex align-items-center">-->
+                    <!--                            <input-->
+                    <!--                                    type="text"-->
+                    <!--                                    class="form-control rounded me-1"-->
+                    <!--                                    placeholder="Mã khuyến mại"-->
+                    <!--                            />-->
+                    <!--                            <button-->
+                    <!--                                    type="button"-->
+                    <!--                                    class="btn btn-link btn-rounded overflow-visible"-->
+                    <!--                            >-->
+                    <!--                                Áp dụng-->
+                    <!--                            </button>-->
+                    <!--                        </div>-->
+                    <!--                    </section>-->
                     <!-- Section: Summary -->
                 </div>
             </div>
@@ -531,7 +521,7 @@
 </main>
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
