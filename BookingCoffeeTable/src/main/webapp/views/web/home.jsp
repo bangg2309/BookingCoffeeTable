@@ -1,4 +1,6 @@
+<%@ page import="java.util.List" %>
 <%@include file="/common/taglib.jsp" %>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-
     <title>Home</title>
-
     <!-- Additional CSS Files -->
 
     <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/> ">
@@ -832,781 +832,133 @@
         </div>
         <div class="container container_menu">
             <div class="row menu_contain_alpha">
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-
-
-                                    src="../template/custom/image/home/fruit.jpg"
-
-
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    TRÀ TRÁI CÂY
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                    <!-- Product card -->
-
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-
-
-                                    src="../template/custom/image/home/wine.jpg"
-
-
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    RƯỢU
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Product card -->
-
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-
-
-                                    src="../template/custom/image/home/coffee.jpg"
-
-
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    CÀ PHÊ
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Product card -->
-
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-
-
-                                    src="../template/custom/image/home/cookie.jpg"
-
-
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    BÁNH NGỌT
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- Product card -->
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container text_menu_contain">
-        <div class="row">
-            <div class="col-lg">
-                <div class="section-heading ">
-                    <h1>Mới ra mắt</h1>
-                </div>
-
-            </div>
-        </div>
-        <div class="menu-item-carousel">
-            <div class="col-lg-12">
-                <div class="owl-menu-item owl-carousel">
-                    <div class="item">
+                <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+                <c:forEach items="${categories}" var="category">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
                         <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
+                            <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block content-farm"
+                                 data-ripple-color="light">
+                                <img src="<c:url value='/views/template/custom/image/home/wine.jpg'/>" class="w-100"
+                                     alt=""/>
+                                <div class="desc-farm">
+                                    <div>
+                            <span>
+                                    ${category.name}
+                            </span>
+                                        <a href="#"> KHÁM PHÁ </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
 
+        <div class="container text_menu_contain">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="section-heading ">
+                        <h1>Mới ra mắt</h1>
+                    </div>
 
-                                        src="../template/custom/image/menu/coffee_cream.jpg"
-
-
-                                        class="w-100"
-                                        alt=""/>
-
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        >
-
+                </div>
+            </div>
+            <div class="menu-item-carousel">
+                <div class="col-lg-12">
+                    <div class="owl-menu-item owl-carousel">
+                        <c:forEach items="${newProducts}" var="product">
+                            <div class="item">
+                                <div>
+                                    <!-- Product image -->
+                                    <div
+                                            class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block"
+                                            data-ripple-color="light">
+                                        <img
+                                                src="<c:url value='/views/template/custom/image/menu/coffee_cream.jpg'/>"
+                                                class=" w-100"
+                                                alt=""/>
+                                        <a href="#!">
+                                            <div class="mask">
+                                                <div class=" d-flex justify-content-start align-items-end h-100 p-3">
                 <span class="badge badge-success rounded-pill me-2"
                 >New</span
                 >
 
-                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="hover-overlay">
+                                                <div
+                                                        class="mask"
+                                                        style="background-color: hsla(0, 0%, 98.4%, 0.15)"
+                                                ></div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
 
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Cà phê kem</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle">35.000đ</s
-                                    ><span class="align-middle">20.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/dalgona.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
+                                    <!-- Product content -->
+                                    <div class="px-3 text-reset d-block">
+                                        <p class="fw-bold mb-2">${product.name}</p>
+                                        <ul
+                                                class="rating mb-2"
+                                                data-mdb-toggle="rating"
+                                                data-mdb-readonly="true"
+                                                data-mdb-value="4"
                                         >
-
-                  <span class="badge badge-success rounded-pill me-2"
-                  >New</span
-                  >
-
-
-                                        </div>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far ps-0"
+                                                        title="Bad"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Poor"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="OK"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Good"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Excellent"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                        <c:choose>
+                                            <c:when test="${product.discount != 0}">
+                                                <h5 class="mb-3">
+                                                    <s class="text-muted me-2 small align-middle">${product.price}.000đ</s
+                                                    ><span
+                                                        class="align-middle">${product.price *(100- product.discount)/100}.000đ</span>
+                                                </h5>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <h5 class="mb-3">
+                                                    <span class="align-middle">${product.price}.000đ</span>
+                                                </h5>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <a href="<c:url value="/add-cart?id=${product.id}"/> "
+                                           class="btn btn-primary btn-rounded w-100 color_btn">
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
+                                        </a>
                                     </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
+                                    <!-- Product content -->
+                                </div>
                             </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Cà phê bọt biển</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="5"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">20.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-
-
-                                        src="../template/custom/image/menu/lemon.jpg"
-
-
-                                        class="w-100"
-                                        alt=""/>
-
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        >
-
-                  <span class="badge badge-success rounded-pill me-2"
-                  >New</span
-
-                  >
-                                        </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Nước chanh</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle">20.000đ</s
-                                    ><span class="align-middle">15.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/cookie_cream.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-                                        </div>
-
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Sinh tố bánh quy</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">20.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/strawberry.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-                                        </div>
-
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Sinh tố dâu</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">59.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/cream_vanila.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-
-                                        </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Chocalate đá xay</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">49.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-
-                            </div>
-                            <!-- Product content -->
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

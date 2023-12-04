@@ -27,29 +27,20 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Gson gson = new Gson();
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json");
-        Product product = productService.findOne(1);
-//        String json = gson.toJson(product);
-//        System.out.println(json);
-//        response.getWriter().write(json);
-
-        List<Category> category = categoryService.findAll();
-//        String json1 = gson.toJson(category);
-//        System.out.println(json1);
-//        response.getWriter().write(json1);
-
-        request.setAttribute("products", productService.findOne(1));
-        request.setAttribute("categories", categoryService.findAll());
+        int productId = 1;
+        int limitCategory = 4;
+        int limitProducts = 10;
+        List<Category> categories = categoryService.findNCategory(limitCategory);
+        List<Product> newProducts = productService.findProductNewest(limitProducts);
+        request.setAttribute("newProducts", newProducts);
+        request.setAttribute("categories", categories);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
 }

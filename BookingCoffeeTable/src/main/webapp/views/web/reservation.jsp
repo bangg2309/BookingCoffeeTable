@@ -97,8 +97,8 @@
                                     </div>
 
                                     <div class="d-flex justify-content-end pt-3">
-                                        <a class="btn btn-warning btn-lg" href="bill.jsp">Quay lại</a>
-                                        <a class="btn btn-success btn-lg ms-2" href="bill.jsp">Xác nhận</a>
+                                        <a class="btn btn-warning btn-lg" href="cart.jsp">Quay lại</a>
+                                        <a class="btn btn-success btn-lg ms-2" href="cart.jsp">Xác nhận</a>
                                     </div>
 
                                 </div>
