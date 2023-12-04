@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable {
 }

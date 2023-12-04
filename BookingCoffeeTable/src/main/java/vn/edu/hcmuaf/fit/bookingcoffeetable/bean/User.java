@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int id;
     private int roleId;
     private String username;

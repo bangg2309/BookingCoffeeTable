@@ -12,7 +12,6 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.UserMapper;
 @RegisterBeanMapper(User.class)
 public interface UserDAO {
     @SqlUpdate("INSERT INTO users (roleId, username, password, email, emailVerified, phone, status) VALUES (:roleId, :username, :password, :email, :emailVerified, :phone, :status)")
-
     void insertUser(@Bind("roleId") int roleId, @Bind("username") String username, @Bind("password") String password, @Bind("email") String email, @Bind("emailVerified") int emailVerified, @Bind("phone") String phone, @Bind("status") int status);
 
 

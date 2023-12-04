@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class ProductVariant {
+import java.io.Serializable;
+
+public class ProductVariant implements Serializable {
 }

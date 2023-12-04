@@ -19,4 +19,11 @@ public class QUERIES {
             "LEFT JOIN images ON products.id = images.productId " +
             "ORDER BY products.createdDate DESC " +
             "LIMIT :limit";
+
+    //CATEGORY
+    public static final String SELECT_N_CATEGORY = "SELECT * FROM categories LIMIT :limit";
+
+
+    //REVIEW
+    public static final String SELECT_REVIEW_BY_PRODUCT_ID = "SELECT * FROM reviews WHERE productId = :productId";
 }

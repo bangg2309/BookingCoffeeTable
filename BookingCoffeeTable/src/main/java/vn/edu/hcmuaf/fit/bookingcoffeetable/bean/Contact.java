@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
 }

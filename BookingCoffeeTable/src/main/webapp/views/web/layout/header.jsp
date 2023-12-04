@@ -8,7 +8,7 @@
         <!-- Navbar brand -->
         <a class="navbar-brand me-2" href="https://mdbgo.com/">
             <img
-                    src ="<c:url value="/views/template/custom/image/drink/logo2.png"/>"
+                    src="<c:url value="/views/template/custom/image/drink/logo2.png"/>"
                     height="50"
                     alt="MDB Logo"
                     loading="lazy"
@@ -34,7 +34,7 @@
             <!-- Left links -->
             <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="scroll-to-section home">
-                    <a href="#">Trang chủ</a>
+                    <a href="<c:url value="/home"/> ">Trang chủ</a>
                 </li>
                 <li class="scroll-to-section">
                     <a href="<c:url value="/views/web/table.jsp"/> ">Bàn</a>
@@ -57,10 +57,11 @@
 
             <div class="login d-flex align-items-center">
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/reservation.jsp"/>">Đặt bàn</a>
+                    <a href="<c:url value="/cart"/>">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="<c:url value="/views/web/login.jsp"/> "><span class="user_icon"
-                                                                                      style="padding-right: 10px"><i
+                <li class="scroll-to-section login_content"><a href="<c:url value="/views/web/login.jsp"/> "><span
+                        class="user_icon"
+                        style="padding-right: 10px"><i
                         class="fa fa-user"
                         aria-hidden="true"></i></span>Đăng nhập</a></li>
 

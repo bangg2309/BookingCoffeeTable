@@ -22,7 +22,7 @@ public interface ProductDAO {
     @RegisterRowMapper(ProductMapper.class)
     List<Product> findOne(@Bind("id") int id);
 
-    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
+    @SqlQuery(QUERIES.SELECT_PRODUCTS_NEWEST)
     List<Product> findProductNewest(@Bind("limit") int limit);
 
 }

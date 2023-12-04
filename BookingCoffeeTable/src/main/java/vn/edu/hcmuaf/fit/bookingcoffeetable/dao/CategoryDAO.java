@@ -6,6 +6,7 @@ import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface CategoryDAO {
 
     @SqlQuery("SELECT * FROM categories")
     List<Category> findAll();
+
+    @SqlQuery(QUERIES.SELECT_N_CATEGORY)
+    List<Category> findNCategory(@Bind("limit") int limit);
 }
