@@ -1,5 +1,6 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,21 +71,11 @@
                             <h5 class="fw-bold mb-4">Khu vực</h5>
 
                             <div class="text-muted small text-uppercase">
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Sân vườn</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 1</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 2</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 3</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Sân thượng</a>
-                                </p>
+                                <c:forEach var="area" items="${areas}">
+                                    <p class="mb-3">
+                                        <a href="#!" class="text-reset" style="text-transform: uppercase">${area.name}</a>
+                                    </p>
+                                </c:forEach>
 
 
                             </div>
@@ -102,7 +93,7 @@
                             <!-- Ngày Đặt -->
                             <div class=" col-md-2 mb-3">
                                 <label for="filterDate" class="form-label ">Ngày Đặt:</label>
-                                <input type="date" class="form-control" id="filterDate">
+                                <input type="date" class="form-control" name="start" id="filterDate" value="">
                             </div>
                             <!-- Thời Gian Đặt -->
                             <div class="col-md-2 mb-3">
@@ -141,216 +132,64 @@
                         </form>
                     </div>
                     <div class="row gx-xl-5 justify-content-center">
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                            <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 101</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
+                        <c:forEach var="table" items="${tables}">
+                            <div class="col-lg-4 col-6 mb-4">
+                                <!-- Product card -->
+                                <div>
+                                    <!-- Product image -->
+                                    <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
+                                         data-ripple-color="light">
+                                        <img src="<c:url value="${table.image}" />"class="w-100" alt=""/>
+                                        <!--                                    <div class="hover-overlay table_alpha">-->
+                                        <!--                                            <h3>Table</h3>-->
+                                        <!--                                    </div>-->
+                                        <div class="hover-overlay table_omega text-center">
+                                            <br>
+                                            <h4>Số bàn: ${table.tableNum}</h4>
+                                            <h4>chỗ ngồi: ${table.seatCount}</h4>
+                                            <h4>Vị trí: ${table.location}</h4>
+                                            <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
+                                                bàn</a>
+                                        </div>
 
 
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table1.jpg"/>" class="w-100 h-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 102</h4>
-                                        <h4>chỗ ngồi: 2 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
                                     </div>
                                 </div>
+
+
                             </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table2.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 103</h4>
-                                        <h4>chỗ ngồi: 4 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table3.jpeg"/>" class="w-100 h-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 104</h4>
-                                        <h4>chỗ ngồi: 1 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table4.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 105</h4>
-                                        <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table5.jpg" />"class="w-100" alt=""/>
-
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 106</h4>
-                                        <h4>chỗ ngồi: 6 người</h4>
-                                        <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table6.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 107</h4>
-                                        <h4>chỗ ngồi: 4 người</h4>
-                                        <h4>Vị trí: tầng thượng</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table9.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 108</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table8.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 109</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
+                        </c:forEach>
                     </div>
-                    <div class="next_button col d-flex justify-content-center mt-2">
-                        <a style="text-transform: uppercase; font-family: Roboto; color: #bf9369" href="">Xem thêm</a>
-                    </div>
+<%--                    <div class="next_button col d-flex justify-content-center mt-2">--%>
+<%--                        <a style="text-transform: uppercase; font-family: Roboto; color: #bf9369" href="">Xem thêm</a>--%>
+<%--                    </div>--%>
+
+                    <ul class="pagination justify-content-end">
+                        <c:if test="${currentPage > 1}">
+                            <li class="page-item">
+                                <a class="page-link btn_page" href="?page=${currentPage - 1}">Previous</a>
+                            </li>
+                        </c:if>
+
+                        <c:forEach var="page" begin="1" end="${totalPages}">
+                            <li class="page-item ${page == currentPage ? 'active' : ''}">
+                                <c:choose>
+                                    <c:when test="${page == currentPage}">
+                                        <span class="page-link btn_page">${page}</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="page-link btn_page" href="?page=${page}">${page}</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </li>
+                        </c:forEach>
+
+                        <c:if test="${currentPage < totalPages}">
+                            <li class="page-item">
+                                <a class="page-link" href="?page=${currentPage + 1}">Next</a>
+                            </li>
+                        </c:if>
+                    </ul>
                 </div>
 
 

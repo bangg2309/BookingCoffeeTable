@@ -1,15 +1,18 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.ProductDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.IProductService;
 
 import java.util.List;
 
-public class ProductService {
+public class ProductService implements IProductService {
     private static ProductService instance;
     private static ProductDAO productDAO;
+
 
     public static ProductService getInstance() {
         if (instance == null) {
@@ -45,10 +48,19 @@ public class ProductService {
         return product.getPrice() * product.getQuantity();
     }
 
+    public List<Product> findAllProducts() {
+        return productDAO.findAllProducts();
+    }
+    public List<Product> findAllProductsOffset(int recordsPerPage, int offset) {
+        return productDAO.findAllProductsOffset(recordsPerPage, offset);
+    }
+
     public static void main(String[] args) {
         ProductService productService = ProductService.getInstance();
-        System.out.println(productService.findOne(2));
+//        System.out.println(productService.findProductNewest(20));
+        System.out.println(productService.findAllProducts().size());
     }
+
 }
 
 

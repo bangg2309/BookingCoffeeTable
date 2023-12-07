@@ -5,8 +5,9 @@ import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.UserDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.IUserService;
 
-public class UserService {
+public class UserService implements IUserService {
     private final UserDAO userDao;
     private static UserService instance;
 

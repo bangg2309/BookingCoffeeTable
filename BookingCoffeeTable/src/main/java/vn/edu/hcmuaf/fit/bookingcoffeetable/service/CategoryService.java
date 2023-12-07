@@ -4,11 +4,12 @@ import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.CategoryDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.ICategoryService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryService {
+public class CategoryService implements ICategoryService {
     private static CategoryService instance;
     private static CategoryDAO categoryDAO;
 
@@ -30,8 +31,8 @@ public class CategoryService {
         categoryDAO.insertCategory(name, status, image);
     }
 
-    public List<Category> findAll() {
-        return categoryDAO.findAll();
+    public List<Category> findAllCategory() {
+        return categoryDAO.findAllCategory();
     }
 
     public List<Category> findNCategory(int limit) {

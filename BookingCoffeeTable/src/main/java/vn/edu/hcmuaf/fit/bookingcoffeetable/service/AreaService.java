@@ -1,0 +1,51 @@
+package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
+
+import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.AreaDAO;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.IAreaService;
+
+import java.util.List;
+
+public class AreaService implements IAreaService {
+    private static AreaService instance;
+    private static AreaDAO areaDAO;
+
+
+    public static AreaService getInstance() {
+        if (instance == null) {
+            areaDAO = JDBIConnector.get().installPlugin(new SqlObjectPlugin()).onDemand(AreaDAO.class);
+            instance = new AreaService(areaDAO);
+        }
+        return instance;
+    }
+
+
+    private AreaService(AreaDAO areaDAO) {
+        this.areaDAO = areaDAO;
+    }
+
+    public void insertProduct(int categoryId, String name, int price, String description, int status, int discount) {
+        areaDAO.insertProduct(categoryId, name, price, description, status, discount);
+    }
+
+
+
+
+
+
+
+
+    public List<Area> findAllArea() {
+        return areaDAO.findAllArea();
+    }
+
+    public static void main(String[] args) {
+        AreaService productService = AreaService.getInstance();
+        System.out.println(productService.findAllArea());
+    }
+
+}
+
+
