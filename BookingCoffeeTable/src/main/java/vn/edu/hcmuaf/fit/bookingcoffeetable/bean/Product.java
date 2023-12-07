@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Product implements Serializable {
     private int id;
@@ -15,13 +16,13 @@ public class Product implements Serializable {
     private List<Review> reviews = new ArrayList<>();
     private List<ProductVariant> productVariants = new ArrayList<>();
     private int quantity;
-
-    private int totalPrice;
-
     private int status;
     private int discount;
-    private int salePrice;
     private Date createDate;
+    private int totalPrice;
+    private int saleTotalPrice;
+    private double averageRating;
+    private String size;
 
 
     @Override
@@ -33,10 +34,56 @@ public class Product implements Serializable {
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 ", images=" + images +
+                ", reviews=" + reviews +
+                ", productVariants=" + productVariants +
+                ", quantity=" + quantity +
                 ", status=" + status +
                 ", discount=" + discount +
                 ", createDate=" + createDate +
+                ", totalPrice=" + totalPrice +
+                ", saleTotalPrice=" + saleTotalPrice +
+                ", averageRating=" + averageRating +
+                ", size='" + size + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && categoryId == product.categoryId && price == product.price && quantity == product.quantity && status == product.status && discount == product.discount && totalPrice == product.totalPrice && saleTotalPrice == product.saleTotalPrice && Double.compare(product.averageRating, averageRating) == 0 && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(images, product.images) && Objects.equals(reviews, product.reviews) && Objects.equals(productVariants, product.productVariants) && Objects.equals(createDate, product.createDate) && Objects.equals(size, product.size);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, categoryId, name, price, description, images, reviews, productVariants, quantity, status, discount, createDate, totalPrice, saleTotalPrice, averageRating, size);
+    }
+
+    public void updateBySize(String size) {
+        for (ProductVariant productVariant : productVariants) {
+            if (productVariant.getSize().equals(size)) {
+                this.price += productVariant.getPricePlus();
+                this.size = productVariant.getSize();
+                break;
+            }
+        }
+    }
+
+    public void updateBySize(String oldSize, String newSize) {
+        for (ProductVariant productVariant : productVariants) {
+            if (productVariant.getSize().equals(oldSize)) {
+                this.price -= productVariant.getPricePlus();
+                break;
+            }
+        }
+        for (ProductVariant productVariant : productVariants) {
+            if (productVariant.getSize().equals(newSize)) {
+                this.price += productVariant.getPricePlus();
+                this.size = productVariant.getSize();
+                break;
+            }
+        }
     }
 
     public List<ProductVariant> getProductVariants() {
@@ -135,12 +182,15 @@ public class Product implements Serializable {
         this.quantity = quantity;
     }
 
-    public int getSalePrice() {
-        return salePrice;
+    public int getSaleTotalPrice() {
+        if (this.discount > 0) {
+            return this.price * this.quantity * (100 - this.discount) / 100;
+        }
+        return this.price * this.quantity;
     }
 
-    public void setSalePrice(int salePrice) {
-        this.salePrice = salePrice;
+    public void setSaleTotalPrice(int saleTotalPrice) {
+        this.saleTotalPrice = saleTotalPrice;
     }
 
     public int getTotalPrice() {
@@ -149,5 +199,28 @@ public class Product implements Serializable {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public double getAverageRating() {
+        double sum = 0;
+        for (Review review : reviews) {
+            sum += review.getStartRate();
+        }
+        if (reviews.size() > 0) {
+            return sum / reviews.size();
+        }
+        return 5;
+    }
+
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 }

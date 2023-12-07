@@ -20,7 +20,9 @@ public class AdditionController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
+        String size = request.getParameter("size");
 
+        System.out.println(size);
         Product product = productService.findOne(Integer.parseInt(id));
         if (product != null) {
             HttpSession session = request.getSession();
@@ -28,9 +30,9 @@ public class AdditionController extends HttpServlet {
             if (cart == null) {
                 cart = Cart.getInstance();
             }
-            cart.addProduct(product);
+            cart.addProduct(product, size);
             session.setAttribute("cart", cart);
-            System.out.println(cart.getProducts().get(product.getId()).getQuantity());
+
             response.sendRedirect(request.getContextPath() + "/home");
         }
     }

@@ -950,7 +950,7 @@
                                                 </h5>
                                             </c:otherwise>
                                         </c:choose>
-                                        <a href="<c:url value="/add-cart?id=${product.id}"/> "
+                                        <a href="<c:url value="/add-cart?id=${product.id}&size=${product.size}"/> "
                                            class="btn btn-primary btn-rounded w-100 color_btn">
                                             <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </a>
