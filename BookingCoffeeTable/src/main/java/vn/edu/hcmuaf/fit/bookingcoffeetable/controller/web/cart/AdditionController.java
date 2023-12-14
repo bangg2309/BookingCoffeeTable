@@ -2,7 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web.cart;
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Cart;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

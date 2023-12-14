@@ -1,12 +1,10 @@
-package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
+package vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService;
 
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.TableDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.ITableService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ITableService;
 
 import java.util.List;
 
@@ -38,8 +36,12 @@ public class TableService implements ITableService {
         return tableDAO.findAllTabes();
     }
 
-    public List<Table> pageTable(int recordsPerPage, int offset){
-        return tableDAO.pageTable(recordsPerPage, offset);
+    public List<Table> getTables(int limit, int offset){
+        return tableDAO.getTables(limit, offset);
+    }
+
+    public String totalItem(){
+        return tableDAO.totalItem();
     }
 
 
@@ -56,7 +58,7 @@ public class TableService implements ITableService {
 
     public static void main(String[] args) {
         TableService productService = TableService.getInstance();
-        System.out.println(productService.findAllTables().size());
+        System.out.println(productService.getTables(9, 0));
     }
 
 }

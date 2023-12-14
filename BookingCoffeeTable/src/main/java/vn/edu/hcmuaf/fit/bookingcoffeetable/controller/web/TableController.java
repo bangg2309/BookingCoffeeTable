@@ -1,10 +1,12 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
+
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.AreaService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.AreaService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.TableService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,63 +15,59 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.List;
 
 @WebServlet(name = "TableController", value = "/table")
 public class TableController extends HttpServlet {
-    TableService tableService;
-    AreaService areaService;
+    private final TableService tableService = TableService.getInstance();
+    private final AreaService areaService = AreaService.getInstance();
+    ;
+    //    private Map<String, Product> mapPro;
+    private List<Table> tables;
+    private List<Area> areas;
+    private int page = 1;
+    private int maxPageItem = 9;
+    private int totalItem = -1;
+//    private final ICategoryService categoryService = CategoryService.getInstance();
+//    private List<Category> categories;
 
-    public TableController() {
-        tableService = TableService.getInstance();
-        areaService = AreaService.getInstance();
-
-    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Table> tables = tableService.findAllTables();
-//        request.setAttribute("tables", tables);
-        List<Area> areas = areaService.findAllArea();
-        request.setAttribute("areas", areas);
+        //setup response
+        response.setContentType("application/json");
+        response.setCharacterEncoding("utf-8");
 
-
-        String pageParameter = request.getParameter("page");
-        int currentPage = 1;  // Giá trị mặc định hoặc bất kỳ giá trị mặc định phù hợp nào khác
-        if (pageParameter != null && !pageParameter.isEmpty()) {
-            try {
-                currentPage = Integer.parseInt(pageParameter);
-            } catch (NumberFormatException e) {
-                // Xử lý ngoại lệ (ví dụ: ghi log hoặc cung cấp giá trị mặc định)
-                e.printStackTrace(); // hoặc logger.error(e.getMessage(), e);
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                totalItem = Integer.parseInt(tableService.totalItem());
             }
+        });
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        if (totalItem != -1) {
+            //paging attribute setup
+//            request.setAttribute("categories", categories);
+            areas = areaService.findAllArea();
+            request.setAttribute("areas", areas);
+            request.setAttribute("page", page);
+            request.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
+            RequestDispatcher rd = request.getRequestDispatcher("/views/web/table.jsp");
+            try {
+                rd.forward(request, response);
+            } catch (ServletException | IOException e) {
+                e.printStackTrace();
+            }
 
-        int recordsPerPage = 9;
-        int offset = (currentPage - 1) * recordsPerPage;
-        List<Table> tables = tableService.pageTable(recordsPerPage, offset);
-        request.setAttribute("tables", tables);
-        // Sử dụng JDBC để truy vấn cơ sở dữ liệu và lấy dữ liệu
-        // Đặt dữ liệu vào request
-        request.setAttribute("dataList", tables);
-        request.setAttribute("currentPage", currentPage);
-        request.setAttribute("totalPages", calculateTotalPages(recordsPerPage));
-//        List<Image> images = productService.findImageById();
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/table.jsp");
-        requestDispatcher.forward(request, response);
-
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
-
-    public int calculateTotalPages(int recordsPerPage) {
-        int totalRecords = tableService.findAllTables().size(); // Lấy tổng số bản ghi từ cơ sở dữ liệu
-        return (int) Math.ceil((double) totalRecords / recordsPerPage);
-    }
-
-
 }

@@ -131,65 +131,13 @@
                             </div>
                         </form>
                     </div>
-                    <div class="row gx-xl-5 justify-content-center">
-                        <c:forEach var="table" items="${tables}">
-                            <div class="col-lg-4 col-6 mb-4">
-                                <!-- Product card -->
-                                <div>
-                                    <!-- Product image -->
-                                    <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                         data-ripple-color="light">
-                                        <img src="<c:url value="${table.image}" />"class="w-100" alt=""/>
-                                        <!--                                    <div class="hover-overlay table_alpha">-->
-                                        <!--                                            <h3>Table</h3>-->
-                                        <!--                                    </div>-->
-                                        <div class="hover-overlay table_omega text-center">
-                                            <br>
-                                            <h4>Số bàn: ${table.tableNum}</h4>
-                                            <h4>chỗ ngồi: ${table.seatCount}</h4>
-                                            <h4>Vị trí: ${table.location}</h4>
-                                            <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                                bàn</a>
-                                        </div>
+                    <div class="row gx-xl-5 justify-content-center" id="yourContainer">
 
 
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </c:forEach>
                     </div>
-<%--                    <div class="next_button col d-flex justify-content-center mt-2">--%>
-<%--                        <a style="text-transform: uppercase; font-family: Roboto; color: #bf9369" href="">Xem thêm</a>--%>
-<%--                    </div>--%>
-
-                    <ul class="pagination justify-content-end">
-                        <c:if test="${currentPage > 1}">
-                            <li class="page-item">
-                                <a class="page-link btn_page" href="?page=${currentPage - 1}">Previous</a>
-                            </li>
-                        </c:if>
-
-                        <c:forEach var="page" begin="1" end="${totalPages}">
-                            <li class="page-item ${page == currentPage ? 'active' : ''}">
-                                <c:choose>
-                                    <c:when test="${page == currentPage}">
-                                        <span class="page-link btn_page">${page}</span>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <a class="page-link btn_page" href="?page=${page}">${page}</a>
-                                    </c:otherwise>
-                                </c:choose>
-                            </li>
-                        </c:forEach>
-
-                        <c:if test="${currentPage < totalPages}">
-                            <li class="page-item">
-                                <a class="page-link" href="?page=${currentPage + 1}">Next</a>
-                            </li>
-                        </c:if>
-                    </ul>
+                    <ul class="pagination" id="pagination"></ul>
+                    <input type="hidden" value="" id="page" name="page">
+                    <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
                 </div>
 
 
@@ -213,7 +161,79 @@
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <!---->
+<!---->
+<script src="<c:url value="/views/template/paging/jquery.twbsPagination.min.js"/>"></script>
+<script type="text/javascript">
 
+    let totalPages = ${totalPage};
+    let currentPage = 1;
+    const limit = 9;
+
+    $(function () {
+        window.pagObj = $('#pagination').twbsPagination({
+            totalPages: totalPages,
+            visiblePages: 5,
+            startPage: currentPage,
+            onPageClick: function (event, page) {
+                if(currentPage!=page){
+                    currentPage = page;
+                    ajaxRun();
+                }
+            }
+        });
+    });
+
+
+    function ajaxRun() {
+        $.ajax({
+            type: "Post",
+            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit,
+            ContentType: 'json',
+            headers: {Accept: "application/json;charset=utf-8"},
+            success: function (json) {
+                let data = "";
+                let obj = json;
+                for (let i = 0; i < obj.length; i++) {
+                    let val = obj[i];
+                    // onclick="return theFunction();"
+                    data += "<div class=\"col-lg-4 col-6 mb-4\">"
+                        + "<div class=\"bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main\" data-ripple-color=\"light\">"
+                        + "<img src=\"" + val.image + "\" class=\"w-100\" alt=\"\"/>"
+                        + "<div class=\"hover-overlay table_omega text-center\">"
+                        + "<br>"
+                        + "<h4>Số bàn: " + val.tableNum + "</h4>"
+                        + "<h4>chỗ ngồi: " + val.seatCount + " người</h4>"
+                        + "<h4>Vị trí: " + val.location + "</h4>"
+                        + "<a href=\"home.html\" class=\"btn btn-primary\" style=\"text-transform: uppercase\">Chọn bàn</a>"
+                        + "</div>"
+                        + "</div>"
+                        + "</div>";
+                }
+                $("#yourContainer").html(data);
+            }
+        });
+    }
+    ajaxRun();
+
+    function addToCart(id){
+        let confirmBox = confirm("Add to cart ?");
+        if (confirmBox === true) {
+            $.ajax({
+                url: '<%=request.getContextPath()%>/add-cart?id='+id,
+                type: 'GET',
+                success: function (data) {
+                    alert('Add to cart is success!');
+                    updateCart();
+                },
+                error: function (data) {
+                    alert('Add to cart is error!');
+                }
+            });
+        } else {
+            console.log("No add product to cart!");
+        }
+    }
+</script>
 
 
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>

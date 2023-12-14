@@ -33,6 +33,9 @@ public interface TableDAO {
 
 
     @SqlQuery(QUERIES.SELECT_TABLE_PAGE)
-    List<Table> pageTable(@Bind("recordsPerPage") int recordsPerPage, @Bind("offset") int offset);
+    List<Table> getTables(@Bind("limit") int limit, @Bind("offset") int offset);
+
+    @SqlQuery(QUERIES.COUNT_TOTALITEM)
+    String totalItem();
 
 }

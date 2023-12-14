@@ -1,10 +1,9 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
-import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.ProductService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

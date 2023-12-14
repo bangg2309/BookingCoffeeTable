@@ -1,10 +1,10 @@
-package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
+package vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService;
 
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.AreaDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.IAreaService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IAreaService;
 
 import java.util.List;
 
