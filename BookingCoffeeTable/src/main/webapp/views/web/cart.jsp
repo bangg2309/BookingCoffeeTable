@@ -42,6 +42,10 @@
                     <section class="mb-5 product_list" data-mdb-perfect-scrollbar="true"
                              data-mdb-suppress-scroll-x="true"
                              style="position: sticky; height: 600px">
+
+                        <c:if test="${ empty cart.products}">
+                            <p>Chưa có sản phẩm nào</p>
+                        </c:if>
                         <c:forEach items="${cart.products}" var="entry">
                             <div class="row border-bottom mb-4 product_item">
                                 <div class="col-md-3 mb-4 mb-md-0 mt-2">
@@ -123,10 +127,6 @@
                                     </p>
                                 </div>
                             </div>
-                            <input type="hidden"
-                                   value="${entry.value.size != null ? entry.value.size : 'notSize'}"
-                                   name="oldSize"
-                                   id="oldSize_${entry.value.id}">
                         </c:forEach>
 
                     </section>
@@ -265,31 +265,51 @@
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 <script>
-    function updateQuantityOrSize(productId) {
-
-        var oldSize = document.getElementById("oldSize_" + productId).value;
-
-        var quantityInput = document.getElementById("quantity_" + productId + "_" + oldSize);
-        var newQuantity = parseInt(quantityInput.value, 10);
-
-        var selectId = productId + "_" + oldSize;
-        var sizeInput = document.getElementById(selectId);
-        var newSize = sizeInput.value;
-        // Chuyển hướng người dùng đến servlet
-        window.location.href = "update-cart?productId=" + productId + "&quantity=" + newQuantity + "&oldSize=" + oldSize + "&size=" + newSize;
-    }
 
     function updateQuantity(productKey) {
         var quantityInput = document.getElementById("quantity_" + productKey);
         var newQuantity = parseInt(quantityInput.value, 10);
-        window.location.href = "update-quantity?productKey=" + productKey + "&quantity=" + newQuantity;
+
+        fetch("update-quantity?productKey=" + productKey + "&quantity=" + newQuantity, {
+            method: "GET",
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Xử lý kết quả từ server (nếu cần)
+                console.log("Update quantity is success!");
+            })
+            .catch(error => {
+                console.error("Error during update quantity:", error);
+            });
     }
 
     function updateSize(productKey) {
         var sizeInput = document.getElementById("size_" + productKey);
         var newSize = sizeInput.value;
-        window.location.href = "update-size?productKey=" + productKey + "&size=" + newSize;
+
+        fetch("update-size?productKey=" + productKey + "&size=" + newSize, {
+            method: "GET",
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Xử lý kết quả từ server (nếu cần)
+                console.log("Update size is success!");
+            })
+            .catch(error => {
+                console.error("Error during update size:", error);
+            });
     }
+
 
 </script>
 

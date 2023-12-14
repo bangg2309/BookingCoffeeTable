@@ -20,7 +20,7 @@ public class ProductVariant implements Serializable {
 
     @Override
     public String toString() {
-        return "ProductVariant{" +
+        return "ProductVariantService{" +
                 "id=" + id +
                 ", size='" + size + '\'' +
                 ", pricePlus=" + pricePlus +

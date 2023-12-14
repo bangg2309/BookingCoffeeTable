@@ -19,6 +19,7 @@ public class Product implements Serializable {
     private int status;
     private int discount;
     private Date createDate;
+    private int salePrice;
     private int totalPrice;
     private int saleTotalPrice;
     private double averageRating;
@@ -59,6 +60,8 @@ public class Product implements Serializable {
     public int hashCode() {
         return Objects.hash(id, categoryId, name, price, description, images, reviews, productVariants, quantity, status, discount, createDate, totalPrice, saleTotalPrice, averageRating, size);
     }
+
+
 
     public void updateBySize(String size) {
         for (ProductVariant productVariant : productVariants) {
@@ -204,7 +207,7 @@ public class Product implements Serializable {
     public double getAverageRating() {
         double sum = 0;
         for (Review review : reviews) {
-            sum += review.getStartRate();
+            sum += review.getStarRate();
         }
         if (reviews.size() > 0) {
             return sum / reviews.size();
@@ -222,5 +225,13 @@ public class Product implements Serializable {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public int getSalePrice() {
+        return this.price * (100 - this.discount) / 100;
+    }
+
+    public void setSalePrice(int salePrice) {
+        this.salePrice = salePrice;
     }
 }

@@ -15,7 +15,6 @@
                     style="margin-top: -1px;"
             />
         </a>
-
         <!-- Toggle button -->
         <button
                 data-mdb-collapse-init
@@ -59,7 +58,7 @@
                 <li class="scroll-to-section">
                     <a href="<c:url value="/cart"/>">Đặt bàn</a>
                 </li>
-                <li class="scroll-to-section login_content"><a href="<c:url value="/views/web/login.jsp"/> "><span
+                <li class="scroll-to-section login_content"><a href="<c:url value="/login"/> "><span
                         class="user_icon"
                         style="padding-right: 10px"><i
                         class="fa fa-user"

@@ -33,4 +33,10 @@ public class QUERIES {
 
     //PRODUCT VARIANT
     public static final String SELECT_PRODUCT_VARIANT_BY_PRODUCT_ID = "SELECT * FROM product_variants WHERE productId = :productId";
+
+    //IMAGE
+    public class IMAGE {
+        public static final String INSERT_IMAGE = "INSERT INTO images (productId, url) VALUES (:productId, :url)";
+        public static final String SELECT_IMAGE_BY_PRODUCT_ID = "SELECT * FROM images WHERE productId = :productId";
+    }
 }

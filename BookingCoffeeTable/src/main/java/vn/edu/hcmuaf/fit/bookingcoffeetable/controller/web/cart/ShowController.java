@@ -19,9 +19,6 @@ public class ShowController extends HttpServlet {
         }
         session.setAttribute("cart", cart);
         request.setAttribute("cart", cart);
-        for (Product product : cart.getProducts().values()) {
-            System.out.println(product.getName() + " " + product.getSize() + " " + product.getQuantity());
-        }
         request.getRequestDispatcher("/views/web/cart.jsp").forward(request, response);
     }
 

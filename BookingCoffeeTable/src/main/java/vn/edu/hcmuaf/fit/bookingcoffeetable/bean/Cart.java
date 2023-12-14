@@ -22,9 +22,11 @@ public class Cart implements Serializable {
     }
 
     public void addProduct(Product product, String size) {
+        System.out.println("size" + size);
         if (size == null) {
             size = "notSize";
         }
+        System.out.println("size" + size);
         String productKey = generateProductKey(product.getId(), size);
         if (products.containsKey(productKey)) {
             updateProductQuantity(productKey, products.get(productKey).getQuantity() + 1);
