@@ -22,7 +22,6 @@ public class AdditionController extends HttpServlet {
         String id = request.getParameter("id");
         String size = request.getParameter("size");
 
-        System.out.println(size);
         Product product = productService.findOne(Integer.parseInt(id));
         if (product != null) {
             HttpSession session = request.getSession();
@@ -32,8 +31,7 @@ public class AdditionController extends HttpServlet {
             }
             cart.addProduct(product, size);
             session.setAttribute("cart", cart);
-
-            response.sendRedirect(request.getContextPath() + "/home");
+//            response.sendRedirect(request.getContextPath() + "/home");
         }
     }
 
