@@ -133,7 +133,6 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
-
 <script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
 </body>
 </html>
