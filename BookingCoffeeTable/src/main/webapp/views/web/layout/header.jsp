@@ -4,71 +4,49 @@
 <header data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top"
         style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
     <!-- Container wrapper -->
-    <div class="container">
-        <!-- Navbar brand -->
-        <a class="navbar-brand me-2" href="https://mdbgo.com/">
-            <img
-                    src="<c:url value="/views/template/custom/image/drink/logo2.png"/>"
-                    height="50"
-                    alt="MDB Logo"
-                    loading="lazy"
-                    style="margin-top: -1px;"
-            />
-        </a>
+    <    <div class="container">
+    <div class="row">
+        <div class="col-9">
+            <nav class="main-nav" style="display: flex">
+                <!-- ***** Logo Start ***** -->
+                <a href="home.html" class="logo">
+                    <img src="../template/custom/image/drink/logo2.png" style="width: 60px;"
+                         align="klassy cafe html template">
+                </a>
 
-        <!-- Toggle button -->
-        <button
-                data-mdb-collapse-init
-                class="navbar-toggler"
-                type="button"
-                data-mdb-target="#navbarButtonsExample"
-                aria-controls="navbarButtonsExample"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
 
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarButtonsExample">
-            <!-- Left links -->
-            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="scroll-to-section home">
-                    <a href="<c:url value="/home"/> ">Trang chủ</a>
-                </li>
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/table.jsp"/> ">Bàn</a>
-                </li>
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/menu.jsp"/>">Thực đơn</a>
-                </li>
-
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/about.jsp"/>">Giới thiệu</a>
-                </li>
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/contactUS.jsp"/> ">Liên hệ</a>
-                </li>
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/post.jsp"/> ">Bài viết</a>
-                </li>
-            </ul>
-            <!-- Left links -->
-
-            <div class="login d-flex align-items-center">
-                <li class="scroll-to-section">
-                    <a href="<c:url value="/cart"/>">Đặt bàn</a>
-                </li>
-                <li class="scroll-to-section login_content"><a href="<c:url value="/views/web/login.jsp"/> "><span
-                        class="user_icon"
-                        style="padding-right: 10px"><i
-                        class="fa fa-user"
-                        aria-hidden="true"></i></span>Đăng nhập</a></li>
-
-            </div>
+                <ul class="nav">
+                    <li class="scroll-to-section"><a id="trangchu" href="home.html">Trang chủ</a></li>
+                    <li class="scroll-to-section"><a href="table.html">Bàn</a></li>
+                    <li class="scroll-to-section"><a href="menu.html">Thực đơn</a></li>
+                    <li class="scroll-to-section"><a id="gioithieu" href="about.html">Giới thiệu</a></li>
+                    <li class="scroll-to-section"><a href="contactUS.html">Liên hệ</a></li>
+                    <li class="scroll-to-section"><a href="post.html">Bài viết</a></li>
+                </ul>
+                <a class='menu-trigger'>
+                    <span>Menu</span>
+                </a>
+                <!-- ***** Menu End ***** -->
+            </nav>
         </div>
-        <!-- Collapsible wrapper -->
+        <div class="col-3">
+            <nav class="main-nav">
+
+                <ul class="nav">
+                    <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
+                    <li class="scroll-to-section drop">
+                        <a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user-circle"
+                                aria-hidden="true"></i></span>huutinh</a>
+                        <ul class="drop_content">
+                            <li><a class="dropdown-item" href="#">Hồ sơ của tôi</a></li>
+                            <li><a class="dropdown-item" href="login.html">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
     </div>
-    <!-- Container wrapper -->
+</div>
 </header>
-<!-- ***** Header Area End ***** -->

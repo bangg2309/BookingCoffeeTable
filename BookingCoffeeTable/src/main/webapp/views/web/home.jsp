@@ -875,7 +875,7 @@
                                             class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block"
                                             data-ripple-color="light">
                                         <img
-                                                src="<c:url value='/views/template/custom/image/menu/coffee_cream.jpg'/>"
+                                                src="<c:url value='${product.images[0].url}'/>"
                                                 class=" w-100"
                                                 alt=""/>
                                         <a href="#!">
@@ -899,11 +899,10 @@
                                     <!-- Product content -->
                                     <div class="px-3 text-reset d-block">
                                         <p class="fw-bold mb-2">${product.name}</p>
-                                        <ul
-                                                class="rating mb-2"
-                                                data-mdb-toggle="rating"
-                                                data-mdb-readonly="true"
-                                                data-mdb-value="4"
+                                        <ul class="rating mb-2"
+                                            data-mdb-toggle="rating"
+                                            data-mdb-readonly="true"
+                                            data-mdb-value="${product.averageRating}"
                                         >
                                             <li>
                                                 <i
@@ -939,21 +938,27 @@
                                         <c:choose>
                                             <c:when test="${product.discount != 0}">
                                                 <h5 class="mb-3">
-                                                    <s class="text-muted me-2 small align-middle">${product.price}.000đ</s
+                                                    <s class="text-muted me-2 small align-middle"><fmt:formatNumber
+                                                            value="${product.price}" type="currency"
+                                                            currencyCode="VND"/> </s
                                                     ><span
-                                                        class="align-middle">${product.price *(100- product.discount)/100}.000đ</span>
+                                                        class="align-middle"><fmt:formatNumber
+                                                        value="${product.salePrice}" type="currency"
+                                                        currencyCode="VND"/></span>
                                                 </h5>
                                             </c:when>
                                             <c:otherwise>
                                                 <h5 class="mb-3">
-                                                    <span class="align-middle">${product.price}.000đ</span>
+                                                    <span class="align-middle"><fmt:formatNumber
+                                                            value="${product.price}" type="currency"
+                                                            currencyCode="VND"/></span>
                                                 </h5>
                                             </c:otherwise>
                                         </c:choose>
-                                        <a href="<c:url value="/add-cart?id=${product.id}"/> "
-                                           class="btn btn-primary btn-rounded w-100 color_btn">
+                                        <button type="button" onclick="addToCart('${product.id}', '${product.size}')"
+                                                class="btn btn-primary btn-rounded w-100 color_btn">
                                             <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                        </a>
+                                        </button>
                                     </div>
                                     <!-- Product content -->
                                 </div>
@@ -1275,9 +1280,24 @@
     });
 </script>
 
-<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
+
+<script>
+    function addToCart(id, size) {
+        $.ajax({
+            url: '/add-cart?id=' + id + '&size=' + size,
+            type: 'GET',
+            success: function (data) {
+                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+            },
+            error: function (data) {
+                alert('Bị lỗi! Không thêm được sản phẩm');
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

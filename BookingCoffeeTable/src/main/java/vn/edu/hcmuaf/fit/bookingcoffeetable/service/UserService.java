@@ -6,6 +6,8 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.UserDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
+import java.util.List;
+
 public class UserService {
     private final UserDAO userDao;
     private static UserService instance;
@@ -31,24 +33,15 @@ public class UserService {
         return userDao.getUserById(id);
     }
 
-    public void insertUser(int roleId, String username, String password, String email, int emailVerified, String phone, int status) {
-        userDao.insertUser(roleId, username, password, email, emailVerified, phone, status);
+    public User findByUserNameAndPassword(String username, String password) {
+        List<User> users = userDao.findByUserNameAndPassword(username, password);
+        if (users.size() != 1) return null;
+        return users.get(0);
     }
 
     public static void main(String[] args) {
         // Tạo đối tượng UserService
         UserService userService = UserService.getInstance();
-
-        int id = 1;
-        User user = userService.getUserById(id);
-
-        if (user != null) {
-            System.out.println(user);
-        } else {
-            System.out.println("Không tìm thấy người dùng có ID là " + id);
-        }
-
-//        userService.insertUser(2, "user", "user", "user@gmail.com", 1, "0842314569", 1);
-
+        System.out.println(userService.findByUserNameAndPassword("quibang", "bang123"));
     }
 }

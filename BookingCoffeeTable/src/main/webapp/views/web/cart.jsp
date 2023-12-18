@@ -42,13 +42,17 @@
                     <section class="mb-5 product_list" data-mdb-perfect-scrollbar="true"
                              data-mdb-suppress-scroll-x="true"
                              style="position: sticky; height: 600px">
+
+                        <c:if test="${ empty cart.products}">
+                            <p>Chưa có sản phẩm nào</p>
+                        </c:if>
                         <c:forEach items="${cart.products}" var="entry">
                             <div class="row border-bottom mb-4 product_item">
                                 <div class="col-md-3 mb-4 mb-md-0 mt-2">
                                     <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
                                          data-ripple-color="light">
                                         <img
-                                                src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
+                                                src="<c:url value="${entry.value.images[0].url}"/>"
                                                 class="w-100"
                                                 alt=""
                                         />
@@ -65,35 +69,56 @@
                                     <p class="fw-bold">${entry.value.name}</p>
                                     <div class="row">
                                         <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                            <input type="number" id="${entry.value.id}" class="form-control quantity"
+                                            <input type="number" id="quantity_${entry.value.id}_${entry.value.size}"
+                                                   class="form-control quantity"
                                                    value="${entry.value.quantity}"
+                                                   onchange="updateQuantity('${entry.value.id}_${entry.value.size}')"
                                                    min="1"/>
                                             <label class="form-label" for="${entry.value.id}"
                                             >Số Lượng</label
                                             >
                                         </div>
                                         <div class=" mb-4 col-md-4" style="width: 110px">
-                                            <select class="select size">
-                                                <option value="1">S</option>
-                                                <option value="2" selected>M</option>
-                                                <option value="3">L</option>
+                                            <select class="select" id="size_${entry.value.id}_${entry.value.size}"
+                                                    onchange="updateSize('${entry.value.id}_${entry.value.size}')">
+                                                <c:forEach items="${entry.value.productVariants}" var="variant">
+                                                    <c:if test="${variant.size == entry.value.size}">
+                                                        <option value="${variant.size}"
+                                                                selected>${variant.size}</option>
+                                                    </c:if>
+                                                    <c:if test="${variant.size != entry.value.size}">
+                                                        <option value="${variant.size}">${variant.size}</option>
+                                                    </c:if>
+                                                </c:forEach>
                                             </select>
                                             <label class="form-label select-label">Size</label>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-md-5 mb-4 mb-md-0">
 
-
                                     <h5 class="mb-2">
-                                        <s class="text-muted me-2 small align-middle price">${entry.value.totalPrice}.000
-                                            đ</s
-                                        ><span class="align-middle totalPrice">100.000 đ</span>
+                                        <c:if test="${entry.value.discount != 0}">
+                                            <s class="text-muted me-2 small align-middle price"><fmt:formatNumber
+                                                    value="${entry.value.totalPrice}" type="currency"
+                                                    currencyCode="VND"/></s>
+                                            <span class="align-middle"><fmt:formatNumber
+                                                    value="${entry.value.saleTotalPrice}" type="currency"
+                                                    currencyCode="VND"/></span>
+                                        </c:if>
+                                        <c:if test="${entry.value.discount == 0}">
+                                            <span class="align-middle"><fmt:formatNumber
+                                                    value="${entry.value.totalPrice}" type="currency"
+                                                    currencyCode="VND"/></span>
+                                        </c:if>
                                     </h5>
-                                    <p class="text-danger"><small>Khuyến mãi 15%</small></p>
+                                    <c:if test="${entry.value.discount !=0}">
+                                        <p class="text-danger"><small>Khuyến mãi ${entry.value.discount}%</small></p>
+                                    </c:if>
+
+
                                     <p class="mb-4">
-                                        <a href="<c:url value="/remove-cart?id=${entry.value.id}"/> "
+                                        <a href="<c:url value="/remove-cart?productKey=${entry.value.id}_${entry.value.size}"/> "
                                            class="text-muted pe-3"
                                         ><small
                                         ><i class="fas fa-trash me-2"></i>Xóa</small
@@ -104,302 +129,6 @@
                             </div>
                         </c:forEach>
 
-                        <div class="row border-bottom mb-4 product_item">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/cherry.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Nước ép Cherry</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="2"
-                                                class="form-control quantity"
-                                                value="1"
-                                                min="1"
-                                                onchange="calculatePrice()"
-
-                                        />
-                                        <label class="form-label" for="2"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()">
-                                            <option value="1">S</option>
-                                            <option value="2 " selected>M</option>
-                                            <option value="3">L</option>
-                                        </select>
-                                        <label class="form-label select-label">Size</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle totalPrice">100.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                                <p class="mb-4">
-                                    <a href="" class="text-muted pe-3"
-                                    ><small
-                                    ><i class="fas fa-trash me-2"></i>Xóa</small
-                                    ></a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row border-bottom mb-4 product_item">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/atiso.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Atiso</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id=""
-                                                class="form-control quantity"
-                                                value="1"
-                                                min="1"
-                                                onchange="calculatePrice()"
-
-                                        />
-                                        <label class="form-label" for="typeNumber"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()">
-                                            <option value="1">S</option>
-                                            <option value="2 " selected>M</option>
-                                            <option value="3">L</option>
-                                        </select>
-                                        <label class="form-label select-label">Size</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle totalPrice">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                                <p class="mb-4">
-                                    <a href="" class="text-muted pe-3"
-                                    ><small
-                                    ><i class="fas fa-trash me-2"></i>Xóa</small
-                                    ></a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row border-bottom mb-4 product_item">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/blueberry.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Sinh tố Việt Quất</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="typeNumber"
-                                                class="form-control quantity"
-                                                value="1"
-                                                min="1"
-                                                onchange="calculatePrice()"
-
-                                        />
-                                        <label class="form-label" for="typeNumber"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()">
-                                            <option value="1">S</option>
-                                            <option value="2 " selected>M</option>
-                                            <option value="3">L</option>
-                                        </select>
-                                        <label class="form-label select-label">Size</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle totalPrice">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                                <p class="mb-4">
-                                    <a href="" class="text-muted pe-3"
-                                    ><small
-                                    ><i class="fas fa-trash me-2"></i>Xóa</small
-                                    ></a
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row border-bottom mb-4 product_item">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/champagne.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Champagne</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id=""
-                                                class="form-control quantity"
-                                                value="1"
-                                                min="1"
-                                                onchange="calculatePrice()"
-
-                                        />
-                                        <label class="form-label" for="typeNumber"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class=" mb-4 col-md-4" style="width: 110px">
-                                        <select class="select size" onchange="calculatePrice()">
-                                            <option value="1">S</option>
-                                            <option value="2 " selected>M</option>
-                                            <option value="3">L</option>
-                                        </select>
-                                        <label class="form-label select-label">Size</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle totalPrice">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                                <p class="mb-4">
-                                    <a href="" class="text-muted pe-3"
-                                    ><small
-                                    ><i class="fas fa-trash me-2"></i>Xóa</small
-                                    ></a
-                                    >
-                                </p>
-                            </div>
-                        </div>
                     </section>
                     <!-- Section: Product list -->
 
@@ -475,7 +204,9 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <span>Tiền tại thời </span>
-                            <span id="tien-tam-thoi">1.000.000 đ</span>
+                            <span id="tien-tam-thoi">
+                                <fmt:formatNumber value="${cart.totalPrice}" type="currency" currencyCode="VND"/>
+                            </span>
                         </div>
                         <div class="d-flex justify-content-between">
                             <span>Khuyến mãi: </span>
@@ -484,35 +215,14 @@
                         <hr class="my-4"/>
                         <div class="d-flex justify-content-between fw-bold mb-5">
                             <span> Tổng số tiền (bao gồm VAT)</span>
-                            <span class="tong-tien">1.000.000 đ</span>
+                            <span class="tong-tien">
+                                <fmt:formatNumber value="${cart.totalPrice}" type="currency" currencyCode="VND"/>
+                            </span>
                         </div>
-
-
                         <a class="btn btn-primary btn-rounded w-100" href="reservation.jsp"
                            style="color: white">Thanh toán</a>
 
                     </section>
-                    <!-- Section: Summary -->
-
-                    <!-- Section: Summary -->
-                    <!--                    <section class="shadow-4 p-4 rounded-5">-->
-                    <!--                        <h5 class="mb-4">Áp dụng mã khuyến mãi</h5>-->
-
-                    <!--                        <div class="d-flex align-items-center">-->
-                    <!--                            <input-->
-                    <!--                                    type="text"-->
-                    <!--                                    class="form-control rounded me-1"-->
-                    <!--                                    placeholder="Mã khuyến mại"-->
-                    <!--                            />-->
-                    <!--                            <button-->
-                    <!--                                    type="button"-->
-                    <!--                                    class="btn btn-link btn-rounded overflow-visible"-->
-                    <!--                            >-->
-                    <!--                                Áp dụng-->
-                    <!--                            </button>-->
-                    <!--                        </div>-->
-                    <!--                    </section>-->
-                    <!-- Section: Summary -->
                 </div>
             </div>
         </section>
@@ -531,6 +241,54 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script>
+
+    function updateQuantity(productKey) {
+        var quantityInput = document.getElementById("quantity_" + productKey);
+        var newQuantity = parseInt(quantityInput.value, 10);
+
+        fetch("update-quantity?productKey=" + productKey + "&quantity=" + newQuantity, {
+            method: "GET",
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Xử lý kết quả từ server (nếu cần)
+                console.log("Update quantity is success!");
+            })
+            .catch(error => {
+                console.error("Error during update quantity:", error);
+            });
+    }
+
+    function updateSize(productKey) {
+        var sizeInput = document.getElementById("size_" + productKey);
+        var newSize = sizeInput.value;
+
+        fetch("update-size?productKey=" + productKey + "&size=" + newSize, {
+            method: "GET",
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Xử lý kết quả từ server (nếu cần)
+                console.log("Update size is success!");
+            })
+            .catch(error => {
+                console.error("Error during update size:", error);
+            });
+    }
+
+
+</script>
 
 </body>
 </html>
