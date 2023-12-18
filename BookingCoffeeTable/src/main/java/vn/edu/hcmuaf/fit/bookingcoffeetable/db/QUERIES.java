@@ -2,6 +2,11 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.db;
 
 public class QUERIES {
 
+    //USER
+    public class User{
+        public static final String findByUserNameAndPassword = "SELECT * FROM users WHERE username = :username AND password = :password";
+    }
+
     //PRODUCT
     public static final String INSERT_PRODUCT = "INSERT INTO products (categoryId, name, price, description, status, discount) VALUES (:categoryId, :name, :price, :description, :status, :discount)";
     public static final String SELECT_ALL_PRODUCT = "SELECT * FROM products";

@@ -22,7 +22,6 @@ public class Cart implements Serializable {
     }
 
     public void addProduct(Product product, String size) {
-        System.out.println("size" + size);
         if (size == null) {
             size = "notSize";
         }
@@ -45,7 +44,7 @@ public class Cart implements Serializable {
 
     public void updateProductQuantity(String productKey, int quantity) {
         Product product = products.get(productKey);
-
+        System.out.println("update product: " + productKey);
         if (product != null) {
             product.setQuantity(quantity);
             getTotalPrice();

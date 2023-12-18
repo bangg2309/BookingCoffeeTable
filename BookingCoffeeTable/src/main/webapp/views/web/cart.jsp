@@ -219,33 +219,10 @@
                                 <fmt:formatNumber value="${cart.totalPrice}" type="currency" currencyCode="VND"/>
                             </span>
                         </div>
-
-
                         <a class="btn btn-primary btn-rounded w-100" href="reservation.jsp"
                            style="color: white">Thanh toán</a>
 
                     </section>
-                    <!-- Section: Summary -->
-
-                    <!-- Section: Summary -->
-                    <!--                    <section class="shadow-4 p-4 rounded-5">-->
-                    <!--                        <h5 class="mb-4">Áp dụng mã khuyến mãi</h5>-->
-
-                    <!--                        <div class="d-flex align-items-center">-->
-                    <!--                            <input-->
-                    <!--                                    type="text"-->
-                    <!--                                    class="form-control rounded me-1"-->
-                    <!--                                    placeholder="Mã khuyến mại"-->
-                    <!--                            />-->
-                    <!--                            <button-->
-                    <!--                                    type="button"-->
-                    <!--                                    class="btn btn-link btn-rounded overflow-visible"-->
-                    <!--                            >-->
-                    <!--                                Áp dụng-->
-                    <!--                            </button>-->
-                    <!--                        </div>-->
-                    <!--                    </section>-->
-                    <!-- Section: Summary -->
                 </div>
             </div>
         </section>

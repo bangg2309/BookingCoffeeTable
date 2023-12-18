@@ -23,9 +23,9 @@ public class AuthorizationFilter implements Filter {
         if (uri.startsWith("/admin")) {
             User user = (User) rq.getSession().getAttribute("user");
             if (user != null) {
-                if (user.getRoleId() == 1) {
+                if (user.getRoleId() == 2) {
                     chain.doFilter(request, response);
-                } else if (user.getRoleId() == 2) {
+                } else if (user.getRoleId() == 1) {
                     rp.sendRedirect(rq.getContextPath() + "/login");
                 }
             } else {
@@ -38,6 +38,5 @@ public class AuthorizationFilter implements Filter {
 
     @Override
     public void destroy() {
-//        Filter.super.destroy();
     }
 }
