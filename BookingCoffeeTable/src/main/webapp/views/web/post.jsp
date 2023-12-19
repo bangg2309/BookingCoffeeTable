@@ -15,12 +15,7 @@
     <title>Menu</title>
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
+
 
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
