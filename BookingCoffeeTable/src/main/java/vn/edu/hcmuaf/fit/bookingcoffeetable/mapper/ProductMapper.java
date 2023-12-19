@@ -59,6 +59,7 @@ public class ProductMapper implements RowMapper<Product> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(product);
         return product;
     }
 

@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom css-->
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/contactUS.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
 </head>
 
 <body>
