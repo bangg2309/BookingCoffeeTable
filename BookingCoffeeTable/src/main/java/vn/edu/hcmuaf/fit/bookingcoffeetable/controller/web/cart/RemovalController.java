@@ -11,12 +11,12 @@ import java.io.IOException;
 public class RemovalController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        String productKey = request.getParameter("productKey");
 
         HttpSession session = request.getSession();
         Cart cart = (Cart) session.getAttribute("cart");
         if (cart != null) {
-            cart.removeProduct(Integer.parseInt(id));
+            cart.removeProduct(productKey);
             session.setAttribute("cart", cart);
         }
         response.sendRedirect(request.getContextPath() + "/cart");

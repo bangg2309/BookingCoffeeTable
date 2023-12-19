@@ -42,7 +42,7 @@
     <!-- Container wrapper -->
     <div class="container" style="padding: 0">
         <!-- Navbar brand -->
-        <a class="navbar-brand me-2" href="https://mdbgo.com/">
+        <a class="navbar-brand me-2" href="/home">
             <img
                     src="<c:url value="/views/template/custom/image/drink/logo2.png"/>"
                     height="50"
@@ -51,7 +51,6 @@
                     style="margin-top: -1px;"
             />
         </a>
-
         <!-- Toggle button -->
         <button
                 data-mdb-collapse-init
@@ -73,10 +72,10 @@
                     <a href="<c:url value="/home"/> ">Trang chủ</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/table.jsp"/> ">Bàn</a>
+                    <a href="<c:url value="/table"/> ">Bàn</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/menu.jsp"/>">Thực đơn</a>
+                    <a href="<c:url value="/menu"/>">Thực đơn</a>
                 </li>
 
                 <li class="scroll-to-section">
@@ -86,10 +85,11 @@
                     <a href="<c:url value="/views/web/contactUS.jsp"/> ">Liên hệ</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/post.jsp"/> ">Bài viết</a>
+                    <a href="<c:url value="/post"/> ">Bài viết</a>
                 </li>
             </ul>
             <!-- Left links -->
+
 
             <ul class="navbar-collapse" style="margin-bottom: 0;">
                 <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
@@ -104,27 +104,6 @@
                 </li>
             </ul>
 
-<%--            <div class="col-3">--%>
-<%--                <nav class="main-nav">--%>
-
-<%--                    <ul class="nav">--%>
-<%--                        <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>--%>
-<%--                        <li class="scroll-to-section drop">--%>
-<%--                            <a href="login.html"><span class="user_icon" style="padding-right: 10px"><i--%>
-<%--                                    class="fa fa-user-circle"--%>
-<%--                                    aria-hidden="true"></i></span>huutinh</a>--%>
-<%--                            <ul class="drop_content">--%>
-<%--                                <li><a class="dropdown-item" href="#">Hồ sơ của tôi</a></li>--%>
-<%--                                <li><a class="dropdown-item" href="login.html">Đăng xuất</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-
-<%--                    </ul>--%>
-
-
-
-<%--                </nav>--%>
-<%--            </div>--%>
         </div>
         <!-- Collapsible wrapper -->
     </div>

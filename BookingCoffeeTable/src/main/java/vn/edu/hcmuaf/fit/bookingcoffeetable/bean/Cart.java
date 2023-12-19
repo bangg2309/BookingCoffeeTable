@@ -3,9 +3,10 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 public class Cart implements Serializable {
-    private Map<Integer, Product> products;
+    private Map<String, Product> products;
     private double totalPrice;
     private static Cart instance;
 
@@ -20,34 +21,72 @@ public class Cart implements Serializable {
         return instance;
     }
 
-    public void addProduct(Product product) {
-        if (products.containsKey(product.getId())) {
-            Product existProduct = products.get(product.getId());
-            existProduct.setQuantity(existProduct.getQuantity() + 1);
+    public void addProduct(Product product, String size) {
+        if (size == null) {
+            size = "notSize";
+        }
+        System.out.println("size" + size);
+        String productKey = generateProductKey(product.getId(), size);
+        if (products.containsKey(productKey)) {
+            updateProductQuantity(productKey, products.get(productKey).getQuantity() + 1);
         } else {
             product.setQuantity(1);
-            products.put(product.getId(), product);
+            if (!size.equals("notSize")) {
+                product.updateBySize(size);
+            }
+            productKey = generateProductKey(product.getId(), size);
+            product.setSize(size);
+            products.put(productKey, product);
+            getTotalPrice();
+            System.out.println("add product: " + productKey);
         }
-        totalPrice += product.getPrice() * product.getQuantity();
     }
 
-    public void upQuantity(int productId) {
-        Product product = products.get(productId);
-        product.setQuantity(product.getQuantity() + 1);
-        totalPrice += product.getPrice();
+    public void updateProductQuantity(String productKey, int quantity) {
+        Product product = products.get(productKey);
+        System.out.println("update product: " + productKey);
+        if (product != null) {
+            product.setQuantity(quantity);
+            getTotalPrice();
+        } else {
+            // Xử lý trường hợp product là null (nếu cần)
+            System.out.println("Không tìm thấy sản phẩm có key: " + productKey);
+        }
     }
 
-    public void downQuantity(int productId) {
-        Product product = products.get(productId);
-        product.setQuantity(product.getQuantity() - 1);
-        totalPrice -= product.getPrice();
+    public void updateProductSize(String productKey, String newSize) {
+        StringTokenizer stringTokenizer = new StringTokenizer(productKey, "_");
+        int productId = Integer.parseInt(stringTokenizer.nextToken());
+        String oldSize = stringTokenizer.nextToken();
+        String oldProductKey = generateProductKey(productId, oldSize);
+
+        if (products.containsKey(oldProductKey)) {
+            Product existingProduct = products.get(oldProductKey);
+
+            products.remove(oldProductKey);
+
+            String newProductKey = generateProductKey(productId, newSize);
+
+            if (products.containsKey(newProductKey)) {
+                Product newProduct = products.get(newProductKey);
+                newProduct.setQuantity(newProduct.getQuantity() + existingProduct.getQuantity());
+            } else {
+                existingProduct.updateBySize(oldSize, newSize);
+                products.put(newProductKey, existingProduct);
+            }
+            getTotalPrice();
+        }
     }
 
+    public void removeProduct(String productKey) {
+        if (products.containsKey(productKey)) {
+            products.remove(productKey);
+            getTotalPrice();
+        }
+    }
 
-    public void removeProduct(int productId) {
-        Product product = products.get(productId);
-        totalPrice -= product.getPrice() * product.getQuantity();
-        products.remove(productId);
+    private String generateProductKey(int productId, String size) {
+        return productId + "_" + size;
     }
 
     @Override
@@ -58,15 +97,19 @@ public class Cart implements Serializable {
                 '}';
     }
 
-    public Map<Integer, Product> getProducts() {
+    public Map<String, Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Map<Integer, Product> products) {
+    public void setProducts(Map<String, Product> products) {
         this.products = products;
     }
 
     public double getTotalPrice() {
+        double totalPrice = 0;
+        for (Product product : products.values()) {
+            totalPrice += product.getSaleTotalPrice();
+        }
         return totalPrice;
     }
 
