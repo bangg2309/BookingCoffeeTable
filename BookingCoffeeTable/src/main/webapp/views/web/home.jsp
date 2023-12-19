@@ -871,68 +871,40 @@
                             <div class="item">
                                 <div>
                                     <!-- Product image -->
-                                    <div
-                                            class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block"
-                                            data-ripple-color="light">
-                                        <img
-                                                src="<c:url value='${product.images[0].url}'/>"
-                                                class=" w-100"
-                                                alt=""/>
-                                        <a href="#!">
+                                    <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block"
+                                         data-ripple-color="light">
+                                        <img src="<c:url value='${product.images[0].url}'/>" class=" w-100" alt=""/>
+                                        <a href="/product-detail?id=${product.id}">
                                             <div class="mask">
                                                 <div class=" d-flex justify-content-start align-items-end h-100 p-3">
-                <span class="badge badge-success rounded-pill me-2"
-                >New</span
-                >
-
+                                                    <span class="badge badge-success rounded-pill me-2">New</span>
                                                 </div>
                                             </div>
                                             <div class="hover-overlay">
-                                                <div
-                                                        class="mask"
-                                                        style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                                ></div>
+                                                <div class="mask"
+                                                     style="background-color: hsla(0, 0%, 98.4%, 0.15)"></div>
                                             </div>
                                         </a>
                                     </div>
-
                                     <!-- Product content -->
                                     <div class="px-3 text-reset d-block">
                                         <p class="fw-bold mb-2">${product.name}</p>
-                                        <ul class="rating mb-2"
-                                            data-mdb-toggle="rating"
-                                            data-mdb-readonly="true"
-                                            data-mdb-value="${product.averageRating}"
-                                        >
+                                        <ul class="rating mb-2" data-mdb-toggle="rating" data-mdb-readonly="true"
+                                            data-mdb-value="${product.averageRating}">
                                             <li>
-                                                <i
-                                                        class="far fa-star fa-sm color_far ps-0"
-                                                        title="Bad"
-                                                ></i>
+                                                <i class="far fa-star fa-sm color_far ps-0" title="Bad"></i>
                                             </li>
                                             <li>
-                                                <i
-                                                        class="far fa-star fa-sm color_far"
-                                                        title="Poor"
-                                                ></i>
+                                                <i class="far fa-star fa-sm color_far" title="Poor"></i>
                                             </li>
                                             <li>
-                                                <i
-                                                        class="far fa-star fa-sm color_far"
-                                                        title="OK"
-                                                ></i>
+                                                <i class="far fa-star fa-sm color_far" title="OK"></i>
                                             </li>
                                             <li>
-                                                <i
-                                                        class="far fa-star fa-sm color_far"
-                                                        title="Good"
-                                                ></i>
+                                                <i class="far fa-star fa-sm color_far" title="Good"></i>
                                             </li>
                                             <li>
-                                                <i
-                                                        class="far fa-star fa-sm color_far"
-                                                        title="Excellent"
-                                                ></i>
+                                                <i class="far fa-star fa-sm color_far" title="Excellent"></i>
                                             </li>
                                         </ul>
                                         <c:choose>

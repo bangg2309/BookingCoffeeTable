@@ -10,6 +10,6 @@ import java.util.List;
 
 @RegisterBeanMapper(Review.class)
 public interface ReviewDAO {
-    @SqlQuery(QUERIES.SELECT_REVIEW_BY_PRODUCT_ID)
+    @SqlQuery(QUERIES.REVIEW.SELECT_REVIEW_BY_PRODUCT_ID)
     List<Review> findReviewByProductId(@Bind("productId") int productId);
 }

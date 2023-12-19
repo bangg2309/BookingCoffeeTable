@@ -14,12 +14,19 @@ import java.util.List;
 
 @RegisterBeanMapper(User.class)
 public interface UserDAO {
-    @SqlQuery("SELECT users.username, users.password FROM users WHERE id = :id")
-    @RegisterRowMapper(UserMapper.class)
+    @SqlQuery(QUERIES.USER.findById)
     User getUserById(@Bind("id") int id);
 
-    @SqlQuery(QUERIES.User.findByUserNameAndPassword)
-    List <User> findByUserNameAndPassword(@Bind("username") String username, @Bind("password") String password);
+    @SqlQuery(QUERIES.USER.findByUser)
+    List<User> findByUser(@Bind("username") String username);
+    @SqlQuery(QUERIES.USER.findByEmail)
+    List<User> findByEmail(@Bind("email") String email);
+
+    @SqlUpdate(QUERIES.USER.register)
+    void register(@Bind("username") String username, @Bind("password") String password, @Bind("email") String email, @Bind("phone") String phone);
+
+    @SqlQuery(QUERIES.USER.findByUserNameAndPassword)
+    List<User> findByUserNameAndPassword(@Bind("username") String username, @Bind("password") String password);
 
 
 }

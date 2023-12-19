@@ -3,8 +3,12 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.db;
 public class QUERIES {
 
     //USER
-    public class User{
+    public class USER {
         public static final String findByUserNameAndPassword = "SELECT * FROM users WHERE username = :username AND password = :password";
+        public static final String register = "INSERT INTO users (username, password, email, phone, roleId,status) VALUES (:username, :password, :email, :phone, 1,1)";
+        public static final String findByUser = "SELECT * FROM users WHERE username = :username";
+        public static final String findById = "SELECT * FROM users WHERE id = :id";
+        public static final String findByEmail = "SELECT * FROM users WHERE email = :email";
     }
 
     //PRODUCT
@@ -30,11 +34,17 @@ public class QUERIES {
             "WHERE products.id = :id";
 
     //CATEGORY
+    public class CATEGORY{
+        public static final String findOne = "SELECT * FROM categories WHERE id = :id";
+    }
     public static final String SELECT_N_CATEGORY = "SELECT * FROM categories LIMIT :limit";
 
 
     //REVIEW
-    public static final String SELECT_REVIEW_BY_PRODUCT_ID = "SELECT * FROM reviews WHERE productId = :productId";
+    public class REVIEW {
+        public static final String INSERT_REVIEW = "INSERT INTO reviews (productId, userId, content, rating) VALUES (:productId, :userId, :content, :rating)";
+        public static final String SELECT_REVIEW_BY_PRODUCT_ID = "SELECT * FROM reviews WHERE productId = :productId";
+    }
 
     //PRODUCT VARIANT
     public static final String SELECT_PRODUCT_VARIANT_BY_PRODUCT_ID = "SELECT * FROM product_variants WHERE productId = :productId";

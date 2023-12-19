@@ -25,7 +25,8 @@ public class ImageService {
         this.imageDAO = imageDAO;
     }
 
-    public List<Image> findById(int id) {
+    public List<Image> findByProductId(int id) {
         return imageDAO.findById(id);
     }
+
 }

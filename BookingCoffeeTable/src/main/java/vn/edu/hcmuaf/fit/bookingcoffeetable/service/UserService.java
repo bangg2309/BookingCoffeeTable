@@ -39,6 +39,40 @@ public class UserService {
         return users.get(0);
     }
 
+    public User findByUserName(String username) {
+        List<User> users = userDao.findByUser(username);
+        if (users.isEmpty()) return null;
+        return users.get(0);
+    }
+
+    public User findByEmail(String email) {
+        List<User> users = userDao.findByEmail(email);
+        if (users.isEmpty()) return null;
+        return users.get(0);
+    }
+
+    public int register(String username, String password, String email, String phone) {
+        User user = null;
+        if (findByUserName(username) != null) {
+            return 1;
+        }
+        if (findByEmail(email) != null) {
+            return 2;
+        }
+        userDao.register(username, password, email, phone);
+        return 0;
+    }
+
+    //Lấy ra tên đầy đủ của một user. Nếu không có tên đầy đủ thì lấy tên đăng nhập. Không có trả về null
+    public String getNameById(int id) {
+        User user = userDao.getUserById(id);
+        if (user.getFullname() != null)
+            return user.getFullname();
+        else if (user.getUsername() != null)
+            return user.getUsername();
+        return null;
+    }
+
     public static void main(String[] args) {
         // Tạo đối tượng UserService
         UserService userService = UserService.getInstance();

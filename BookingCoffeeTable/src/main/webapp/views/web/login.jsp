@@ -108,7 +108,7 @@
 						</span>
                     </div>
                     <div class="mt-2">
-                        <a href="registerUser.jsp" class="login100-form-btn">
+                        <a href="/register" class="login100-form-btn">
                             Đăng Ký
                         </a>
                     </div>

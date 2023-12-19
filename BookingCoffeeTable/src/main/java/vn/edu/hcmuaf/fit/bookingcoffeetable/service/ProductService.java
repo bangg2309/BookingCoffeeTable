@@ -32,7 +32,6 @@ public class ProductService {
 
     public Product findOne(int id) {
         List<Product> products = productDAO.findOne(id);
-
         if (!products.isEmpty()) {
             Product product = products.get(0);
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
@@ -46,10 +45,25 @@ public class ProductService {
         for (Product product : products) {
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
             product.updateBySize(product.getProductVariants().get(0).getSize());
-            product.setImages(ImageService.getInstance().findById(product.getId()));
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
         }
         return products;
+    }
+
+    //Lấy ra các thông tin của sản phẩm để hiển thị trong productDetail
+    public Product findProductDetail(int id) {
+        List<Product> products = productDAO.findOne(id);
+        if (!products.isEmpty()) {
+            Product product = products.get(0);
+            product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
+            product.updateBySize(product.getProductVariants().get(0).getSize());
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
+            product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
+            product.setCategory(CategoryService.getInstance().findOne(product.getCategoryId()));
+            return product;
+        }
+        return null;
     }
 
     public static void main(String[] args) {
