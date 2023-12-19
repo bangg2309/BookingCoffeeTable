@@ -1,5 +1,8 @@
+
 <%@include file="/common/taglib.jsp" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +16,9 @@
 
     <title>Đăng Nhập</title>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
 
+
+    <!-- MDB ESSENTIAL -->
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
@@ -30,7 +28,8 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
           integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/login/main.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/login/main.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/home.css"/> ">
 
 </head>
 
@@ -74,7 +73,7 @@
                             </label>
                         </div>
                         <div class="">
-                            <a href="passwordRetrievalUS.jsp" class="txt1 ">
+                            <a href="#" class="txt1 ">
                                 Quên mật khẩu?
                             </a>
                         </div>
@@ -108,14 +107,16 @@
 						</span>
                     </div>
                     <div class="mt-2">
-                        <a href="registerUser.jsp" class="login100-form-btn">
+                        <a href="registerUser.html" class="login100-form-btn">
                             Đăng Ký
                         </a>
                     </div>
                 </form>
 
+
                 <div class="login100-more" style="background-image: url('<c:url
                         value="/views/template/custom/image/login/coffee shop (1).png"/>')" ;>
+
                 </div>
             </div>
         </div>
@@ -124,15 +125,24 @@
 <!--Main layout-->
 
 <!-- ***** Footer Start ***** -->
+
 <%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
+
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
+<!---->
+
+<!-- Plugins -->
+
+<!-- Global Init -->
 
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
-<!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
-<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 <script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+
+<script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
+
 </body>
 </html>

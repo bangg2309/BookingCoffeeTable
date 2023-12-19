@@ -29,4 +29,13 @@ public interface ProductDAO {
     @RegisterRowMapper(ProductMapper.class)
     List<Product> findProductNewest(@Bind("limit") int limit);
 
+    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
+    @RegisterRowMapper(ProductMapper.class)
+    List<Product> findAllProducts();
+
+
+    @RegisterRowMapper(ProductMapper.class)
+    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT_OFFSET)
+    List<Product> findAllProductsOffset(@Bind("recordsPerPage") int recordsPerPage, @Bind("offset") int offset);
+
 }

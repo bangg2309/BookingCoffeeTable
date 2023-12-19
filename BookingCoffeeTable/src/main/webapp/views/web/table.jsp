@@ -1,5 +1,6 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,6 +45,7 @@
                         <section class="mb-5 mt-4">
                             <div class="d-flex">
                                 <input
+                                        id="search-text"
                                         type="search"
                                         class="form-control rounded me-1"
                                         placeholder="Tìm kiếm"
@@ -70,21 +72,12 @@
                             <h5 class="fw-bold mb-4">Khu vực</h5>
 
                             <div class="text-muted small text-uppercase">
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Sân vườn</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 1</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 2</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Tầng 3</a>
-                                </p>
-                                <p class="mb-3">
-                                    <a href="#!" class="text-reset">Sân thượng</a>
-                                </p>
+                                <c:forEach var="area" items="${areas}" varStatus="loop">
+                                    <p class="mb-3">
+                                        <a href="#!" class="text-reset category-link" data-category-value="${loop.index + 1}" style="text-transform: uppercase">${area.name}</a>
+                                    </p>
+                                </c:forEach>
+
 
 
                             </div>
@@ -102,7 +95,7 @@
                             <!-- Ngày Đặt -->
                             <div class=" col-md-2 mb-3">
                                 <label for="filterDate" class="form-label ">Ngày Đặt:</label>
-                                <input type="date" class="form-control" id="filterDate">
+                                <input type="date" class="form-control" name="start" id="filterDate" value="">
                             </div>
                             <!-- Thời Gian Đặt -->
                             <div class="col-md-2 mb-3">
@@ -128,229 +121,25 @@
                             <!-- Số người -->
                             <div class="col-md-2 mb-3">
                                 <label for="filterPeople" class="form-label">Số người:</label>
-                                <input type="number" class="form-control" id="filterPeople" min="1">
+                                <input type="number" class="form-control" id="filterPeople" min="1" name="count">
                             </div>
                             <!-- Nút Áp Dụng -->
                             <div class="col-md-2 mb-3 d-flex align-items-end pb-1 justify-content-center">
 
                                 <div>
-                                    <button type="button" class="btn btn-primary  " onclick="applyFilter()">Tìm kiếm
+                                    <button type="button" class="btn btn-primary"id="find">Tìm kiếm
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="row gx-xl-5 justify-content-center">
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                            <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 101</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
+                    <div class="row gx-xl-5 justify-content-center" id="yourContainer">
 
 
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table1.jpg"/>" class="w-100 h-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 102</h4>
-                                        <h4>chỗ ngồi: 2 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table2.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 103</h4>
-                                        <h4>chỗ ngồi: 4 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table3.jpeg"/>" class="w-100 h-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 104</h4>
-                                        <h4>chỗ ngồi: 1 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table4.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 105</h4>
-                                        <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table5.jpg" />"class="w-100" alt=""/>
-
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 106</h4>
-                                        <h4>chỗ ngồi: 6 người</h4>
-                                        <h4>Vị trí: trong nhà</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table6.jpg"/>" class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 107</h4>
-                                        <h4>chỗ ngồi: 4 người</h4>
-                                        <h4>Vị trí: tầng thượng</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table9.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 108</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="col-lg-4 col-6 mb-4">
-                            <!-- Product card -->
-                            <div>
-                                <!-- Product image -->
-                                <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main"
-                                     data-ripple-color="light">
-                                    <img src="<c:url value="/views/template/custom/image/table/table8.jpg" />"class="w-100" alt=""/>
-                                    <!--                                    <div class="hover-overlay table_alpha">-->
-                                    <!--                                        <h3>Table</h3>-->
-                                    <!--                                    </div>-->
-                                    <div class="hover-overlay table_omega text-center">
-                                        <br>
-                                        <h4>Số bàn: 109</h4>
-                                        <h4>chỗ ngồi: 5 người</h4>
-                                        <h4>Vị trí: cửa sổ</h4>
-                                        <a href="home.jsp" class="btn btn-primary" style="text-transform: uppercase">Chọn
-                                            bàn</a>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
                     </div>
-                    <div class="next_button col d-flex justify-content-center mt-2">
-                        <a style="text-transform: uppercase; font-family: Roboto; color: #bf9369" href="">Xem thêm</a>
-                    </div>
+                    <ul class="pagination" id="pagination"></ul>
+                    <input type="hidden" value="" id="page" name="page">
+                    <input type="hidden" value="" id="maxPageItem" name="maxPageItem">
                 </div>
 
 
@@ -374,7 +163,120 @@
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <!---->
+<!---->
+<script src="<c:url value="/views/template/paging/jquery.twbsPagination.min.js"/>"></script>
+<script type="text/javascript">
 
+    let totalPages = ${totalPage};
+    let currentPage = 1;
+    const limit = 9;
+    let count = $('#filterPeople').val();
+    let text = "";
+    let category = $('#category').val();
+    let categoryValue = 0;
+
+    // Đặt sự kiện click cho các liên kết danh mục
+    var categoryLinks = document.querySelectorAll('.category-link');
+    categoryLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Lấy giá trị danh mục từ thuộc tính data-category-value
+            categoryValue = this.getAttribute('data-category-value');
+
+            // Hiển thị giá trị trong console (có thể thay đổi thành việc xử lý giá trị theo yêu cầu của bạn)
+            console.log("Selected category value: " + categoryValue);
+        });
+    });
+
+    $(function () {
+        window.pagObj = $('#pagination').twbsPagination({
+            totalPages: totalPages,
+            visiblePages: 5,
+            startPage: currentPage,
+            onPageClick: function (event, page) {
+                if(currentPage!=page){
+                    currentPage = page;
+                    count = $('#filterPeople').val();
+                    ajaxRun(count, text);
+                }
+            }
+        });
+    });
+
+
+
+    $('#find').click(function (){
+        count = $('#filterPeople').val();
+        console.log("Số:" +count);
+        ajaxRun(count,text);
+    })
+
+    $("#search-text").on('keyup',function (){
+        text = $(this).val();
+        console.log(text);
+        ajaxRun(count,text);
+    });
+
+    $('#category').click(function (){
+        category = $(this).val();
+
+    })
+
+
+
+    function ajaxRun(count, text) {
+        $.ajax({
+            type: "Post",
+            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text ,
+            ContentType: 'json',
+            headers: {Accept: "application/json;charset=utf-8"},
+            success: function (json) {
+                let data = "";
+                let obj = json;
+                for (let i = 0; i < obj.length; i++) {
+                    let val = obj[i];
+                    // onclick="return theFunction();"
+                    data += "<div class=\"col-lg-4 col-6 mb-4\">"
+                        + "<div class=\"bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main\" data-ripple-color=\"light\">"
+                        + "<img src=\"<%=request.getContextPath()%>/" + val.image + "\" class=\"w-100\" alt=\"\"/>"
+                        + "<div class=\"hover-overlay table_omega text-center\">"
+                        + "<br>"
+                        + "<h4>Số bàn: " + val.tableNum + "</h4>"
+                        + "<h4>chỗ ngồi: " + val.seatCount + " người</h4>"
+                        + "<h4>Vị trí: " + val.location + "</h4>"
+                        + "<a href=\"home.html\" class=\"btn btn-primary\" style=\"text-transform: uppercase\">Chọn bàn</a>"
+                        + "</div>"
+                        + "</div>"
+                        + "</div>";
+                }
+                $("#yourContainer").html(data);
+            }
+        });
+    }
+    ajaxRun(count, text);
+
+    function addToCart(id){
+        let confirmBox = confirm("Add to cart ?");
+        if (confirmBox === true) {
+            $.ajax({
+                url: '<%=request.getContextPath()%>/add-cart?id='+id,
+                type: 'GET',
+                success: function (data) {
+                    alert('Add to cart is success!');
+                    updateCart();
+                },
+                error: function (data) {
+                    alert('Add to cart is error!');
+                }
+            });
+        } else {
+            console.log("No add product to cart!");
+        }
+    }
+
+
+</script>
 
 
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>

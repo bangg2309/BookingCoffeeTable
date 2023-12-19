@@ -1,4 +1,5 @@
 
+
 .table_main {
     position: relative;
     width: 100%; /* Điều chỉnh kích thước cho phù hợp */
@@ -107,6 +108,7 @@ li {
     background-color: white;
 }
 
+
 .navbar div li a:hover{
     color: #bf9369;
 }
@@ -148,4 +150,11 @@ li {
 
 .section-heading{
     margin: 50px;
+}
+
+.page-item.active .page-link .btn_page{
+    z-index: 3;
+    color: #fff;
+    background-color: #bf9369;
+    border-color: #bf9369;
 }

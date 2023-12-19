@@ -12,6 +12,7 @@ public class ProductService {
     private static ProductService instance;
     private static ProductDAO productDAO;
 
+
     public static ProductService getInstance() {
         if (instance == null) {
             Jdbi jdbi = JDBIConnector.get();
@@ -52,13 +53,22 @@ public class ProductService {
         return products;
     }
 
+    public List<Product> findAllProducts() {
+        return productDAO.findAllProducts();
+    }
+    public List<Product> findAllProductsOffset(int recordsPerPage, int offset) {
+        return productDAO.findAllProductsOffset(recordsPerPage, offset);
+    }
+
     public static void main(String[] args) {
         ProductService productService = ProductService.getInstance();
+
         List<Product> products = productService.findProductNewest(20);
         for (Product product : products) {
             System.out.println(product.getId() + " " + product.getName() + " " + product.getPrice() + " " + product.getImages());
         }
     }
+
 }
 
 
