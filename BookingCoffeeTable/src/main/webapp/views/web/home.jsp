@@ -1278,6 +1278,7 @@
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 
 </body>
 </html>

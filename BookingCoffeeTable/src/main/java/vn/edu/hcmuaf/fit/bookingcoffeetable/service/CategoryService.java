@@ -1,14 +1,13 @@
-package vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService;
+package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 
 import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.CategoryDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ICategoryService;
 
 import java.util.List;
 
-public class CategoryService implements ICategoryService {
+public class CategoryService {
     private static CategoryService instance;
     private static CategoryDAO categoryDAO;
 

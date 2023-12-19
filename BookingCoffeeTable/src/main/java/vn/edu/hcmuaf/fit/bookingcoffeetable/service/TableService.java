@@ -1,14 +1,13 @@
-package vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService;
+package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.TableDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ITableService;
 
 import java.util.List;
 
-public class TableService implements ITableService {
+public class TableService {
     private static TableService instance;
     private static TableDAO tableDAO;
 

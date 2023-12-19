@@ -45,6 +45,7 @@
                         <section class="mb-5 mt-4">
                             <div class="d-flex">
                                 <input
+                                        id="search-text"
                                         type="search"
                                         class="form-control rounded me-1"
                                         placeholder="Tìm kiếm"
@@ -71,11 +72,12 @@
                             <h5 class="fw-bold mb-4">Khu vực</h5>
 
                             <div class="text-muted small text-uppercase">
-                                <c:forEach var="area" items="${areas}">
+                                <c:forEach var="area" items="${areas}" varStatus="loop">
                                     <p class="mb-3">
-                                        <a href="#!" class="text-reset" style="text-transform: uppercase">${area.name}</a>
+                                        <a href="#!" class="text-reset category-link" data-category-value="${loop.index + 1}" style="text-transform: uppercase">${area.name}</a>
                                     </p>
                                 </c:forEach>
+
 
 
                             </div>
@@ -119,13 +121,13 @@
                             <!-- Số người -->
                             <div class="col-md-2 mb-3">
                                 <label for="filterPeople" class="form-label">Số người:</label>
-                                <input type="number" class="form-control" id="filterPeople" min="1">
+                                <input type="number" class="form-control" id="filterPeople" min="1" name="count">
                             </div>
                             <!-- Nút Áp Dụng -->
                             <div class="col-md-2 mb-3 d-flex align-items-end pb-1 justify-content-center">
 
                                 <div>
-                                    <button type="button" class="btn btn-primary  " onclick="applyFilter()">Tìm kiếm
+                                    <button type="button" class="btn btn-primary"id="find">Tìm kiếm
                                     </button>
                                 </div>
                             </div>
@@ -168,6 +170,24 @@
     let totalPages = ${totalPage};
     let currentPage = 1;
     const limit = 9;
+    let count = $('#filterPeople').val();
+    let text = "";
+    let category = $('#category').val();
+    let categoryValue = 0;
+
+    // Đặt sự kiện click cho các liên kết danh mục
+    var categoryLinks = document.querySelectorAll('.category-link');
+    categoryLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Lấy giá trị danh mục từ thuộc tính data-category-value
+            categoryValue = this.getAttribute('data-category-value');
+
+            // Hiển thị giá trị trong console (có thể thay đổi thành việc xử lý giá trị theo yêu cầu của bạn)
+            console.log("Selected category value: " + categoryValue);
+        });
+    });
 
     $(function () {
         window.pagObj = $('#pagination').twbsPagination({
@@ -177,17 +197,38 @@
             onPageClick: function (event, page) {
                 if(currentPage!=page){
                     currentPage = page;
-                    ajaxRun();
+                    count = $('#filterPeople').val();
+                    ajaxRun(count, text);
                 }
             }
         });
     });
 
 
-    function ajaxRun() {
+
+    $('#find').click(function (){
+        count = $('#filterPeople').val();
+        console.log("Số:" +count);
+        ajaxRun(count,text);
+    })
+
+    $("#search-text").on('keyup',function (){
+        text = $(this).val();
+        console.log(text);
+        ajaxRun(count,text);
+    });
+
+    $('#category').click(function (){
+        category = $(this).val();
+
+    })
+
+
+
+    function ajaxRun(count, text) {
         $.ajax({
             type: "Post",
-            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit,
+            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text ,
             ContentType: 'json',
             headers: {Accept: "application/json;charset=utf-8"},
             success: function (json) {
@@ -198,7 +239,7 @@
                     // onclick="return theFunction();"
                     data += "<div class=\"col-lg-4 col-6 mb-4\">"
                         + "<div class=\"bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main\" data-ripple-color=\"light\">"
-                        + "<img src=\"" + val.image + "\" class=\"w-100\" alt=\"\"/>"
+                        + "<img src=\"<%=request.getContextPath()%>/" + val.image + "\" class=\"w-100\" alt=\"\"/>"
                         + "<div class=\"hover-overlay table_omega text-center\">"
                         + "<br>"
                         + "<h4>Số bàn: " + val.tableNum + "</h4>"
@@ -213,7 +254,7 @@
             }
         });
     }
-    ajaxRun();
+    ajaxRun(count, text);
 
     function addToCart(id){
         let confirmBox = confirm("Add to cart ?");
@@ -233,6 +274,8 @@
             console.log("No add product to cart!");
         }
     }
+
+
 </script>
 
 

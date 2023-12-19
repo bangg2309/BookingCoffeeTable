@@ -2,11 +2,9 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.AreaService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.CategoryService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.TableService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.AreaService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

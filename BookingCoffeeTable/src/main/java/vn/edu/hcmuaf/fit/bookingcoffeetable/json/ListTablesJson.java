@@ -4,7 +4,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.json;
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.paging.PageRequest;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.IService.TableService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -27,6 +27,9 @@ public class ListTablesJson extends HttpServlet {
     private double fromPrice = 0, toPrice = 100;
     int pageIndexNum = 1;
     int perPageNum = 9;
+
+    int countNum = 0;
+
     PageRequest pageRequest = null;
 
     public ListTablesJson() {
@@ -38,24 +41,30 @@ public class ListTablesJson extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
         //receive request page-index and per-page
-            String pageIndex = request.getParameter("page-index");
-            String perPage = request.getParameter("per-page");
+        String pageIndex = request.getParameter("page-index");
+        String perPage = request.getParameter("per-page");
+        String count = request.getParameter("count");
+        String location = request.getParameter("text");
 
-            try {
-                pageIndexNum = Integer.parseInt(pageIndex);
-                perPageNum = Integer.parseInt(perPage);
-                pageRequest = new PageRequest(pageIndexNum, perPageNum);
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
+
+        try {
+            pageIndexNum = Integer.parseInt(pageIndex);
+            perPageNum = Integer.parseInt(perPage);
+            if (count != null && !count.equals("")){
+                countNum = Integer.parseInt(count);
             }
-        //receive request categoryID
 
 
-//        pageable = new PageRequest(pageIndexNum, perPageNum);
+            pageRequest = new PageRequest(pageIndexNum, perPageNum);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                tables = tableService.getTables(pageRequest.getLimit(), pageRequest.getOffset());
+                System.out.println(location);
+                tables = tableService.getTables(countNum, location, pageRequest.getLimit(), pageRequest.getOffset());
             }
         });
         thread.start();

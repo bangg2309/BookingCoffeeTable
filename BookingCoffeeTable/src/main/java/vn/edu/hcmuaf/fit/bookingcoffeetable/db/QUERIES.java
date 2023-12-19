@@ -47,7 +47,7 @@ public class QUERIES {
             "WHERE T.status = 1 AND T.location :location AND \n" +
             "T.seatCount >= :seatCount AND\n" +
             "(R.id ISNULL OR (R.endTime <= :endTime OR R.startTime >= :startTime));\n";
-    public static final String SELECT_TABLE_PAGE = "SELECT * FROM tables LIMIT :limit OFFSET :offset";
+    public static final String SELECT_TABLE_PAGE = "SELECT * FROM tables WHERE seatCount >= :count AND LOWER(location) LIKE LOWER(CONCAT('%', :location, '%')) LIMIT :limit OFFSET :offset";
 
     public static final String COUNT_TOTALITEM = "SELECT count(*) FROM tables";
 }
