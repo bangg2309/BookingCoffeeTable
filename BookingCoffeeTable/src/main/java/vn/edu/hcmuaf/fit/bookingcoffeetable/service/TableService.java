@@ -36,8 +36,8 @@ public class TableService implements ITableService {
         return tableDAO.findAllTabes();
     }
 
-    public List<Table> getTables(int limit, int offset){
-        return tableDAO.getTables(limit, offset);
+    public List<Table> getTables(int count, String location, int limit, int offset){
+        return tableDAO.getTables(count, location, limit, offset);
     }
 
     public String totalItem(){
@@ -58,7 +58,7 @@ public class TableService implements ITableService {
 
     public static void main(String[] args) {
         TableService productService = TableService.getInstance();
-        System.out.println(productService.getTables(9, 0));
+//        System.out.println(productService.getTables(9, 0));
     }
 
 }
