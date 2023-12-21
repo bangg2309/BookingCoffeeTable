@@ -1,10 +1,15 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
 import com.google.gson.Gson;
+import org.apache.log4j.ConsoleAppender;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.SlideImg;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.PostService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.SlideImgService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,10 +24,16 @@ import java.util.List;
 public class HomeController extends HttpServlet {
     ProductService productService;
     CategoryService categoryService;
+    SlideImgService slideImgService;
+
+    PostService postService;
 
     public HomeController() {
         productService = ProductService.getInstance();
         categoryService = CategoryService.getInstance();
+        slideImgService = SlideImgService.getInstance();
+        postService = PostService.getInstance();
+
     }
 
     @Override
@@ -40,9 +51,14 @@ public class HomeController extends HttpServlet {
 //        String json1 = gson.toJson(category);
 //        System.out.println(json1);
 //        response.getWriter().write(json1);
+        List<SlideImg> slideImgs = slideImgService.getImgSlide();
+        List<Post> posts = postService.getPost();
 
         request.setAttribute("products", productService.findOne(1));
         request.setAttribute("categories", categoryService.findAll());
+        request.setAttribute("slideImgs", slideImgs);
+        request.setAttribute("posts", posts);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
 

@@ -34,7 +34,7 @@
             <!-- Left links -->
             <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="scroll-to-section home">
-                    <a href="#">Trang chủ</a>
+                    <a href="<c:url value="/home"/>">Trang chủ</a>
                 </li>
                 <li class="scroll-to-section">
                     <a href="<c:url value="/views/web/table.jsp"/> ">Bàn</a>
@@ -50,7 +50,7 @@
                     <a href="<c:url value="/views/web/contactUS.jsp"/> ">Liên hệ</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/post.jsp"/> ">Bài viết</a>
+                    <a href="<c:url value="/post"/>">Bài viết</a>
                 </li>
             </ul>
             <!-- Left links -->

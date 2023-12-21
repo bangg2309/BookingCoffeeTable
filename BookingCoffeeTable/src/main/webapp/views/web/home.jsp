@@ -1,4 +1,5 @@
 <%@include file="/common/taglib.jsp" %>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,75 +38,30 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="<c:url value="/views/template/custom/image/home/background1.jpg"/>">
-                    <div class="alpha">
-                        <div class="slide_booking">
-                            <div>
-                                <span>COFFEE SHOP</span>
-                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
+                <c:forEach items="${slideImgs}" var="slideImg">
+                    <div class="swiper-slide">
+                        <img src="<c:url value="${slideImg.url}"/>">
+                        <div class="alpha">
+                            <div class="slide_booking">
+                                <div>
+                                    <span>COFFEE SHOP</span>
+                                    <a href="table.jsp">ĐẶT BÀN NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beta">
+                            <div class="">
+                                <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
+                                <div>
+                                    <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
+                                    <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
+                                    <h6>Chủ nhật: 9h00 - 22h00</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="beta">
-                        <div class="">
-                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
-                            <div>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
-                                <h6>Chủ nhật: 9h00 - 22h00</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="<c:url value="/views/template/custom/image/home/background2.jpg"/>">
-                    <div class="alpha">
-                        <div class="slide_booking">
-                            <div>
-                                <span>COFFEE SHOP</span>
-                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="beta">
-                        <div class="">
-                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
-                            <div>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
-                                <h6>Chủ nhật: 9h00 - 22h00</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="<c:url value="/views/template/custom/image/home/background3.jpg"/>">
-                    <div class="alpha">
-                        <div class="slide_booking">
-                            <div>
-                                <span>COFFEE SHOP</span>
-                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="beta">
-                        <div class="">
-                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
-                            <div>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
-                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
-                                <h6>Chủ nhật: 9h00 - 22h00</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                </c:forEach>
             </div>
-            <!--            <div class="swiper-button-next"></div>-->
-            <!--            <div class="swiper-button-prev"></div>-->
             <div class="swiper-pagination" style="display: none"></div>
             <div class="autoplay-progress" style="display: none">
                 <svg viewBox="0 0 48 48">
@@ -848,11 +804,7 @@
                                 data-ripple-color="light"
                         >
                             <img
-
-
-                                    src="../template/custom/image/home/fruit.jpg"
-
-
+                                    src="<c:url value="/views/template/custom/image/home/fruit.jpg" />"
                                     class="w-100"
                                     alt=""/>
                             <div class="desc-farm">
@@ -887,11 +839,7 @@
                                 data-ripple-color="light"
                         >
                             <img
-
-
-                                    src="../template/custom/image/home/wine.jpg"
-
-
+                                    src="<c:url value="/views/template/custom/image/home/wine.jpg" />"
                                     class="w-100"
                                     alt=""/>
                             <div class="desc-farm">
@@ -925,11 +873,7 @@
                                 data-ripple-color="light"
                         >
                             <img
-
-
-                                    src="../template/custom/image/home/coffee.jpg"
-
-
+                                    src="<c:url value="/views/template/custom/image/home/coffee.jpg" />"
                                     class="w-100"
                                     alt=""/>
                             <div class="desc-farm">
@@ -963,11 +907,7 @@
                                 data-ripple-color="light"
                         >
                             <img
-
-
-                                    src="../template/custom/image/home/cookie.jpg"
-
-
+                                    src="<c:url value="/views/template/custom/image/home/cookie.jpg" />"
                                     class="w-100"
                                     alt=""/>
                             <div class="desc-farm">
@@ -1016,11 +956,7 @@
                                     data-ripple-color="light"
                             >
                                 <img
-
-
-                                        src="../template/custom/image/menu/coffee_cream.jpg"
-
-
+                                        src="<c:url value="/views/template/custom/image/home/coffeeCream.jpg" />"
                                         class="w-100"
                                         alt=""/>
 
@@ -1622,22 +1558,23 @@
     </div>
     <div class="container">
         <div class="row">
+            <c:forEach items="${posts}" var="post">
             <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
                 <div class="stArticleLoop">
                     <div class="box-latest-news">
-                        <a href="" class="thumb-img">
+                        <a href="<c:url value="/post?id=${post.id}"/>" class="thumb-img">
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/2.jpg" />" alt="">
+                            <img src="<c:url value="${post.thumbnail}" />" alt="">
                         </a>
                         <div class="content-ln">
-                            <span>07/09/2023</span>
-                            <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
+                            <span>${post.createdDate}</span>
+                            <a href="<c:url value="/post?id=${post.id}"/>">
+                                <h3>${post.shortDescription}</h3>
                             </a>
-                            <a href="">
-                                "Xem thêm "
+                            <a href="<c:url value="/post?id=${post.id}"/>">
+                                "Xem thêm"
                                 <i class="fa fa-long-arrow-right"></i>
                             </a>
 
@@ -1646,54 +1583,7 @@
 
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
-                <div class="stArticleLoop">
-                    <div class="box-latest-news">
-                        <a href="" class="thumb-img">
-                            <div class="mask-plus">
-                                <div class="shape"></div>
-                            </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/1.jpg" />" alt="">
-                        </a>
-                        <div class="content-ln">
-                            <span>07/09/2023</span>
-                            <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
-                            </a>
-                            <a href="">
-                                "Xem thêm "
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
-                <div class="stArticleLoop">
-                    <div class="box-latest-news">
-                        <a href="" class="thumb-img">
-                            <div class="mask-plus">
-                                <div class="shape"></div>
-                            </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/3.jpg"/>" alt="">
-                        </a>
-                        <div class="content-ln">
-                            <span>07/09/2023</span>
-                            <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
-                            </a>
-                            <a href="">
-                                "Xem thêm "
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>

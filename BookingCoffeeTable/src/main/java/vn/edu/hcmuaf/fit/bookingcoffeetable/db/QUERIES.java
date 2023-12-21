@@ -19,4 +19,6 @@ public class QUERIES {
             "LEFT JOIN images ON products.id = images.productId " +
             "ORDER BY products.createdDate DESC " +
             "LIMIT :limit";
+
+
 }
