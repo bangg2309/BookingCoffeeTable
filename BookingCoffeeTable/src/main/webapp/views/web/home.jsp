@@ -61,6 +61,8 @@
                     </div>
                 </c:forEach>
             </div>
+            <!--            <div class="swiper-button-next"></div>-->
+            <!--            <div class="swiper-button-prev"></div>-->
             <div class="swiper-pagination" style="display: none"></div>
             <div class="autoplay-progress" style="display: none">
                 <svg viewBox="0 0 48 48">
@@ -1525,6 +1527,9 @@
                             </div>
                             <!-- Product content -->
                         </div>
+=======
+                        </c:forEach>
+>>>>>>> e34b7e2 (commit)
                     </div>
                 </div>
             </div>
@@ -1685,7 +1690,6 @@
     </div>
     <div class="container">
         <div class="row">
-            <c:forEach items="${posts}" var="post">
             <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
                 <div class="stArticleLoop">
                     <div class="box-latest-news">
