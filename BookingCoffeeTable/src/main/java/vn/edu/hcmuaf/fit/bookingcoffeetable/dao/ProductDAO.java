@@ -2,12 +2,15 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.dao;
 
 import org.jdbi.v3.core.mapper.Nested;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+import org.jdbi.v3.sqlobject.config.RegisterJoinRowMapper;
 import org.jdbi.v3.sqlobject.config.RegisterRowMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Image;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.ImageMapper;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.ProductMapper;
 
 import java.util.List;
@@ -22,7 +25,17 @@ public interface ProductDAO {
     @RegisterRowMapper(ProductMapper.class)
     List<Product> findOne(@Bind("id") int id);
 
-    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
+    @SqlQuery(QUERIES.SELECT_PRODUCTS_NEWEST)
+    @RegisterRowMapper(ProductMapper.class)
     List<Product> findProductNewest(@Bind("limit") int limit);
+
+    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
+    @RegisterRowMapper(ProductMapper.class)
+    List<Product> findAllProducts();
+
+
+    @RegisterRowMapper(ProductMapper.class)
+    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT_OFFSET)
+    List<Product> findAllProductsOffset(@Bind("recordsPerPage") int recordsPerPage, @Bind("offset") int offset);
 
 }

@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Role {
+import java.io.Serializable;
+
+public class Role implements Serializable {
 }

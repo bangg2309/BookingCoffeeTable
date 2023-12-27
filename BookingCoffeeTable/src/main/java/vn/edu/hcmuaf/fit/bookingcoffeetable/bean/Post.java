@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
+
 public class Post {
     private int id;
     private int userId;
@@ -99,4 +100,4 @@ public class Post {
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
     }
-}
+

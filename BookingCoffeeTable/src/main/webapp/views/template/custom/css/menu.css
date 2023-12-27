@@ -154,6 +154,7 @@ li {
     color: #bf9369;
 }
 
+
 @media screen and (max-width:1200px) {
     .navbar-brand{
         padding-right: 10px;

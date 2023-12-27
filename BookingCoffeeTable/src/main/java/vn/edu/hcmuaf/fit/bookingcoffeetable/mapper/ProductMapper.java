@@ -44,6 +44,7 @@ public class ProductMapper implements RowMapper<Product> {
             if (columnExists(rs, "createdDate")) {
                 product.setCreateDate(rs.getDate("createdDate"));
             }
+
             List<Image> images = new ArrayList<>();
             do {
                 Image image = new Image();
@@ -52,13 +53,13 @@ public class ProductMapper implements RowMapper<Product> {
                 image.setUrl(rs.getString("url"));
                 images.add(image);
             }
-            while (rs.next() && rs.getInt("productId") == product.getId());
-
+            while (rs.next() && rs.getInt("id") == product.getId());
             product.setImages(images);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(product);
         return product;
     }
 
@@ -71,4 +72,6 @@ public class ProductMapper implements RowMapper<Product> {
             return false;
         }
     }
+
+
 }

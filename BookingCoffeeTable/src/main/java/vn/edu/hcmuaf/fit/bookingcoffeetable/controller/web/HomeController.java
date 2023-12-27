@@ -1,7 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
-import com.google.gson.Gson;
-import org.apache.log4j.ConsoleAppender;
+
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
@@ -38,7 +37,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Gson gson = new Gson();
+
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
@@ -59,13 +58,22 @@ public class HomeController extends HttpServlet {
         request.setAttribute("slideImgs", slideImgs);
         request.setAttribute("posts", posts);
 
+
+        int productId = 1;
+        int limitCategory = 4;
+        int limitProducts = 10;
+        List<Category> categories = categoryService.findNCategory(limitCategory);
+        List<Product> newProducts = productService.findProductNewest(limitProducts);
+        request.setAttribute("newProducts", newProducts);
+        request.setAttribute("categories", categories);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
 }

@@ -1,4 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class Reservation {
+import java.io.Serializable;
+
+public class Reservation implements Serializable {
 }

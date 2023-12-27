@@ -1,3 +1,4 @@
+<%@ page import="java.util.List" %>
 <%@include file="/common/taglib.jsp" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,9 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-
     <title>Home</title>
-
     <!-- Additional CSS Files -->
 
     <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/> ">
@@ -109,6 +108,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="about bg2">
@@ -771,9 +771,8 @@
                                         class="btn btn-primary btn-rounded w-100 color_btn"
                                 >
                                     <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
+                              </button>
                             </div>
-                            <!-- Product content -->
                         </div>
                     </div>
                 </div>
@@ -816,13 +815,20 @@
                                 </div>
                             </div>
 
+<!-- ***** Main Banner Area End ***** -->
 
-                        </div>
+<!-- ***** About Area Starts ***** -->
+<section class="section" id="about">
+    <div class="vnt-container">
+        <div id="vnt-content">
 
-                    </div>
-                    <!-- Product card -->
 
+            <div class="about bg1">
+                <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
+                        href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><img
+                        src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg" alt="NGUỒN GỐC"></a>
                 </div>
+
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <!-- Product card -->
                     <div>
@@ -849,13 +855,10 @@
                                 </span>
                                     <a href="#">KHÁM PHÁ</a>
                                 </div>
+
                             </div>
-
                         </div>
-
                     </div>
-                    <!-- Product card -->
-
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <!-- Product card -->
@@ -884,12 +887,8 @@
                                     <a href="#">KHÁM PHÁ</a>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-                    <!-- Product card -->
-
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-6">
                     <!-- Product card -->
@@ -918,27 +917,30 @@
                                     <a href="#">KHÁM PHÁ</a>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-                    <!-- Product card -->
-
                 </div>
             </div>
+
+
         </div>
     </div>
+</section>
+<!-- ***** About Area Ends ***** -->
 
-    <div class="container text_menu_contain">
+<!-- ***** Menu Area Starts ***** -->
+<section class="section" id="menu">
+    <div class="container text_menu_contain mb-5">
         <div class="row">
             <div class="col-lg">
                 <div class="section-heading ">
-                    <h1>Mới ra mắt</h1>
+                    <h1>Bán chạy nhất</h1>
+
                 </div>
 
             </div>
         </div>
-        <div class="menu-item-carousel">
+        <div class="menu-item-carousel best_seller">
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel">
                     <div class="item">
@@ -971,11 +973,9 @@
                             p-3
                             "
                                         >
-
-                <span class="badge badge-success rounded-pill me-2"
-                >New</span
-                >
-
+                  <span class="badge badge-danger rounded-pill me-2"
+                  >Best seller</span
+                  >
                                         </div>
                                     </div>
                                     <div class="hover-overlay">
@@ -1071,11 +1071,9 @@
                             p-3
                             "
                                         >
-
-                  <span class="badge badge-success rounded-pill me-2"
-                  >New</span
+                  <span class="badge badge-danger rounded-pill me-2"
+                  >Best seller</span
                   >
-
 
                                         </div>
                                     </div>
@@ -1175,10 +1173,8 @@
                             p-3
                             "
                                         >
-
-                  <span class="badge badge-success rounded-pill me-2"
-                  >New</span
-
+                  <span class="badge badge-danger rounded-pill me-2"
+                  >Best seller</span
                   >
                                         </div>
                                     </div>
@@ -1259,7 +1255,7 @@
                                     data-ripple-color="light"
                             >
                                 <img
-                                        src="../template/custom/image/menu/cookie_cream.jpg"
+                                        src="../template/custom/image/menu/vodka.jpg"
                                         class="w-100"
                                         alt=""
                                 />
@@ -1273,13 +1269,9 @@
                             h-100
                             p-3
                             "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-                                        </div>
-
+                                        ><span class="badge badge-danger rounded-pill me-2"
+                                        >Best seller</span
+                                        ></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div
@@ -1292,7 +1284,7 @@
 
                             <!-- Product content -->
                             <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Sinh tố bánh quy</p>
+                                <p class="fw-bold mb-2">Vodka</p>
                                 <ul
                                         class="rating mb-2"
                                         data-mdb-toggle="rating"
@@ -1372,13 +1364,9 @@
                             h-100
                             p-3
                             "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-                                        </div>
-
+                                        ><span class="badge badge-danger rounded-pill me-2"
+                                        >Best seller</span
+                                        ></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div
@@ -1471,13 +1459,9 @@
                             h-100
                             p-3
                             "
-
-                                        >
-                                            <span class="badge badge-success rounded-pill me-2"
-                                            >New</span
-                                            >
-
-                                        </div>
+                                        ><span class="badge badge-danger rounded-pill"
+                                        >Best seller</span
+                                        ></div>
                                     </div>
                                     <div class="hover-overlay">
                                         <div
@@ -1487,7 +1471,6 @@
                                     </div>
                                 </a>
                             </div>
-
 
                             <!-- Product content -->
                             <div class="px-3 text-reset d-block">
@@ -1539,10 +1522,154 @@
                                 >
                                     <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                 </button>
-
                             </div>
                             <!-- Product content -->
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="farm-cate-v3">
+        <div class="same-title white">
+            <h2 class="text_favorite text-white">
+                Danh mục yêu thích
+            </h2>
+        </div>
+        <div class="container container_menu">
+            <div class="row menu_contain_alpha">
+                <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+                <c:forEach items="${categories}" var="category">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div>
+                            <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block content-farm"
+                                 data-ripple-color="light">
+                                <img src="<c:url value='/views/template/custom/image/home/wine.jpg'/>" class="w-100"
+                                     alt=""/>
+                                <div class="desc-farm">
+                                    <div>
+                            <span>
+                                    ${category.name}
+                            </span>
+                                        <a href="#"> KHÁM PHÁ </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+
+        <div class="container text_menu_contain">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="section-heading ">
+                        <h1>Mới ra mắt</h1>
+                    </div>
+
+                </div>
+            </div>
+            <div class="menu-item-carousel">
+                <div class="col-lg-12">
+                    <div class="owl-menu-item owl-carousel">
+                        <c:forEach items="${newProducts}" var="product">
+                            <div class="item">
+                                <div>
+                                    <!-- Product image -->
+                                    <div
+                                            class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block"
+                                            data-ripple-color="light">
+                                        <img
+                                                src="<c:url value='${product.images[0].url}'/>"
+                                                class=" w-100"
+                                                alt=""/>
+                                        <a href="#!">
+                                            <div class="mask">
+                                                <div class=" d-flex justify-content-start align-items-end h-100 p-3">
+                <span class="badge badge-success rounded-pill me-2"
+                >New</span
+                >
+
+                                                </div>
+                                            </div>
+                                            <div class="hover-overlay">
+                                                <div
+                                                        class="mask"
+                                                        style="background-color: hsla(0, 0%, 98.4%, 0.15)"
+                                                ></div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Product content -->
+                                    <div class="px-3 text-reset d-block">
+                                        <p class="fw-bold mb-2">${product.name}</p>
+                                        <ul class="rating mb-2"
+                                            data-mdb-toggle="rating"
+                                            data-mdb-readonly="true"
+                                            data-mdb-value="${product.averageRating}"
+                                        >
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far ps-0"
+                                                        title="Bad"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Poor"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="OK"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Good"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                        class="far fa-star fa-sm color_far"
+                                                        title="Excellent"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                        <c:choose>
+                                            <c:when test="${product.discount != 0}">
+                                                <h5 class="mb-3">
+                                                    <s class="text-muted me-2 small align-middle"><fmt:formatNumber
+                                                            value="${product.price}" type="currency"
+                                                            currencyCode="VND"/> </s
+                                                    ><span
+                                                        class="align-middle"><fmt:formatNumber
+                                                        value="${product.salePrice}" type="currency"
+                                                        currencyCode="VND"/></span>
+                                                </h5>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <h5 class="mb-3">
+                                                    <span class="align-middle"><fmt:formatNumber
+                                                            value="${product.price}" type="currency"
+                                                            currencyCode="VND"/></span>
+                                                </h5>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <button type="button" onclick="addToCart('${product.id}', '${product.size}')"
+                                                class="btn btn-primary btn-rounded w-100 color_btn">
+                                            <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
+                                        </button>
+                                    </div>
+                                    <!-- Product content -->
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -1813,9 +1940,25 @@
     });
 </script>
 
-<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+
+<script>
+    function addToCart(id, size) {
+        $.ajax({
+            url: '/add-cart?id=' + id + '&size=' + size,
+            type: 'GET',
+            success: function (data) {
+                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+            },
+            error: function (data) {
+                alert('Bị lỗi! Không thêm được sản phẩm');
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
