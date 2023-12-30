@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 <div class="main_content" style="margin-top: 100px">
@@ -69,15 +69,18 @@
 
                         <!-- Section: Categories -->
                         <section class="mb-5">
-                            <h5 class="fw-bold mb-4">Khu vực</h5>
+
 
                             <div class="text-muted small text-uppercase">
+                                <a href="#!" data-category-value="0" class="font-weight-bold text-reset area-link"
+                                   style="font-size: 20px; padding-bottom: 10px">Khu vực</a>
                                 <c:forEach var="area" items="${areas}" varStatus="loop">
-                                    <p class="mb-3">
-                                        <a href="#!" class="text-reset category-link" data-category-value="${loop.index + 1}" style="text-transform: uppercase">${area.name}</a>
+                                    <p class="mt-3">
+                                        <a href="#!" class="text-reset area-link"
+                                           data-category-value="${loop.index + 1}"
+                                           style="text-transform: uppercase">${area.name}</a>
                                     </p>
                                 </c:forEach>
-
 
 
                             </div>
@@ -89,7 +92,7 @@
                 </div>
                 <div class="col-lg-10">
 
-                    <div class="d-flex justify-content-end mb-5">
+                    <div class="mb-5">
 
                         <form class="d-flex justify-content-between flex-wrap">
                             <!-- Ngày Đặt -->
@@ -98,36 +101,27 @@
                                 <input type="date" class="form-control" name="start" id="filterDate" value="">
                             </div>
                             <!-- Thời Gian Đặt -->
-                            <div class="col-md-2 mb-3">
+                            <div class="col-md mb-3">
                                 <label for="filterStartTime" class="form-label">Thời Gian Đặt:</label>
                                 <input type="time" class="form-control" id="filterStartTime" min="08:00" max="18:00">
                             </div>
                             <!-- Thời Gian Kết Thúc -->
-                            <div class="col-md-2 mb-3">
+                            <div class="col-md mb-3">
                                 <label for="filterEndTime" class="form-label">Thời Gian Kết Thúc:</label>
                                 <input type="time" class="form-control" id="filterEndTime">
                             </div>
-                            <!-- Vị Trí -->
-                            <div class="col-md-2 mb-3">
-                                <label for="filterLocation" class="form-label">Vị Trí:</label>
-                                <select class="select" id="filterLocation">
-                                    <option value="1" selected>Chọn vị trí</option>
-                                    <option value="2">Trong nhà</option>
-                                    <option value="3">Ban công</option>
-                                    <option value="3">Cửa sổ</option>
-                                    <option value="3">Quầy bar</option>
-                                </select>
-                            </div>
+
                             <!-- Số người -->
                             <div class="col-md-2 mb-3">
                                 <label for="filterPeople" class="form-label">Số người:</label>
-                                <input type="number" class="form-control" id="filterPeople" min="1" name="count">
+                                <input type="number" class="form-control" id="filterPeople" min="1" value="0"
+                                       name="count">
                             </div>
                             <!-- Nút Áp Dụng -->
                             <div class="col-md-2 mb-3 d-flex align-items-end pb-1 justify-content-center">
 
                                 <div>
-                                    <button type="button" class="btn btn-primary"id="find">Tìm kiếm
+                                    <button type="button" class="btn btn-primary" id="find">Tìm kiếm
                                     </button>
                                 </div>
                             </div>
@@ -158,7 +152,7 @@
 
 </div>
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
@@ -173,19 +167,22 @@
     let count = $('#filterPeople').val();
     let text = "";
     let category = $('#category').val();
-    let categoryValue = 0;
+    let areaValue = 0;
+    let startTime = "0000-00-00 00:00:00";
+    let endTime = "0000-00-00 00:00:00";
 
     // Đặt sự kiện click cho các liên kết danh mục
-    var categoryLinks = document.querySelectorAll('.category-link');
-    categoryLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
+    var areaLinks = document.querySelectorAll('.area-link');
+    areaLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
             event.preventDefault();
 
             // Lấy giá trị danh mục từ thuộc tính data-category-value
-            categoryValue = this.getAttribute('data-category-value');
+            areaValue = this.getAttribute('data-category-value');
 
             // Hiển thị giá trị trong console (có thể thay đổi thành việc xử lý giá trị theo yêu cầu của bạn)
-            console.log("Selected category value: " + categoryValue);
+            console.log("Selected category value: " + areaValue);
+            ajaxRun(count, text, '', '', areaValue);
         });
     });
 
@@ -195,40 +192,94 @@
             visiblePages: 5,
             startPage: currentPage,
             onPageClick: function (event, page) {
-                if(currentPage!=page){
+                if (currentPage != page) {
                     currentPage = page;
                     count = $('#filterPeople').val();
-                    ajaxRun(count, text);
+                    ajaxRun(count, text, '', '', areaValue);
                 }
             }
         });
     });
 
 
+    $('#find').click(function () {
+        count = 0;
+        var currentDate = new Date();
+        var currentDateTimePlus15Minutes = new Date();
+        currentDateTimePlus15Minutes.setMinutes(currentDateTimePlus15Minutes.getMinutes() + 15);
 
-    $('#find').click(function (){
-        count = $('#filterPeople').val();
-        console.log("Số:" +count);
-        ajaxRun(count,text);
-    })
+        if ($('#filterDate').val()) {
+            startTime = $('#filterDate').val() + " " + $('#filterStartTime').val() + ":00";
+            endTime = $('#filterDate').val() + " " + $('#filterEndTime').val() + ":00";
 
-    $("#search-text").on('keyup',function (){
-        text = $(this).val();
-        console.log(text);
-        ajaxRun(count,text);
+            var parsedStartTime = new Date(startTime);
+            var parsedEndTime = new Date(endTime);
+            count = $('#filterPeople').val();
+            // Kiểm tra điều kiện
+
+            if (parsedStartTime > currentDateTimePlus15Minutes) {
+                if (parsedEndTime > parsedStartTime) {
+                    ajaxRun(count, text, startTime, endTime, areaValue);
+                } else alert('Thoi gian ket thuc phai lon hon thoi gian bat dau 15 phút.');
+            } else alert('Thoi gian bat dau phai lon hon thoi gian hien tai 15 phút.');
+
+
+        } else {
+            alert('Vui lòng chọn ngày đặt bàn.');
+        }
     });
 
-    $('#category').click(function (){
-        category = $(this).val();
 
-    })
+    $("#search-text").on('keyup', function () {
+        currentPage = 1; // Đặt lại currentPage về 1 khi có sự kiện tìm kiếm
+        text = $(this).val();
+        console.log(text);
+
+        // Gọi hàm update của twbsPagination để cập nhật giá trị currentPage
+        window.pagObj.twbsPagination('destroy'); // Hủy bỏ phân trang hiện tại
+        window.pagObj = $('#pagination').twbsPagination({
+            totalPages: totalPages,
+            visiblePages: 5,
+            startPage: currentPage,
+            onPageClick: function (event, page) {
+                if (currentPage != page) {
+                    currentPage = page;
+
+                    ajaxRun(count, text, '', '', areaValue);
+                }
+            }
+        });
+        count = 1;
+        ajaxRun(count, text, '', '', areaValue);
+    });
+
+        function yourButtonClick(button) {
+        // Lấy giá trị từ các trường date, startTime, và endTime
+        var selectedDate = $('#filterDate').val();
+        var selectedStartTime = $('#filterStartTime').val();
+        var selectedEndTime = $('#filterEndTime').val();
+
+        var parsedStartTime = new Date(selectedDate + " " + selectedStartTime);
+        var parsedEndTime = new Date(selectedDate + " " + selectedEndTime);
+        var currentDateTime = new Date();
+
+        // Kiểm tra điều kiện
+        if (parsedStartTime > currentDateTime && parsedEndTime > parsedStartTime) {
+            // Nếu điều kiện đúng, thực hiện hành động của bạn (ví dụ: chuyển hướng đến trang home.html)
+            window.location.href = 'home.html';
+        } else {
+            // Ngược lại, hiển thị cảnh báo hoặc thực hiện các hành động khác
+            alert('Vui lòng chọn thời gian hợp lệ!');
+        }
+    }
 
 
 
-    function ajaxRun(count, text) {
+
+    function ajaxRun(count, text, startTime, endTime, areaValue) {
         $.ajax({
             type: "Post",
-            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text ,
+            url: "/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text + "&startTime=" + startTime + "&endTime=" + endTime + "&areaValue=" + areaValue,
             ContentType: 'json',
             headers: {Accept: "application/json;charset=utf-8"},
             success: function (json) {
@@ -239,28 +290,30 @@
                     // onclick="return theFunction();"
                     data += "<div class=\"col-lg-4 col-6 mb-4\">"
                         + "<div class=\"bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main\" data-ripple-color=\"light\">"
-                        + "<img src=\"<%=request.getContextPath()%>/" + val.image + "\" class=\"w-100\" alt=\"\"/>"
+                        + "<img src=\"" + val.image + "\" class=\"w-100\" alt=\"\"/>"
                         + "<div class=\"hover-overlay table_omega text-center\">"
                         + "<br>"
                         + "<h4>Số bàn: " + val.tableNum + "</h4>"
                         + "<h4>chỗ ngồi: " + val.seatCount + " người</h4>"
                         + "<h4>Vị trí: " + val.location + "</h4>"
-                        + "<a href=\"home.html\" class=\"btn btn-primary\" style=\"text-transform: uppercase\">Chọn bàn</a>"
+                        + "<a class=\"btn btn-primary yourBookButton\" style=\"text-transform: uppercase\" onclick=\"yourButtonClick(this)\">Chọn bàn</a>"
                         + "</div>"
                         + "</div>"
                         + "</div>";
+
                 }
                 $("#yourContainer").html(data);
             }
         });
     }
-    ajaxRun(count, text);
 
-    function addToCart(id){
+    ajaxRun(count, text, startTime, endTime, areaValue);
+
+    function addToCart(id) {
         let confirmBox = confirm("Add to cart ?");
         if (confirmBox === true) {
             $.ajax({
-                url: '<%=request.getContextPath()%>/add-cart?id='+id,
+                url: '<%=request.getContextPath()%>/add-cart?id=' + id,
                 type: 'GET',
                 success: function (data) {
                     alert('Add to cart is success!');
@@ -274,6 +327,11 @@
             console.log("No add product to cart!");
         }
     }
+
+    // Bạn có thể sử dụng class hoặc id để xác định đúng thẻ cần kiểm tra
+
+
+
 
 
 </script>

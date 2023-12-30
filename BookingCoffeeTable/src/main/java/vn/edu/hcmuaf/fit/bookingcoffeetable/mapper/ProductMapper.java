@@ -42,7 +42,7 @@ public class ProductMapper implements RowMapper<Product> {
                 product.setDiscount(rs.getInt("discount"));
             }
             if (columnExists(rs, "createdDate")) {
-                product.setCreateDate(rs.getDate("createdDate"));
+                product.setCreatedDate(rs.getTimestamp("createdDate"));
             }
 
             List<Image> images = new ArrayList<>();

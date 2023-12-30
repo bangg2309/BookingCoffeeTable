@@ -35,32 +35,22 @@ public class TableController extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                totalItem = Integer.parseInt(tableService.totalItem());
-            }
-        });
-        thread.start();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // Calculate totalItem synchronously
+        totalItem = Integer.parseInt(tableService.totalItem());
+
         if (totalItem != -1) {
-            //paging attribute setup
-//            request.setAttribute("categories", categories);
+            // paging attribute setup
             areas = areaService.findAllArea();
             request.setAttribute("areas", areas);
             request.setAttribute("page", page);
             request.setAttribute("totalPage", (int) Math.ceil((double) totalItem / maxPageItem));
             RequestDispatcher rd = request.getRequestDispatcher("/views/web/table.jsp");
+
             try {
                 rd.forward(request, response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
