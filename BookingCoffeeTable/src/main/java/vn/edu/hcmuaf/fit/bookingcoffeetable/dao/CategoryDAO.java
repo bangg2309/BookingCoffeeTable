@@ -21,11 +21,6 @@ public interface CategoryDAO {
     List<Category> findNCategory(@Bind("limit") int limit);
 
 
-    @SqlQuery(QUERIES.SELECT_ALL_CATEGORY)
-    List<Category> findAllCategory();
-}
-
-
     @SqlQuery(QUERIES.CATEGORY.findOne)
     List<Category> findOne(@Bind("id") int id);
 

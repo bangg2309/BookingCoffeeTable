@@ -1,41 +1,41 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.dao;
 
-import org.jdbi.v3.core.mapper.Nested;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
-import org.jdbi.v3.sqlobject.config.RegisterJoinRowMapper;
-import org.jdbi.v3.sqlobject.config.RegisterRowMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Image;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.ImageMapper;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.ProductMapper;
 
 import java.util.List;
 
 @RegisterBeanMapper(Product.class)
 public interface ProductDAO {
-    @SqlUpdate(QUERIES.INSERT_PRODUCT)
+    @SqlUpdate(QUERIES.PRODUCT.INSERT_PRODUCT)
     void insertProduct(@Bind("categoryId") int categoryId, @Bind("name") String name, @Bind("price") int price, @Bind("description") String description, @Bind("status") int status, @Bind("discount") int discount);
 
 
-    @SqlQuery(QUERIES.SELECT_PRODUCT_WITH_IMAGES)
-    @RegisterRowMapper(ProductMapper.class)
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_WITH_IMAGES)
     List<Product> findOne(@Bind("id") int id);
 
-    @SqlQuery(QUERIES.SELECT_PRODUCTS_NEWEST)
-    @RegisterRowMapper(ProductMapper.class)
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTS_NEWEST)
     List<Product> findProductNewest(@Bind("limit") int limit);
 
-    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
-    @RegisterRowMapper(ProductMapper.class)
+
+    @SqlQuery(QUERIES.PRODUCT.SELECT_ALL_PRODUCT)
+
     List<Product> findAllProducts();
 
 
-    @RegisterRowMapper(ProductMapper.class)
-    @SqlQuery(QUERIES.SELECT_ALL_PRODUCT_OFFSET)
-    List<Product> findAllProductsOffset(@Bind("recordsPerPage") int recordsPerPage, @Bind("offset") int offset);
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_PAGE_PRICE_DESC)
+    List<Product> getProductsORDERBYPriceDESC(@Bind("categoryId") String categoryId, @Bind("find") String find, @Bind("limit") int limit, @Bind("offset") int offset, @Bind("from") int from, @Bind("to") int to);
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_PAGE_PRICE_ASC)
+    List<Product> getProductsORDERBYPriceASC(@Bind("categoryId") String categoryId, @Bind("find") String find, @Bind("limit") int limit, @Bind("offset") int offset, @Bind("from") int from, @Bind("to") int to);
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_PAGE)
+    List<Product> getProducts(@Bind("categoryId") String categoryId, @Bind("find") String find, @Bind("limit") int limit, @Bind("offset") int offset, @Bind("from") int from, @Bind("to") int to);
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_PAGE_NAME_ASC)
+    List<Product> getProductsORDERBYNameASC(@Bind("categoryId") String categoryId, @Bind("find") String find, @Bind("limit") int limit, @Bind("offset") int offset, @Bind("from") int from, @Bind("to") int to);
 
+    @SqlQuery(QUERIES.PRODUCT.COUNT_PRODUCT)
+    String totalItem();
 }

@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web.cart;
 
+import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Cart;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
@@ -31,7 +32,11 @@ public class AdditionController extends HttpServlet {
             }
             cart.addProduct(product, size);
             session.setAttribute("cart", cart);
-//            response.sendRedirect(request.getContextPath() + "/home");
+            Gson gson = new Gson();
+            String json = gson.toJson(cart);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
         }
     }
 

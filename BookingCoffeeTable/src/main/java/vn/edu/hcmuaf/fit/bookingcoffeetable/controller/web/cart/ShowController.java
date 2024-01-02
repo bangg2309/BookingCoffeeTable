@@ -1,11 +1,14 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web.cart;
 
+import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Cart;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "ShowController", value = "/cart")
@@ -19,6 +22,7 @@ public class ShowController extends HttpServlet {
         }
         session.setAttribute("cart", cart);
         request.setAttribute("cart", cart);
+
         request.getRequestDispatcher("/views/web/cart.jsp").forward(request, response);
     }
 

@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.json;
 
-
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.paging.PageRequest;
@@ -30,6 +29,9 @@ public class ListTablesJson extends HttpServlet {
 
     int countNum = 0;
 
+    int areaValue = 0;
+    String area = null;
+
     PageRequest pageRequest = null;
 
     public ListTablesJson() {
@@ -40,39 +42,33 @@ public class ListTablesJson extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
-        //receive request page-index and per-page
+
+        // Receive request page-index and per-page
         String pageIndex = request.getParameter("page-index");
         String perPage = request.getParameter("per-page");
         String count = request.getParameter("count");
-        String location = request.getParameter("text");
-
+        String find = request.getParameter("text");
+        String startTime = request.getParameter("startTime");
+        String endTime = request.getParameter("endTime");
+        area = request.getParameter("areaValue");
 
         try {
             pageIndexNum = Integer.parseInt(pageIndex);
             perPageNum = Integer.parseInt(perPage);
-            if (count != null && !count.equals("")){
+            if (area.equals("0")) {
+                area = null;
+            }
+            if (count != null && !count.equals("")) {
                 countNum = Integer.parseInt(count);
             }
-
 
             pageRequest = new PageRequest(pageIndexNum, perPageNum);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(location);
-                tables = tableService.getTables(countNum, location, pageRequest.getLimit(), pageRequest.getOffset());
-            }
-        });
-        thread.start();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // Fetch tables directly without using a separate thread
+        tables = tableService.getTables(area, startTime, endTime, countNum, find, pageRequest.getLimit(), pageRequest.getOffset());
 
         if (tables != null) {
             json = new Gson().toJson(tables);

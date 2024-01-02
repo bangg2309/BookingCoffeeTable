@@ -14,6 +14,10 @@ public class User implements Serializable {
     private String fullname;
     private String avatar;
     private String createdDate;
+    private Role role;
+
+    public User() {
+    }
 
     @Override
     public String toString() {
@@ -118,5 +122,13 @@ public class User implements Serializable {
 
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,19 +36,22 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="userManagement.jsp" class="btn btn-link mb-2">
+        <a href="/admin/user-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
             <span class="text-white">Thông tin người dùng</span>
         </div>
-        <form class="border p-5">
+        <form class="border p-5" id="formSubmit" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="username" class="form-label"><b>Tên đăng nhập</b></label>
                         <i class="fas fa-user"></i>
-                        <input type="text" class="form-control" id="username" name="username"
+                        <input type="text" class="form-control" id="username" name="username" value="${user.username}"
+                        <c:if test="${user.username != null}">
+                               readonly
+                        </c:if>
                                placeholder="Nhập UserName..." required>
                     </div>
                 </div>
@@ -57,6 +60,10 @@
                         <label for="password" class="form-label"><b>Mật khẩu</b></label>
                         <i class="fas fa-key"></i>
                         <input type="password" class="form-control" id="password" name="password"
+                               value="${user.password}"
+                        <c:if test="${user.password != null}">
+                               readonly
+                        </c:if>
                                placeholder="Nhập Password..." required>
                     </div>
                 </div>
@@ -64,7 +71,7 @@
                     <div class="mb-3">
                         <label for="fullname" class="form-label"><b>Tên đầy đủ</b></label>
                         <i class="fas fa-user"></i>
-                        <input type="text" class="form-control" id="fullname" name="fullname"
+                        <input type="text" class="form-control" id="fullname" name="fullname" value="${user.fullname}"
                                placeholder="Nhập FullName..." required>
                     </div>
                 </div>
@@ -74,7 +81,8 @@
                     <div class="mb-3">
                         <label for="email" class="form-label"><b>Email</b></label>
                         <i class="fas fa-envelope"></i>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập Email..."
+                        <input type="email" class="form-control" id="email" name="email" value="${user.email}"
+                               placeholder="Nhập Email..."
                                required>
                     </div>
                 </div>
@@ -82,18 +90,25 @@
                     <div class="mb-3">
                         <label for="phone" class="form-label"><b>Số điện thoại</b></label>
                         <i class="fas fa-phone"></i>
-                        <input type="number" class="form-control" id="phone" name="phone"
+                        <input type="number" class="form-control" id="phone" name="phone" value="${user.phone}"
                                placeholder="Nhập PhoneNumber..." required>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="role" class="form-label"><b>Vai trò</b></label>
+                    <label for="roleId" class="form-label"><b>Vai trò</b></label>
                     <i class="fas fa-user-tag"></i>
-                    <select class="form-select" id="role" name="role" required>
-                        <option value="" disabled selected>Chọn vai trò</option>
-                        <option value="1">Quản trị</option>
-                        <option value="2">Người dùng</option>
-                        <!-- Add more options as needed -->
+                    <select class="form-select" id="roleId" name="roleId" required>
+                        <option value="" disabled>--Chọn vai trò--</option>
+                        <c:forEach items="${roles}" var="role">
+                            <c:choose>
+                                <c:when test="${role.id == user.roleId}">
+                                    <option value="${role.id}" selected>${role.name}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${role.id}">${role.name}</option>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </select>
                 </div>
             </div>
@@ -105,11 +120,19 @@
                             <i class="fas fa-toggle-on"></i>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="emailVerify" id="verify" value="1" checked>
+                            <input class="form-check-input" type="radio" name="emailVerify" id="verify" value="1"
+                            <c:if test="${user.emailVerified == 1}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="verify">Đã xác thực</label>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="emailVerify" id="inVerify" value="0">
+                            <input class="form-check-input" type="radio" name="emailVerify" id="inVerify" value="0"
+                            <c:if test="${user.emailVerified == 0}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="inVerify">Chưa xác thực</label>
                         </div>
                     </div>
@@ -121,11 +144,19 @@
                             <i class="fas fa-toggle-on"></i>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1"
+                            <c:if test="${user.status == 1}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="active">Hoạt động</label>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0"
+                            <c:if test="${user.status == 0}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="inactive">Ngừng hoạt động</label>
                         </div>
                     </div>
@@ -141,22 +172,87 @@
 
             <!-- Repeat the pattern for other form elements -->
 
-            <button type="submit" class="btn btn-primary">Thêm mới</button>
+            <button type="button" class="btn btn-primary" id="addOrUpdate">
+                <c:if test="${user.id != null}">
+                    Cập nhật
+                </c:if>
+                <c:if test="${user.id == null}">
+                    Thêm mới
+                </c:if>
+            </button>
+
+            <input type="hidden" name="id" id="id" value="${user.id}"/>
+            <input type="hidden" name="user" id="user" value="${user}"/>
         </form>
 
     </div>
     <!-- Container for demo purpose -->
 </main>
 <!--Main layout-->
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    $('#addOrUpdate').click(function (e) {
+        e.preventDefault();
+        var data = {};
+        var userId = $('#id').val();
+        var formData = $('#formSubmit').serializeArray();
+        $.each(formData, function (index, v) {
+            data["" + v.name + ""] = v.value;
+        });
+        console.log(data);
+        if (userId === "") {
+            delete data.id;
+            addUser(data);
+        } else {
+            updateUser(data);
+        }
+    });
 
-<!--Footer-->
-<footer></footer>
-<!--Footer-->
+    function addUser(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "POST",
+            url: "/api/admin/user",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+                alert("Thêm mới thành công");
+                window.location.href = "/admin/user-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Thêm mới thất bại");
+            }
+        })
+    }
+
+    function updateUser(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "PUT",
+            url: "/api/admin/user",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert("Cập nhật thành công");
+                window.location.href = "/admin/user-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Cập nhật thất bại");
+            }
+        })
+    }
+</script>
 <!-- End your project here-->
 </body>
 
 <!-- MDB ESSENTIAL -->
-<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

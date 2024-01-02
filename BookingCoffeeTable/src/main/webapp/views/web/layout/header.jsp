@@ -94,17 +94,29 @@
             <!-- Left links -->
 
 
-            <ul class="navbar-collapse" style="margin-bottom: 0;">
-                <li class="scroll-to-section order_table"><a href="bill.html">Đặt bàn</a></li>
-                <li class="scroll-to-section drop">
-                    <a href="login.html"><span class="user_icon" style="padding-right: 10px"><i
-                            class="fa fa-user-circle"
-                            aria-hidden="true"></i></span>huutinh</a>
+            <ul class="navbar-collapse d-flex justify-content-end" style="margin-bottom: 0;">
+
+                <li class="scroll-to-section order_table"><a href="/cart">Đặt bàn</a></li>
+                <c:if test="${not empty userSession}">
+                    <li class="scroll-to-section drop" style="padding-right: 0px">
+                    <a href="/profile"><span class="user_icon" style="padding-right: 10px"><i
+                    class="fa fa-user-circle"
+                    aria-hidden="true"></i></span>${userSession.username}</a>
+
                     <ul class="drop_content">
-                        <li><a class="dropdown-item" href="#">Hồ sơ của tôi</a></li>
-                        <li><a class="dropdown-item" href="login.html">Đăng xuất</a></li>
+                    <li><a class="dropdown-item" href="/profile">Hồ sơ của tôi</a></li>
+                    <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
                     </ul>
-                </li>
+                    </li>
+                </c:if>
+                <c:if test="${empty userSession}">
+                    <li class="scroll-to-section drop" style="padding-right: 0px">
+                    <a href="/login"><span class="user_icon" style="padding-right: 10px"><i
+                    class="fa fa-user-circle"
+                    aria-hidden="true"></i></span>Đăng nhập</a>
+                    </li>
+                </c:if>
+
             </ul>
 
         </div>
