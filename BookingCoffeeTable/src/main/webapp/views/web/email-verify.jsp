@@ -6,6 +6,7 @@
 <head>
 
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -41,7 +42,7 @@
             bắt đầu. Liên kết sẽ hết hạn sau 48 giờ.
         </p>
         <div class="d-flex justify-content-center button mt-4 pb-4">
-            <a class="btn btn-primary  " href="userProfile.jsp"
+            <a class="btn btn-primary  " href="profile.jsp"
                style="color: white">Xác nhận gmail của tôi</a>
         </div>
 

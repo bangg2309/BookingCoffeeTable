@@ -45,7 +45,7 @@
                         </div>
                         <nav class="side-menu">
                             <ul class="nav">
-                                <li><a href="userProfile.jsp"><span class="fa fa-user"></span> Thông tin</a></li>
+                                <li><a href="profile.jsp"><span class="fa fa-user"></span> Thông tin</a></li>
                                 <li class="active"><a href="#"><span class="fa fa-cog"></span> Thay Đổi Mật Khẩu</a>
                                 </li>
                                 <li><a href="historyBooking.jsp"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>

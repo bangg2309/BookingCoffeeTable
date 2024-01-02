@@ -37,7 +37,7 @@
     <!-- Container for demo purpose -->
     <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="userAddition.jsp">
+            <a class="btn btn-primary" href="/admin/userManagement/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm người dùng</span>
             </a>
@@ -54,55 +54,64 @@
                 <thead class="bg-light">
                 <tr>
                     <th>STT</th>
+                    <th>Vai trò</th>
                     <th>Tên đăng nhập</th>
                     <th>Tên người dùng</th>
                     <th>Số điện thoại</th>
                     <th>email</th>
-                    <th>Xác thực Email</th>
                     <th>Trạng thái</th>
                     <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class=" mb-1">bangg2309</p>
+                <c:forEach items="${users}" var="user">
+                    <tr>
+                        <td>
+                            ${user.id}
+                        </td>
+                        <td>
+                            <span>${user.role.name}</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class=" mb-1">${user.username}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class=" mb-1">Trần Quí Bằng</p>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class=" mb-1">${user.fullname}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>0842314569</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">bangg2309@gmail.com</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">đã xác thực</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-danger rounded-pill d-inline">ngưng hoạt động</span>
-                    </td>
-                    <td>
-                        <a href="productAddition.jsp" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            <span>${user.phone}</span>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${user.email}</p>
+                        </td>
+                        <c:if test="${user.status == 1}">
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">active</span>
+                            </td>
+                        </c:if>
+                        <c:if test="${user.status ==0}">
+                            <td>
+                                <span class="badge badge-danger rounded-pill d-inline">blocked</span>
+                            </td>
+                        </c:if>
+                        <td>
+                            <a href="/admin/userManagement/edit?id=${user.id}" class="btn btn-primary btn-floating">
+                                <i class="far fa-pen-to-square"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteUser(${user.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -111,15 +120,33 @@
     <!-- Container for demo purpose -->
 </main>
 <!--Main layout-->
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function deleteUser(id){
 
-<!--Footer-->
-<footer></footer>
-<!--Footer-->
-<!-- End your project here-->
+    $.ajax({
+        url: '/api/admin/user',
+        contentType: "application/json",
+        type: 'DELETE',
+        data: JSON.stringify({
+            id: id
+        }),
+        success: function (data) {
+            if (data) {
+                alert('Xóa thành công');
+                location.reload();
+            } else {
+                alert('Xóa thất bại');
+            }
+        }
+    });
+    }
+
+</script>
 </body>
 
 <!-- MDB ESSENTIAL -->
-<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->
