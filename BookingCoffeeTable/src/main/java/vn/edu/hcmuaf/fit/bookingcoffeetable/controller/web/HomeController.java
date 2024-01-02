@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
-
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
@@ -27,30 +26,6 @@ public class HomeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json");
-        Product product = productService.findOne(1);
-//        String json = gson.toJson(product);
-//        System.out.println(json);
-//        response.getWriter().write(json);
-
-        List<Category> category = categoryService.findAll();
-//        String json1 = gson.toJson(category);
-//        System.out.println(json1);
-//        response.getWriter().write(json1);
-        List<SlideImg> slideImgs = slideImgService.getImgSlide();
-        List<Post> posts = postService.getPost();
-
-        request.setAttribute("products", productService.findOne(1));
-        request.setAttribute("categories", categoryService.findAll());
-        request.setAttribute("slideImgs", slideImgs);
-        request.setAttribute("posts", posts);
-
-
-
         int productId = 1;
         int limitCategory = 4;
         int limitProducts = 10;
@@ -58,7 +33,6 @@ public class HomeController extends HttpServlet {
         List<Product> newProducts = productService.findProductNewest(limitProducts);
         request.setAttribute("newProducts", newProducts);
         request.setAttribute("categories", categories);
-
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
     }
