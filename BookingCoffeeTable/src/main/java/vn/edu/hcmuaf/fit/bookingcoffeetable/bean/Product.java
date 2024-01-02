@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public class Product implements Serializable {
     private int quantity;
     private int status;
     private int discount;
-    private Date createDate;
+    private Timestamp createdDate;
     private int salePrice;
     private int totalPrice;
     private int saleTotalPrice;
@@ -41,7 +42,8 @@ public class Product implements Serializable {
                 ", quantity=" + quantity +
                 ", status=" + status +
                 ", discount=" + discount +
-                ", createDate=" + createDate +
+                ", createdDate=" + createdDate +
+                ", salePrice=" + salePrice +
                 ", totalPrice=" + totalPrice +
                 ", saleTotalPrice=" + saleTotalPrice +
                 ", averageRating=" + averageRating +
@@ -49,17 +51,20 @@ public class Product implements Serializable {
                 '}';
     }
 
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id == product.id && categoryId == product.categoryId && price == product.price && quantity == product.quantity && status == product.status && discount == product.discount && totalPrice == product.totalPrice && saleTotalPrice == product.saleTotalPrice && Double.compare(product.averageRating, averageRating) == 0 && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(images, product.images) && Objects.equals(reviews, product.reviews) && Objects.equals(productVariants, product.productVariants) && Objects.equals(createDate, product.createDate) && Objects.equals(size, product.size);
+        return id == product.id && categoryId == product.categoryId && price == product.price && quantity == product.quantity && status == product.status && discount == product.discount && totalPrice == product.totalPrice && saleTotalPrice == product.saleTotalPrice && Double.compare(product.averageRating, averageRating) == 0 && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(images, product.images) && Objects.equals(reviews, product.reviews) && Objects.equals(productVariants, product.productVariants) && Objects.equals(createdDate, product.createdDate) && Objects.equals(size, product.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, categoryId, name, price, description, images, reviews, productVariants, quantity, status, discount, createDate, totalPrice, saleTotalPrice, averageRating, size);
+        return Objects.hash(id, categoryId, name, price, description, images, reviews, productVariants, quantity, status, discount, createdDate, totalPrice, saleTotalPrice, averageRating, size);
     }
 
     public void updateBySize(String size) {
@@ -168,12 +173,12 @@ public class Product implements Serializable {
         this.reviews = reviews;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public int getQuantity() {
@@ -209,9 +214,9 @@ public class Product implements Serializable {
             sum += review.getStarRate();
         }
         if (reviews.size() > 0) {
-            return sum / reviews.size();
+            return this.averageRating =  sum / reviews.size();
         }
-        return 5;
+        return this.averageRating = 5;
     }
 
     public void setAverageRating(double averageRating) {
