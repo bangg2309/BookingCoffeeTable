@@ -36,29 +36,72 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <c:forEach items="${slideImgs}" var="slideImg">
-                    <div class="swiper-slide">
-                        <img src="<c:url value="${slideImg.url}"/>">
-                        <div class="alpha">
-                            <div class="slide_booking">
-                                <div>
-                                    <span>COFFEE SHOP</span>
-                                    <a href="table.jsp">ĐẶT BÀN NGAY</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="beta">
-                            <div class="">
-                                <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
-                                <div>
-                                    <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
-                                    <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
-                                    <h6>Chủ nhật: 9h00 - 22h00</h6>
-                                </div>
+                <div class="swiper-slide">
+                    <img src="<c:url value="/views/template/custom/image/home/background1.jpg"/>">
+                    <div class="alpha">
+                        <div class="slide_booking">
+                            <div>
+                                <span>COFFEE SHOP</span>
+                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
                             </div>
                         </div>
                     </div>
-                </c:forEach>
+                    <div class="beta">
+                        <div class="">
+                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
+                            <div>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
+                                <h6>Chủ nhật: 9h00 - 22h00</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<c:url value="/views/template/custom/image/home/background2.jpg"/>">
+                    <div class="alpha">
+                        <div class="slide_booking">
+                            <div>
+                                <span>COFFEE SHOP</span>
+                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="beta">
+                        <div class="">
+                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
+                            <div>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
+                                <h6>Chủ nhật: 9h00 - 22h00</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <img src="<c:url value="/views/template/custom/image/home/background3.jpg"/>">
+                    <div class="alpha">
+                        <div class="slide_booking">
+                            <div>
+                                <span>COFFEE SHOP</span>
+                                <a href="table.jsp">ĐẶT BÀN NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="beta">
+                        <div class="">
+                            <h5 class="text-uppercase mb-lg-5 mb-sm-0">Giờ mở cửa</h5>
+                            <div>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ hai - Thứ năm: 8h00 - 21h00</h6>
+                                <h6 class="mb-lg-4 mb-sm-0">Thứ sáu - Thứ bảy: 8h00 - 1h00</h6>
+                                <h6>Chủ nhật: 9h00 - 22h00</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <!--            <div class="swiper-button-next"></div>-->
             <!--            <div class="swiper-button-prev"></div>-->
@@ -109,7 +152,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="about bg2">
@@ -772,763 +814,10 @@
                                         class="btn btn-primary btn-rounded w-100 color_btn"
                                 >
                                     <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                              </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="farm-cate-v3">
-        <div class="same-title white">
-            <h2 class="text_favorite text-white">
-                Danh mục yêu thích
-            </h2>
-        </div>
-        <div class="container container_menu">
-            <div class="row menu_contain_alpha">
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-                                    src="<c:url value="/views/template/custom/image/home/fruit.jpg" />"
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    TRÀ TRÁI CÂY
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-
-<!-- ***** Main Banner Area End ***** -->
-
-<!-- ***** About Area Starts ***** -->
-<section class="section" id="about">
-    <div class="vnt-container">
-        <div id="vnt-content">
-
-
-            <div class="about bg1">
-                <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
-                        href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><img
-                        src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg" alt="NGUỒN GỐC"></a>
-                </div>
-
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-                                    src="<c:url value="/views/template/custom/image/home/wine.jpg" />"
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    RƯỢU
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-                                    src="<c:url value="/views/template/custom/image/home/coffee.jpg" />"
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    CÀ PHÊ
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6">
-                    <!-- Product card -->
-                    <div>
-                        <!-- Product image -->
-                        <div
-                                class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block content-farm
-                      "
-                                data-ripple-color="light"
-                        >
-                            <img
-                                    src="<c:url value="/views/template/custom/image/home/cookie.jpg" />"
-                                    class="w-100"
-                                    alt=""/>
-                            <div class="desc-farm">
-                                <div>
-                                <span>
-                                    BÁNH NGỌT
-                                </span>
-                                    <a href="#">KHÁM PHÁ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-<!-- ***** About Area Ends ***** -->
-
-<!-- ***** Menu Area Starts ***** -->
-<section class="section" id="menu">
-    <div class="container text_menu_contain mb-5">
-        <div class="row">
-            <div class="col-lg">
-                <div class="section-heading ">
-                    <h1>Bán chạy nhất</h1>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="menu-item-carousel best_seller">
-            <div class="col-lg-12">
-                <div class="owl-menu-item owl-carousel">
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="<c:url value="/views/template/custom/image/home/coffeeCream.jpg" />"
-                                        class="w-100"
-                                        alt=""/>
-
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        >
-                  <span class="badge badge-danger rounded-pill me-2"
-                  >Best seller</span
-                  >
-                                        </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Cà phê kem</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle">35.000đ</s
-                                    ><span class="align-middle">20.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                 </button>
                             </div>
                             <!-- Product content -->
                         </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/dalgona.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        >
-                  <span class="badge badge-danger rounded-pill me-2"
-                  >Best seller</span
-                  >
-
-                                        </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Cà phê bọt biển</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="5"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">20.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
-                      bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-
-
-                                        src="../template/custom/image/menu/lemon.jpg"
-
-
-                                        class="w-100"
-                                        alt=""/>
-
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        >
-                  <span class="badge badge-danger rounded-pill me-2"
-                  >Best seller</span
-                  >
-                                        </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Nước chanh</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle">20.000đ</s
-                                    ><span class="align-middle">15.000đ</span>
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/vodka.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        ><span class="badge badge-danger rounded-pill me-2"
-                                        >Best seller</span
-                                        ></div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Vodka</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">20.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/strawberry.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        ><span class="badge badge-danger rounded-pill me-2"
-                                        >Best seller</span
-                                        ></div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Sinh tố dâu</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">59.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="bg-image ripple
-                      shadow-4-soft
-                      rounded-6
-                      mb-4
-                      overflow-hidden
-                      d-block
-                      "
-                                    data-ripple-color="light"
-                            >
-                                <img
-                                        src="../template/custom/image/menu/cream_vanila.jpg"
-                                        class="w-100"
-                                        alt=""
-                                />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div
-                                                class="
-                            d-flex
-                            justify-content-start
-                            align-items-end
-                            h-100
-                            p-3
-                            "
-                                        ><span class="badge badge-danger rounded-pill"
-                                        >Best seller</span
-                                        ></div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">Chocalate đá xay</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="4"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <span class="align-middle">49.000đ</span>
-                                </h5>
-
-                                <button
-                                        type="button"
-                                        class="btn btn-primary btn-rounded w-100 color_btn"
-                                >
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
-                            </div>
-                            <!-- Product content -->
-                        </div>
-=======
-                        </c:forEach>
->>>>>>> e34b7e2 (commit)
                     </div>
                 </div>
             </div>
@@ -1664,19 +953,19 @@
             <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
                 <div class="stArticleLoop">
                     <div class="box-latest-news">
-                        <a href="<c:url value="/post?id=${post.id}"/>" class="thumb-img">
+                        <a href="" class="thumb-img">
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="<c:url value="${post.thumbnail}" />" alt="">
+                            <img src="<c:url value="/views/template/custom/image/home/new/2.jpg" />" alt="">
                         </a>
                         <div class="content-ln">
-                            <span>${post.createdDate}</span>
-                            <a href="<c:url value="/post?id=${post.id}"/>">
-                                <h3>${post.shortDescription}</h3>
+                            <span>07/09/2023</span>
+                            <a href="">
+                                <h3>Trung thu tết đoàn viên</h3>
                             </a>
-                            <a href="<c:url value="/post?id=${post.id}"/>">
-                                "Xem thêm"
+                            <a href="">
+                                "Xem thêm "
                                 <i class="fa fa-long-arrow-right"></i>
                             </a>
 
@@ -1685,7 +974,54 @@
 
                 </div>
             </div>
-            </c:forEach>
+            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
+                <div class="stArticleLoop">
+                    <div class="box-latest-news">
+                        <a href="" class="thumb-img">
+                            <div class="mask-plus">
+                                <div class="shape"></div>
+                            </div>
+                            <img src="<c:url value="/views/template/custom/image/home/new/1.jpg" />" alt="">
+                        </a>
+                        <div class="content-ln">
+                            <span>07/09/2023</span>
+                            <a href="">
+                                <h3>Trung thu tết đoàn viên</h3>
+                            </a>
+                            <a href="">
+                                "Xem thêm "
+                                <i class="fa fa-long-arrow-right"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
+                <div class="stArticleLoop">
+                    <div class="box-latest-news">
+                        <a href="" class="thumb-img">
+                            <div class="mask-plus">
+                                <div class="shape"></div>
+                            </div>
+                            <img src="<c:url value="/views/template/custom/image/home/new/3.jpg"/>" alt="">
+                        </a>
+                        <div class="content-ln">
+                            <span>07/09/2023</span>
+                            <a href="">
+                                <h3>Trung thu tết đoàn viên</h3>
+                            </a>
+                            <a href="">
+                                "Xem thêm "
+                                <i class="fa fa-long-arrow-right"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </section>

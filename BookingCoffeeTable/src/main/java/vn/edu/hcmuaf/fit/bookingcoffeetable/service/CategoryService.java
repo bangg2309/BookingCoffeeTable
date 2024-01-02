@@ -31,7 +31,6 @@ public class CategoryService {
 
     public List<Category> findAllCategory() {
         return categoryDAO.findAllCategory();
-
     }
 
     public List<Category> findNCategory(int limit) {
