@@ -279,7 +279,9 @@
     function ajaxRun(count, text, startTime, endTime, areaValue) {
         $.ajax({
             type: "Post",
+
             url: "/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text + "&startTime=" + startTime + "&endTime=" + endTime + "&areaValue=" + areaValue,
+
             ContentType: 'json',
             headers: {Accept: "application/json;charset=utf-8"},
             success: function (json) {

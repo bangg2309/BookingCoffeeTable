@@ -16,6 +16,7 @@ public class Product implements Serializable {
     private List<Image> images = new ArrayList<>();
     private List<Review> reviews = new ArrayList<>();
     private List<ProductVariant> productVariants = new ArrayList<>();
+    private Category category;
     private int quantity;
     private int status;
     private int discount;
@@ -65,8 +66,6 @@ public class Product implements Serializable {
     public int hashCode() {
         return Objects.hash(id, categoryId, name, price, description, images, reviews, productVariants, quantity, status, discount, createdDate, totalPrice, saleTotalPrice, averageRating, size);
     }
-
-
 
     public void updateBySize(String size) {
         for (ProductVariant productVariant : productVariants) {
@@ -192,9 +191,9 @@ public class Product implements Serializable {
 
     public int getSaleTotalPrice() {
         if (this.discount > 0) {
-            return this.price * this.quantity * (100 - this.discount) / 100;
+            return saleTotalPrice = this.price * this.quantity * (100 - this.discount) / 100;
         }
-        return this.price * this.quantity;
+        return saleTotalPrice = this.price * this.quantity;
     }
 
     public void setSaleTotalPrice(int saleTotalPrice) {
@@ -202,7 +201,7 @@ public class Product implements Serializable {
     }
 
     public int getTotalPrice() {
-        return this.price * this.quantity;
+        return this.totalPrice = this.price * this.quantity;
     }
 
     public void setTotalPrice(int totalPrice) {
@@ -239,4 +238,13 @@ public class Product implements Serializable {
     public void setSalePrice(int salePrice) {
         this.salePrice = salePrice;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 }

@@ -37,9 +37,12 @@ public class CategoryService {
         return categoryDAO.findNCategory(limit);
     }
 
-    public static void main(String[] args) {
-        CategoryService categoryService = CategoryService.getInstance();
-        System.out.println(categoryService.findNCategory(4));
+    public Category findOne(int id) {
+        List<Category> categories = categoryDAO.findOne(id);
+        if (!categories.isEmpty()) {
+            return categories.get(0);
+        }
+        return null;
     }
 
 }

@@ -28,7 +28,8 @@
     <!-- Custom styles -->
 
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
+    <link rel="stylesheet"
+          href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
 
 </head>
 <body>
@@ -43,30 +44,31 @@
                     <div class="side-bar ">
                         <div class="user-info">
                             <img class="img-profile img-circle img-responsive center-block"
-                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                 src="${userSession.avatar}" alt="avatar">
                             <ul class="meta list list-unstyled">
-                                <li class="name" style="font-weight: bold; font-size: 20px">Nguyễn Hửu Tính
+                                <li class="fullname"
+                                    style="font-weight: bold; font-size: 20px">${userSession.fullname}</li>
                                 </li>
-                                <li class="email"><a href="#">huutinh2412@gmail.com</a></li>
+                                <li class="email"><a href="#">${userSession.email}</a></li>
                             </ul>
                         </div>
                         <nav class="side-menu">
                             <ul class="nav">
                                 <li class="active"><a href="#"><span class="fa fa-user"></span> Thông tin</a></li>
-                                <li><a href="changePassword.jsp"><span class="fa fa-cog"></span> Thay đổi mật khẩu</a>
+                                <li><a href="/change-password"><span class="fa fa-cog"></span> Thay đổi mật khẩu</a>
                                 </li>
-                                <li><a href="historyBooking.jsp"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>
+                                <li><a href="/history-booking"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="content-panel">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" method="post" action="/profile">
                             <fieldset class="fieldset">
                                 <h3 class="fieldset-title">Thông Tin Cá Nhân</h3>
                                 <div class="form-group avatar row">
                                     <figure class="figure col-md-2 col-sm-3 col-xs-12">
                                         <img class="img-rounded img-responsive"
-                                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                             src="${userSession.avatar}" alt="avatar">
                                     </figure>
                                     <div class="form-inline col-md-10 col-sm-9 col-xs-12">
                                         <input type="file" class="file-uploader pull-left">
@@ -78,7 +80,8 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Tên Đăng Nhập</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="huutinh" disabled>
+                                        <input type="text" class="form-control" value="${userSession.username}"
+                                               disabled>
                                     </div>
                                 </div>
 
@@ -89,19 +92,19 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Và Tên</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Sanders">
+                                        <input type="text" class="form-control" name="fullname" value="${userSession.fullname}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" value="Rebecca@website.com">
+                                        <input type="email" class="form-control" name="email" value="${userSession.email}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="number" class="form-control" value="SpeedyBecky">
+                                        <input type="number" class="form-control" name="phone" value="${userSession.phone}">
                                     </div>
                                 </div>
                             </fieldset>
@@ -109,9 +112,10 @@
                             <div class="form-group row">
                                 <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
                                     <input class="btn text-white" style="background-color: #bf9369" type="submit"
-                                           value="Update Profile" style="background-color: #bf9369; color: white">
+                                           value="Cập nhật thông tin" style="background-color: #bf9369; color: white">
                                 </div>
                             </div>
+                            <input type="hidden" name="userId" value="${userSession.id}">
                         </form>
                     </div>
                 </div>
@@ -133,5 +137,6 @@
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+
 </body>
 </html>

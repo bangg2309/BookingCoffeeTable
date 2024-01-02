@@ -37,7 +37,8 @@ public class Cart implements Serializable {
             productKey = generateProductKey(product.getId(), size);
             product.setSize(size);
             products.put(productKey, product);
-            getTotalPrice();
+            product.getTotalPrice();
+            this.getTotalPrice();
             System.out.println("add product: " + productKey);
         }
     }
@@ -96,7 +97,6 @@ public class Cart implements Serializable {
                 ", totalPrice=" + totalPrice +
                 '}';
     }
-
     public Map<String, Product> getProducts() {
         return products;
     }
@@ -110,6 +110,7 @@ public class Cart implements Serializable {
         for (Product product : products.values()) {
             totalPrice += product.getSaleTotalPrice();
         }
+        setTotalPrice(totalPrice);
         return totalPrice;
     }
 

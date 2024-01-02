@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Table {
     private int id;
-
     private int areaId;
     private int tableNum;
     private int seatCount;
@@ -37,7 +36,6 @@ public class Table {
                 ", reservations=" + reservations +
                 '}';
     }
-
     public int getId() {
         return id;
     }

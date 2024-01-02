@@ -1,21 +1,53 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Reservation implements Serializable {
     private int id;
+
     private int tableId;
     private int userId;
+
     private String contactName;
     private int contactPhone;
     private String contactEmail;
     private String startTime;
     private String endTime;
-    private int status;
-    private int total;
+
+    private String status;
     private String paymentMethod;
     private String note;
+    private String totalPrice;
     private String createdDate;
+
+    private List<ReservationProduct> reservationProducts;
+    private Table table;
+
+
+    public Reservation() {
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", tableId=" + tableId +
+                ", contactName='" + contactName + '\'' +
+                ", contactPhone=" + contactPhone +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", status='" + status + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", note='" + note + '\'' +
+                ", totalPrice='" + totalPrice + '\'' +
+                ", createdDate='" + createdDate + '\'' +
+                ", reservationProducts=" + reservationProducts +
+                ", table=" + table +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -23,14 +55,7 @@ public class Reservation implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
 
-    public int getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(int tableId) {
-        this.tableId = tableId;
     }
 
     public int getUserId() {
@@ -40,6 +65,16 @@ public class Reservation implements Serializable {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+
+    public int getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(int tableId) {
+        this.tableId = tableId;
+    }
+
 
     public String getContactName() {
         return contactName;
@@ -81,21 +116,14 @@ public class Reservation implements Serializable {
         this.endTime = endTime;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 
     public String getPaymentMethod() {
         return paymentMethod;
@@ -113,6 +141,15 @@ public class Reservation implements Serializable {
         this.note = note;
     }
 
+
+    public String getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
     public String getCreatedDate() {
         return createdDate;
     }
@@ -121,23 +158,22 @@ public class Reservation implements Serializable {
         this.createdDate = createdDate;
     }
 
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "id=" + id +
-                ", tableId=" + tableId +
-                ", userId=" + userId +
-                ", contactName='" + contactName + '\'' +
-                ", contactPhone=" + contactPhone +
-                ", contactEmail='" + contactEmail + '\'' +
-                ", startTime='" + startTime + '\'' +
-                ", endTime='" + endTime + '\'' +
-                ", status=" + status +
-                ", total=" + total +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", note='" + note + '\'' +
-                ", createdDate='" + createdDate + '\'' +
-                '}';
+
+    public List<ReservationProduct> getReservationProducts() {
+        return reservationProducts;
+    }
+
+    public void setReservationProducts(List<ReservationProduct> reservationProducts) {
+        this.reservationProducts = reservationProducts;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+
     }
 }
 

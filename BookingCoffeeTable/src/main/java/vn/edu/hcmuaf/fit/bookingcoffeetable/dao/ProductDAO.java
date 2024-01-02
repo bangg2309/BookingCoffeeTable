@@ -21,7 +21,9 @@ public interface ProductDAO {
     @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTS_NEWEST)
     List<Product> findProductNewest(@Bind("limit") int limit);
 
+
     @SqlQuery(QUERIES.PRODUCT.SELECT_ALL_PRODUCT)
+
     List<Product> findAllProducts();
 
 

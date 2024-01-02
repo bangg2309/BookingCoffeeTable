@@ -25,10 +25,10 @@
           <i class="fas fa-users fa-fw me-3 "></i><span>Quản lý người dùng</span></a>
         <ul class="sidenav-collapse">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="userAddition.jsp">Thêm người dùng</a>
+            <a class="sidenav-link" href="/admin/user-management/edit">Thêm người dùng</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="userManagement.jsp">Danh sách người dùng</a>
+            <a class="sidenav-link" href="/admin/user-management">Danh sách người dùng</a>
           </li>
         </ul>
       </li>
@@ -136,8 +136,8 @@
                  loading="lazy"/>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item " href="profile.jsp">My profile</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item " href="/profile">My profile</a></li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
           </ul>
         </li>
       </ul>
