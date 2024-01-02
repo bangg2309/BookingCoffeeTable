@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,13 +32,11 @@
           integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/login/main.css"/>">
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/registerUser.css"/>">
-
-
 </head>
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 
@@ -47,12 +45,18 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 row">
-                <form class="login100-form validate-form">
+                <form method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-43 mb-4">
 						Đăng Ký
 					</span>
+                    <c:if test="${error != null}">
+                        <div class="alert" role="alert" data-mdb-color="danger" data-mdb-alert-init>
+                            <i class="fas fa-times-circle me-3"></i>
+                                ${error}
+                        </div>
+                    </c:if>
                     <div class="wrap-input100 validate-input" data-validate="Cần nhập tên đăng nhập">
-                        <input class="input100" type="text" name="name">
+                        <input class="input100" type="text" name="username">
                         <span class="focus-input100"></span>
                         <span class="label-input100">Tên đăng nhập</span>
                     </div>
@@ -72,19 +76,19 @@
                         <span class="label-input100">Mật khẩu</span>
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Cần có mật khẩu">
-                        <input class="input100" type="password" name="pass">
+                        <input class="input100" type="password" name="confirmPassword">
                         <span class="focus-input100"></span>
                         <span class="label-input100">Nhập lại mật khẩu</span>
                     </div>
-
-                        <div class="">
-                            <a href="emailVerify.jsp" class="login100-form-btn mt-4">
-                                Đăng Ký
-                            </a>
-                        </div>
+                    <div class="">
+                        <button type="submit" class="login100-form-btn mt-4">
+                            Đăng Ký
+                        </button>
+                    </div>
                 </form>
 
-                <div class="login100-more" style="background-image: url('<c:url value="/views/template/custom/image/registerUser/coffee shop (2).png"/>');">
+                <div class="login100-more" style="background-image: url('<c:url
+                        value="/views/template/custom/image/registerUser/coffee shop (2).png"/>');">
                 </div>
             </div>
         </div>
@@ -93,7 +97,7 @@
 <!--Main layout-->
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
@@ -104,9 +108,6 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
-
-
-<!--===============================================================================================-->
 <script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
 </body>
 </html>

@@ -27,7 +27,15 @@ public class ReviewService {
     }
 
     public List<Review> findReviewByProductId(int productId) {
-        return reviewDAO.findReviewByProductId(productId);
+        List<Review> reviews = reviewDAO.findReviewByProductId(productId);
+        for (Review review : reviews){
+            review.setUserName(UserService.getInstance().getNameById(review.getUserId()));
+        }
+        return reviews;
     }
 
+    public static void main(String[] args) {
+        ReviewService rv = ReviewService.getInstance();
+        System.out.println(rv.findReviewByProductId(20));
+    }
 }

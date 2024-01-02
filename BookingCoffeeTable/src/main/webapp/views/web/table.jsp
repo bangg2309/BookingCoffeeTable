@@ -228,7 +228,7 @@
     function ajaxRun(count, text) {
         $.ajax({
             type: "Post",
-            url: "${pageContext.request.contextPath}/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text ,
+            url: "/tables?page-index=" + currentPage + "&per-page=" + limit + "&count=" + count + "&text=" + text ,
             ContentType: 'json',
             headers: {Accept: "application/json;charset=utf-8"},
             success: function (json) {
@@ -239,7 +239,7 @@
                     // onclick="return theFunction();"
                     data += "<div class=\"col-lg-4 col-6 mb-4\">"
                         + "<div class=\"bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block table_main\" data-ripple-color=\"light\">"
-                        + "<img src=\"<%=request.getContextPath()%>/" + val.image + "\" class=\"w-100\" alt=\"\"/>"
+                        + "<img src=\"" + val.image + "\" class=\"w-100\" alt=\"\"/>"
                         + "<div class=\"hover-overlay table_omega text-center\">"
                         + "<br>"
                         + "<h4>Số bàn: " + val.tableNum + "</h4>"

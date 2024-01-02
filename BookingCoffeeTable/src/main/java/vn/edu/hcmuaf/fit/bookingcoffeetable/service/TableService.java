@@ -29,35 +29,29 @@ public class TableService {
         tableDAO.insertProduct(categoryId, name, price, description, status, discount);
     }
 
-
-
     public List<Table> findAllArea() {
         return tableDAO.findAllTabes();
     }
 
-    public List<Table> getTables(int count, String location, int limit, int offset){
+    public List<Table> getTables(int count, String location, int limit, int offset) {
         return tableDAO.getTables(count, location, limit, offset);
     }
 
-    public String totalItem(){
+    public String totalItem() {
         return tableDAO.totalItem();
     }
-
-
-
-
-
-
-
-
 
     public List<Table> findAllTables() {
         return tableDAO.findAllTabes();
     }
 
+    public Table findById(int id) {
+        if (tableDAO.findById(id).isEmpty()) return null;
+        return tableDAO.findById(id).get(0);
+    }
+
     public static void main(String[] args) {
         TableService productService = TableService.getInstance();
-//        System.out.println(productService.getTables(9, 0));
     }
 
 }

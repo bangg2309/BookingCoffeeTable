@@ -2,7 +2,6 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 public class Table {
     private int id;
-
     private int areaId;
     private int tableNum;
     private int seatCount;
@@ -23,7 +22,6 @@ public class Table {
                 ", status=" + status +
                 '}';
     }
-
     public int getId() {
         return id;
     }

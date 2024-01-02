@@ -21,7 +21,7 @@ public class AuthorizationFilter implements Filter {
         HttpServletRequest rq = (HttpServletRequest) request;
         String uri = rq.getRequestURI();
         if (uri.startsWith("/admin")) {
-            User user = (User) rq.getSession().getAttribute("user");
+            User user = (User) rq.getSession().getAttribute("userSession");
             if (user != null) {
                 if (user.getRoleId() == 2) {
                     chain.doFilter(request, response);

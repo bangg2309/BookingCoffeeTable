@@ -219,7 +219,7 @@
                                 <fmt:formatNumber value="${cart.totalPrice}" type="currency" currencyCode="VND"/>
                             </span>
                         </div>
-                        <a class="btn btn-primary btn-rounded w-100" href="reservation.jsp"
+                        <a class="btn btn-primary btn-rounded w-100" href="/table"
                            style="color: white">Thanh toán</a>
 
                     </section>
@@ -233,7 +233,6 @@
 <!-- ***** Footer Start ***** -->
 <%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
-
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
@@ -246,7 +245,6 @@
     function updateQuantity(productKey) {
         var quantityInput = document.getElementById("quantity_" + productKey);
         var newQuantity = parseInt(quantityInput.value, 10);
-
         fetch("update-quantity?productKey=" + productKey + "&quantity=" + newQuantity, {
             method: "GET",
         })
@@ -257,7 +255,7 @@
                 return response.text();
             })
             .then(data => {
-                // Xử lý kết quả từ server (nếu cần)
+                window.location.reload();
                 console.log("Update quantity is success!");
             })
             .catch(error => {
@@ -268,7 +266,6 @@
     function updateSize(productKey) {
         var sizeInput = document.getElementById("size_" + productKey);
         var newSize = sizeInput.value;
-
         fetch("update-size?productKey=" + productKey + "&size=" + newSize, {
             method: "GET",
         })
@@ -279,16 +276,13 @@
                 return response.text();
             })
             .then(data => {
-                // Xử lý kết quả từ server (nếu cần)
+                window.location.reload();
                 console.log("Update size is success!");
             })
             .catch(error => {
                 console.error("Error during update size:", error);
             });
     }
-
-
 </script>
-
 </body>
 </html>

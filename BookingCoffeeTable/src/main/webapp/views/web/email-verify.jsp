@@ -6,6 +6,7 @@
 <head>
 
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -36,13 +37,13 @@
     </div>
     <div class="col-md-12 p-4 content">
         <h2>Email Xác Thực</h2>
-        <p class="mb-4">Xin Chào TinhNguyen <br>
-            Bạn sắp bắt đầu trải nghiệm CoffeeShop. Chỉ cần nhấp vào liên kết bên dưới để xác minh địa chỉ email của bạn và
+        <p class="mb-4">
+            Bạn sắp bắt đầu trải nghiệm CoffeeShop. Chỉ cần nhấp vào liên kết trong mà chúng tôi đã gửi trong email của bạn để xác minh và
             bắt đầu. Liên kết sẽ hết hạn sau 48 giờ.
         </p>
         <div class="d-flex justify-content-center button mt-4 pb-4">
-            <a class="btn btn-primary  " href="userProfile.jsp"
-               style="color: white">Xác nhận gmail của tôi</a>
+            <a class="btn btn-primary  " href="https://mail.google.com/mail/u/1/#inbox"
+               style="color: white">Đến Hộp Thư</a>
         </div>
 
     </div>

@@ -6,6 +6,7 @@ public class Review implements Serializable {
     private int id;
     private int productId;
     private int userId;
+    private String userName;
     private int starRate;
     private String content;
 
@@ -26,7 +27,8 @@ public class Review implements Serializable {
                 "id=" + id +
                 ", productId=" + productId +
                 ", userId=" + userId +
-                ", startRate=" + starRate +
+                ", userName='" + userName + '\'' +
+                ", starRate=" + starRate +
                 ", content='" + content + '\'' +
                 '}';
     }
@@ -69,5 +71,13 @@ public class Review implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
