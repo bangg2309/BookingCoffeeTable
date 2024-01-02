@@ -1,4 +1,3 @@
-
 <%@include file="/common/taglib.jsp" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
     <title>Đăng Nhập</title>
-
 
 
     <!-- MDB ESSENTIAL -->
@@ -52,6 +50,12 @@
                             <i class="fas fa-times-circle me-3"></i>
                                 ${error}
                         </div>
+                    </c:if>
+                    <c:if test="${registerSession != null}">
+                    <div class="alert" role="alert" data-mdb-color="success" data-mdb-alert-init>
+                        <i class="fas fa-check me-3"></i>
+                            ${registerSession}
+                    </div>
                     </c:if>
                     <div class="wrap-input100 validate-input" data-validate="Cần nhập tên đăng nhập">
                         <input class="input100" type="text" name="username">
@@ -108,8 +112,7 @@
                     </div>
                     <div class="mt-2">
 
-                        <a href="registerUser.html" class="login100-form-btn">
-
+                        <a href="/register" class="login100-form-btn">
                             Đăng Ký
                         </a>
                     </div>

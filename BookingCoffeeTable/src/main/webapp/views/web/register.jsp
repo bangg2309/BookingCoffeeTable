@@ -32,8 +32,6 @@
           integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/login/main.css"/>">
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/registerUser.css"/>">
-
-
 </head>
 
 <body>
@@ -78,7 +76,7 @@
                         <span class="label-input100">Mật khẩu</span>
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Cần có mật khẩu">
-                        <input class="input100" type="password" name="rePass">
+                        <input class="input100" type="password" name="confirmPassword">
                         <span class="focus-input100"></span>
                         <span class="label-input100">Nhập lại mật khẩu</span>
                     </div>
@@ -110,9 +108,6 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
-
-
-<!--===============================================================================================-->
 <script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
 </body>
 </html>

@@ -37,10 +37,12 @@ public class LoginController extends HttpServlet {
             error = "Your account has been blocked";
             request.setAttribute("error", error);
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+        } else if (user.getEmailVerified() == 0) {
+            response.sendRedirect(request.getContextPath() + "/verify");
         } else {
 
             HttpSession session = request.getSession(true);
-            session.setAttribute("user", user);
+            session.setAttribute("userSession", user);
 
             if (user.getRoleId() == 1) {
                 response.sendRedirect(request.getContextPath() + "/home");

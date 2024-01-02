@@ -186,9 +186,9 @@ public class Product implements Serializable {
 
     public int getSaleTotalPrice() {
         if (this.discount > 0) {
-            return this.price * this.quantity * (100 - this.discount) / 100;
+            return saleTotalPrice = this.price * this.quantity * (100 - this.discount) / 100;
         }
-        return this.price * this.quantity;
+        return saleTotalPrice = this.price * this.quantity;
     }
 
     public void setSaleTotalPrice(int saleTotalPrice) {
@@ -196,7 +196,7 @@ public class Product implements Serializable {
     }
 
     public int getTotalPrice() {
-        return this.price * this.quantity;
+        return this.totalPrice = this.price * this.quantity;
     }
 
     public void setTotalPrice(int totalPrice) {
@@ -241,4 +241,5 @@ public class Product implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
+
 }

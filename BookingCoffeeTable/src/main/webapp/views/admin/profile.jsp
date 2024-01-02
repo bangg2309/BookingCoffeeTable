@@ -65,7 +65,7 @@
                                 <div class="form-group avatar row">
                                     <figure class="figure col-md-2 col-sm-3 col-xs-12">
                                         <img class="img-rounded img-responsive"
-                                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
                                     </figure>
                                     <div class="form-inline col-md-10 col-sm-9 col-xs-12">
                                         <input type="file" class="file-uploader pull-left">

@@ -38,40 +38,40 @@
                             <img class="img-profile img-circle img-responsive center-block"
                                  src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                             <ul class="meta list list-unstyled">
-                                <li class="name" style="font-weight: bold; font-size: 20px">Nguyễn Hửu Tính
+                                <li class="name" style="font-weight: bold; font-size: 20px">${userSession.fullname}
                                 </li>
-                                <li class="email"><a href="#">huutinh2412@gmail.com</a></li>
+                                <li class="email"><a href="#">${userSession.email}</a></li>
                             </ul>
                         </div>
                         <nav class="side-menu">
                             <ul class="nav">
-                                <li><a href="profile.jsp"><span class="fa fa-user"></span> Thông tin</a></li>
+                                <li><a href="/profile"><span class="fa fa-user"></span> Thông tin</a></li>
                                 <li class="active"><a href="#"><span class="fa fa-cog"></span> Thay Đổi Mật Khẩu</a>
                                 </li>
-                                <li><a href="historyBooking.jsp"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>
+                                <li><a href="/history-booking"><span class="fa fa-clock-o"></span> Lịch Sử</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="content-panel">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" method="post" action="/change-password">
                             <fieldset class="fieldset">
                                 <h3 class="fieldset-title">Thay Đổi Mật Khẩu</h3>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-sm-3 col-xs-12 control-label">Mật Khẩu Hiện Tại</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="oldPassword" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-sm-3 col-xs-12 control-label">Mật Khẩu Mới</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="newPassword" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-sm-3 col-xs-12 control-label">Nhập Lại Mật Khẩu</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="confirmPassword">
                                     </div>
                                 </div>
                             </fieldset>
@@ -82,6 +82,7 @@
                                            style="background-color: #bf9369; color: white">
                                 </div>
                             </div>
+                           <input type="hidden" name="userId" value="${userSession.id}">
                         </form>
                     </div>
                 </div>

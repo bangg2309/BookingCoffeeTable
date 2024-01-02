@@ -30,7 +30,6 @@ public interface ProductDAO {
     List<Product> findProductNewest(@Bind("limit") int limit);
 
     @SqlQuery(QUERIES.SELECT_ALL_PRODUCT)
-    @RegisterRowMapper(ProductMapper.class)
     List<Product> findAllProducts();
 
 

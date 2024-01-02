@@ -45,9 +45,4 @@ public class CategoryService {
         return null;
     }
 
-    public static void main(String[] args) {
-        CategoryService categoryService = CategoryService.getInstance();
-        System.out.println(categoryService.findNCategory(4));
-    }
-
 }

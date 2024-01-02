@@ -36,7 +36,7 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="/admin/userManagement" class="btn btn-link mb-2">
+        <a href="/admin/user-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
@@ -220,7 +220,7 @@
             success: function (data) {
                 console.log("SUCCESS : ", data);
                 alert("Thêm mới thành công");
-                window.location.href = "/admin/userManagement";
+                window.location.href = "/admin/user-management";
             },
             error: function (e) {
                 console.log("ERROR : ", e);
@@ -239,7 +239,7 @@
             contentType: false,
             success: function (data) {
                 alert("Cập nhật thành công");
-                window.location.href = "/admin/userManagement";
+                window.location.href = "/admin/user-management";
             },
             error: function (e) {
                 console.log("ERROR : ", e);

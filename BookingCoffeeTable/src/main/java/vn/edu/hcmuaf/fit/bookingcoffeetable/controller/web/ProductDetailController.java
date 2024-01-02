@@ -15,7 +15,6 @@ public class ProductDetailController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("id");
         request.setAttribute("product", productService.findProductDetail(Integer.parseInt(productId)));
-
         request.getRequestDispatcher("/views/web/productDetail.jsp").forward(request, response);
     }
 

@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 <main class="mb-6" style="padding-top: 20px; margin-top: 80px">
@@ -47,230 +47,44 @@
                     <!-- Section: Product list -->
                     <section class="mb-5" data-mdb-perfect-scrollbar="true" data-mdb-suppress-scroll-x="true"
                              style="position: sticky; height: 600px">
-                        <div class="row border-bottom mb-4">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/coffee_cream.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
+                        <c:forEach items="${reservation.reservationProducts}" var="reservationProduct">
+                            <div class="row border-bottom mb-4">
+                                <div class="col-md-3 mb-4 mb-md-0 mt-2">
+                                    <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
+                                         data-ripple-color="light">
+                                        <img src="<c:url value="${reservationProduct.product.images[0].url}"/>"
+                                             class="w-100" alt=""/>
+                                        <a href="#!">
+                                            <div class="hover-overlay">
+                                                <div class="mask"
+                                                     style="background-color: hsla(0, 0%, 98.4%, 0.2)"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4 mb-md-0">
+                                    <p class="fw-bold">${reservationProduct.product.name}</p>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
+                                            <input type="number" id="1" class="form-control" value="${reservationProduct.quantity}" min="1" disabled
+                                                   style="background-color: white"/>
+                                            <label class="form-label" for="1">Số Lượng</label>
                                         </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Cà phê kem</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="1"
-                                                class="form-control"
-                                                value="1"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="1"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="text"
-                                                id="2"
-                                                class="form-control"
-                                                value="M"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="2"
-                                        >Size</label
-                                        >
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                               
-                            </div>
-                        </div>
-                        <div class="row border-bottom mb-4">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/cherry.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
+                                        <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
+                                            <input type="text" id="2" class="form-control" value="${reservationProduct.size}" min="1" disabled style="background-color: white"/>
+                                            <label class="form-label" for="2">Size</label>
                                         </div>
-                                    </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 mb-4 mb-md-0">
+                                    <h5 class="mb-2">
+                                        <span class="align-middle"><fmt:formatNumber value="${reservationProduct.price}" type="currency" currencyCode="VND"/></span>
+                                    </h5>
                                 </div>
                             </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Nước ép Cherry</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="3"
-                                                class="form-control"
-                                                value="1"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="3"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="text"
-                                                id="4"
-                                                class="form-control"
-                                                value="M"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="4"
-                                        >Size</label
-                                        >
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                               
-                            </div>
-                        </div>
-                        <div class="row border-bottom mb-4">
-                            <div class="col-md-3 mb-4 mb-md-0 mt-2">
-                                <div
-                                        class="
-                            bg-image
-                            ripple
-                            rounded-5
-                            mb-4
-                            overflow-hidden
-                            d-block
-                            "
-                                        data-ripple-color="light"
-                                >
-                                    <img
-                                            src="<c:url value="/views/template/custom/image/menu/atiso.jpg"/>"
-                                            class="w-100"
-                                            alt=""
-                                    />
-                                    <a href="#!">
-                                        <div class="hover-overlay">
-                                            <div
-                                                    class="mask"
-                                                    style="background-color: hsla(0, 0%, 98.4%, 0.2)"
-                                            ></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <p class="fw-bold">Sinh tố atiso</p>
-                                <div class="row">
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="number"
-                                                id="5"
-                                                class="form-control"
-                                                value="1"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="5"
-                                        >Số Lượng</label
-                                        >
-                                    </div>
-                                    <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                        <input
-                                                type="text"
-                                                id="6"
-                                                class="form-control"
-                                                value="M"
-                                                min="1" disabled style="background-color: white"
-
-                                        />
-                                        <label class="form-label" for="6"
-                                        >Size</label
-                                        >
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-5 mb-4 mb-md-0">
-
-
-                                <h5 class="mb-2">
-                                    <s class="text-muted me-2 small align-middle">190.000 đ</s
-                                    ><span class="align-middle">90.000 đ</span>
-                                </h5>
-                                <p class="text-danger"><small>Khuyến mãi 15%</small></p>
-                               
-                            </div>
-                        </div>
+                        </c:forEach>
                     </section>
                     <!-- Section: Product list -->
-
-                    <!-- Section: Details -->
-                    <!-- Section: Details -->
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-md-0">
@@ -281,21 +95,21 @@
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Người đặt: </span>
-                                <span>Đỗ Công Thịnh</span>
+                                <span>${reservation.contactName}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Email : </span>
-                                <span>21130187@st.hcmuaf.edu.vn</span>
+                                <span>${reservation.contactEmail}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Số điện thoại: </span>
-                                <span>0769644603    </span>
+                                <span>${reservation.contactPhone}</span>
                             </div>
 
                         </div>
@@ -303,54 +117,69 @@
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Ghi chú: </span>
-                                <span>Tiệc sinh nhật</span>
+                                <span>${reservation.note}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Phương thức thanh toán: </span>
-                                <span>Momo</span>
+                                <span>${reservation.paymentMethod}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Ngày đặt: </span>
-                                <span>04-09-2023 8:30 AM</span>
+                                <span>${reservation.createdDate}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Số bàn: </span>
-                                <span>101</span>
+                                <span>${reservation.table.tableNum}</span>
                             </div>
 
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
-                                <span>Số ghế: </span>
-                                <span>10</span>
+                                <span>Số chỗ ngồi: </span>
+                                <span>${reservation.table.seatCount}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <span>Khu vực: </span>
+                                    <span>Tầng 1</span>
+                                </div>
+                            </div>
                             <div>
                                 <span>Vị trí: </span>
-                                <span>Cửa sổ</span>
+                                <span>${reservation.table.location}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <div>
-                                <span>Khu vực: </span>
-                                <span>Tầng 1</span>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
+                            <fmt:parseDate var="parsedstartTime" value="${reservation.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:parseDate var="parsedendTime" value="${reservation.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                             <span>Thời gian: </span>
-                            <span>06-09-2023 8:30 AM - 10:00 AM</span>
+                            <span><fmt:formatDate value="${parsedstartTime}" pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate value="${parsedendTime}" pattern="HH:mm:ss"/></span>
                         </div>
-
+                        <div class="d-flex justify-content-between mb-2">
+                            <c:if test="${reservation.status == 1}">
+                                <div>
+                                    <span>Trạng thái: </span>
+                                    <span class="alert-success">Thành công</span>
+                                </div>
+                            </c:if>
+                            <c:if test="${reservation.status == 0}">
+                                <div>
+                                    <span>Trạng thái: </span>
+                                    <span class="alert-danger">Đã hủy</span>
+                                </div>
+                            </c:if>
+                        </div>
 
                         <hr class="my-4"/>
                         <h5 class="mb-2">
@@ -358,7 +187,7 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <span>Tiền tạm thời </span>
-                            <span>1.000.000 đ</span>
+                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency" currencyCode="VND"/></span>
                         </div>
                         <div class="d-flex justify-content-between">
                             <span>Khuyến mãi: </span>
@@ -367,14 +196,16 @@
                         <hr class="my-4"/>
                         <div class="d-flex justify-content-between fw-bold mb-5">
                             <span> Tổng số tiền (bao gồm VAT)</span>
-                            <span>1.000.000 đ</span>
+                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency" currencyCode="VND"/></span>
                         </div>
+                        <c:if test="${reservation.status == 1}">
                         <div class="d-flex justify-content-betweemb-5">
                             <a class="btn btn-danger btn-rounded w-100 mr-4" href="reservation.jsp"
                                style="color: white">Hủy đơn</a>
                             <a class="btn btn-success btn-rounded w-100" href="reservation.jsp"
                                style="color: white">Liên hệ</a>
                         </div>
+                        </c:if>
                     </section>
                 </div>
             </div>
@@ -389,12 +220,11 @@
 <!-- ***** Main Banner Area End ***** -->
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
-
 
 
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>

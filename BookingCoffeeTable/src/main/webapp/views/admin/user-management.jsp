@@ -37,7 +37,7 @@
     <!-- Container for demo purpose -->
     <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="/admin/userManagement/edit">
+            <a class="btn btn-primary" href="/admin/user-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm người dùng</span>
             </a>
@@ -103,7 +103,7 @@
                             </td>
                         </c:if>
                         <td>
-                            <a href="/admin/userManagement/edit?id=${user.id}" class="btn btn-primary btn-floating">
+                            <a href="/admin/user-management/edit?id=${user.id}" class="btn btn-primary btn-floating">
                                 <i class="far fa-pen-to-square"></i>
                             </a>
                             <button type="button" class="btn btn-danger btn-floating" onclick="deleteUser(${user.id})">
