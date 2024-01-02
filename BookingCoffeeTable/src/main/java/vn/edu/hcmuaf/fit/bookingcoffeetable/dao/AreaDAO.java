@@ -11,7 +11,7 @@ import java.util.List;
 
 @RegisterBeanMapper(Area.class)
 public interface AreaDAO {
-    @SqlUpdate(QUERIES.INSERT_PRODUCT)
+    @SqlUpdate(QUERIES.PRODUCT.INSERT_PRODUCT)
     void insertProduct(@Bind("categoryId") int categoryId, @Bind("name") String name, @Bind("price") int price, @Bind("description") String description, @Bind("status") int status, @Bind("discount") int discount);
 
 

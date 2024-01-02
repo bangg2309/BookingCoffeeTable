@@ -33,8 +33,15 @@ public class TableService {
         return tableDAO.findAllTabes();
     }
 
-    public List<Table> getTables(int count, String location, int limit, int offset) {
-        return tableDAO.getTables(count, location, limit, offset);
+
+    public List<Table> getTables(String areaId, String startTime, String endTime, int count, String find, int limit, int offset){
+        List<Table> tables = tableDAO.getTables(areaId, startTime, endTime, count, find, limit, offset);
+        for (Table table : tables) {
+            table.setReservations(ReservationService.getInstance().getReservationByTableId(table.getId()));
+        }
+
+        return tables;
+
     }
 
     public String totalItem() {
@@ -52,6 +59,8 @@ public class TableService {
 
     public static void main(String[] args) {
         TableService productService = TableService.getInstance();
+        System.out.println(productService.getTables("1", "2021-05-05 10:00:00", "2021-05-05 12:00:00", 2, "", 2, 0));
+
     }
 
 }

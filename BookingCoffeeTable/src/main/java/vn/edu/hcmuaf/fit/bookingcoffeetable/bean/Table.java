@@ -1,5 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Table {
     private int id;
     private int areaId;
@@ -9,6 +12,16 @@ public class Table {
     private String image;
 
     private int status;
+
+    private List<Reservation> reservations = new ArrayList<>();
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 
     @Override
     public String toString() {
@@ -20,6 +33,7 @@ public class Table {
                 ", location='" + location + '\'' +
                 ", image='" + image + '\'' +
                 ", status=" + status +
+                ", reservations=" + reservations +
                 '}';
     }
     public int getId() {

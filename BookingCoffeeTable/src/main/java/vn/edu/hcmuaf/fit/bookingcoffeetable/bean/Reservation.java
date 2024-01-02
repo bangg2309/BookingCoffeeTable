@@ -5,13 +5,16 @@ import java.util.List;
 
 public class Reservation implements Serializable {
     private int id;
-    private int userId;
+
     private int tableId;
+    private int userId;
+
     private String contactName;
     private int contactPhone;
     private String contactEmail;
     private String startTime;
     private String endTime;
+
     private String status;
     private String paymentMethod;
     private String note;
@@ -52,6 +55,7 @@ public class Reservation implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+
     }
 
     public int getUserId() {
@@ -62,6 +66,7 @@ public class Reservation implements Serializable {
         this.userId = userId;
     }
 
+
     public int getTableId() {
         return tableId;
     }
@@ -69,6 +74,7 @@ public class Reservation implements Serializable {
     public void setTableId(int tableId) {
         this.tableId = tableId;
     }
+
 
     public String getContactName() {
         return contactName;
@@ -118,6 +124,7 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
+
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -133,6 +140,7 @@ public class Reservation implements Serializable {
     public void setNote(String note) {
         this.note = note;
     }
+
 
     public String getTotalPrice() {
         return totalPrice;
@@ -150,6 +158,7 @@ public class Reservation implements Serializable {
         this.createdDate = createdDate;
     }
 
+
     public List<ReservationProduct> getReservationProducts() {
         return reservationProducts;
     }
@@ -164,5 +173,9 @@ public class Reservation implements Serializable {
 
     public void setTable(Table table) {
         this.table = table;
+
     }
 }
+
+
+

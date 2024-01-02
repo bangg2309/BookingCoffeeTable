@@ -1,9 +1,9 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.json;
 
 import com.google.gson.Gson;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.paging.PageRequest;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -15,51 +15,51 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "table-json", urlPatterns = {"/tables"}, initParams = {
+@WebServlet(name = "product-json", urlPatterns = {"/menus"}, initParams = {
         @WebInitParam(name = "page-index", value = "1"),
         @WebInitParam(name = "per-page", value = "9")
 })
-public class ListTablesJson extends HttpServlet {
-    private TableService tableService;
-    private List<Table> tables;
+public class ListProductsJson extends HttpServlet {
+    private ProductService productService;
+    private List<Product> products;
     private String json;
-    private double fromPrice = 0, toPrice = 100;
+
     int pageIndexNum = 1;
     int perPageNum = 9;
 
     int countNum = 0;
+    int from = 0;
+    int to = 1000000;
 
-    int areaValue = 0;
-    String area = null;
+    String category = null;
 
     PageRequest pageRequest = null;
 
-    public ListTablesJson() {
-        tableService = TableService.getInstance();
+    public ListProductsJson() {
+        productService = ProductService.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
-
         // Receive request page-index and per-page
         String pageIndex = request.getParameter("page-index");
         String perPage = request.getParameter("per-page");
-        String count = request.getParameter("count");
-        String find = request.getParameter("text");
-        String startTime = request.getParameter("startTime");
-        String endTime = request.getParameter("endTime");
-        area = request.getParameter("areaValue");
+        String find = request.getParameter("find");
+        String orderBy = request.getParameter("orderBy");
+        String ratingValue = request.getParameter("ratingValue");
+        String fromPriceStr = request.getParameter("firstPrice");
+        String toPriceStr = request.getParameter("secondPrice");
+        category = request.getParameter("categoryValue");
 
         try {
             pageIndexNum = Integer.parseInt(pageIndex);
             perPageNum = Integer.parseInt(perPage);
-            if (area.equals("0")) {
-                area = null;
-            }
-            if (count != null && !count.equals("")) {
-                countNum = Integer.parseInt(count);
+            from = Integer.parseInt(fromPriceStr);
+            to = Integer.parseInt(toPriceStr);
+            if (category.equals("0")) {
+                category = null;
             }
 
             pageRequest = new PageRequest(pageIndexNum, perPageNum);
@@ -67,11 +67,14 @@ public class ListTablesJson extends HttpServlet {
             e.printStackTrace();
         }
 
-        // Fetch tables directly without using a separate thread
-        tables = tableService.getTables(area, startTime, endTime, countNum, find, pageRequest.getLimit(), pageRequest.getOffset());
 
-        if (tables != null) {
-            json = new Gson().toJson(tables);
+
+        // Fetch tables directly without using a separate thread
+        products = productService.getProducts(category, find, pageRequest.getLimit(), pageRequest.getOffset(), orderBy, ratingValue, from, to);
+        System.out.println("product"+products);
+
+        if (products != null) {
+            json = new Gson().toJson(products);
             PrintWriter out = response.getWriter();
             try {
                 out.println(json);
@@ -79,6 +82,7 @@ public class ListTablesJson extends HttpServlet {
                 out.close();
             }
         }
+
     }
 
     @Override
