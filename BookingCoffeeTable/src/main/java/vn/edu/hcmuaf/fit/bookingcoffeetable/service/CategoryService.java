@@ -31,6 +31,7 @@ public class CategoryService {
 
     public List<Category> findAllCategory() {
         return categoryDAO.findAllCategory();
+
     }
 
     public List<Category> findNCategory(int limit) {
@@ -40,6 +41,20 @@ public class CategoryService {
     public static void main(String[] args) {
         CategoryService categoryService = CategoryService.getInstance();
         System.out.println(categoryService.findNCategory(4));
+
+    }
+
+    public List<Category> findNCategory(int limit) {
+        return categoryDAO.findNCategory(limit);
+
+    }
+
+    public Category findOne(int id) {
+        List<Category> categories = categoryDAO.findOne(id);
+        if (!categories.isEmpty()) {
+            return categories.get(0);
+        }
+        return null;
     }
 
 }

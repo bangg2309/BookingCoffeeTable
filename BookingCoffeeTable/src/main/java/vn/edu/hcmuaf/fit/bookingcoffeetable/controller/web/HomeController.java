@@ -2,13 +2,9 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.SlideImg;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.PostService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.SlideImgService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,20 +19,15 @@ import java.util.List;
 public class HomeController extends HttpServlet {
     ProductService productService;
     CategoryService categoryService;
-    SlideImgService slideImgService;
-
-    PostService postService;
 
     public HomeController() {
         productService = ProductService.getInstance();
         categoryService = CategoryService.getInstance();
-        slideImgService = SlideImgService.getInstance();
-        postService = PostService.getInstance();
-
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -57,6 +48,7 @@ public class HomeController extends HttpServlet {
         request.setAttribute("categories", categoryService.findAll());
         request.setAttribute("slideImgs", slideImgs);
         request.setAttribute("posts", posts);
+
 
 
         int productId = 1;
