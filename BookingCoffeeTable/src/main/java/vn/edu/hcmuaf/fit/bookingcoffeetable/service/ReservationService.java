@@ -32,11 +32,9 @@ public class ReservationService {
         return reservationDAO.getReservationByTableId(tableId);
     }
 
-}
 
-    public ReservationService(ReservationDAO reservationDAO) {
-        this.reservationDAO = reservationDAO;
-    }
+
+
 
     public List<Reservation> findReservationByUserId(int userId, String sortOrder) {
         List<Reservation> reservations = null;

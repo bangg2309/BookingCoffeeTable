@@ -38,7 +38,7 @@
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="categoryAddition.html.html">
+            <a class="btn btn-primary" href="/admin/category-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm loại món</span>
             </a>
@@ -82,9 +82,9 @@
                     <a href="/admin/category-management/edit?id=${category.id}" class="btn btn-primary btn-floating">
                         <i class="far fa-pen-to-square"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-floating">
-                        <i class="far fa-trash-can"></i>
-                    </button>
+                        <button type="button" class="btn btn-danger btn-floating" onclick="deleteCategory(${category.id})">
+                            <i class="far fa-trash-can"></i>
+                        </button>
                 </td>
                 </tr>
             </c:forEach>

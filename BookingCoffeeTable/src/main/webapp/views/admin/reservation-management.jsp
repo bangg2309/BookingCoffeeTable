@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,44 +65,53 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">Trần Quí Bằng</p>
+                <c:forEach items="${reservations}" var="reservation">
+                    <tr>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class="fw-bold mb-1">${reservation.contactName}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>Mon, 14.03.2022</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">14:30</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">16:30</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">101</p>
-                    </td>
-                    <td>
-                        <span class="">1.500.000đ</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">thành công</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            <span>formatDateTime(${reservation.startTime})</span>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">getTimeFromDateTime(${reservation.startTime})</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">getTimeFromDateTime(${reservation.endTime})</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${reservation.table.tableNum}</p>
+                        </td>
+                        <td>
+                            <span class="">${reservation.totalPrice}</span>
+                        </td>
+                        <c:if test="${reservation.status == 1}">
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">active</span>
+                            </td>
+                        </c:if>
+                        <c:if test="${reservation.status ==0}">
+                            <td>
+                                <span class="badge badge-danger rounded-pill d-inline">blocked</span>
+                            </td>
+                        </c:if>
+                        <td>
+                            <a href="/admin/user-management/edit?id=${reservation.id}" class="btn btn-primary btn-floating">
+                                <i class="far fa-pen-to-square"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteReservation(${reservation.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -120,6 +129,55 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function formatDateTime(dateTimeString) {
+        var dateTimeObject = new Date(dateTimeString);
+
+        var year = dateTimeObject.getFullYear();
+        var month = dateTimeObject.getMonth() + 1;
+        var day = dateTimeObject.getDate();
+
+        // Format lại thành chuỗi theo định dạng yyyy-mm-dd
+        var formattedDate = year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+
+        return formattedDate;
+    }
+
+    function getTimeFromDateTime(dateTimeString) {
+        var dateTimeObject = new Date(dateTimeString);
+
+        var hours = dateTimeObject.getHours();
+        var minutes = dateTimeObject.getMinutes();
+        var seconds = dateTimeObject.getSeconds();
+
+        // Format lại thành chuỗi theo định dạng hh:mm:ss
+        var formattedTime = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+        return formattedTime;
+    }
+
+
+    function deleteReservation(id) {
+
+        $.ajax({
+            url: '/api/admin/reservation',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

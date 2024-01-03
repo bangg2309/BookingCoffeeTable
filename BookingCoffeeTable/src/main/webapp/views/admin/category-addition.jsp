@@ -35,18 +35,18 @@
 <main class="mb-5">
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="categoryManagement.jsp" class="btn btn-link mb-2">
+        <a href="category-management.jsp" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
             <span class="text-white">Thông tin loại món</span>
         </div>
-        <form class="border p-5">
+        <form class="border p-5" id="formSubmit" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
                     <label for="category" class="form-label"><b>Loại món</b></label>
                     <i class="fas fa-bars"></i>
-                    <input type="text" class="form-control" id="category" name="category"
+                    <input type="text" class="form-control" id="category" name="category" value="${category.name}"
                            placeholder="Nhập Tên loại món..." required>
                 </div>
                 <div class="col-md-4">

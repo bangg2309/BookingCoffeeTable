@@ -37,7 +37,7 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="tableManagement.jsp" class="btn btn-link mb-2">
+        <a href="/admin/table-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
@@ -60,26 +60,27 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="area" class="form-label"><b>Khu vực</b></label>
-                        <select class="select" data-mdb-filter="true" id="area" name="area" required>
-                            <option value="" disabled selected>Chọn khu vực</option>
-                            <option value="1">Sân vườn</option>
-                            <option value="1">Tầng trệt</option>
-                            <option value="1">Tầng 1</option>
-                            <option value="1">Tầng 2</option>
-                            <option value="1">Tầng 3</option>
-                            <option value="1">Sân thượng</option>
-                            <!-- Add more options as needed -->
+                        <label for="areaId" class="form-label"><b>Khu vực</b></label>
+                        <select class="form-select" id="areaId" name="areaId" required>
+                            <option value="" disabled>--Chọn vai trò--</option>
+                            <c:forEach items="${areas}" var="area">
+                                <c:choose>
+                                    <c:when test="${area.id == table.areaId}">
+                                        <option value="${area.id}" selected>${area.name}</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${area.id}">${area.name}</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
                         </select>
                     </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="location" class="form-label"><b>Vị trí</b></label>
-                        <input type="email" class="form-control" id="location" name="location" value="${table.location}}"
+                        <input type="text" class="form-control" id="location" name="location" value="${table.location}"
                                placeholder="Nhập vị trí..."
                                required>
                     </div>

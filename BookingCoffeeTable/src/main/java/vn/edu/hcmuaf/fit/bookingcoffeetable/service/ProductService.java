@@ -87,7 +87,7 @@ public class ProductService {
         for (Product product : products) {
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
             product.updateBySize(product.getProductVariants().get(0).getSize());
-            product.setImages(ImageService.getInstance().findById(product.getId()));
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
             product.getAverageRating();
             System.out.println("ratingValue: " + ratingValue);

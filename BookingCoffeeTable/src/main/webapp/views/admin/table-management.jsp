@@ -37,7 +37,7 @@
     <!-- Container for demo purpose -->
     <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="tableAddition.jsp">
+            <a class="btn btn-primary" href="/admin/table-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm bàn</span>
             </a>
@@ -50,7 +50,7 @@
             </button>
         </div>
         <div class="datatable">
-            <table class="table align-middle mb-0 bg-white">
+            <table class="table align-middle mb-0 bg-white" id="table">
                 <thead class="bg-light">
                 <tr>
                     <th>Id</th>
@@ -73,7 +73,7 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <div class="">
-                                    <p class=" mb-1">${table.area}</p>
+                                    <p class=" mb-1">${table.area.name}</p>
                                 </div>
                             </div>
                         </td>
