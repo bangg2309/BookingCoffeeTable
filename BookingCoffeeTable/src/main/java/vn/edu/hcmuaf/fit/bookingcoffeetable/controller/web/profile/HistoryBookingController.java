@@ -1,7 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web.profile;
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.ReservationProduct;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationService;
 
@@ -31,11 +30,6 @@ public class HistoryBookingController extends HttpServlet {
         }
         System.out.println("OrderBy " + sortOrder);
         List<Reservation> reservations = reservationService.findReservationByUserId(user.getId(), sortOrder);
-        for (Reservation reservation : reservations) {
-            for (ReservationProduct reservationProduct : reservation.getReservationProducts()) {
-                System.out.println(reservationProduct.getProduct().getImages());
-            }
-        }
         request.setAttribute("reservations", reservations);
         request.setAttribute("sortOrder", sortOrder);
         request.getRequestDispatcher("/views/web/history-booking.jsp").forward(request, response);

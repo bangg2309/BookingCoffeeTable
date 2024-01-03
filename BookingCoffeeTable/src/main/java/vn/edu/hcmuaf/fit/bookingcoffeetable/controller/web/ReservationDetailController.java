@@ -18,7 +18,6 @@ public class ReservationDetailController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         Reservation reservation = reservationService.findById(Integer.parseInt(id));
-        System.out.println(reservation + " reservation");
         request.setAttribute("reservation", reservation);
         request.getRequestDispatcher("/views/web/reservation-detail.jsp").forward(request, response);
     }

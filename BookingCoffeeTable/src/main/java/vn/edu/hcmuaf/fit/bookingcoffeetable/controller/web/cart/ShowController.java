@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web.cart;
 
-import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Cart;
 
 import javax.servlet.ServletException;

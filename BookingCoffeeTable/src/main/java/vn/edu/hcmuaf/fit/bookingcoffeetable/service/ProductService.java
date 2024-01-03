@@ -36,6 +36,7 @@ public class ProductService {
         if (!products.isEmpty()) {
             Product product = products.get(0);
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             return product;
         }
         return null;
@@ -87,7 +88,7 @@ public class ProductService {
         for (Product product : products) {
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
             product.updateBySize(product.getProductVariants().get(0).getSize());
-            product.setImages(ImageService.getInstance().findById(product.getId()));
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
             product.getAverageRating();
             System.out.println("ratingValue: " + ratingValue);
@@ -104,13 +105,12 @@ public class ProductService {
 
     public static void main(String[] args) {
         ProductService productService = ProductService.getInstance();
-
         List<Product> products = productService.findProductNewest(20);
         for (Product product : products) {
-//            System.out.println(product.getId() + " " + product.getName() + " " + product.getPrice() + " " + product.getImages() + product.getCreatedDate());
+            System.out.println(product.getId() + " " + product.getName() + " " + product.getPrice() + " " + product.getImages() + product.getCreatedDate());
         }
 
-        System.out.println(productService.getProducts(null, "", 9, 0, "price_DESC", "4", 0, 100000));
+//        System.out.println(productService.getProducts(null, "", 9, 0, "price_DESC", "4", 0, 100000));
 
     }
 }

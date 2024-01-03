@@ -8,14 +8,11 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
 
 import java.util.List;
 
-
-@RegisterBeanMapper(Reservation.class)
+@RegisterBeanMapper(value = Reservation.class)
 public interface ReservationDAO {
     @SqlQuery(QUERIES.RESERVATION.SELECT_RESERVATION_BY_USER_ID)
     List<Reservation> getReservationByTableId(@Bind("tableId") int tableId);
 
-@RegisterBeanMapper(value = Reservation.class)
-public interface ReservationDAO {
     @SqlQuery(QUERIES.RESERVATION.SELECT_RESERVATION_NEWEST_BY_USER_ID)
     List<Reservation> findReservationNewestByUserId(@Bind("userId") int userId);
     @SqlQuery(QUERIES.RESERVATION.SELECT_RESERVATION_LATEST_BY_USER_ID)

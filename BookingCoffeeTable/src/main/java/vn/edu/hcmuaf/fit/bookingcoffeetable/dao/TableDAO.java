@@ -38,7 +38,7 @@ public interface TableDAO {
     @SqlQuery(QUERIES.TABLE.COUNT_TABLE)
     String totalItem();
 
-    @SqlQuery(QUERIES.SELECT_TABLE_BY_ID)
+    @SqlQuery(QUERIES.TABLE.SELECT_TABLE_BY_ID)
     List<Table> findById(@Bind("id") int id);
 
 }
