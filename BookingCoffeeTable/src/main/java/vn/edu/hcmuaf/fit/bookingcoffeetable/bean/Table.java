@@ -13,6 +13,16 @@ public class Table {
 
     private int status;
 
+    private Area area;
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
     private List<Reservation> reservations = new ArrayList<>();
 
     public List<Reservation> getReservations() {

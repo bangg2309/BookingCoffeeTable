@@ -25,6 +25,18 @@ public interface TableDAO {
 
 //    @RegisterRowMapper(TableMapper.class)
 
+    @SqlQuery(QUERIES.TABLE.SELECT_TABLE_BY_ID)
+    Table findTableById(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.TABLE.SAVE_TABLE)
+    void save(@Bind("tableNum") int tableNum, @Bind("areaId") int areaId, @Bind("seatCount") int seatCount, @Bind("location") String location, @Bind("image") String image, @Bind("status") int status);
+
+    @SqlUpdate(QUERIES.TABLE.UPDATE_TABLE)
+    void updateTable(@Bind("id") int id, @Bind("tableNum") int tableNum, @Bind("areaId") int areaId, @Bind("seatCount") int seatCount, @Bind("location") String location, @Bind("image") String image, @Bind("status") int status);
+
+    @SqlUpdate(QUERIES.TABLE.DELETE_TABLE)
+    void deleteTable(@Bind("id") int id);
+
     @SqlQuery(QUERIES.TABLE.SELECT_ALL_TABLE)
     List<Table> findAllTabes();
 
@@ -38,7 +50,7 @@ public interface TableDAO {
     @SqlQuery(QUERIES.TABLE.COUNT_TABLE)
     String totalItem();
 
-    @SqlQuery(QUERIES.SELECT_TABLE_BY_ID)
+    @SqlQuery(QUERIES.TABLE.SELECT_TABLE_BY_ID)
     List<Table> findById(@Bind("id") int id);
 
 }

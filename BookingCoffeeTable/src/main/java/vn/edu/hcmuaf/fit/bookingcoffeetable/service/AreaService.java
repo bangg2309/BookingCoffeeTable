@@ -29,6 +29,11 @@ public class AreaService{
         areaDAO.insertProduct(categoryId, name, price, description, status, discount);
     }
 
+    public Area findById(int id) {
+        List<Area> areas = areaDAO.findById(id);
+        return areas.isEmpty() ? null : areas.get(0);
+    }
+
 
 
 

@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "EditController", value = "/admin/user-management/edit")
+@WebServlet(name = "EditUserController", value = "/admin/user-management/edit")
 public class EditController extends HttpServlet {
     UserService userService;
     RoleService roleService;

@@ -23,8 +23,12 @@ public interface AreaDAO {
 //    List<Product> findProductNewest(@Bind("limit") int limit);
 
 //    @RegisterRowMapper(TableMapper.class)
-    @SqlQuery(QUERIES.SELECT_ALL_AREA)
+    @SqlQuery(QUERIES.AREA.SELECT_ALL_AREA)
     List<Area> findAllArea();
+
+    @SqlQuery(QUERIES.AREA.SELECT_AREA_BY_ID)
+    List<Area> findById(@Bind("id") int id);
+
 
 
 }
