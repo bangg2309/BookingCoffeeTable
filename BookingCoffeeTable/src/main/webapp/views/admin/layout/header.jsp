@@ -37,13 +37,13 @@
           <i class="fas fa-mug-saucer fa-fw me-3"></i><span>Quản lý món</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="productAddition.jsp">Thêm món</a>
+            <a class="sidenav-link" href="/admin/product-management/edit">Thêm món</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="productManagement.jsp">Danh sách món</a>
+            <a class="sidenav-link" href="/admin/product-management">Danh sách món</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="reviewManagement.jsp">Danh sách đánh giá</a>
+            <a class="sidenav-link" href="/admin/product-management/review">Danh sách đánh giá</a>
           </li>
         </ul>
       </li>
@@ -52,10 +52,10 @@
           <i class="fas fa-bars fa-fw me-3 "></i><span>Quản lý danh mục</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="categoryAddition.jsp">Thêm danh mục</a>
+            <a class="sidenav-link" href="/admin/category-management/edit">Thêm danh mục</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="categoryManagement.jsp">Danh sách danh mục</a>
+            <a class="sidenav-link" href="/admin/category-management">Danh sách danh mục</a>
           </li>
         </ul>
       </li>
@@ -64,10 +64,10 @@
           <i class="fas fa-table fa-fw me-3 "></i><span>Quản lý bàn</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="tableAddition.jsp">Thêm bàn</a>
+            <a class="sidenav-link" href="/admin/table-management/edit">Thêm bàn</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="tableManagement.jsp">Danh sách bàn</a>
+            <a class="sidenav-link" href="/admin/table-management">Danh sách bàn</a>
           </li>
         </ul>
       </li>
@@ -76,10 +76,10 @@
           <i class="fas fa-clipboard-list fa-fw me-3 "></i><span>Quản lý đơn đặt bàn</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="reservationAddition.jsp">Thêm đơn đặt bàn</a>
+            <a class="sidenav-link" href="reservation-addition.jsp">Thêm đơn đặt bàn</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="reservationManagement.jsp">Danh sách đơn đặt bàn</a>
+            <a class="sidenav-link" href="reservation-management.jsp">Danh sách đơn đặt bàn</a>
           </li>
         </ul>
       </li>

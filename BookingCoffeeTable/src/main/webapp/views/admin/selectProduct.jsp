@@ -38,7 +38,7 @@
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="reservationAddition.jsp">
+            <a class="btn btn-primary" href="reservation-addition.jsp">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm vào bàn</span>
             </a>

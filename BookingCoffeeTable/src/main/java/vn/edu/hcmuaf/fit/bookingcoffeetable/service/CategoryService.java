@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 
 import org.jdbi.v3.core.Jdbi;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.CategoryDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
@@ -29,6 +30,27 @@ public class CategoryService {
         categoryDAO.insertCategory(name, status, image);
     }
 
+    public Category findByUserName(String name) {
+        List<Category> categories = categoryDAO.findByUser(name);
+        if (categories.isEmpty()) return null;
+        return categories.get(0);
+    }
+
+    public Category SAVE(Category category) {
+        categoryDAO.SAVE(category.getName(), category.getStatus(), category.getImage());
+        return findByUserName(category.getName());
+    }
+
+    public Category UPDATE(Category category) {
+        categoryDAO.UPDATE(category.getName(), category.getStatus(), category.getImage());
+        return findByUserName(category.getName());
+    }
+
+    public void DELETE(int id) {
+        categoryDAO.DELETE(id);
+    }
+
+
     public List<Category> findAllCategory() {
         return categoryDAO.findAllCategory();
     }
@@ -43,6 +65,10 @@ public class CategoryService {
             return categories.get(0);
         }
         return null;
+    }
+
+    public Category findById(int id) {
+        return categoryDAO.findById(id);
     }
 
 }

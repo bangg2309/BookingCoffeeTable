@@ -37,7 +37,7 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="reservationManagement.jsp" class="btn btn-link mb-2">
+        <a href="reservation-management.jsp" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
@@ -80,17 +80,21 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="tableNum" class="form-label"><b>Số bàn</b></label>
-                        <select class="form-select" id="tableNum" name="tableNum" required>
-                            <option value="" disabled selected>Chọn bàn</option>
-                            <option value="1">101</option>
-                            <option value="2">201</option>
-                            <option value="3">301</option>
-                            <option value="4">401</option>
-                            <!-- Add more options as needed -->
-                        </select>
-                    </div>
+                    <label for="tableNum" class="form-label"><b>Vai trò</b></label>
+                    <i class="fas fa-user-tag"></i>
+                    <select class="form-select" id="tableNum" name="tableNum" required>
+                        <option value="" disabled>--Chọn vai trò--</option>
+                        <c:forEach items="${tables}" var="table">
+                            <c:choose>
+                                <c:when test="${table.id == reservation.tableId}">
+                                    <option value="${table.id}" selected>${table.tableNum}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${table.id}">${role.tableNum}</option>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
@@ -154,8 +158,17 @@
             </div>
 
             <!-- Repeat the pattern for other form elements -->
+            <button type="button" class="btn btn-primary" id="addOrUpdate">
+                <c:if test="${reservation.id != null}">
+                    Cập nhật
+                </c:if>
+                <c:if test="${reservation.id == null}">
+                    Thêm mới
+                </c:if>
+            </button>
 
-            <button type="submit" class="btn btn-primary">Thêm mới</button>
+            <input type="hidden" name="id" id="id" value="${reservation.id}"/>
+            <input type="hidden" name="user" id="user" value="${reservation}"/>
         </form>
 
     </div>
@@ -171,6 +184,64 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    $('#addOrUpdate').click(function (e) {
+        e.preventDefault();
+        var data = {};
+        var reservationId = $('#id').val();
+        var formData = $('#formSubmit').serializeArray();
+        $.each(formData, function (index, v) {
+            data["" + v.name + ""] = v.value;
+        });
+        console.log(data);
+        if (reservationId === "") {
+            delete data.id;
+            addReservation(data);
+        } else {
+            updateReservation(data);
+        }
+    });
+
+    function addReservation(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "POST",
+            url: "/api/admin/reservation",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+                alert("Thêm mới thành công");
+                window.location.href = "/admin/user-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Thêm mới thất bại");
+            }
+        })
+    }
+
+    function updateReservation(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "PUT",
+            url: "/api/admin/reservation",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert("Cập nhật thành công");
+                window.location.href = "/admin/user-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Cập nhật thất bại");
+            }
+        })
+    }
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->
