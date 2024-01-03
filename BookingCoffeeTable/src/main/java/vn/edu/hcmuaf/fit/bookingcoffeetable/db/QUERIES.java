@@ -45,12 +45,7 @@ public class QUERIES {
             "LEFT JOIN images ON products.id = images.productId " +
             "WHERE products.id = :id";
     public static final String SELECT_PRODUCTS_NEWEST =
-            "SELECT products.id,products.categoryId, products.name,products.price,products.description,products." +
-                    "status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url " +
-                    "FROM products " +
-                    "LEFT JOIN images ON products.id = images.productId " +
-                    "ORDER BY products.createdDate DESC " +
-                    "LIMIT :limit";
+            "SELECT * FROM products ORDER BY createdDate DESC LIMIT :limit";
     public static final String SELECT_ALL_ATTRIBUTE = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products.status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url" +
             "FROM products " +
             "LEFT JOIN images ON products.id = images.productId " +
@@ -129,11 +124,11 @@ public class QUERIES {
 
     public static final String SELECT_TABLE_PAGE = "SELECT t.* FROM tables t LEFT JOIN reservations r ON t.id = r.tableId WHERE (areaId IS NULL OR areaId = :areaId OR :areaId IS NULL) AND (r.id IS NULL OR (r.startTime > :startTime OR r.endTime < :endTime)) AND t.seatCount >= :count AND LOWER(t.location) LIKE LOWER(CONCAT('%', :find, '%')) LIMIT :limit OFFSET :offset";
     public static final String COUNT_TABLE = "SELECT count(*) FROM tables";
-
     public static final String SELECT_TABLE_BY_ID = "SELECT * FROM tables WHERE id = :id";
     public static final String SAVE_TABLE = "INSERT INTO tables (tableNum, areaId, seatCount, location, image, status) VALUES (:tableNum, :areaId, :seatCount, :location, :image, :status)";
     public static final String UPDATE_TABLE = "UPDATE tables SET tableNum = :tableNum, areaId = :areaId, seatCount = :seatCount, location = :location, image = :image, status = :status WHERE id = :id";
     public static final String DELETE_TABLE = "DELETE FROM tables WHERE id = :id";
+
     }
 
     //PRODUCT VARIANT

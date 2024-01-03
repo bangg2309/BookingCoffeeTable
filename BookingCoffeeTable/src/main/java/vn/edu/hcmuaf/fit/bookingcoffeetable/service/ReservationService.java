@@ -34,8 +34,6 @@ public class ReservationService {
 
 
 
-
-
     public List<Reservation> findReservationByUserId(int userId, String sortOrder) {
         List<Reservation> reservations = null;
         if (sortOrder.equals("DESC")) {
