@@ -63,11 +63,19 @@
                             <i class="fas fa-toggle-on"></i>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1"
+                            <c:if test="${category.status == 1}">
+                                checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="active">Hoạt động</label>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0"
+                            <c:if test="${category.status == 0}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="inactive">Ngưng hoạt động</label>
                         </div>
                     </div>
@@ -75,7 +83,17 @@
 
             </div>
             <!-- Repeat the pattern for other form elements -->
-            <button type="submit" class="btn btn-primary">Thêm mới</button>
+            <button type="button" class="btn btn-primary" id="addOrUpdate">
+                <c:if test="${category.id != null}">
+                    Cập nhật
+                </c:if>
+                <c:if test="${category.id == null}">
+                    Thêm mới
+                </c:if>
+            </button>
+
+            <input type="hidden" name="id" id="id" value="${category.id}"/>
+            <input type="hidden" name="user" id="user" value="${category}"/>
         </form>
 
     </div>
@@ -91,6 +109,64 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    $('#addOrUpdate').click(function (e) {
+        e.preventDefault();
+        var data = {};
+        var categoryId = $('#id').val();
+        var formData = $('#formSubmit').serializeArray();
+        $.each(formData, function (index, v) {
+            data["" + v.name + ""] = v.value;
+        });
+        console.log(data);
+        if (categoryId === "") {
+            delete data.id;
+            addCategory(data);
+        } else {
+            updateCategory(data);
+        }
+    });
+
+    function addCategory(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "POST",
+            url: "/api/admin/category",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+                alert("Thêm mới thành công");
+                window.location.href = "/admin/category-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Thêm mới thất bại");
+            }
+        })
+    }
+
+    function updateCategory(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "PUT",
+            url: "/api/admin/category",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert("Cập nhật thành công");
+                window.location.href = "/admin/category-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Cập nhật thất bại");
+            }
+        })
+    }
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

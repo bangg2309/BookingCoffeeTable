@@ -62,35 +62,48 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">101</p>
+                <c:forEach items="${tables}" var="table">
+                    <tr>
+                        <td>
+                                ${table.id}
+                        </td>
+                        <td>
+                            <span>${table.tableNum}</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class=" mb-1">${table.area}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>Tầng 1</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">Gần quầy bar</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline"> hoạt động</span>
-                    </td>
-                    <td>
-                        <a href="productAddition.jsp" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class=" mb-1">${table.location}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <c:if test="${table.status == 1}">
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">active</span>
+                            </td>
+                        </c:if>
+                        <c:if test="${table.status ==0}">
+                            <td>
+                                <span class="badge badge-danger rounded-pill d-inline">blocked</span>
+                            </td>
+                        </c:if>
+                        <td>
+                            <a href="/admin/user-management/edit?id=${table.id}" class="btn btn-primary btn-floating">
+                                <i class="far fa-pen-to-square"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteTable(${table.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -108,6 +121,28 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function deleteTable(id){
+
+        $.ajax({
+            url: '/api/admin/table',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

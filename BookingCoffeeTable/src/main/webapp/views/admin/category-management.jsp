@@ -53,35 +53,41 @@
         <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
             <tr>
-                <th>STT</th>
+                <th>ID</th>
                 <th>Tên loại món</th>
                 <th>Trạng thái</th>
                 <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1">Cà phê</p>
-                    </div>
-                </td>
-                <td>
-                    <span class="badge badge-success rounded-pill d-inline">hoạt động</span>
-                </td>
-                <td>
-                    <a href="categoryAddition.jsp" class="btn btn-primary btn-floating">
+            <c:forEach items="${categories}" var="category">
+                <tr>
+                    <td>
+                            ${category.id}
+                    </td>
+                    <td>
+                        <span>${category.name}</span>
+                    </td>
+                    <c:if test="${category.status == 1}">
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">active</span>
+                    </td>
+                </c:if>
+                    <c:if test="${category.status ==0}">
+                    <td>
+                        <span class="badge badge-danger rounded-pill d-inline">blocked</span>
+                    </td>
+                </c:if>
+                    <td>
+                    <a href="/admin/category-management/edit?id=${category.id}" class="btn btn-primary btn-floating">
                         <i class="far fa-pen-to-square"></i>
                     </a>
                     <button type="button" class="btn btn-danger btn-floating">
                         <i class="far fa-trash-can"></i>
                     </button>
                 </td>
-            </tr>
-
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
         <div class=" p-2 d-flex bg-white justify-content-end">
@@ -129,6 +135,28 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function deleteCategory(id){
+
+        $.ajax({
+            url: '/api/admin/category',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->
