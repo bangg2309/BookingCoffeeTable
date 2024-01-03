@@ -8,7 +8,6 @@ import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.UserMapper;
 
 import java.util.List;
 
