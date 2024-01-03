@@ -98,17 +98,17 @@
                             <!-- Ngày Đặt -->
                             <div class=" col-md-2 mb-3">
                                 <label for="filterDate" class="form-label ">Ngày Đặt:</label>
-                                <input type="date" class="form-control" name="start" id="filterDate" value="">
+                                <input type="date" class="form-control" name="date" id="filterDate" value="">
                             </div>
                             <!-- Thời Gian Đặt -->
                             <div class="col-md mb-3">
                                 <label for="filterStartTime" class="form-label">Thời Gian Đặt:</label>
-                                <input type="time" class="form-control" id="filterStartTime" min="08:00" max="18:00">
+                                <input type="time" class="form-control" id="filterStartTime" name="startTime" min="08:00" max="18:00">
                             </div>
                             <!-- Thời Gian Kết Thúc -->
                             <div class="col-md mb-3">
                                 <label for="filterEndTime" class="form-label">Thời Gian Kết Thúc:</label>
-                                <input type="time" class="form-control" id="filterEndTime">
+                                <input type="time" class="form-control" name="startEnd" id="filterEndTime">
                             </div>
 
                             <!-- Số người -->
@@ -298,11 +298,10 @@
                         + "<h4>Số bàn: " + val.tableNum + "</h4>"
                         + "<h4>chỗ ngồi: " + val.seatCount + " người</h4>"
                         + "<h4>Vị trí: " + val.location + "</h4>"
-                        + "<a class=\"btn btn-primary yourBookButton\" style=\"text-transform: uppercase\" onclick=\"yourButtonClick(this)\">Chọn bàn</a>"
+                        + "<a class=\"btn btn-primary yourBookButton\" style=\"text-transform: uppercase\" href=\"/add-table?id="+val.id+"&startTime="+startTime+"&endTime="+endTime+"\">Chọn bàn</a>"
                         + "</div>"
                         + "</div>"
                         + "</div>";
-
                 }
                 $("#yourContainer").html(data);
             }
@@ -310,27 +309,6 @@
     }
 
     ajaxRun(count, text, startTime, endTime, areaValue);
-
-    function addToCart(id) {
-        let confirmBox = confirm("Add to cart ?");
-        if (confirmBox === true) {
-            $.ajax({
-                url: '<%=request.getContextPath()%>/add-cart?id=' + id,
-                type: 'GET',
-                success: function (data) {
-                    alert('Add to cart is success!');
-                    updateCart();
-                },
-                error: function (data) {
-                    alert('Add to cart is error!');
-                }
-            });
-        } else {
-            console.log("No add product to cart!");
-        }
-    }
-
-    // Bạn có thể sử dụng class hoặc id để xác định đúng thẻ cần kiểm tra
 
 
 
