@@ -26,14 +26,13 @@ public interface ReservationDAO {
     List<Reservation> findAllReservation();
 
     @SqlUpdate(QUERIES.RESERVATION.SAVE_RESERVATION)
-    void saveReservation(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") String totalPrice, @Bind("createdDate") String createdDate);
+    void saveReservation(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice, @Bind("createdDate") String createdDate);
 
     @SqlUpdate(QUERIES.RESERVATION.UPDATE_RESERVATION)
-    void updateReservation(@Bind("id") int id, @Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") String totalPrice, @Bind("createdDate") String createdDate);
+    void updateReservation(@Bind("id") int id, @Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice, @Bind("createdDate") String createdDate);
 
     @SqlUpdate(QUERIES.RESERVATION.DELETE_RESERVATION)
     void deleteReservation(@Bind("id") int id);
-
 
     @SqlUpdate(QUERIES.RESERVATION.SAVE)
     void save(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice);
