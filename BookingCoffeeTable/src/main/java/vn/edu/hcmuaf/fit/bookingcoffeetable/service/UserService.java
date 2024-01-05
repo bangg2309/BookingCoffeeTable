@@ -81,7 +81,7 @@ public class UserService {
     //Lấy ra tên đầy đủ của một user. Nếu không có tên đầy đủ thì lấy tên đăng nhập. Không có trả về null
     public String getNameById(int id) {
         User user = userDao.findById(id);
-        if (user.getFullname() != null)
+        if (user.getFullname() != null && !user.getFullname().isEmpty())
             return user.getFullname();
         else if (user.getUsername() != null)
             return user.getUsername();
@@ -90,15 +90,18 @@ public class UserService {
 
     public User save(User user) {
         user.setPassword(hashPassword(user.getPassword()));
-        userDao.save(user.getUsername(), user.getPassword(), user.getFullname(), user.getEmail(), user.getPhone(), user.getRoleId(), user.getEmailVerified(), user.getStatus(),user.getAvatar());
+        userDao.save(user.getUsername(), user.getPassword(), user.getFullname(), user.getEmail(), user.getPhone(), user.getRoleId(), user.getEmailVerified(), user.getStatus(), user.getAvatar());
         return findByUserName(user.getUsername());
+    }
+    public void insertByGoogle(User user) {
+        userDao.insertByGoogle(user.getUsername(), user.getFullname(), user.getEmail(), user.getRoleId(), user.getEmailVerified(), user.getStatus(), user.getAvatar());
     }
 
     public User update(User user) {
         User oldUser = userDao.findById(user.getId());
         if (user.getPassword() != null)
             user.setPassword(hashPassword(user.getPassword()));
-        userDao.update(user.getId(),user.getFullname(), user.getEmail(), user.getPhone(), user.getRoleId(), user.getEmailVerified(), user.getStatus(),user.getAvatar());
+        userDao.update(user.getId(), user.getFullname(), user.getEmail(), user.getPhone(), user.getRoleId(), user.getEmailVerified(), user.getStatus(), user.getAvatar());
         return findByUserName(user.getUsername());
     }
 
@@ -115,8 +118,19 @@ public class UserService {
         userDao.updateProfile(id, fullname, email, phone);
         return findById(id);
     }
+
     public void updateEmailVerifiedById(int id) {
         userDao.updateEmailVerifiedById(id);
+    }
+
+    public boolean exists(User user) {
+        List<User> users = userDao.findAll();
+        for (User u : users) {
+            if (u.getUsername().equals(user.getUsername())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String hashPassword(String password) {

@@ -926,7 +926,7 @@
                                                 </h5>
                                             </c:otherwise>
                                         </c:choose>
-                                        <button type="button" onclick="addToCart('${product.id}', '${product.size}')"
+                                        <button type="button" onclick="addToCart('${product.id}', '${product.size}','1')"
                                                 class="btn btn-primary btn-rounded w-100 color_btn">
                                             <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
@@ -1257,9 +1257,9 @@
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 
 <script>
-    function addToCart(id, size) {
+    function addToCart(id, size, quantity) {
         $.ajax({
-            url: '/add-cart?id=' + id + '&size=' + size,
+            url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
             type: 'GET',
             success: function (data) {
                 alert('Sản phẩm được thêm thành công vào đơn đặt bàn');

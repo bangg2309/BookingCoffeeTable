@@ -1,9 +1,10 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Table {
+public class Table implements Serializable {
     private int id;
     private int areaId;
     private int tableNum;

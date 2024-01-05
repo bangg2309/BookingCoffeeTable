@@ -35,7 +35,7 @@ public interface UserDAO {
               @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 
     @SqlUpdate(QUERIES.USER.update)
-    void update(@Bind("id") int id,  @Bind("fullname") String fullname, @Bind("email") String email, @Bind("phone") String phone,
+    void update(@Bind("id") int id, @Bind("fullname") String fullname, @Bind("email") String email, @Bind("phone") String phone,
                 @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 
     @SqlUpdate(QUERIES.USER.delete)
@@ -49,4 +49,8 @@ public interface UserDAO {
 
     @SqlUpdate(QUERIES.USER.updateEmailVerifiedById)
     void updateEmailVerifiedById(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.USER.insertByGoogle)
+    void insertByGoogle(@Bind("username") String username, @Bind("fullname") String fullname, @Bind("email") String email,
+                        @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 }

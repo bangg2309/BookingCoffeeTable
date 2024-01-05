@@ -34,6 +34,10 @@ public class ReviewService {
         return reviews;
     }
 
+    public void save(Review review){
+        reviewDAO.save(review.getProductId(), review.getUserId(), review.getStarRate(), review.getContent());
+    }
+
     public static void main(String[] args) {
         ReviewService rv = ReviewService.getInstance();
         System.out.println(rv.findReviewByProductId(20));

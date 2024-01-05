@@ -57,6 +57,12 @@
                             ${registerSession}
                     </div>
                     </c:if>
+                    <c:if test="${message != null}">
+                    <div class="alert" role="alert" data-mdb-color="warning" data-mdb-alert-init>
+                        <i class="fas fa-exclamation-triangle me-3"></i>
+                            ${message}
+                    </div>
+                    </c:if>
                     <div class="wrap-input100 validate-input" data-validate="Cần nhập tên đăng nhập">
                         <input class="input100" type="text" name="username">
                         <span class="focus-input100"></span>
@@ -100,9 +106,10 @@
                             </button>
                         </div>
                         <div class="col-md-6">
-                            <button class="login100-form-btn"><i class="fa-brands fa-google fa-2xl mr-2"></i>
+                            <a href="https://accounts.google.com/o/oauth2/auth?scope=profile%20email&redirect_uri=http://localhost:8080/login-google&response_type=code
+    &client_id=37788005886-d97gv9runl8duup9ko6kohklp2s32u3a.apps.googleusercontent.com&approval_prompt=force" class="login100-form-btn"><i class="fa-brands fa-google fa-2xl mr-2"></i>
                                 Google
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div class="text-center p-t-46 p-b-20 mt-4">
