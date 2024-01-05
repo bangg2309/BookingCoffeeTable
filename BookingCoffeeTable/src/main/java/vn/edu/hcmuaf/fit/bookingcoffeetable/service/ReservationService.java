@@ -80,8 +80,8 @@ public class ReservationService {
 
     public void delete(int id) {
         reservationDAO.deleteReservation(id);
-
-    public void save(Reservation reservation) {
+    }
+    public void saveReservation(Reservation reservation) {
         reservationDAO.save(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice());
     }
 
