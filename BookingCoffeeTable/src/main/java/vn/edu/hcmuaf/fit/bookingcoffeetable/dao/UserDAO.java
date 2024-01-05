@@ -1,14 +1,11 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.dao;
 
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
-import org.jdbi.v3.sqlobject.config.RegisterRowMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
-
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.mapper.UserMapper;
 
 import java.util.List;
 
@@ -38,7 +35,7 @@ public interface UserDAO {
               @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 
     @SqlUpdate(QUERIES.USER.update)
-    void update(@Bind("id") int id,  @Bind("fullname") String fullname, @Bind("email") String email, @Bind("phone") String phone,
+    void update(@Bind("id") int id, @Bind("fullname") String fullname, @Bind("email") String email, @Bind("phone") String phone,
                 @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 
     @SqlUpdate(QUERIES.USER.delete)
@@ -52,4 +49,8 @@ public interface UserDAO {
 
     @SqlUpdate(QUERIES.USER.updateEmailVerifiedById)
     void updateEmailVerifiedById(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.USER.insertByGoogle)
+    void insertByGoogle(@Bind("username") String username, @Bind("fullname") String fullname, @Bind("email") String email,
+                        @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 }

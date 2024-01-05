@@ -169,32 +169,34 @@
                         <div class="d-flex justify-content-between ">
                             <div>
                                 <span>Số bàn: </span>
-                                <span>101</span>
+                                <span>${cart.table.tableNum}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between ">
                             <div>
                                 <span>Số ghế: </span>
-                                <span>10</span>
+                                <span>${cart.table.seatCount}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between">
                             <div>
                                 <span>Vị trí: </span>
-                                <span>Cửa sổ</span>
+                                <span>${cart.table.location}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between">
                             <div>
                                 <span>Khu vực: </span>
-                                <span>Tầng 1</span>
+                                <span>${cart.table.area.name}</span>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between mb-2">
+                            <fmt:parseDate var="parsedstartTime" value="${cart.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:parseDate var="parsedendTime" value="${cart.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                             <span>Thời gian: </span>
-                            <span>6/9/2023 8:30 AM - 10:00 AM</span>
+                            <span><fmt:formatDate value="${parsedstartTime}" pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate value="${parsedendTime}" pattern="HH:mm:ss"/></span>
                         </div>
-                        <a class="btn btn-danger btn-rounded w-50 mt-2" href="table.jsp"
+                        <a class="btn btn-danger btn-rounded w-50 mt-2" href="${pageContext.request.contextPath}/table"
                            style="color: whitesmoke">Thay đổi bàn</a>
 
 
@@ -219,9 +221,8 @@
                                 <fmt:formatNumber value="${cart.totalPrice}" type="currency" currencyCode="VND"/>
                             </span>
                         </div>
-                        <a class="btn btn-primary btn-rounded w-100" href="/table"
+                        <a class="btn btn-primary btn-rounded w-100" href="/reservation"
                            style="color: white">Thanh toán</a>
-
                     </section>
                 </div>
             </div>

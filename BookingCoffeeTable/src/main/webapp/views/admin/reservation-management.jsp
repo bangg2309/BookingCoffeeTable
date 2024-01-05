@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@
     <!-- Container for demo purpose -->
     <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="selectProduct.jsp">
+            <a class="btn btn-primary" href="/admin/reservation-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm đơn đặt bàn</span>
             </a>
@@ -65,44 +65,53 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="fw-bold mb-1">Trần Quí Bằng</p>
+                <c:forEach items="${reservations}" var="reservation">
+                    <tr>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class="fw-bold mb-1">${reservation.contactName}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <span>Mon, 14.03.2022</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">14:30</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">16:30</p>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">101</p>
-                    </td>
-                    <td>
-                        <span class="">1.500.000đ</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">thành công</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+                            <span>${reservation.createdDate}</span>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${reservation.startTime}</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${reservation.startTime}</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${reservation.table.tableNum}</p>
+                        </td>
+                        <td>
+                            <span class="">${reservation.totalPrice}</span>
+                        </td>
+                        <c:if test="${reservation.status == 1}">
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">active</span>
+                            </td>
+                        </c:if>
+                        <c:if test="${reservation.status ==0}">
+                            <td>
+                                <span class="badge badge-danger rounded-pill d-inline">blocked</span>
+                            </td>
+                        </c:if>
+                        <td>
+                            <a href="/admin/reservation-management/edit?id=${reservation.id}" class="btn btn-primary btn-floating">
+                                <i class="far fa-pen-to-square"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteReservation(${reservation.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -120,6 +129,29 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+
+    function deleteReservation(id) {
+
+        $.ajax({
+            url: '/api/admin/reservation',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

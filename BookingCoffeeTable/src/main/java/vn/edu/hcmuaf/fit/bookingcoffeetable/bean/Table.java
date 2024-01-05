@@ -1,9 +1,10 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Table {
+public class Table implements Serializable {
     private int id;
     private int areaId;
     private int tableNum;
@@ -12,6 +13,16 @@ public class Table {
     private String image;
 
     private int status;
+
+    private Area area;
+
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
 
     private List<Reservation> reservations = new ArrayList<>();
 

@@ -509,7 +509,7 @@
                 var result = priceRange[0];
 
 
-                if (priceRange[2] == null){
+                if (priceRange[2] == null) {
                     priceRange[2] = result;
                     priceRange[0] = 0;
                     secondPrice = parseInt(priceRange[2] + "000");
@@ -533,7 +533,6 @@
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
             success: function (json) {
-                console.log("json" + json);
                 let data = "";
                 let obj = json;
                 for (let i = 0; i < obj.length; i++) {
@@ -555,7 +554,7 @@
                         'data-ripple-color="light" ' +
                         '>' +
                         '<img src="' + val.images[0].url + '" class="w-100" alt=""/>' +
-                        '<a href="#!">' +
+                        '<a href="/product-detail?id=' + val.id + '">' +
                         '<div class="mask">' +
                         '<div ' +
                         'class="' +
@@ -622,6 +621,7 @@
                         '<button ' +
                         'type="button" ' +
                         'class="btn btn-primary btn-rounded w-100 color_btn" ' +
+                        'onclick="addToCart(' + val.id + ',\'' + val.size + '\',' + 1 + ')"' +
                         '>' +
                         '<i class="fas fa-cart-plus me-2"></i>Thêm vào bàn' +
                         '</button>' +
@@ -699,8 +699,6 @@
     }
 
 
-
-
     function formatCurrency(amount) {
         var formatter = new Intl.NumberFormat('vi-VN', {
             style: 'currency',
@@ -728,6 +726,19 @@
 
         // Append the new script element to the document head
         document.head.appendChild(script);
+    }
+
+    function addToCart(id, size, quantity) {
+        $.ajax({
+            url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
+            type: 'GET',
+            success: function (data) {
+                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+            },
+            error: function (data) {
+                alert('Bị lỗi! Không thêm được sản phẩm');
+            }
+        });
     }
 </script>
 

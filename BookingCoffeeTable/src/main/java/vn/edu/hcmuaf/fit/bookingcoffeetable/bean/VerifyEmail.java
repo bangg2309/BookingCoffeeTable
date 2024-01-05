@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-public class VerifyEmail {
+import java.io.Serializable;
+
+public class VerifyEmail implements Serializable {
     private int id;
     private int userId;
     private String code;

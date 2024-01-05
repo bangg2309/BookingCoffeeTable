@@ -1,23 +1,43 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 
-public class Post {
+
+public class Post implements Serializable {
+
     private int id;
     private int userId;
     private String title;
     private String shortDescription;
     private String description;
     private String thumbnail;
-    private int status;
-    private String createdDate;
+
+    private String status;
     private String createdBy;
+    private String createdDate;
 
-    private String coverImage;
+    private User user;
 
+    @Override
     public String toString() {
-        return "Post [id=" + id + ", userId=" + userId + ", title=" + title + ", shortDescription=" + shortDescription
-                + ", description=" + description + ", thumbnail=" + thumbnail + ", status=" + status + ", createdDate="
-                + createdDate + ", createdBy=" + createdBy + ", coverImage=" + coverImage + "]";
+        return "Post{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", title='" + title + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", description='" + description + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", status='" + status + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", createdDate='" + createdDate + '\'' +
+                '}';
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
 
     }
 
@@ -69,21 +89,15 @@ public class Post {
         this.thumbnail = thumbnail;
     }
 
-    public int getStatus() {
+
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
 
     public String getCreatedBy() {
         return createdBy;
@@ -93,11 +107,13 @@ public class Post {
         this.createdBy = createdBy;
     }
 
-    public String getCoverImage() {
-        return coverImage;
+
+    public String getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
+}
 

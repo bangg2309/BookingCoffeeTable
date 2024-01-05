@@ -7,6 +7,9 @@ import java.util.StringTokenizer;
 
 public class Cart implements Serializable {
     private Map<String, Product> products;
+    private Table table;
+    private String startTime;
+    private String endTime;
     private double totalPrice;
     private static Cart instance;
 
@@ -21,16 +24,15 @@ public class Cart implements Serializable {
         return instance;
     }
 
-    public void addProduct(Product product, String size) {
+    public void addProduct(Product product, String size, int quantity) {
         if (size == null) {
             size = "notSize";
         }
-        System.out.println("size" + size);
         String productKey = generateProductKey(product.getId(), size);
         if (products.containsKey(productKey)) {
-            updateProductQuantity(productKey, products.get(productKey).getQuantity() + 1);
+            updateProductQuantity(productKey, products.get(productKey).getQuantity() + quantity);
         } else {
-            product.setQuantity(1);
+            product.setQuantity(quantity);
             if (!size.equals("notSize")) {
                 product.updateBySize(size);
             }
@@ -97,6 +99,7 @@ public class Cart implements Serializable {
                 ", totalPrice=" + totalPrice +
                 '}';
     }
+
     public Map<String, Product> getProducts() {
         return products;
     }
@@ -116,5 +119,29 @@ public class Cart implements Serializable {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 }
