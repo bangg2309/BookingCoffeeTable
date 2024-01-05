@@ -52,7 +52,7 @@ public class TableService {
     }
 
 
-    public List<Table> getTables(String areaId, String startTime, String endTime, int count, String find, int limit, int offset){
+    public List<Table> getTables(String areaId, String startTime, String endTime, int count, String find, int limit, int offset) {
         List<Table> tables = tableDAO.getTables(areaId, startTime, endTime, count, find, limit, offset);
         for (Table table : tables) {
             table.setArea(AreaService.getInstance().findById(table.getAreaId()));
@@ -79,13 +79,14 @@ public class TableService {
 
     public Table findById(int id) {
         if (tableDAO.findById(id).isEmpty()) return null;
-        return tableDAO.findById(id).get(0);
+        Table table = tableDAO.findById(id).get(0);
+        table.setArea(AreaService.getInstance().findById(table.getAreaId()));
+        return table;
     }
 
     public static void main(String[] args) {
         TableService productService = TableService.getInstance();
         System.out.println(productService.getTables("1", "2021-05-05 10:00:00", "2021-05-05 12:00:00", 2, "", 2, 0));
-
     }
 
 }

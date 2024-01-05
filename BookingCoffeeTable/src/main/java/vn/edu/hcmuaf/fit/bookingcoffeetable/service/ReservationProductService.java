@@ -5,6 +5,7 @@ import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.ReservationProduct;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.ReservationProductDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
+
 import java.util.List;
 
 public class ReservationProductService {
@@ -31,5 +32,9 @@ public class ReservationProductService {
             reservationProduct.setProduct(ProductService.getInstance().findProductDetail(reservationProduct.getProductId()));
         }
         return list;
+    }
+
+    public void save(int productId, int reservId, int quantity, int price, String size) {
+         reservationProductDAO.save(productId, reservId, quantity, price, size);
     }
 }

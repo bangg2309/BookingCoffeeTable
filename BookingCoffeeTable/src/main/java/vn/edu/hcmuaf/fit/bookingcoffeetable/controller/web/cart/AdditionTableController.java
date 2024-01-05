@@ -10,7 +10,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AdditonTableController", value = "/add-table")
+@WebServlet(name = "AdditionTableController", value = "/add-table")
 public class AdditionTableController extends HttpServlet {
     TableService tableService;
 

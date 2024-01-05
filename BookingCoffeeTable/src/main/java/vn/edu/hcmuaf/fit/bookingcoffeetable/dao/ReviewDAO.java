@@ -19,4 +19,8 @@ public interface ReviewDAO {
 
     @SqlUpdate(QUERIES.REVIEW.DELETE_REVIEW)
     void deleteReview(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.REVIEW.INSERT_REVIEW)
+    void save(@Bind("productId") int productId, @Bind("userId") int userId, @Bind("starRate") int starRate, @Bind("content") String content);
+
 }

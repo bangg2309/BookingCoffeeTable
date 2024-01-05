@@ -51,57 +51,57 @@
                                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                             </div>
                             <div class="col-xl-6">
-                                <div class="card-body p-md-5 text-black">
-                                    <h3 class="mb-5 text-uppercase">Thông tin đặt bàn</h3>
+                                <form action="${pageContext.request.contextPath}/reservation" method="post">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-5 text-uppercase">Thông tin đặt bàn</h3>
 
-                                    <div class="row">
-                                        <div class="col-md-12 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="name" class="form-control form-control-lg" />
-                                                <label class="form-label" for="name">Họ Và Tên Người Đặt</label>
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="fullname" name="fullname" class="form-control form-control-lg" value="${userSession.fullname}" required />
+                                                    <label class="form-label"  for="fullname">Họ Và Tên Người Đặt</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="phone" class="form-control form-control-lg" />
-                                                <label class="form-label" for="phone">Số Điện Thoại</label>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="phone" name="phone" class="form-control form-control-lg" value="${userSession.phone}" required />
+                                                    <label class="form-label"  for="phone">Số Điện Thoại</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="email" name="email" class="form-control form-control-lg" value="${userSession.email}"  />
+                                                    <label class="form-label"  for="email">Email</label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="email" class="form-control form-control-lg" />
-                                                <label class="form-label" for="email">Email</label>
-                                            </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="note" name="note" class="form-control form-control-lg" />
+                                            <label class="form-label"  for="note">Ghi Chú</label>
+                                        </div>
+
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                                            <h6 class="mb-0 me-4">Phương Thức Thanh Toán: </h6>
+
+                                            <select name="paymentMethod" id="singleSelection" class="select" required>
+                                                <option value="1">Visa</option>
+                                                <option value="2">Mater Card</option>
+                                                <option value="3">Momo</option>
+                                                <option value="3" selected>Tiền Mặt</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <a class="btn btn-warning btn-lg" href="${pageContext.request.contextPath}/cart">Quay lại</a>
+                                            <button type="submit" class="btn btn-success btn-lg ms-2" >Xác nhận</button>
                                         </div>
                                     </div>
-
-                                    <div class="form-outline mb-4">
-                                        <input type="text" id="note" class="form-control form-control-lg" />
-                                        <label class="form-label" for="note">Ghi Chú</label>
-                                    </div>
-
-                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                                        <h6 class="mb-0 me-4">Phương Thức Thanh Toán: </h6>
-
-                                        <select id="singleSelection" class="select">
-                                            <option value="1">Visa</option>
-                                            <option value="2">Mater Card</option>
-                                            <option value="3">Momo</option>
-                                            <option value="3">Tiền Mặt</option>
-                                        </select>
-
-                                    </div>
-
-                                    <div class="d-flex justify-content-end pt-3">
-                                        <a class="btn btn-warning btn-lg" href="cart.jsp">Quay lại</a>
-                                        <a class="btn btn-success btn-lg ms-2" href="cart.jsp">Xác nhận</a>
-                                    </div>
-
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

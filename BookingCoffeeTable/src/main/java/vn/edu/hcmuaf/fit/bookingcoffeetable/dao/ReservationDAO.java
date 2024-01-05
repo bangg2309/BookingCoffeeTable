@@ -34,4 +34,10 @@ public interface ReservationDAO {
     @SqlUpdate(QUERIES.RESERVATION.DELETE_RESERVATION)
     void deleteReservation(@Bind("id") int id);
 
+
+    @SqlUpdate(QUERIES.RESERVATION.SAVE)
+    void save(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice);
+    @SqlQuery(QUERIES.RESERVATION.SELECT_RESERVATION_ID_BY_DETAILS)
+    int findIdByDetails(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice);
+
 }

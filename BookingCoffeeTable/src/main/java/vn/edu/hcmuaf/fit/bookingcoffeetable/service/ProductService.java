@@ -138,9 +138,6 @@ public class ProductService {
         for (Product product : products) {
             System.out.println(product.getId() + " " + product.getName() + " " + product.getPrice() + " " + product.getImages() + product.getCreatedDate());
         }
-
-//        System.out.println(productService.getProducts(null, "", 9, 0, "price_DESC", "4", 0, 100000));
-
     }
 }
 

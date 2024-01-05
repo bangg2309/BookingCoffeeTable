@@ -150,30 +150,29 @@
                                 <!-- Quantity -->
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <input
+                                        <input id="quantity"
                                                 type="number"
-                                                id="typeNumber"
                                                 class="form-control"
                                                 value="1"
                                                 min="1"
                                         />
-                                        <label class="form-label" for="typeNumber"
+                                        <label class="form-label" for="quantity"
                                         >Số lượng</label
                                         >
                                     </div>
                                 </div>
                                 <!-- Size -->
                                 <div class="col-md-6 mb-4">
-                                    <select class="select">
-                                        <option value="1">S</option>
-                                        <option value="2">M</option>
-                                        <option value="3">L</option>
+                                    <select class="select" id="size">
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
 
                                     </select>
                                     <label class="form-label select-label">Size</label>
                                 </div>
                             </div>
-                            <button
+                            <button onclick="addToCart('${product.id}', '${product.size}')"
                                     type="button"
                                     class="btn btn-primary btn-rounded me-2 color_btn"
                             >
@@ -227,10 +226,9 @@
                                     <i class="far fa-star color_far fa-sm"></i>
                                 </li>
                             </ul>
-
                             <p class="mb-0">
                                 <i class="fas fa-quote-left pe-2"></i>
-                                ${review.content}
+                                    ${review.content}
                             </p>
                         </div>
                     </c:forEach>
@@ -238,13 +236,15 @@
                 </div>
 
                 <div class="col-md-5 mb-4">
-                    <form>
+                    <form action="${pageContext.request.contextPath}/product-detail" method="post">
                         <p>Đánh giá</p>
 
                         <ul
-                                class="rating d-flex justify-content-center mb-4"
+                                class="rating d-flex justify-content-center mb-4" id="rating"
                                 data-mdb-toggle="rating"
                                 data-mdb-value="3"
+                                data-mdb-rating-init
+
                         >
                             <li>
                                 <i class="far fa-star color_far fa-sm" title="Bad"></i>
@@ -271,17 +271,18 @@
               <textarea
                       class="form-control"
                       id="textAreaExample"
-                      rows="4"
+                      rows="4" name="content"
               ></textarea>
                             <label class="form-label" for="textAreaExample"
                             >Your review</label
                             >
                         </div>
-
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary mb-4 color_btn">
                             Submit
                         </button>
+                        <input type="hidden" name="productId" value="${product.id}">
+                        <input type="hidden" id="starRate" name="starRate" value="3">
                     </form>
                 </div>
             </div>
@@ -298,10 +299,40 @@
 
 
 <!-- MDB ESSENTIAL -->
+<script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
-<!-- MDB PLUGINS -->
 <script src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 <!-- Custom scripts -->
+<script>
+    const ratingElement = document.querySelector('#rating');
+    const ratingInput = document.getElementById('starRate');
+    ratingElement.addEventListener('scoreSelect.mdb.rating', function (event) {
+        const selectedValue = event.value;
+        console.log('Selected value: ', selectedValue);
+        ratingInput.value = selectedValue;
+
+    });
+
+
+    // Xử lý thêm vào giỏ hàng
+    function addToCart() {
+        let id = '${product.id}';
+        let size = $('#size').val();
+        let quantity = $('#quantity').val();
+        $.ajax({
+            url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
+            type: 'GET',
+            success: function (data) {
+                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+            },
+            error: function (data) {
+                alert('Bị lỗi! Không thêm được sản phẩm');
+            }
+        });
+    }
+</script>
+
 </body>
 
 

@@ -24,16 +24,15 @@ public class Cart implements Serializable {
         return instance;
     }
 
-    public void addProduct(Product product, String size) {
+    public void addProduct(Product product, String size, int quantity) {
         if (size == null) {
             size = "notSize";
         }
-        System.out.println("size" + size);
         String productKey = generateProductKey(product.getId(), size);
         if (products.containsKey(productKey)) {
-            updateProductQuantity(productKey, products.get(productKey).getQuantity() + 1);
+            updateProductQuantity(productKey, products.get(productKey).getQuantity() + quantity);
         } else {
-            product.setQuantity(1);
+            product.setQuantity(quantity);
             if (!size.equals("notSize")) {
                 product.updateBySize(size);
             }
