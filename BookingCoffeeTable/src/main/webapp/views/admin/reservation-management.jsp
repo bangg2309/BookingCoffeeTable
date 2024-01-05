@@ -37,7 +37,7 @@
     <!-- Container for demo purpose -->
     <div class="container  px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="selectProduct.jsp">
+            <a class="btn btn-primary" href="/admin/reservation-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm đơn đặt bàn</span>
             </a>
@@ -78,13 +78,13 @@
                             </div>
                         </td>
                         <td>
-                            <span>formatDateTime(${reservation.startTime})</span>
+                            <span>${reservation.createdDate}</span>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1">getTimeFromDateTime(${reservation.startTime})</p>
+                            <p class="fw-normal mb-1">${reservation.startTime}</p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1">getTimeFromDateTime(${reservation.endTime})</p>
+                            <p class="fw-normal mb-1">${reservation.startTime}</p>
                         </td>
                         <td>
                             <p class="fw-normal mb-1">${reservation.table.tableNum}</p>
@@ -103,7 +103,7 @@
                             </td>
                         </c:if>
                         <td>
-                            <a href="/admin/user-management/edit?id=${reservation.id}" class="btn btn-primary btn-floating">
+                            <a href="/admin/reservation-management/edit?id=${reservation.id}" class="btn btn-primary btn-floating">
                                 <i class="far fa-pen-to-square"></i>
                             </a>
                             <button type="button" class="btn btn-danger btn-floating" onclick="deleteReservation(${reservation.id})">
@@ -130,32 +130,6 @@
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
 <script>
-    function formatDateTime(dateTimeString) {
-        var dateTimeObject = new Date(dateTimeString);
-
-        var year = dateTimeObject.getFullYear();
-        var month = dateTimeObject.getMonth() + 1;
-        var day = dateTimeObject.getDate();
-
-        // Format lại thành chuỗi theo định dạng yyyy-mm-dd
-        var formattedDate = year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-
-        return formattedDate;
-    }
-
-    function getTimeFromDateTime(dateTimeString) {
-        var dateTimeObject = new Date(dateTimeString);
-
-        var hours = dateTimeObject.getHours();
-        var minutes = dateTimeObject.getMinutes();
-        var seconds = dateTimeObject.getSeconds();
-
-        // Format lại thành chuỗi theo định dạng hh:mm:ss
-        var formattedTime = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-
-        return formattedTime;
-    }
-
 
     function deleteReservation(id) {
 

@@ -35,7 +35,7 @@
 <main class="mb-5">
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="category-management.jsp" class="btn btn-link mb-2">
+        <a href="/admin/category-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">

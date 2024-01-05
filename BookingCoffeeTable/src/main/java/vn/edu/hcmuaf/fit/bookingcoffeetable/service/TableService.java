@@ -34,7 +34,7 @@ public class TableService {
     }
 
     public Table save(Table table) {
-        tableDAO.save(table.getTableNum(), table.getAreaId(), table.getSeatCount(), table.getLocation(), table.getImage(), table.getStatus());
+        tableDAO.saveTable(table.getTableNum(), table.getAreaId(), table.getSeatCount(), table.getLocation(), table.getImage(), table.getStatus());
         return findTableById(table.getId());
     }
 

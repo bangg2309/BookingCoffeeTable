@@ -50,35 +50,35 @@
                 </tr>
                 </thead>
                 <tbody>
+                <c:forEach items="${contacts}" var="contact">
                 <tr>
                     <td>
                         <span>1</span>
                     </td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <p class="fw-bold mb-1">Trần Quí Bằng</p>
+                            <p class="fw-bold mb-1">${contact.fullName}</p>
                         </div>
                     </td>
                     <td>
-                        <span>0842314569</span>
+                        <span>${contact.phone}</span>
                     </td>
                     <td>
-                        <p class="fw-normal mb-1">bangg2309@gmail.com</p>
+                        <p class="fw-normal mb-1">${contact.email}</p>
                     </td>
                     <td>
-                        <span>Đặt bàn</span>
+                        <span>${contact.subject}</span>
                     </td>
                     <td>
-                        <span>Quán có nhận tổ chức sự kiện không</span>
+                        <span>${contact.content}</span>
                     </td>
                     <td>
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-danger btn-floating">
-                                <i class="far fa-trash-can"></i>
-                            </button>
-                        </div>
+                        <button type="button" class="btn btn-danger btn-floating" onclick="deleteContact(${contact.id})">
+                            <i class="far fa-trash-can"></i>
+                        </button>
                     </td>
                 </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -134,6 +134,28 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function deleteContact(id){
+
+        $.ajax({
+            url: '/api/admin/contact',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

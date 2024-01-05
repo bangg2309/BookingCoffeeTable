@@ -58,12 +58,36 @@ public class ReservationService {
         return reservation;
     }
 
+
+    public List<Reservation> findAllReservation() {
+        List<Reservation> reservations = reservationDAO.findAllReservation();
+        for (Reservation reservation : reservations) {
+            reservation.setReservationProducts(ReservationProductService.getInstance().findReservationProductByReservId(reservation.getId()));
+            reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
+        }
+        return reservations;
+    }
+
+    public Reservation save(Reservation reservation) {
+        reservationDAO.saveReservation(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
+        return findById(reservation.getId());
+    }
+
+    public Reservation update(Reservation reservation) {
+        reservationDAO.updateReservation(reservation.getId(), reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
+        return findById(reservation.getId());
+    }
+
+    public void delete(int id) {
+        reservationDAO.deleteReservation(id);
+
     public void save(Reservation reservation) {
         reservationDAO.save(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice());
     }
 
     public int findIdByDetails(int tableId, int userId, String contactName, int contactPhone, String contactEmail, String startTime, String endTime, int status, String paymentMethod, String note, double totalPrice) {
         return reservationDAO.findIdByDetails(tableId, userId, contactName, contactPhone, contactEmail, startTime, endTime, status, paymentMethod, note, totalPrice);
+
     }
 
     public static void main(String[] args) {

@@ -76,10 +76,10 @@
           <i class="fas fa-clipboard-list fa-fw me-3 "></i><span>Quản lý đơn đặt bàn</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="reservation-addition.jsp">Thêm đơn đặt bàn</a>
+            <a class="sidenav-link" href="/admin/reservation-management/edit">Thêm đơn đặt bàn</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="reservation-management.jsp">Danh sách đơn đặt bàn</a>
+            <a class="sidenav-link" href="/admin/reservation-management">Danh sách đơn đặt bàn</a>
           </li>
         </ul>
       </li>
@@ -88,7 +88,7 @@
           <i class="fas fa-message fa-fw me-3 "></i><span>Quản lý trang liên hệ</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="contactManagemet.jsp">Danh sách liên hệ</a>
+            <a class="sidenav-link" href="/admin/contact-management">Danh sách liên hệ</a>
           </li>
         </ul>
       </li>
@@ -97,10 +97,10 @@
           <i class="fas fa-blog fa-fw me-3 "></i><span>Quản lý trang tin tức</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="postAddition.jsp">Thêm bài viết</a>
+            <a class="sidenav-link" href="/admin/post-management/edit">Thêm bài viết</a>
           </li>
           <li class="sidenav-item">
-            <a class="sidenav-link" href="postManagement.jsp">Danh sách bài viết</a>
+            <a class="sidenav-link" href="/admin/post-management">Danh sách bài viết</a>
           </li>
         </ul>
       </li>

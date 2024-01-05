@@ -14,6 +14,13 @@ public interface ReviewDAO {
     @SqlQuery(QUERIES.REVIEW.SELECT_REVIEW_BY_PRODUCT_ID)
     List<Review> findReviewByProductId(@Bind("productId") int productId);
 
+    @SqlQuery(QUERIES.REVIEW.SELECT_ALL_REVIEW)
+    List<Review> findAllReview();
+
+    @SqlUpdate(QUERIES.REVIEW.DELETE_REVIEW)
+    void deleteReview(@Bind("id") int id);
+
     @SqlUpdate(QUERIES.REVIEW.INSERT_REVIEW)
     void save(@Bind("productId") int productId, @Bind("userId") int userId, @Bind("starRate") int starRate, @Bind("content") String content);
+
 }

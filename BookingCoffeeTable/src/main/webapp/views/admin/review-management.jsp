@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,53 +56,53 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <p class="fw-bold mb-1">Cà phê sữa</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span>Trần Quí Bằng</span>
-                    </td>
-                    <td>
-                        <ul
-                                class="rating mb-3"
-                                data-mdb-toggle="rating"
-                                data-mdb-readonly="true"
-                                data-mdb-value="3"
-                        >
-                            <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-star fa-sm text-primary"></i>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        <span>Cà phê sữa mà sao đắng zậy</span>
-                    </td>
-                    <td>
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-danger btn-floating">
+                <c:forEach items="${reviews}" var="review">
+                    <tr>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <p class="fw-bold mb-1">Cà phê sữa</p>
+                            </div>
+                        </td>
+                        <td>
+                            <span>${review.userName}</span>
+                        </td>
+                        <td>
+                            <ul
+                                    class="rating mb-3"
+                                    data-mdb-toggle="rating"
+                                    data-mdb-readonly="true"
+                                    data-mdb-value="${review.starRate}"
+                            >
+                                <li>
+                                    <i class="far fa-star fa-sm text-primary"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-star fa-sm text-primary"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-star fa-sm text-primary"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-star fa-sm text-primary"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-star fa-sm text-primary"></i>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span>${review.content}</span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteReview(${review.id})">
                                 <i class="far fa-trash-can"></i>
                             </button>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -119,6 +119,29 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+
+    function deleteReview(id) {
+
+        $.ajax({
+            url: '/api/admin/review',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

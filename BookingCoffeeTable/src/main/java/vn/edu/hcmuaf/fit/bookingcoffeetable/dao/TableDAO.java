@@ -29,7 +29,7 @@ public interface TableDAO {
     Table findTableById(@Bind("id") int id);
 
     @SqlUpdate(QUERIES.TABLE.SAVE_TABLE)
-    void save(@Bind("tableNum") int tableNum, @Bind("areaId") int areaId, @Bind("seatCount") int seatCount, @Bind("location") String location, @Bind("image") String image, @Bind("status") int status);
+    void saveTable(@Bind("tableNum") int tableNum, @Bind("areaId") int areaId, @Bind("seatCount") int seatCount, @Bind("location") String location, @Bind("image") String image, @Bind("status") int status);
 
     @SqlUpdate(QUERIES.TABLE.UPDATE_TABLE)
     void updateTable(@Bind("id") int id, @Bind("tableNum") int tableNum, @Bind("areaId") int areaId, @Bind("seatCount") int seatCount, @Bind("location") String location, @Bind("image") String image, @Bind("status") int status);

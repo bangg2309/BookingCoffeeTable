@@ -22,7 +22,7 @@ public interface CategoryDAO {
     void SAVE(@Bind("name") String name, @Bind("status") int status, @Bind("image") String image);
 
     @SqlUpdate(QUERIES.CATEGORY.UPDATE_CATEGORY)
-    void UPDATE(@Bind("name") String name, @Bind("status") int status, @Bind("image") String image);
+    void UPDATE(@Bind("id") int id, @Bind("name") String name, @Bind("status") int status, @Bind("image") String image);
 
     @SqlUpdate(QUERIES.CATEGORY.DELETE_CATEGORY)
     void DELETE(@Bind("id") int id);
