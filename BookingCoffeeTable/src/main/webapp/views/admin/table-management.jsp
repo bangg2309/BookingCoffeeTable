@@ -95,7 +95,7 @@
                             </td>
                         </c:if>
                         <td>
-                            <a href="/admin/user-management/edit?id=${table.id}" class="btn btn-primary btn-floating">
+                            <a href="/admin/table-management/edit?id=${table.id}" class="btn btn-primary btn-floating">
                                 <i class="far fa-pen-to-square"></i>
                             </a>
                             <button type="button" class="btn btn-danger btn-floating" onclick="deleteTable(${table.id})">

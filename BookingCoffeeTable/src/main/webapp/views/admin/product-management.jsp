@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="productAddition.jsp">
+            <a class="btn btn-primary" href="/admin/product-management/edit">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm món</span>
             </a>
@@ -64,79 +64,54 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
+                <c:forEach items="${products}" var="product">
+                    <tr>
+                        <td>
+                                ${product.id}
+                        </td>
+                        <td>
 
 
-                        <div class="ms-3">
-                            <p class=" mb-1">Cà phê</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class=" mb-1">Cà phê kem</p>
+                            <div class="ms-3">
+                                <p class=" mb-1">${product.category.name}</p>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">20%</span>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <a href="productAddition.jsp" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-
-
-                        <div class="ms-3">
-                            <p class=" mb-1">Sinh tố</p>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class=" mb-1">Sinh tố dâu</p>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="">
+                                    <p class=" mb-1">${product.name}</p>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">49.000đ</p>
-                    </td>
-                    <td>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${product.price}</p>
+                        </td>
+                        <td>
+                            <span class="badge badge-success rounded-pill d-inline">${product.discount}%</span>
+                        </td>
+                        <c:if test="${product.status == 1}">
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">Còn bán</span>
+                            </td>
+                        </c:if>
+                        <c:if test="${product.status ==0}">
+                            <td>
+                                <span class="badge badge-danger rounded-pill d-inline">Tạm ngưng</span>
+                            </td>
+                        </c:if>
+                        <td>
+                            <a href="/admin/product-management/edit?id=${product.id}"
+                               class="btn btn-primary btn-floating">
+                                <i class="far fa-pen-to-square"></i>
+                            </a>
+                            <button type="button" class="btn btn-danger btn-floating"
+                                    onclick="deleteProduct(${product.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
 
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline">còn bán</span>
-                    </td>
-                    <td>
-                        <a href="productAddition.jsp" class="btn btn-primary btn-floating">
-                            <i class="far fa-pen-to-square"></i>
-                        </a>
-                        <button type="button" class="btn btn-danger btn-floating">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
-
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -155,6 +130,27 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script>
+    function deleteProduct(id){
+        $.ajax({
+            url: '/api/admin/product',
+            contentType: "application/json",
+            type: 'DELETE',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function (data) {
+                if (data) {
+                    alert('Xóa thành công');
+                    location.reload();
+                } else {
+                    alert('Xóa thất bại');
+                }
+            }
+        });
+    }
+
+</script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <!-- Custom scripts -->

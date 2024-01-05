@@ -15,7 +15,7 @@ public class Reservation implements Serializable {
     private String startTime;
     private String endTime;
 
-    private String status;
+    private int status;
     private String paymentMethod;
     private String note;
     private String totalPrice;
@@ -116,11 +116,11 @@ public class Reservation implements Serializable {
         this.endTime = endTime;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

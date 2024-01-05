@@ -46,7 +46,9 @@ public class ProductService {
         List<Product> products = productDAO.findProductNewest(limit);
         for (Product product : products) {
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
-            product.updateBySize(product.getProductVariants().get(0).getSize());
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
             product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
         }
@@ -69,7 +71,15 @@ public class ProductService {
     }
 
     public List<Product> findAllProducts() {
-        return productDAO.findAllProducts();
+        List<Product> products = productDAO.findAllProducts();
+        for (Product product : products) {
+          product.setCategory(CategoryService.getInstance().findOne(product.getCategoryId()));
+            product.updateBySize(product.getProductVariants().get(0).getSize());
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
+            product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
+
+        }
+        return products;
     }
 
     public List<Product> getProducts(String categoryId, String find, int limit, int offset, String orderBy, String ratingValue, int from, int to) {
@@ -101,6 +111,25 @@ public class ProductService {
 
     public String totalItem() {
         return productDAO.totalItem();
+    }
+
+    public Product saveProduct(Product product) {
+        System.out.println(product.getCategoryId() + " " + product.getName() + " " + product.getPrice() + " " + product.getDescription() + " " + product.getStatus() + " " + product.getDiscount());
+        productDAO.insertProduct(product.getCategoryId(), product.getName(), product.getPrice(), product.getDescription(), product.getStatus(), product.getDiscount());
+        return findOne(product.getId());
+    }
+
+    public Product updateProduct(Product product) {
+        productDAO.updateProduct(product.getId(), product.getCategoryId(), product.getName(), product.getPrice(), product.getDescription(), product.getStatus(), product.getDiscount());
+        return findOne(product.getId());
+    }
+
+    public void deleteProduct(int id) {
+        productDAO.deleteProduct(id);
+    }
+
+    public int getByName(String name) {
+        return productDAO.getByName(name);
     }
 
     public static void main(String[] args) {

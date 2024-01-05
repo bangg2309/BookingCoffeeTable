@@ -73,11 +73,9 @@
                         <span>${contact.content}</span>
                     </td>
                     <td>
-                        <div class="justify-content-center">
-                            <button type="button" class="btn btn-danger btn-floating">
-                                <i class="far fa-trash-can"></i>
-                            </button>
-                        </div>
+                        <button type="button" class="btn btn-danger btn-floating" onclick="deleteContact(${contact.id})">
+                            <i class="far fa-trash-can"></i>
+                        </button>
                     </td>
                 </tr>
                 </c:forEach>

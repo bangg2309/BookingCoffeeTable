@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@
 <!--Main layout-->
 <main class="mb-5">
     <div class="container px-4">
-        <a href="productManagement.jsp" class="btn btn-link mb-2">
+        <a href="/admin/product-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
 
@@ -42,33 +42,41 @@
             <span class="text-white">Thông tin món</span>
         </div>
 
-        <form class="border p-5">
+        <form class="border p-5" id="formSubmit" enctype="multipart/form-data">
             <!-- Thông tin cơ bản -->
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="category" class="form-label"><b>Loại món</b></label>
                     <i class="fas fa-bars"></i>
                     <select class="form-select" id="category" name="category" required>
-                        <option value="" disabled selected>Chọn danh mục</option>
-                        <option value="1">Cà phê</option>
-                        <option value="2">Nước ép</option>
-                        <option value="3">Sinh tố</option>
-                        <option value="4">Bánh ngọt</option>
-                        <!-- Add more options as needed -->
+                        <option value="" disabled>--Chọn danh mục món--</option>
+                        <c:forEach items="${categories}" var="category">
+                            <c:choose>
+                                <c:when test="${category.id == product.categoryId}">
+                                    <option value="${category.id}" selected>${category.name}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${category.id}">${category.name}</option>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </select>
                 </div>
 
                 <div class="col-md-4">
                     <label for="name" class="form-label"><b>Tên món</b></label>
                     <i class="fas fa-mug-saucer"></i>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nhập Tên món..."
+                    <input type="text" class="form-control" id="name" name="name" value="${product.name}"
+                           placeholder="Nhập Tên món..."
                            required>
                 </div>
 
                 <div class="col-md-4">
                     <label for="price" class="form-label"><b>Giá tiền</b></label>
                     <i class="fas fa-coins"></i>
-                    <input type="number" class="form-control" id="price" name="price" placeholder="VND..." required>
+                    <input type="number" class="form-control" id="price" name="price" value="${product.price}"
+                           placeholder="VND..."
+                           required>
                 </div>
             </div>
 
@@ -77,7 +85,10 @@
                 <div class="col-md-4">
                     <label for="discount" class="form-label"><b>Khuyến mãi</b></label>
                     <i class="fas fa-percent"></i>
-                    <input type="text" class="form-control" id="discount" name="discount" placeholder="%" required>
+                    <input type="text" class="form-control" id="discount" name="discount"
+                           value="${product.discount * 100}"
+                           placeholder="%"
+                           required>
                 </div>
 
                 <div class="col-md-4">
@@ -87,76 +98,93 @@
                             <i class="fas fa-toggle-on"></i>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
-                            <label class="form-check-label" for="active">Đang bán</label>
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1"
+                            <c:if test="${product.status == 1}">
+                                   checked
+                            </c:if>
+                            >
+                            <label class="form-check-label" for="active">Còn bán</label>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
-                            <label class="form-check-label" for="inactive">Ngừng bán</label>
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0"
+                            <c:if test="${product.status == 0}">
+                                   checked
+                            </c:if>
+                            >
+                            <label class="form-check-label" for="inactive">Tạm ngưng</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mô tả và Hình ảnh -->
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label"><b>Mô tả</b></label>
+                        <textarea class="form-control" id="description" name="description" rows="7"
+                                  placeholder="Mô tả..."></textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="image" class="form-label"><b>Hình ảnh</b></label>
+                        <i class="fas fa-image"></i>
+                        <div class="file-upload-wrapper">
+                            <input id="image" name="image" type="file" class="file-upload-input" data-mdb-multiple="true"
+                                   data-mdb-file-upload="file-upload"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kích thước và Giá -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="form-label"><b>Option</b></label>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Kích Thước</th>
+                                <th scope="col">Giá tiền cộng thêm</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody id="sizeTableBody">
+                            <!-- Dòng mẫu, có thể ẩn hoặc xóa nếu không cần -->
+                            <tr class="size-row">
+                                <td><input type="text" class="form-control" name="size[]"
+                                           placeholder="Nhập kích thước..."
+                                           required></td>
+                                <td><input type="number" class="form-control" name="price[]" placeholder="VND..."
+                                           required>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="removeSizeRow(this)">Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- ... Các dòng khác sẽ được thêm thông qua JavaScript ... -->
+                            </tbody>
+                        </table>
+                        <div class="row mt-3">
+                            <div class="col-md-8">
+                                <button type="button" class="btn btn-success" onclick="addSizeRow()">Thêm Kích Thước
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Mô tả và Hình ảnh -->
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label class="form-label"><b>Mô tả</b></label>
-                    <textarea class="form-control" id="description" name="description" rows="7"
-                              placeholder="Mô tả..."></textarea>
-                </div>
-
-                <div class="col-md-4">
-                    <label for="image" class="form-label"><b>Hình ảnh</b></label>
-                    <i class="fas fa-image"></i>
-                    <div class="file-upload-wrapper">
-                        <input id="image" type="file" class="file-upload-input" data-mdb-multiple="true"
-                               data-mdb-file-upload="file-upload"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kích thước và Giá -->
-            <div class="row">
-                <div class="col-md-8">
-                    <label class="form-label"><b>Option</b></label>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Kích Thước</th>
-                            <th scope="col">Giá tiền cộng thêm</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody id="sizeTableBody">
-                        <!-- Dòng mẫu, có thể ẩn hoặc xóa nếu không cần -->
-                        <tr class="size-row">
-                            <td><input type="text" class="form-control" name="size[]" placeholder="Nhập kích thước..."
-                                       required></td>
-                            <td><input type="number" class="form-control" name="price[]" placeholder="VND..." required>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" onclick="removeSizeRow(this)">Xóa</button>
-                            </td>
-                        </tr>
-                        <!-- ... Các dòng khác sẽ được thêm thông qua JavaScript ... -->
-                        </tbody>
-                    </table>
-                    <div class="row mt-3">
-                        <div class="col-md-8">
-                            <button type="button" class="btn btn-success" onclick="addSizeRow()">Thêm Kích Thước
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Nút Submit -->
-            <div class="row mt-3">
-                <div class="col-md-8">
-                    <button type="submit" class="btn btn-primary">Thêm mới</button>
-                </div>
-            </div>
+            <button type="button" class="btn btn-primary" id="addOrUpdate">
+                <c:if test="${product.id != null}">
+                    Cập nhật
+                </c:if>
+                <c:if test="${product.id == null}">
+                    Thêm mới
+                </c:if>
+            </button>
+
+            <input type="hidden" name="id" id="id" value="${product.id}"/>
+            <input type="hidden" name="user" id="user" value="${product}"/>
+
         </form>
     </div>
 </main>
@@ -188,6 +216,64 @@
         const sizeTableBody = document.getElementById("sizeTableBody");
         const row = button.parentNode.parentNode;
         sizeTableBody.removeChild(row);
+    }
+</script>
+<script>
+    $('#addOrUpdate').click(function (e) {
+        e.preventDefault();
+        var data = {};
+        var productId = $('#id').val();
+        var formData = $('#formSubmit').serializeArray();
+        $.each(formData, function (index, v) {
+            data["" + v.name + ""] = v.value;
+        });
+        console.log(data);
+        if (productId === "") {
+            delete data.id;
+            addProduct(data);
+        } else {
+            updateProduct(data);
+        }
+    });
+
+    function addProduct(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "POST",
+            url: "/api/admin/product",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+                alert("Thêm mới thành công");
+                window.location.href = "/admin/product-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Thêm mới thất bại");
+            }
+        })
+    }
+
+    function updateProduct(data) {
+        var formData = new FormData($("#formSubmit")[0]);
+        $.ajax({
+            type: "PUT",
+            url: "/api/admin/product",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                alert("Cập nhật thành công");
+                window.location.href = "/admin/product-management";
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+                alert("Cập nhật thất bại");
+            }
+        })
     }
 </script>
 </html>

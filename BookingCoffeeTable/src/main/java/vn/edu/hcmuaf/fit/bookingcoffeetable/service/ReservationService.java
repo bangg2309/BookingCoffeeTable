@@ -33,7 +33,6 @@ public class ReservationService {
     }
 
 
-
     public List<Reservation> findReservationByUserId(int userId, String sortOrder) {
         List<Reservation> reservations = null;
         if (sortOrder.equals("DESC")) {
@@ -57,6 +56,29 @@ public class ReservationService {
         reservation.setReservationProducts(ReservationProductService.getInstance().findReservationProductByReservId(reservation.getId()));
         reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
         return reservation;
+    }
+
+    public List<Reservation> findAllReservation() {
+        List<Reservation> reservations = reservationDAO.findAllReservation();
+        for (Reservation reservation : reservations) {
+            reservation.setReservationProducts(ReservationProductService.getInstance().findReservationProductByReservId(reservation.getId()));
+            reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
+        }
+        return reservations;
+    }
+
+    public Reservation save(Reservation reservation) {
+        reservationDAO.saveReservation(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
+        return findById(reservation.getId());
+    }
+
+    public Reservation update(Reservation reservation) {
+        reservationDAO.updateReservation(reservation.getId(), reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
+        return findById(reservation.getId());
+    }
+
+    public void delete(int id) {
+        reservationDAO.deleteReservation(id);
     }
 
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.admin.table;
+package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.admin.reservation;
 
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
 
 import javax.servlet.RequestDispatcher;
@@ -14,17 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "AdminTableController", value = "/admin/table-management")
-public class TableController extends HttpServlet {
-    TableService tableService;
-    public TableController() {
-        tableService = TableService.getInstance();
+@WebServlet(name = "AdminReservationController", value = "/admin/reservation-management")
+public class ReservationController extends HttpServlet {
+    ReservationService reservationService;
+    public ReservationController() {
+        reservationService = ReservationService.getInstance();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Table> tables = tableService.findAllTables();
-        request.setAttribute("tables", tables);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin/table-management.jsp");
+        List<Reservation> reservations = reservationService.findAllReservation();
+        request.setAttribute("reservations", reservations);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin/reservation-management.jsp");
         requestDispatcher.forward(request,response);
 
     }

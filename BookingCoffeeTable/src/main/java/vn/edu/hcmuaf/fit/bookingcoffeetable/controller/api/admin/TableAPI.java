@@ -39,7 +39,6 @@ public class TableAPI extends HttpServlet {
         Gson gson = new Gson();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-
         String numberTable = request.getParameter("numberTable");
         String seatCount = request.getParameter("seatCount");
         String areaId = request.getParameter("areaId");
@@ -71,7 +70,7 @@ public class TableAPI extends HttpServlet {
         Gson gson = new Gson();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-
+        String tableId = request.getParameter("id");
         String numberTable = request.getParameter("numberTable");
         String seatCount = request.getParameter("seatCount");
         String areaId = request.getParameter("areaId");
@@ -82,6 +81,7 @@ public class TableAPI extends HttpServlet {
         table.setSeatCount(Integer.parseInt(seatCount));
         table.setArea(areaService.findById(Integer.parseInt(areaId)));
         table.setStatus(Integer.parseInt(status));
+        table.setId(Integer.parseInt(tableId));
         // Xử lý tải lên hình ảnh avatar
         Part filePart = request.getPart("avatar");
         String fileName = "default.svg";

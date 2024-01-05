@@ -34,6 +34,18 @@ public class ReviewService {
         return reviews;
     }
 
+    public List<Review> findAllReview() {
+        List<Review> reviews = reviewDAO.findAllReview();
+        for (Review review : reviews){
+            review.setUserName(UserService.getInstance().getNameById(review.getUserId()));
+        }
+        return reviews;
+    }
+
+    public void deleteReview(int id) {
+        reviewDAO.deleteReview(id);
+    }
+
     public static void main(String[] args) {
         ReviewService rv = ReviewService.getInstance();
         System.out.println(rv.findReviewByProductId(20));

@@ -62,11 +62,12 @@ public class CategoryAPI extends HttpServlet {
         Gson gson = new Gson();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-
+        String categoryId = request.getParameter("id");
         String categoryName = request.getParameter("category");
 
         String status = request.getParameter("status");
         Category category = new Category();
+        category.setId(Integer.parseInt(categoryId));
         category.setName(categoryName);
 
         category.setStatus(Integer.parseInt(status));

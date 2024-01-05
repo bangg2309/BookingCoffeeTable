@@ -4,19 +4,18 @@ import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Contact;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Review;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
 
 import java.util.List;
 
-@RegisterBeanMapper(Review.class)
-public interface ReviewDAO {
-    @SqlQuery(QUERIES.REVIEW.SELECT_REVIEW_BY_PRODUCT_ID)
-    List<Review> findReviewByProductId(@Bind("productId") int productId);
+@RegisterBeanMapper(Contact.class)
+public interface ContactDAO {
+    @SqlQuery(QUERIES.CONTACT.FIND_ALL_CONTACT)
+    List<Contact> findAllContact();
 
-    @SqlQuery(QUERIES.REVIEW.SELECT_ALL_REVIEW)
-    List<Review> findAllReview();
 
-    @SqlUpdate(QUERIES.REVIEW.DELETE_REVIEW)
-    void deleteReview(@Bind("id") int id);
+    @SqlUpdate(QUERIES.CONTACT.DELETE_CONTACT)
+    void deleteContact(@Bind("id") int id);
 }

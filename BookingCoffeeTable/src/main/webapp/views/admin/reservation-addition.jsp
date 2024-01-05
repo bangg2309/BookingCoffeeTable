@@ -37,19 +37,19 @@
 
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
-        <a href="reservation-management.jsp" class="btn btn-link mb-2">
+        <a href="/admin/reservation-management" class="btn btn-link mb-2">
             <i class="fas fa-angle-left"></i> Quay lại
         </a>
         <div class="mb-3 bg-primary p-2">
             <span class="text-white">Thông tin đặt bàn</span>
         </div>
-        <form class="border p-5">
+        <form class="border p-5" id="formSubmit" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="username" class="form-label"><b>Tên liên hệ</b></label>
                         <i class="fas fa-user"></i>
-                        <input type="text" class="form-control" id="username" name="username"
+                        <input type="text" class="form-control" id="username" name="username" value="${reservation.contactName}"
                                placeholder="Nhập UserName..." required>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="mb-3">
                         <label for="phone" class="form-label"><b>Số điện thoại</b></label>
                         <i class="fas fa-phone"></i>
-                        <input type="number" class="form-control" id="phone" name="phone"
+                        <input type="number" class="form-control" id="phone" name="phone" value="${reservation.contactPhone}"
                                placeholder="Nhập PhoneNumber..." required>
                     </div>
                 </div>
@@ -65,7 +65,8 @@
                     <div class="mb-3">
                         <label for="email" class="form-label"><b>Email</b></label>
                         <i class="fas fa-envelope"></i>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Nhập Email..."
+                        <input type="email" class="form-control" id="email" name="email" value="${reservation.contactEmail}"
+                               placeholder="Nhập Email..."
                                required>
                     </div>
                 </div>
@@ -74,23 +75,23 @@
 
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="userID" class="form-label"><b>ID người đặt</b></label>
-                        <input type="number" class="form-control" id="userID" name="userID"
+                        <label for="userId" class="form-label"><b>ID người đặt</b></label>
+                        <input type="number" class="form-control" id="userId" name="userId" value="${reservation.userId}"
                                placeholder="Nhập ID người đặt..." required>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="tableNum" class="form-label"><b>Vai trò</b></label>
+                    <label for="tableNum" class="form-label"><b>Bàn</b></label>
                     <i class="fas fa-user-tag"></i>
                     <select class="form-select" id="tableNum" name="tableNum" required>
-                        <option value="" disabled>--Chọn vai trò--</option>
+                        <option value="" disabled>--Chọn bàn--</option>
                         <c:forEach items="${tables}" var="table">
                             <c:choose>
                                 <c:when test="${table.id == reservation.tableId}">
                                     <option value="${table.id}" selected>${table.tableNum}</option>
                                 </c:when>
                                 <c:otherwise>
-                                    <option value="${table.id}">${role.tableNum}</option>
+                                    <option value="${table.id}">${table.tableNum}</option>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -98,29 +99,36 @@
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
+                        <fmt:parseDate var="parsedCreatedDate" value="${reservation.createdDate}" pattern="yyyy-MM-dd HH:mm:ss" />
+                        <fmt:formatDate var="formattedCreatedDate" value="${parsedCreatedDate}" pattern="yyyy-MM-dd" />
                         <label for="filterDate" class="form-label "><b>Ngày Đặt:</b></label>
-                        <input type="date" class="form-control" id="filterDate">
+                        <input type="date" class="form-control" id="filterDate" name="filterDate" value="${formattedCreatedDate}" />
+
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
+                        <fmt:parseDate var="parsedStartTime" value="${reservation.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                        <fmt:formatDate var="formattedStartTime" value="${parsedStartTime}" pattern="HH:mm" />
                         <label for="filterStartTime" class="form-label"><b>Thời Gian Đặt:</b></label>
-                        <input type="time" class="form-control" id="filterStartTime" min="08:00" max="18:00">
+                        <input type="time" class="form-control" id="filterStartTime" name="filterStartTime" value="${formattedStartTime}" min="08:00" max="18:00">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
+                        <fmt:parseDate var="parsedEndTime" value="${reservation.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                        <fmt:formatDate var="formattedEndTime" value="${parsedEndTime}" pattern="HH:mm" />
                         <label for="filterEndTime" class="form-label"><b>Thời Gian Kết Thúc:</b></label>
-                        <input type="time" class="form-control" id="filterEndTime">
+                        <input type="time" class="form-control" id="filterEndTime" name="filterEndTime" value="${formattedEndTime}" min="08:00" max="18:00">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="role" class="form-label"><b>Phương thức thanh toán</b></label>
-                    <select class="form-select" id="role" name="role" required>
-                        <option value="" disabled selected>Chọn phương thức thanh toán</option>
-                        <option value="1">Momo</option>
-                        <option value="2">VnPay</option>
-                        <option value="2">Master Card</option>
+                    <label for="paymentMethod" class="form-label"><b>Phương thức thanh toán</b></label>
+                    <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+                        <option value="" disabled>--Chọn phương thức thanh toán--</option>
+                        <c:forEach items="${paymentMethods}" var="method">
+                            <option value="${method}">${method}</option>
+                        </c:forEach>
                     </select>
                 </div>
             </div>
@@ -132,19 +140,27 @@
                             <i class="fas fa-toggle-on"></i>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="active" value="1" checked>
+                            <input class="form-check-input" type="radio" name="status" id="active" value="1"
+                            <c:if test="${reservation.status == 1}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="active">Thành công</label>
                         </div>
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0">
+                            <input class="form-check-input" type="radio" name="status" id="inactive" value="0"
+                            <c:if test="${reservation.status == 0}">
+                                   checked
+                            </c:if>
+                            >
                             <label class="form-check-label" for="inactive">Đã hủy</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="totalCost" class="form-label"><b>Tổng tiền</b></label>
-                        <input type="number" class="form-control" id="totalCost" name="totalCost"
+                        <label for="totalPrice" class="form-label"><b>Tổng tiền</b></label>
+                        <input type="number" class="form-control" id="totalPrice" name="totalPrice" value="${reservation.totalPrice}"
                                placeholder="Nhập tổng số tiền thanh toán..." required>
                     </div>
                 </div>
@@ -214,7 +230,7 @@
             success: function (data) {
                 console.log("SUCCESS : ", data);
                 alert("Thêm mới thành công");
-                window.location.href = "/admin/user-management";
+                window.location.href = "/admin/reservation-management";
             },
             error: function (e) {
                 console.log("ERROR : ", e);
@@ -233,7 +249,7 @@
             contentType: false,
             success: function (data) {
                 alert("Cập nhật thành công");
-                window.location.href = "/admin/user-management";
+                window.location.href = "/admin/reservation-management";
             },
             error: function (e) {
                 console.log("ERROR : ", e);

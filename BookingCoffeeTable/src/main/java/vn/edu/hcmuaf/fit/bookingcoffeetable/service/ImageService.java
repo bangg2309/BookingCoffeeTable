@@ -25,6 +25,24 @@ public class ImageService {
         this.imageDAO = imageDAO;
     }
 
+    public Image findById(int id) {
+        return imageDAO.findByIdImage(id);
+    }
+
+    public Image saveImage(Image image) {
+        imageDAO.saveImage(image.getProductId(), image.getUrl());
+        return findById(image.getId());
+    }
+
+    public Image updateImage(Image image) {
+        imageDAO.updateImage(image.getId(), image.getProductId(), image.getUrl());
+        return findById(image.getId());
+    }
+
+    public void deleteImage(int id) {
+        imageDAO.deleteImage(id);
+    }
+
     public List<Image> findByProductId(int id) {
         return imageDAO.findById(id);
     }

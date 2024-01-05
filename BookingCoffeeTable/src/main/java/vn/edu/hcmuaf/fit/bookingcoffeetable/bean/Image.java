@@ -7,6 +7,14 @@ public class Image implements Serializable {
     private int productId;
     private String url;
 
+    public Image() {
+    }
+
+    public Image(int productId, String url) {
+        this.productId = productId;
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "Image{" +
