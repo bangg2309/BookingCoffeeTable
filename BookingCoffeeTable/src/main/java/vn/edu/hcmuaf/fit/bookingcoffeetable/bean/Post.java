@@ -1,14 +1,16 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
-import java.io.Serializable;
+
 
 public class Post implements Serializable {
+
     private int id;
     private int userId;
     private String title;
     private String shortDescription;
     private String description;
     private String thumbnail;
+
     private String status;
     private String createdBy;
     private String createdDate;
@@ -36,6 +38,7 @@ public class Post implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+
     }
 
     public int getId() {
@@ -86,6 +89,7 @@ public class Post implements Serializable {
         this.thumbnail = thumbnail;
     }
 
+
     public String getStatus() {
         return status;
     }
@@ -93,6 +97,7 @@ public class Post implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
 
     public String getCreatedBy() {
         return createdBy;
@@ -102,6 +107,7 @@ public class Post implements Serializable {
         this.createdBy = createdBy;
     }
 
+
     public String getCreatedDate() {
         return createdDate;
     }
@@ -110,3 +116,4 @@ public class Post implements Serializable {
         this.createdDate = createdDate;
     }
 }
+

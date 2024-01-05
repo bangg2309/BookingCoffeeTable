@@ -39,7 +39,9 @@ public class QUERIES {
     }
 
     //PRODUCT
+
     public class PRODUCT {
+
 
         public static final String INSERT_PRODUCT = "INSERT INTO products (categoryId, name, price, description, status, discount) VALUES (:categoryId, :name, :price, :description, :status, :discount)";
         public static final String SELECT_ALL_PRODUCT = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products." +
@@ -60,6 +62,7 @@ public class QUERIES {
                 "WHERE products.id = :id";
         public static final String SELECT_PRODUCTS_NEWEST =
                 "SELECT * FROM products ORDER BY createdDate DESC LIMIT :limit";
+
         public static final String SELECT_ALL_ATTRIBUTE = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products.status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url" +
                 "FROM products " +
                 "LEFT JOIN images ON products.id = images.productId " +
@@ -67,31 +70,40 @@ public class QUERIES {
 
         // Phân trang menu
         public static final String SELECT_PRODUCT_PAGE_PRICE_DESC = "SELECT * FROM products " +
+
                 "WHERE (categoryId IS NULL OR categoryId = :categoryId OR :categoryId IS NULL) " +
                 "AND LOWER(name) LIKE LOWER(CONCAT('%', :find, '%')) " +
                 "AND price >= :from AND price <= :to " +
                 "ORDER BY price DESC " +
                 "LIMIT :limit OFFSET :offset";
+
         public static final String SELECT_PRODUCT_PAGE_PRICE_ASC = "SELECT * FROM products " +
+
                 "WHERE (categoryId IS NULL OR categoryId = :categoryId OR :categoryId IS NULL) " +
                 "AND LOWER(name) LIKE LOWER(CONCAT('%', :find, '%')) " +
                 "AND price >= :from AND price <= :to " +
                 "ORDER BY price ASC " +
                 "LIMIT :limit OFFSET :offset";
+
         public static final String SELECT_PRODUCT_PAGE_NAME_ASC = "SELECT * FROM products " +
+
                 "WHERE (categoryId IS NULL OR categoryId = :categoryId OR :categoryId IS NULL) " +
                 "AND LOWER(name) LIKE LOWER(CONCAT('%', :find, '%')) " +
                 "AND price >= :from AND price <= :to " +
                 "ORDER BY LEFT(name, 1) ASC " +
                 "LIMIT :limit OFFSET :offset";
+
         public static final String SELECT_PRODUCT_PAGE = "SELECT * FROM products " +
+
                 "WHERE (categoryId IS NULL OR categoryId = :categoryId OR :categoryId IS NULL) " +
                 "AND LOWER(name) LIKE LOWER(CONCAT('%', :find, '%')) " +
                 "AND price >= :from AND price <= :to " +
                 "LIMIT :limit OFFSET :offset";
         public static final String COUNT_PRODUCT = "SELECT count(*) FROM products";
 
+
         public static final String SELECT_PRODUCTID_BY_NAME = "SELECT id FROM products WHERE name = :name";
+
 
     }
 
@@ -132,6 +144,7 @@ public class QUERIES {
 
         public static final String SELECT_ALL_TABLE = "SELECT * FROM tables";
 
+
         public static final String SELECT_TABLE_FILTER = "SELECT T.tableNum, T.seatCount, T.location, T.image\n" +
                 "FROM tables T\n" +
                 "LEFT JOIN reservations R ON T.id = R.tableId\n" +
@@ -146,6 +159,7 @@ public class QUERIES {
     public static final String SAVE_TABLE = "INSERT INTO tables (tableNum, areaId, seatCount, location, image, status) VALUES (:tableNum, :areaId, :seatCount, :location, :image, :status)";
     public static final String UPDATE_TABLE = "UPDATE tables SET tableNum = :tableNum, areaId = :areaId, seatCount = :seatCount, location = :location, image = :image, status = :status WHERE id = :id";
     public static final String DELETE_TABLE = "DELETE FROM tables WHERE id = :id";
+
 
 
     }

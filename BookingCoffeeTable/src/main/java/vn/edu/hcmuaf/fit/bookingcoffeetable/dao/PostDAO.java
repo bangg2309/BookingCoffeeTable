@@ -3,15 +3,18 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.dao;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
+
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Contact;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
 
+
 import java.util.List;
 
 @RegisterBeanMapper(Post.class)
 public interface PostDAO {
+
     @SqlQuery(QUERIES.POST.FIND_ALL_POST)
     List<Post> findAllPost();
 
@@ -26,4 +29,5 @@ public interface PostDAO {
 
     @SqlUpdate(QUERIES.POST.DELETE_POST)
     void deletePost(@Bind("id") int id);
+
 }

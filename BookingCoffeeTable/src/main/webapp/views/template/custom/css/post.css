@@ -115,7 +115,7 @@ a {
 }
 
 .box-article-heading h1 {
-    margin: 0 0 20px;
+    margin: 20px 0 20px;
     font-size: 24px;
 }
 
@@ -241,5 +241,6 @@ ul.article-info-more li {
     color: #fff;
     background-color: #bf9369;
 }
+
 
 

@@ -1,10 +1,12 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 
+
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Contact;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.ContactDAO;
+
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.PostDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
@@ -20,9 +22,11 @@ public class PostService {
             jdbi.installPlugin(new SqlObjectPlugin());
             postDAO = jdbi.onDemand(PostDAO.class);
             instance = new PostService(postDAO);
+
         }
         return instance;
     }
+
 
     public PostService(PostDAO postDAO) {
         this.postDAO = postDAO;
@@ -55,5 +59,6 @@ public class PostService {
 
     public static void main(String[] args) {
         PostService rv = PostService.getInstance();
+
     }
 }
