@@ -55,7 +55,7 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="seatCount" class="form-label"><b>Chỗ ngồi</b></label>
-                        <input type="number" class="form-control" id="seatCount" name="seatCount"
+                        <input type="number" class="form-control" id="seatCount" name="seatCount" value="${table.seatCount}"
                                placeholder="Nhập số ghế" required>
                     </div>
                 </div>

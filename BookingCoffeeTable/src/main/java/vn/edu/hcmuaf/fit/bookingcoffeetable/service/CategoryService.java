@@ -42,7 +42,7 @@ public class CategoryService {
     }
 
     public Category UPDATE(Category category) {
-        categoryDAO.UPDATE(category.getName(), category.getStatus(), category.getImage());
+        categoryDAO.UPDATE(category.getId(), category.getName(), category.getStatus(), category.getImage());
         return findByUserName(category.getName());
     }
 

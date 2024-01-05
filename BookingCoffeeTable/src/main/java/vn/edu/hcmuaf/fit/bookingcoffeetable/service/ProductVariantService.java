@@ -30,4 +30,20 @@ public class ProductVariantService {
     public List<ProductVariant> getProductVariantByProductId(int productId) {
         return productVariantDAO.getProductVariantByProductId(productId);
     }
+
+    public ProductVariant saveProductVariant(ProductVariant productVariant) {
+        productVariantDAO.saveProductVariant(productVariant.getProductId(), productVariant.getSize(), productVariant.getPricePlus());
+        return getProductVariantByProductId(productVariant.getProductId()).get(0);
+    }
+
+    public ProductVariant updateProductVariant(ProductVariant productVariant) {
+        productVariantDAO.updateProductVariant(productVariant.getId(), productVariant.getProductId(), productVariant.getSize(), productVariant.getPricePlus());
+        return getProductVariantByProductId(productVariant.getProductId()).get(0);
+    }
+
+    public void deleteProductVariant(int id) {
+        productVariantDAO.deleteProductVariant(id);
+    }
+
+
 }
