@@ -187,7 +187,7 @@
                         <div class="d-flex justify-content-between">
                             <div>
                                 <span>Khu vực: </span>
-                                <span>Tầng 1</span>
+                                <span>${cart.table.area.name}</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mb-2">

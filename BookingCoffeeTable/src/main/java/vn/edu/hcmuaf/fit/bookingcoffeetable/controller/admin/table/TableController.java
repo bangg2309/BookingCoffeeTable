@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "TableController", value = "/admin/table-management")
+@WebServlet(name = "AdminTableController", value = "/admin/table-management")
 public class TableController extends HttpServlet {
     TableService tableService;
     public TableController() {

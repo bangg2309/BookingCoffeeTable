@@ -5,20 +5,17 @@ import java.util.List;
 
 public class Reservation implements Serializable {
     private int id;
-
     private int tableId;
     private int userId;
-
     private String contactName;
     private int contactPhone;
     private String contactEmail;
     private String startTime;
     private String endTime;
-
-    private String status;
+    private int status;
     private String paymentMethod;
     private String note;
-    private String totalPrice;
+    private double totalPrice;
     private String createdDate;
 
     private List<ReservationProduct> reservationProducts;
@@ -26,6 +23,20 @@ public class Reservation implements Serializable {
 
 
     public Reservation() {
+    }
+
+    public Reservation(int tableId, int userId, String contactName, int contactPhone, String contactEmail, String startTime, String endTime, int status, String paymentMethod, String note, double totalPrice) {
+        this.tableId = tableId;
+        this.userId = userId;
+        this.contactName = contactName;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.status = status;
+        this.paymentMethod = paymentMethod;
+        this.note = note;
+        this.totalPrice = totalPrice;
     }
 
     @Override
@@ -116,11 +127,11 @@ public class Reservation implements Serializable {
         this.endTime = endTime;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -142,11 +153,11 @@ public class Reservation implements Serializable {
     }
 
 
-    public String getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 

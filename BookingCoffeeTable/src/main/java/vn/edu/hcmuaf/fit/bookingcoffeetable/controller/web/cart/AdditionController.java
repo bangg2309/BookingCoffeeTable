@@ -22,6 +22,7 @@ public class AdditionController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String size = request.getParameter("size");
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
 
         Product product = productService.findOne(Integer.parseInt(id));
         if (product != null) {
@@ -30,7 +31,7 @@ public class AdditionController extends HttpServlet {
             if (cart == null) {
                 cart = Cart.getInstance();
             }
-            cart.addProduct(product, size);
+            cart.addProduct(product, size, quantity);
             session.setAttribute("cart", cart);
             Gson gson = new Gson();
             String json = gson.toJson(cart);

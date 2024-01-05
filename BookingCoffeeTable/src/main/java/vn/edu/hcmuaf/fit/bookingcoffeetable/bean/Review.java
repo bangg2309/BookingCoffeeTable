@@ -13,8 +13,8 @@ public class Review implements Serializable {
     public Review() {
     }
 
-    public Review(int id, int productId, int userId, int starRate, String content) {
-        this.id = id;
+    public Review(int productId, int userId, int starRate, String content) {
+
         this.productId = productId;
         this.userId = userId;
         this.starRate = starRate;
