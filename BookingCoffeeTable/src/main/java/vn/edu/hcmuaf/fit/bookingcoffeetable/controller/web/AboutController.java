@@ -16,32 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeController", value = "/home")
-public class HomeController extends HttpServlet {
-    ProductService productService;
-    CategoryService categoryService;
-    PostService postService;
+@WebServlet(name = "AboutController", value = "/about")
+public class AboutController extends HttpServlet {
 
-    public HomeController() {
-        productService = ProductService.getInstance();
-        categoryService = CategoryService.getInstance();
-        postService = PostService.getInstance();
+    public AboutController() {
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int productId = 1;
-        int limitCategory = 4;
-        int limitProducts = 10;
-        int limitPost = 3;
-//        List<Category> categories = categoryService.findNCategory(limitCategory);
-        List<Category> categories = categoryService.findCategory();
-        List<Product> newProducts = productService.findProductNewest(limitProducts);
-        List<Post> posts = postService.findNewPost(limitPost);
-        request.setAttribute("newProducts", newProducts);
-        request.setAttribute("categories", categories);
-        request.setAttribute("posts", posts);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/about.jsp");
         requestDispatcher.forward(request, response);
     }
 

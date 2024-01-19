@@ -8,6 +8,10 @@ public class QUERIES {
         public static final String SAVE_POST = "INSERT INTO posts (userId, title, shortDescription, description, thumbnail, status, createdBy, createdDate) VALUES (:userId, :title, :shortDescription, :description, :thumbnail, :status, :createdBy, :createdDate)";
         public static final String UPDATE_POST = "UPDATE contacts SET name = :name, email = :email, phone = :phone, message = :message WHERE id = :id";
         public static final String DELETE_POST = "DELETE FROM contacts WHERE id = :id";
+        public static final String FIND_NEW_POST = "SELECT * FROM posts ORDER BY createdDate DESC LIMIT :limit";
+
+        public static final String TOTAL_ITEM = "SELECT count(*) FROM posts";
+        public static final String GET_POSTS = "SELECT * FROM posts ORDER BY createdDate DESC LIMIT :limit OFFSET :offset";
     }
 
     public class CONTACT {
@@ -106,6 +110,8 @@ public class QUERIES {
         public static final String SAVE_CATEGORY = "INSERT INTO categories (name, status, image) VALUES (:name, :status, :image)";
         public static final String UPDATE_CATEGORY = "UPDATE categories SET name = :name, status = :status, image = :image WHERE id = :id";
         public static final String DELETE_CATEGORY = "DELETE FROM categories WHERE id = :id";
+
+        public static final String SELECT_CATEGORY = "SELECT * FROM categories WHERE name = 'Cà phê' OR name = 'Nước ép' OR name = 'Bánh ngọt' OR name = 'Thức uống có cồn'";
     }
 
 

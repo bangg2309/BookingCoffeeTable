@@ -71,4 +71,14 @@ public class CategoryService {
         return categoryDAO.findById(id);
     }
 
+    public List<Category> findCategory() {
+        return categoryDAO.findCategory();
+    }
+
+    public static void main(String[] args) {
+        CategoryService categoryService = CategoryService.getInstance();
+        List<Category> categories = categoryService.findCategory();
+        System.out.println(categories);
+    }
+
 }
