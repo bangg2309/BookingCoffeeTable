@@ -26,4 +26,13 @@ public interface PostDAO {
 
     @SqlUpdate(QUERIES.POST.DELETE_POST)
     void deletePost(@Bind("id") int id);
+
+    @SqlQuery(QUERIES.POST.FIND_NEW_POST)
+    List<Post> findNewPost(@Bind("limit") int limit);
+
+    @SqlQuery(QUERIES.POST.TOTAL_ITEM)
+    String totalItem();
+
+    @SqlQuery(QUERIES.POST.GET_POSTS)
+    List<Post> getPosts(@Bind("limit") int limit, @Bind("offset") int offset);
 }

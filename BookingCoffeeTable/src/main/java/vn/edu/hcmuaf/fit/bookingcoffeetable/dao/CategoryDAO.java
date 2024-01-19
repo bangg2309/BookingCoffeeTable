@@ -40,4 +40,7 @@ public interface CategoryDAO {
     @SqlQuery(QUERIES.CATEGORY.SELECT_FIND_BYID)
     Category findById(@Bind("id") int id);
 
+    @SqlQuery(QUERIES.CATEGORY.SELECT_CATEGORY)
+    List<Category> findCategory();
+
 }

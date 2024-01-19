@@ -1,8 +1,10 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Post;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.PostService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
 
 import javax.servlet.RequestDispatcher;
@@ -18,10 +20,12 @@ import java.util.List;
 public class HomeController extends HttpServlet {
     ProductService productService;
     CategoryService categoryService;
+    PostService postService;
 
     public HomeController() {
         productService = ProductService.getInstance();
         categoryService = CategoryService.getInstance();
+        postService = PostService.getInstance();
     }
 
     @Override
@@ -29,10 +33,14 @@ public class HomeController extends HttpServlet {
         int productId = 1;
         int limitCategory = 4;
         int limitProducts = 10;
-        List<Category> categories = categoryService.findNCategory(limitCategory);
+        int limitPost = 3;
+//        List<Category> categories = categoryService.findNCategory(limitCategory);
+        List<Category> categories = categoryService.findCategory();
         List<Product> newProducts = productService.findProductNewest(limitProducts);
+        List<Post> posts = postService.findNewPost(limitPost);
         request.setAttribute("newProducts", newProducts);
         request.setAttribute("categories", categories);
+        request.setAttribute("posts", posts);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
     }

@@ -79,10 +79,10 @@
                 </li>
 
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/about.jsp"/>">Giới thiệu</a>
+                    <a href="<c:url value="/about"/>">Giới thiệu</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/views/web/contactUS.jsp"/> ">Liên hệ</a>
+                    <a href="<c:url value="/"/> ">Liên hệ</a>
                 </li>
                 <li class="scroll-to-section">
                     <a href="<c:url value="/post"/> ">Bài viết</a>

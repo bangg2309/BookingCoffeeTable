@@ -88,7 +88,7 @@ public class ReservationAPI extends HttpServlet {
         reservation.setStartTime(filterDate + " " + filterStartTime);
         reservation.setEndTime(filterDate + " " + filterEndTime);
         reservation.setPaymentMethod(paymentMethod);
-        reservation.setTotalPrice(totalPrice);
+        reservation.setTotalPrice(Double.parseDouble(totalPrice));
         reservation.setStatus(Integer.parseInt(status));
         System.out.println(Integer.parseInt(status));
         System.out.println(reservation);
