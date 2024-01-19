@@ -128,7 +128,7 @@
 
             <div class="about bg1">
                 <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
-                        href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><img
+                        href="/about"><img
                         src="https://www.highlandscoffee.com.vn/vnt_upload/about/ABOUT-CAREER3.jpg" alt="NGUỒN GỐC"></a>
                 </div>
                 <div class="captionWrap">
@@ -136,18 +136,18 @@
                         <div class="caption">
                             <div class="tend lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
                                  style="animation-delay: 0.3s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html">NGUỒN GỐC</a></div>
+                                    href="/about">NGUỒN GỐC</a></div>
                             <div class="des lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
                                  style="animation-delay: 0.5s;"><p><span style="font-size:18px;">CÂU CHUYỆN NÀY LÀ CỦA CHÚNG MÌNH</span>
                             </p>
 
                                 <p><span style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
-                                        style="line-height:115%"><span style="line-height:115%">Highlands Coffee® được thành lập vào năm 1999, bắt nguồn từ tình yêu dành cho đất Việt cùng với cà phê và cộng đồng nơi đây.&nbsp;</span></span></span></span><span
+                                        style="line-height:115%"><span style="line-height:115%">Coffee Shop được thành lập vào năm 1999, bắt nguồn từ tình yêu dành cho đất Việt cùng với cà phê và cộng đồng nơi đây.&nbsp;</span></span></span></span><span
                                         style="font-family:Roboto,sans-serif;"><span style="font-size:16px;">Ngay từ những ngày đầu tiên, mục tiêu của chúng mình là có thể phục vụ và góp phần phát triển cộng đồng bằng cách siết chặt thêm sự kết nối và sự gắn bó giữa người với người.</span></span>
                                 </p></div>
                             <div class="link lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
                                  style="animation-delay: 0.7s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/nguon-goc.html"><span>Xem chi tiết</span></a>
+                                    href="/about"><span>Xem chi tiết</span></a>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
 
             <div class="about bg2">
                 <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
-                        href="https://www.highlandscoffee.com.vn/vn/dich-vu.html"><img
+                        href="/about"><img
                         src="https://www.highlandscoffee.com.vn/vnt_upload/about/Highlands_4577_R3_-_Copy.jpg"
                         alt="DỊCH VỤ"></a></div>
                 <div class="captionWrap">
@@ -164,18 +164,18 @@
                         <div class="caption">
                             <div class="tend w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
                                  style="animation-delay: 0.3s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/dich-vu.html">DỊCH VỤ</a></div>
+                                    href="/about">DỊCH VỤ</a></div>
                             <div class="des w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
-                                 style="animation-delay: 0.5s;"><p>DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</p>
+                                 style="animation-delay: 0.5s; color: red"><p style="color: red">DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</p>
 
                                 <p><span style="font-size:16px;"><span style="font-family:Roboto,sans-serif;"><span
                                         style="line-height:115%"><span style="line-height:115%"><span
-                                        style="color:#4f2c1c">Highlands Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.&nbsp;</span></span></span><span
-                                        style="color:#4f2c1c">Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Highlands Coffee® trở nên tuyệt vời hơn. </span></span></span>
+                                        style="color:#4f2c1c">Coffee Shop là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.&nbsp;</span></span></span><span
+                                        style="color:#4f2c1c">Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Coffee Shop trở nên tuyệt vời hơn. </span></span></span>
                                 </p></div>
                             <div class="link w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
                                  style="animation-delay: 0.7s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/dich-vu.html"><span>Xem chi tiết</span></a>
+                                    href="/about"><span>Xem chi tiết</span></a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
 
             <div class="about bg3">
                 <div class="img lazy-start fadeIn" data-eff="fadeIn" data-delay="0.3" style="animation-delay: 0.3s;"><a
-                        href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html"><img
+                        href="/about"><img
                         src="https://www.highlandscoffee.com.vn/vnt_upload/about/Highlands_5557_R3_-_Copy.jpg"
                         alt="NGHỀ NGHIỆP"></a></div>
                 <div class="captionWrap">
@@ -192,19 +192,19 @@
                         <div class="caption">
                             <div class="tend w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.3"
                                  style="animation-delay: 0.3s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html">NGHỀ NGHIỆP</a></div>
+                                    href="/about">NGHỀ NGHIỆP</a></div>
                             <div class="des w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
-                                 style="animation-delay: 0.5s;"><p>CƠ HỘI NÀY LÀ CỦA CHÚNG MÌNH</p>
+                                 style="animation-delay: 0.5s; "><p style="color: red">CƠ HỘI NÀY LÀ CỦA CHÚNG MÌNH</p>
 
                                 <p><span style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
                                         style="line-height:115%"><span style="line-height:115%"><span
-                                        style="color:#4f2c1c">Là điểm hội tụ của cộng đồng, Highlands Coffee® luôn tìm kiếm những thành viên mới với mong muốn không ngừng hoàn thiện một không gian dành cho tất cả mọi người.&nbsp;</span></span></span></span></span><span
+                                        style="color:#4f2c1c">Là điểm hội tụ của cộng đồng, Coffee Shop luôn tìm kiếm những thành viên mới với mong muốn không ngừng hoàn thiện một không gian dành cho tất cả mọi người.&nbsp;</span></span></span></span></span><span
                                         style="font-family:Roboto,sans-serif;"><span style="font-size:16px;"><span
-                                        style="color:#4f2c1c">Chúng mình luôn chào đón bạn trở thành một phần của Highlands Coffee® để cùng nhau siết chặt thêm những kết nối và sự gắn bó giữa người với người.</span></span></span>
+                                        style="color:#4f2c1c">Chúng mình luôn chào đón bạn trở thành một phần của Coffee Shop để cùng nhau siết chặt thêm những kết nối và sự gắn bó giữa người với người.</span></span></span>
                                 </p></div>
                             <div class="link w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.7"
                                  style="animation-delay: 0.7s;"><a
-                                    href="https://www.highlandscoffee.com.vn/vn/nghe-nghiep.html"><span>Xem chi tiết</span></a>
+                                    href="/about"><span>Xem chi tiết</span></a>
                             </div>
                         </div>
                     </div>
@@ -837,7 +837,7 @@
                         <div>
                             <div class="bg-image ripple shadow-4-soft rounded-6 mb-4 overflow-hidden d-block content-farm"
                                  data-ripple-color="light">
-                                <img src="<c:url value='/views/template/custom/image/home/wine.jpg'/>" class="w-100"
+                                <img src="<c:url value='${category.image}'/>" class="w-100"
                                      alt=""/>
                                 <div class="desc-farm">
                                     <div>
@@ -950,19 +950,20 @@
     </div>
     <div class="container">
         <div class="row">
+            <c:forEach items="${posts}" var="post">
             <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
                 <div class="stArticleLoop">
                     <div class="box-latest-news">
-                        <a href="" class="thumb-img">
+                        <a href="/post?id=${post.id}" class="thumb-img">
                             <div class="mask-plus">
                                 <div class="shape"></div>
                             </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/2.jpg" />" alt="">
+                            <img src="<c:url value='${post.thumbnail}'/>" alt="">
                         </a>
                         <div class="content-ln">
-                            <span>07/09/2023</span>
+                            <span>${post.createdDate}</span>
                             <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
+                                <h3>${post.title}</h3>
                             </a>
                             <a href="">
                                 "Xem thêm "
@@ -974,54 +975,7 @@
 
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
-                <div class="stArticleLoop">
-                    <div class="box-latest-news">
-                        <a href="" class="thumb-img">
-                            <div class="mask-plus">
-                                <div class="shape"></div>
-                            </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/1.jpg" />" alt="">
-                        </a>
-                        <div class="content-ln">
-                            <span>07/09/2023</span>
-                            <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
-                            </a>
-                            <a href="">
-                                "Xem thêm "
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
-                <div class="stArticleLoop">
-                    <div class="box-latest-news">
-                        <a href="" class="thumb-img">
-                            <div class="mask-plus">
-                                <div class="shape"></div>
-                            </div>
-                            <img src="<c:url value="/views/template/custom/image/home/new/3.jpg"/>" alt="">
-                        </a>
-                        <div class="content-ln">
-                            <span>07/09/2023</span>
-                            <a href="">
-                                <h3>Trung thu tết đoàn viên</h3>
-                            </a>
-                            <a href="">
-                                "Xem thêm "
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>

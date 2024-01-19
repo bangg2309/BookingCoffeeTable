@@ -103,7 +103,8 @@
                             <!-- Thời Gian Đặt -->
                             <div class="col-md mb-3">
                                 <label for="filterStartTime" class="form-label">Thời Gian Đặt:</label>
-                                <input type="time" class="form-control" id="filterStartTime" name="startTime" min="08:00" max="18:00">
+                                <input type="time" class="form-control" id="filterStartTime" name="startTime"
+                                       min="08:00" max="18:00">
                             </div>
                             <!-- Thời Gian Kết Thúc -->
                             <div class="col-md mb-3">
@@ -253,7 +254,7 @@
         ajaxRun(count, text, '', '', areaValue);
     });
 
-        function yourButtonClick(button) {
+    function yourButtonClick(button) {
         // Lấy giá trị từ các trường date, startTime, và endTime
         var selectedDate = $('#filterDate').val();
         var selectedStartTime = $('#filterStartTime').val();
@@ -272,8 +273,6 @@
             alert('Vui lòng chọn thời gian hợp lệ!');
         }
     }
-
-
 
 
     function ajaxRun(count, text, startTime, endTime, areaValue) {
@@ -296,9 +295,11 @@
                         + "<div class=\"hover-overlay table_omega text-center\">"
                         + "<br>"
                         + "<h4>Số bàn: " + val.tableNum + "</h4>"
-                        + "<h4>chỗ ngồi: " + val.seatCount + " người</h4>"
+                        + "<h4>Chỗ ngồi: " + val.seatCount + " người</h4>"
                         + "<h4>Vị trí: " + val.location + "</h4>"
-                        + "<a class=\"btn btn-primary yourBookButton\" style=\"text-transform: uppercase\" href=\"/add-table?id="+val.id+"&startTime="+startTime+"&endTime="+endTime+"\">Chọn bàn</a>"
+                        + "<div class=\"button-container\">"
+                        + "<button class=\"btn btn-primary yourBookButton\" style=\"text-transform: uppercase\" onclick=\"checkTimeAndRedirect('" + val.id + "', '" + startTime + "', '" + endTime + "' )\">Chọn bàn</button>"
+                        + "</div>"
                         + "</div>"
                         + "</div>"
                         + "</div>";
@@ -310,9 +311,18 @@
 
     ajaxRun(count, text, startTime, endTime, areaValue);
 
+    function checkTimeAndRedirect(tableId, startTime, endTime) {
+        if (startTime === "0000-00-00 00:00:00" || endTime === "0000-00-00 00:00:00") {
+            // Nếu có giá trị cho cả startTime và endTime, chuyển hướng trang
+            alert('Vui lòng chọn giờ trước khi chọn bàn.');
+        } else {
+            // Nếu thiếu giá trị, hiển thị thông báo hoặc thực hiện hành động khác
 
-
-
+            console.log(startTime);
+            location.href = '/add-table?id=' + tableId + '&startTime=' + startTime + '&endTime=' + endTime;
+            // Hoặc có thể thực hiện hành động khác ở đây
+        }
+    }
 
 </script>
 
