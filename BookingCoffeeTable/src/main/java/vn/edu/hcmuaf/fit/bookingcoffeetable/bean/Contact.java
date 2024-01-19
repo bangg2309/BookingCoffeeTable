@@ -22,6 +22,14 @@ public class Contact implements Serializable {
                 '}';
     }
 
+    public Contact(String fullName, String email, String phone, String subject, String content) {
+        this.fullName = fullName;
+        this.email = email;
+        this.phone = phone;
+        this.subject = subject;
+        this.content = content;
+    }
+
     public int getId() {
         return id;
     }

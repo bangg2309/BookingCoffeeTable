@@ -143,7 +143,6 @@ public class UserService {
             for (byte aByte : bytes) {
                 sb.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
             }
-
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
