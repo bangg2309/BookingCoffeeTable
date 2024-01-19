@@ -26,6 +26,10 @@ public class ContactService {
         this.contactDAO = contactDAO;
     }
 
+    public void save(Contact contact) {
+        contactDAO.save(contact);
+    }
+
 
     public List<Contact> findAllContact() {
         return contactDAO.findAllContact();
