@@ -46,6 +46,9 @@ public class ReservationController extends HttpServlet {
 
         Cart cart = (Cart) session.getAttribute("cart");
         User userSession = (User) session.getAttribute("userSession");
+
+        System.out.println(userSession.getId());
+        
         Reservation reservation = new Reservation(cart.getTable().getId(), userSession.getId(), fullname, Integer.parseInt(phone), email, cart.getStartTime(), cart.getEndTime(), 1, paymentMethod, note, cart.getTotalPrice());
         reservationService.save(reservation);
         int reservationId = reservationService.findIdByDetails(cart.getTable().getId(), userSession.getId(), fullname, Integer.parseInt(phone), email, cart.getStartTime(), cart.getEndTime(), 1, paymentMethod, note, cart.getTotalPrice());

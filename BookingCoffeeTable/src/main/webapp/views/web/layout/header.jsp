@@ -3,35 +3,35 @@
 <!-- ***** Header Area Start ***** -->
 <style>
 
-    .drop_content{
+    .drop_content {
         padding-left: 0px;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-       display: none;
+        display: none;
         position: absolute;
         width: 10%;
         height: 100%;
         /*margin-top: 10px;*/
     }
 
-    .drop_content li{
+    .drop_content li {
         padding-bottom: 15%;
     }
-    .drop:hover a
-    {
-        color:  #2a2a2a!important;
+
+    .drop:hover a {
+        color: #2a2a2a !important;
     }
 
-    .drop .drop_content li:hover a
-    {
-        color:  #bf9369!important;
+    .drop .drop_content li:hover a {
+        color: #bf9369 !important;
         background-color: white;
     }
 
     .drop:hover .drop_content {
         display: block;
     }
-    .navbar-collapse{
+
+    .navbar-collapse {
         padding-left: 0px;
     }
 
@@ -82,7 +82,7 @@
                     <a href="<c:url value="/about"/>">Giới thiệu</a>
                 </li>
                 <li class="scroll-to-section">
-                    <a href="<c:url value="/"/> ">Liên hệ</a>
+                    <a href="<c:url value="/contact"/> ">Liên hệ</a>
                 </li>
                 <li class="scroll-to-section">
                     <a href="<c:url value="/post"/> ">Bài viết</a>
@@ -96,21 +96,21 @@
                 <li class="scroll-to-section order_table"><a href="/cart">Đặt bàn</a></li>
                 <c:if test="${not empty userSession}">
                     <li class="scroll-to-section drop" style="padding-right: 0px">
-                    <a href="/profile"><span class="user_icon" style="padding-right: 10px"><i
-                    class="fa fa-user-circle"
-                    aria-hidden="true"></i></span>${userSession.username}</a>
+                        <a href="/profile"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user-circle"
+                                aria-hidden="true"></i></span>${userSession.username}</a>
 
-                    <ul class="drop_content">
-                    <li><a class="dropdown-item" href="/profile">Hồ sơ của tôi</a></li>
-                    <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
-                    </ul>
+                        <ul class="drop_content">
+                            <li><a class="dropdown-item" href="/profile">Hồ sơ của tôi</a></li>
+                            <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+                        </ul>
                     </li>
                 </c:if>
                 <c:if test="${empty userSession}">
                     <li class="scroll-to-section drop" style="padding-right: 0px">
-                    <a href="/login"><span class="user_icon" style="padding-right: 10px"><i
-                    class="fa fa-user-circle"
-                    aria-hidden="true"></i></span>Đăng nhập</a>
+                        <a href="/login"><span class="user_icon" style="padding-right: 10px"><i
+                                class="fa fa-user-circle"
+                                aria-hidden="true"></i></span>Đăng nhập</a>
                     </li>
                 </c:if>
 

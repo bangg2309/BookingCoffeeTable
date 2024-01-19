@@ -51,6 +51,7 @@ public class LoginGoogleController extends HttpServlet {
             user.setStatus(1);
             userService.insertByGoogle(user);
         }
+        user = userService.findByUserName(user.getUsername());
         HttpSession session = request.getSession();
         session.setAttribute("userSession", user);
         response.sendRedirect(request.getContextPath() + "/home");
