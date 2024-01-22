@@ -2,8 +2,10 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.api.admin;
 
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
 
 import javax.servlet.ServletException;
@@ -20,9 +22,11 @@ import java.io.IOException;
 @WebServlet(name = "CategoryAPI", value = "/api/admin/category")
 public class CategoryAPI extends HttpServlet {
     CategoryService categoryService;
+    ProductService productService;
 
     public CategoryAPI() {
         categoryService = CategoryService.getInstance();
+        productService = ProductService.getInstance();
     }
 
     @Override
@@ -89,8 +93,10 @@ public class CategoryAPI extends HttpServlet {
         Gson gson = new Gson();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        User user = gson.fromJson(request.getReader(), User.class);
-        categoryService.DELETE(user.getId());
+        Category category = gson.fromJson(request.getReader(), Category.class);
+        Product product = gson.fromJson(request.getReader(), Product.class);
+        productService.delete(category.getId());
+        categoryService.DELETE(category.getId());
         gson.toJson("{}", response.getWriter());
     }
 }

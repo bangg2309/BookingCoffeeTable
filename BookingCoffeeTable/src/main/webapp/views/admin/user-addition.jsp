@@ -183,7 +183,6 @@
 
             <input type="hidden" name="id" id="id" value="${user.id}"/>
             <input type="hidden" name="user" id="user" value="${user}"/>
-            <input type="hidden" id="imageBase64" name="imageBase64">
         </form>
 
     </div>
@@ -192,22 +191,6 @@
 <!--Main layout-->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
 <script>
-
-    $('#avatar').change(function () {
-        var fileInput = this;
-        var file = fileInput.files[0];
-
-        if (file) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                // Đọc xong tệp, e.target.result chứa dữ liệu base64
-                var base64Data = e.target.result;
-                // Thêm dữ liệu base64 vào trường input ẩn có id là 'imageBase64'
-                $('#imageBase64').val(base64Data);
-            };
-            reader.readAsDataURL(file);
-        }
-    });
     $('#addOrUpdate').click(function (e) {
         e.preventDefault();
         var data = {};
@@ -231,6 +214,8 @@
             type: "POST",
             url: "/api/admin/user",
             data: formData,
+            processData: false,
+            contentType: false,
             dataType: 'json',
             success: function (data) {
                 console.log("SUCCESS : ", data);

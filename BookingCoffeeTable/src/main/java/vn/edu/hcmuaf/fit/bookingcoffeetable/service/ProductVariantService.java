@@ -36,13 +36,17 @@ public class ProductVariantService {
         return getProductVariantByProductId(productVariant.getProductId()).get(0);
     }
 
-    public ProductVariant updateProductVariant(ProductVariant productVariant) {
-        productVariantDAO.updateProductVariant(productVariant.getId(), productVariant.getProductId(), productVariant.getSize(), productVariant.getPricePlus());
-        return getProductVariantByProductId(productVariant.getProductId()).get(0);
+    public void updateProductVariant(ProductVariant productVariant, String sizeChange) {
+        System.out.println(productVariant.getProductId()+ "" + sizeChange+ "" + productVariant.getSize()+ "" + productVariant.getPricePlus());
+        productVariantDAO.updateProductVariant(productVariant.getProductId(), sizeChange, productVariant.getSize(), productVariant.getPricePlus());
     }
 
     public void deleteProductVariant(int id) {
         productVariantDAO.deleteProductVariant(id);
+    }
+
+    public void delete(int id) {
+        productVariantDAO.delete(id);
     }
 
 

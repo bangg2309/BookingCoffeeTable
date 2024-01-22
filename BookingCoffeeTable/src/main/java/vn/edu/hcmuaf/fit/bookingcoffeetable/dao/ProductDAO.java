@@ -21,6 +21,9 @@ public interface ProductDAO {
     @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTS_NEWEST)
     List<Product> findProductNewest(@Bind("limit") int limit);
 
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTS_DISCOUNT)
+    List<Product> findProductDiscount(@Bind("limit") int limit);
+
 
     @SqlQuery(QUERIES.PRODUCT.SELECT_ALL_PRODUCT)
     List<Product> findAllProducts();
@@ -46,6 +49,9 @@ public interface ProductDAO {
 
     @SqlUpdate(QUERIES.PRODUCT.DELETE_PRODUCT)
     void deleteProduct(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.PRODUCT.DELETE)
+    void delete(@Bind("categoryId") int id);
 
     @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTID_BY_NAME)
     int getByName(@Bind("name") String name);

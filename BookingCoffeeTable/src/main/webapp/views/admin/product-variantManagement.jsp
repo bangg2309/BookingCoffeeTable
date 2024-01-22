@@ -36,7 +36,7 @@
     <!-- Container for demo purpose -->
     <div class="container px-4 ">
         <div class="mb-3 d-flex justify-content-end px-4">
-            <a class="btn btn-primary" href="productVariantAddition.jsp">
+            <a class="btn btn-primary" href="product-variantAddition.jsp">
                 <i class="far fa-square-plus"></i>
                 <span>Thêm kích thước món</span>
             </a>

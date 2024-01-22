@@ -27,6 +27,9 @@ public interface PostDAO {
     @SqlUpdate(QUERIES.POST.DELETE_POST)
     void deletePost(@Bind("id") int id);
 
+    @SqlUpdate(QUERIES.POST.DELETE)
+    void delete(@Bind("userId") int id);
+
     @SqlQuery(QUERIES.POST.FIND_NEW_POST)
     List<Post> findNewPost(@Bind("limit") int limit);
 

@@ -37,4 +37,8 @@ public class ReservationProductService {
     public void save(int productId, int reservId, int quantity, int price, String size) {
          reservationProductDAO.save(productId, reservId, quantity, price, size);
     }
+
+    public void delete(int reservId) {
+        reservationProductDAO.delete(reservId);
+    }
 }

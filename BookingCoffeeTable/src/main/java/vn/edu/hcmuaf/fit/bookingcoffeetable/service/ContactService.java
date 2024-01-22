@@ -41,5 +41,6 @@ public class ContactService {
 
     public static void main(String[] args) {
         ContactService rv = ContactService.getInstance();
+        System.out.println(rv.findAllContact());
     }
 }
