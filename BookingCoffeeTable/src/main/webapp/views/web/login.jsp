@@ -51,17 +51,17 @@
                                 ${error}
                         </div>
                     </c:if>
-                    <c:if test="${registerSession != null}">
-                    <div class="alert" role="alert" data-mdb-color="success" data-mdb-alert-init>
-                        <i class="fas fa-check me-3"></i>
-                            ${registerSession}
-                    </div>
+                    <c:if test="${registerSession != null} }">
+                        <div class="alert" role="alert" data-mdb-color="success" data-mdb-alert-init>
+                            <i class="fas fa-check me-3"></i>
+                                ${registerSession}
+                        </div>
                     </c:if>
                     <c:if test="${message != null}">
-                    <div class="alert" role="alert" data-mdb-color="warning" data-mdb-alert-init>
-                        <i class="fas fa-exclamation-triangle me-3"></i>
-                            ${message}
-                    </div>
+                        <div class="alert" role="alert" data-mdb-color="warning" data-mdb-alert-init>
+                            <i class="fas fa-exclamation-triangle me-3"></i>
+                                ${message}
+                        </div>
                     </c:if>
                     <div class="wrap-input100 validate-input" data-validate="Cần nhập tên đăng nhập">
                         <input class="input100" type="text" name="username">
@@ -83,7 +83,7 @@
                             </label>
                         </div>
                         <div class="">
-                            <a href="#" class="txt1 ">
+                            <a href="/forget-password" class="txt1 ">
                                 Quên mật khẩu?
                             </a>
                         </div>
@@ -107,7 +107,8 @@
                         </div>
                         <div class="col-md-6">
                             <a href="https://accounts.google.com/o/oauth2/auth?scope=profile%20email&redirect_uri=http://localhost:8080/login-google&response_type=code
-    &client_id=37788005886-d97gv9runl8duup9ko6kohklp2s32u3a.apps.googleusercontent.com&approval_prompt=force" class="login100-form-btn"><i class="fa-brands fa-google fa-2xl mr-2"></i>
+    &client_id=37788005886-d97gv9runl8duup9ko6kohklp2s32u3a.apps.googleusercontent.com&approval_prompt=force"
+                               class="login100-form-btn"><i class="fa-brands fa-google fa-2xl mr-2"></i>
                                 Google
                             </a>
                         </div>

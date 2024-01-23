@@ -7,6 +7,7 @@ public class VerifyEmail implements Serializable {
     private int userId;
     private String code;
     private String expires;
+    private String type;
 
     public VerifyEmail() {
     }
@@ -41,5 +42,13 @@ public class VerifyEmail implements Serializable {
 
     public void setExpires(String expires) {
         this.expires = expires;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

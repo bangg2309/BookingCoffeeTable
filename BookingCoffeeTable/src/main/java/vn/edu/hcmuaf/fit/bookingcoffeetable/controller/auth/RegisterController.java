@@ -36,14 +36,14 @@ public class RegisterController extends HttpServlet {
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String confirm = request.getParameter("confirmPassword");
-
+        String type = "register";
         String verifyCode = UUID.randomUUID().toString();
 
 
         int result = userService.register(username, pass, email, phone, confirm);
         if (result == 0) {
             int userId = userService.findByUserName(username).getId();
-            verifyEmailService.insertVerifyEmail(userId, verifyCode);
+            verifyEmailService.insertVerifyEmail(userId, verifyCode, type);
             mailService.sendVerificationMail("http://localhost:8080", email, verifyCode);
 
             response.sendRedirect(request.getContextPath() + "/verify");

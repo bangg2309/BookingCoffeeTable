@@ -25,11 +25,12 @@ public class ProductDetailController extends HttpServlet {
         String productId = request.getParameter("id");
 
         request.setAttribute("product", productService.findProductDetail(Integer.parseInt(productId)));
-        request.getRequestDispatcher("/views/web/productDetail.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/web/product-detail.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         User userSession = (User) session.getAttribute("userSession");
         if (userSession == null) {
