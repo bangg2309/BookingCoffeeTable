@@ -63,6 +63,9 @@ public class PostService {
     public void deletePost(int id) {
         postDAO.deletePost(id);
     }
+    public void delete(int id) {
+        postDAO.delete(id);
+    }
 
     public List<Post> findNewPost(int limit) {
         return postDAO.findNewPost(limit);

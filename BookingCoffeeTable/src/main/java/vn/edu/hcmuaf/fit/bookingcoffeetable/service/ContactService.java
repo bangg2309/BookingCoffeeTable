@@ -39,4 +39,8 @@ public class ContactService {
         contactDAO.deleteContact(id);
     }
 
+    public static void main(String[] args) {
+        ContactService rv = ContactService.getInstance();
+        System.out.println(rv.findAllContact());
+    }
 }

@@ -17,6 +17,11 @@ public interface VerifyEmailDAO {
     @SqlQuery(QUERIES.VERIFY_EMAIL.SELECT_VERIFY_EMAIL_BY_CODE)
     List<VerifyEmail> selectVerifyEmailByCode(@Bind("code") String code, @Bind("type") String type);
 
+
     @SqlUpdate(QUERIES.VERIFY_EMAIL.DELETE_VERIFY_EMAIL_BY_USER_ID_AND_TYPE)
     void deleteVerifyEmailByUserIdAndType(@Bind("userId") int userId, @Bind("type") String type);
+
+    @SqlUpdate(QUERIES.VERIFY_EMAIL.DELETE)
+    void delete(@Bind("id") int id);
+
 }

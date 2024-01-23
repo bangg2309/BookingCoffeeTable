@@ -40,4 +40,8 @@ public class VerifyEmailService {
     public void deleteVerifyEmailByUserIdAndType(int userId, String type) {
         verifyEmailDAO.deleteVerifyEmailByUserIdAndType(userId, type);
     }
+
+    public void delete(int id) {
+        verifyEmailDAO.delete(id);
+    }
 }

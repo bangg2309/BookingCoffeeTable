@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +17,9 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
     <!-- MDB ESSENTIAL -->
-     <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> ">
     <!-- MDB PLUGINS -->
-     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> ">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<c:url value="/views/admin/assets/css/home.css"/> ">
     <style></style>
@@ -47,7 +47,7 @@
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Tổng đơn đặt bàn
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">648</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">${reservationCount}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -68,7 +68,7 @@
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         Doanh thu
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">542.254.000đ</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">${cost}đ</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -88,7 +88,7 @@
                                     <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Tổng số
                                         khách hàng
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">3.200</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">${seatCount}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-user-group fa-2x text-gray-300"></i>
@@ -108,7 +108,7 @@
                                     <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                         Tổng sản phẩm
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">${totalProduct}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-mug-saucer fa-2x text-gray-300"></i>
@@ -127,13 +127,13 @@
                     <strong>Thống kê chi tiết</strong>
                 </div>
                 <div class="card-body">
-                        <div class="input-group mb-4 ">
-                            <input type="text" class="form-control" id="advanced-search-input"
-                                   placeholder=""/>
-                            <button class="btn btn-primary" id="advanced-search-button" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+                    <div class="input-group mb-4 ">
+                        <input type="text" class="form-control" id="advanced-search-input"
+                               placeholder=""/>
+                        <button class="btn btn-primary" id="advanced-search-button" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
                     <div class="table-responsive datatable">
                         <table class="table table-hover table-borderless table-striped text-nowrap">
                             <thead>
@@ -147,33 +147,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>Trần Quí Bằng</td>
-                                <td>0842314569</td>
-                                <td>bangg2309@gmail.com</td>
-                                <td>23</td>
-                                <td>68</td>
-                                <td>3.200.000đ</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>Trần Quí Bằng</td>
-                                <td>0842314569</td>
-                                <td>bangg2309@gmail.com</td>
-                                <td>23</td>
-                                <td>68</td>
-                                <td>3.200.000đ</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"></th>
-                                <td>Trần Quí Bằng</td>
-                                <td>0842314569</td>
-                                <td>bangg2309@gmail.com</td>
-                                <td>23</td>
-                                <td>68</td>
-                                <td>3.200.000đ</td>
-                            </tr>
+                            <c:forEach items="${statisticals}" var="statistical">
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>${statistical.reservations.get(0).contactName}</td>
+                                    <td>${statistical.reservations.get(0).contactPhone}</td>
+                                    <td>${statistical.reservations.get(0).contactEmail}</td>
+                                    <td>${statistical.reservationCount}</td>
+                                    <td>${statistical.countProduct}</td>
+                                    <td>${statistical.sumTotalPrice}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

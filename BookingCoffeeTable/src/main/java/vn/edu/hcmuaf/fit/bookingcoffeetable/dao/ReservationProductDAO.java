@@ -16,4 +16,7 @@ public interface ReservationProductDAO {
 
     @SqlUpdate(QUERIES.RESERVATION_PRODUCT.SAVE)
     void save(@Bind("productId") int productId, @Bind("reservId") int reservId, @Bind("quantity") int quantity, @Bind("price") int price, @Bind("size") String size);
+
+    @SqlUpdate(QUERIES.RESERVATION_PRODUCT.DELETE)
+    void delete(@Bind("reservId") int reservId);
 }

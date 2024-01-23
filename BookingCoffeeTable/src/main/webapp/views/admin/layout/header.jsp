@@ -5,7 +5,7 @@
   <!-- Sidenav -->
   <nav id="main-sidenav" class="sidenav sidenav-sm shadow-1" data-mdb-mode="side"
        data-mdb-hidden="false">
-    <a class="ripple d-flex justify-content-center pt-4 pb-2" href="#!" data-mdb-ripple-color="primary">
+    <a class="ripple d-flex justify-content-center pt-4 pb-2" href="/admin/dashboard" data-mdb-ripple-color="primary">
       <img id="MDB-logo" src="/views/template/custom/image/drink/logo2.png" style="width: 60px"
            alt="MDB Logo" draggable="false"/>
     </a>
@@ -14,7 +14,7 @@
 
     <ul class="sidenav-menu px-2 pb-5">
       <li class="sidenav-item">
-        <a class="sidenav-link text-primary" href="home.html">
+        <a class="sidenav-link text-primary" href="/admin/dashboard">
           <i class="fas fa-tachometer-alt fa-fw me-3 "></i><span>Trang chủ</span></a>
       </li>
       <li class="sidenav-item pt-3">

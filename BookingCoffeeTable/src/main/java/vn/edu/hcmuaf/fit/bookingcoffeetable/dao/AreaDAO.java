@@ -30,5 +30,4 @@ public interface AreaDAO {
     List<Area> findById(@Bind("id") int id);
 
 
-
 }

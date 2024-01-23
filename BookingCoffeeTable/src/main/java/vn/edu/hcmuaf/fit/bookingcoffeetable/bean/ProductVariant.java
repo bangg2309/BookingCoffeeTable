@@ -59,4 +59,5 @@ public class ProductVariant implements Serializable {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
 }

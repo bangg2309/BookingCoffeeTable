@@ -32,7 +32,12 @@ public class MenuController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categories = categoryService.findAllCategory();
         request.setAttribute("categories", categories);
-
+        String value = request.getParameter("category-value");
+        if (value != null) {
+            request.setAttribute("category-value", value);
+        } else {
+            request.setAttribute("category-value", "0");
+        }
         totalItem = Integer.parseInt(productService.totalItem());
 
         if (totalItem != -1) {

@@ -2,10 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.api.admin;
 
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.*;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ImageService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductVariantService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -27,11 +24,13 @@ public class ProductAPI extends HttpServlet {
     ProductVariantService productVariantService;
 
     ImageService imageService;
+    ReviewService reviewService;
 
     public ProductAPI() {
         productVariantService = ProductVariantService.getInstance();
         productService = ProductService.getInstance();
         imageService = ImageService.getInstance();
+        reviewService = ReviewService.getInstance();
     }
 
     @Override
@@ -54,22 +53,7 @@ public class ProductAPI extends HttpServlet {
         String[] sizes = request.getParameterValues("size[]");
         String[] prices = request.getParameterValues("price[]");
         ProductVariant productVariant = new ProductVariant();
-        List<ProductVariant> productVariants = new ArrayList<>();
-        if (sizes != null && prices != null && sizes.length == prices.length) {
-            for (int i = 0; i < sizes.length; i++) {
-                String sizeVariant = sizes[i];
-                String priceVariant = prices[i];
-                productVariant.setSize(sizeVariant);
-                if (priceVariant.equals("")) {
-                    productVariant.setPricePlus(0);
-                } else {
-                    productVariant.setPricePlus(Integer.parseInt(priceVariant));
-                }
-                productVariants.add(productVariant);
-            }
-        } else {
-            // Xử lý trường hợp không có dữ liệu hoặc dữ liệu không tương thích
-        }
+
 
         Product product = new Product();
         product.setName(name);
@@ -81,8 +65,26 @@ public class ProductAPI extends HttpServlet {
 
         product = productService.saveProduct(product);
         int idProduct = productService.getByName(name);
-        productVariant.setProductId(idProduct);
-        productVariant = productVariantService.saveProductVariant(productVariant);
+        List<ProductVariant> productVariants = new ArrayList<>();
+        if (sizes != null && prices != null && sizes.length == prices.length) {
+            for (int i = 0; i < sizes.length; i++) {
+                String sizeVariant = sizes[i];
+                String priceVariant = prices[i];
+                productVariant.setSize(sizeVariant);
+                productVariant.setProductId(idProduct);
+                if (priceVariant.equals("")) {
+                    productVariant.setPricePlus(0);
+                } else {
+                    productVariant.setPricePlus(Integer.parseInt(priceVariant));
+                }
+                productVariant = productVariantService.saveProductVariant(productVariant);
+                productVariants.add(productVariant);
+            }
+        } else {
+            // Xử lý trường hợp không có dữ liệu hoặc dữ liệu không tương thích
+        }
+
+
         List<String> fileNames = new ArrayList<>(); // Danh sách để lưu các tên file
         Collection<Part> fileParts = request.getParts(); // Lấy danh sách các phần từ request
         for (Part filePart : fileParts) {
@@ -113,7 +115,7 @@ public class ProductAPI extends HttpServlet {
 
         Image image = null;
         for (String fileName : fileNames) {
-            image = new Image(idProduct,fileName);
+            image = new Image(idProduct, fileName);
             image = imageService.saveImage(image);
         }
 
@@ -125,7 +127,7 @@ public class ProductAPI extends HttpServlet {
         Gson gson = new Gson();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        String count = productService.totalItem() + 1;
+        String count = request.getParameter("id");
 
         String name = request.getParameter("name");
         String price = request.getParameter("price");
@@ -138,18 +140,54 @@ public class ProductAPI extends HttpServlet {
         String[] sizes = request.getParameterValues("size[]");
         String[] prices = request.getParameterValues("price[]");
         ProductVariant productVariant = new ProductVariant();
+        int variant = productService.findOne(Integer.parseInt(count)).getProductVariants().size();
         List<ProductVariant> productVariants = new ArrayList<>();
         if (sizes != null && prices != null && sizes.length == prices.length) {
-            for (int i = 0; i < sizes.length; i++) {
-                String sizeVariant = sizes[i];
-                String priceVariant = prices[i];
-                productVariant.setProductId(Integer.parseInt(count));
-                productVariant.setSize(sizeVariant);
-                productVariant.setPricePlus(Integer.parseInt(priceVariant));
-                productVariants.add(productVariant);
-                productVariant = productVariantService.updateProductVariant(productVariant);
-                // Xử lý các giá trị kích thước và giá tiền ở đây
-                System.out.println("Size: " + size + ", Price: " + price);
+            if (sizes.length == variant) {
+                for (int i = 0; i < sizes.length; i++) {
+                    String sizeVariant = sizes[i];
+                    String priceVariant = prices[i];
+                    productVariant.setProductId(Integer.parseInt(count));
+                    productVariant.setSize(sizeVariant);
+                    System.out.println(sizeVariant);
+                    productVariant.setPricePlus(Integer.parseInt(priceVariant));
+                    System.out.println(priceVariant);
+                    productVariants.add(productVariant);
+                    productVariantService.updateProductVariant(productVariant, sizeVariant);
+                    // Xử lý các giá trị kích thước và giá tiền ở đây
+                    System.out.println("Size: " + size + ", Price: " + price);
+                }
+            } else if (sizes.length > variant) {
+
+                for (int k = sizes.length - variant - 1; k < sizes.length; k++) {
+                    String sizeVariant = sizes[k];
+                    String priceVariant = prices[k];
+                    productVariant.setProductId(Integer.parseInt(count));
+                    productVariant.setSize(sizeVariant);
+                    System.out.println(sizeVariant);
+                    productVariant.setPricePlus(Integer.parseInt(priceVariant));
+                    System.out.println(priceVariant);
+                    productVariants.add(productVariant);
+                    productVariantService.saveProductVariant(productVariant);
+                    // Xử lý các giá trị kích thước và giá tiền ở đây
+                    System.out.println("Size: " + size + ", Price: " + price);
+                }
+            } else if (sizes.length < variant) {
+                productVariantService.deleteProductVariant(Integer.parseInt(count));
+                for (int i = 0; i < sizes.length; i++) {
+                    String sizeVariant = sizes[i];
+                    String priceVariant = prices[i];
+                    productVariant.setProductId(Integer.parseInt(count));
+                    productVariant.setSize(sizeVariant);
+                    System.out.println(sizeVariant);
+                    productVariant.setPricePlus(Integer.parseInt(priceVariant));
+                    System.out.println(priceVariant);
+                    productVariants.add(productVariant);
+                    productVariantService.saveProductVariant(productVariant);
+                    // Xử lý các giá trị kích thước và giá tiền ở đây
+                    System.out.println("Size: " + size + ", Price: " + price);
+                }
+
             }
         } else {
             // Xử lý trường hợp không có dữ liệu hoặc dữ liệu không tương thích
@@ -212,8 +250,14 @@ public class ProductAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Product product = gson.fromJson(request.getReader(), Product.class);
+        Review review = gson.fromJson(request.getReader(), Review.class);
+        if (review != null) {
+            reviewService.delete(product.getId());
+        }
+        imageService.delete(product.getId());
+        productVariantService.delete(product.getId());
         productService.deleteProduct(product.getId());
-        productVariantService.deleteProductVariant(product.getId());
         gson.toJson("{}", response.getWriter());
     }
+
 }

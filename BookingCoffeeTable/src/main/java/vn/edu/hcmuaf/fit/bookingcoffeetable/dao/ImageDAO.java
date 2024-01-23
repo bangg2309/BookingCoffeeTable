@@ -24,6 +24,6 @@ public interface ImageDAO {
     @SqlUpdate(QUERIES.IMAGE.UPDATE_IMAGE)
     void updateImage(@Bind("id") int id, @Bind("productId") int productId, @Bind("url") String url);
 
-    @SqlUpdate(QUERIES.IMAGE.DELETE_IMAGE)
-    void deleteImage(@Bind("id") int id);
+    @SqlUpdate(QUERIES.IMAGE.DELETE)
+    void delete(@Bind("productId") int id);
 }

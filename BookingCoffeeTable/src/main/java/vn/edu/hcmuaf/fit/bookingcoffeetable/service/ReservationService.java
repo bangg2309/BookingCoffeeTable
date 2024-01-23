@@ -4,9 +4,12 @@ import org.jdbi.v3.core.Jdbi;
 
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Statistical;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.ReservationDAO;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.TableDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationService {
@@ -78,9 +81,16 @@ public class ReservationService {
         return findById(reservation.getId());
     }
 
-    public void delete(int id) {
+    public void deleteReservation(int id) {
         reservationDAO.deleteReservation(id);
     }
+    public void deleteByUserId(int id) {
+        reservationDAO.deleteByUserId(id);
+    }
+    public void deleteByTableId(int id) {
+        reservationDAO.deleteByTableId(id);
+    }
+
     public void saveReservation(Reservation reservation) {
         reservationDAO.save(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice());
     }
@@ -90,8 +100,54 @@ public class ReservationService {
 
     }
 
+    public int count() {
+        return reservationDAO.count();
+    }
+
+    public List<Statistical> getStatistical() {
+        List<Statistical> statisticals = new ArrayList<Statistical>();
+        List<Reservation> reservations = findAllReservation();
+        for (Reservation reservation : reservations) {
+            List<Reservation> reservationParent = findReservationByUserId(reservation.getUserId(), "DESC");
+            Statistical statistical = new Statistical();
+            statistical.setReservations(reservationParent);
+            statisticals.add(statistical);
+        }
+
+        return statisticals;
+    }
+
+    public double getTotalPrice() {
+        List<Reservation> reservations = reservationDAO.findAllReservation();
+        double totalPrice = 0;
+        for (Reservation reservation : reservations) {
+            totalPrice += reservation.getTotalPrice();
+        }
+        return totalPrice;
+    }
+
+    public int getPeople() {
+        List<Reservation> reservations = findAllReservation();
+        int people = 0;
+        for (Reservation reservation : reservations) {
+            reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
+            people += reservation.getTable().getSeatCount();
+        }
+        return people;
+    }
+
+    public int countProduct() {
+        List<Reservation> reservations = findAllReservation();
+        int count = 0;
+        for (Reservation reservation : reservations) {
+            count += reservation.getReservationProducts().size();
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
-        System.out.println(ReservationService.getInstance().findById(1));
+//        System.out.println(ReservationService.getInstance().findById(1));
+        System.out.println(ReservationService.getInstance().getStatistical());
     }
 
 }
