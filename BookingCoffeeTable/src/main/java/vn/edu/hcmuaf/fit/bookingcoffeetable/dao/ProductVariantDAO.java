@@ -18,9 +18,13 @@ public interface ProductVariantDAO {
     void saveProductVariant(@Bind("productId") int productId, @Bind("size") String size, @Bind("pricePlus") int pricePlus);
 
     @SqlUpdate(QUERIES.PRODUCTVARIANT.UPDATE_PRODUCT_VARIANT)
-    void updateProductVariant(@Bind("id") int id, @Bind("productId") int productId, @Bind("size") String size, @Bind("pricePlus") int pricePlus);
+    void updateProductVariant(@Bind("productId") int id, @Bind("sizeChange") String sizeChange, @Bind("size") String size, @Bind("pricePlus") int pricePlus);
 
     @SqlUpdate(QUERIES.PRODUCTVARIANT.DELETE_PRODUCT_VARIANT)
     void deleteProductVariant(@Bind("id") int id);
+
+    @SqlUpdate(QUERIES.PRODUCTVARIANT.DELETE)
+    void delete(@Bind("productId") int id);
+
 
 }

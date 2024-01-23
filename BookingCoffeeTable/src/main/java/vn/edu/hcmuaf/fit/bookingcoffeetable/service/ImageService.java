@@ -39,8 +39,8 @@ public class ImageService {
         return findById(image.getId());
     }
 
-    public void deleteImage(int id) {
-        imageDAO.deleteImage(id);
+    public void delete(int id) {
+        imageDAO.delete(id);
     }
 
     public List<Image> findByProductId(int id) {

@@ -128,7 +128,8 @@
                         <label for="image" class="form-label"><b>Hình ảnh</b></label>
                         <i class="fas fa-image"></i>
                         <div class="file-upload-wrapper">
-                            <input id="image" name="image" type="file" class="file-upload-input" data-mdb-multiple="true"
+                            <input id="image" name="image" type="file" class="file-upload-input"
+                                   data-mdb-multiple="true"
                                    data-mdb-file-upload="file-upload"/>
                         </div>
                     </div>
@@ -148,18 +149,48 @@
                             </thead>
                             <tbody id="sizeTableBody">
                             <!-- Dòng mẫu, có thể ẩn hoặc xóa nếu không cần -->
-                            <tr class="size-row">
-                                <td><input type="text" class="form-control" name="size[]"
-                                           placeholder="Nhập kích thước..."
-                                           required></td>
-                                <td><input type="number" class="form-control" name="price[]" placeholder="VND..."
-                                           required>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" onclick="removeSizeRow(this)">Xóa
-                                    </button>
-                                </td>
-                            </tr>
+                            <c:choose>
+                                <c:when test="${not empty product.productVariants}">
+                                    <c:forEach items="${product.productVariants}" var="productVariant">
+                                        <tr class="size-row">
+                                            <td>
+                                                <input type="text" class="form-control" name="size[]"
+                                                       value="${productVariant.size}" placeholder="Nhập kích thước..."
+                                                       required>
+                                            </td>
+                                            <td>
+                                                <input type="number" class="form-control" name="price[]"
+                                                       value="${not empty productVariant ? productVariant.pricePlus : ''}"
+                                                       placeholder="VND..." required>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger"
+                                                        onclick="removeSizeRow(this)">
+                                                    Xóa
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+                                    <!-- Điều kiện else -->
+                                    <tr class="size-row">
+                                        <td>
+                                            <input type="text" class="form-control" name="size[]"
+                                                   placeholder="Nhập kích thước..." required>
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" name="price[]"
+                                                   placeholder="VND..." required>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" onclick="removeSizeRow(this)">
+                                                Xóa
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:otherwise>
+                            </c:choose>
                             <!-- ... Các dòng khác sẽ được thêm thông qua JavaScript ... -->
                             </tbody>
                         </table>

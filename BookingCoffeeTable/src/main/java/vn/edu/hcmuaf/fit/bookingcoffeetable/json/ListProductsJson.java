@@ -53,6 +53,7 @@ public class ListProductsJson extends HttpServlet {
         String toPriceStr = request.getParameter("secondPrice");
         category = request.getParameter("categoryValue");
 
+
         try {
             pageIndexNum = Integer.parseInt(pageIndex);
             perPageNum = Integer.parseInt(perPage);

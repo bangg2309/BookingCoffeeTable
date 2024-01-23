@@ -55,13 +55,29 @@ public class ProductService {
         return products;
     }
 
+    public List<Product> findProductDiscount(int limit) {
+        List<Product> products = productDAO.findProductDiscount(limit);
+        for (Product product : products) {
+            product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
+            product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
+        }
+        return products;
+    }
+
+
     //Lấy ra các thông tin của sản phẩm để hiển thị trong productDetail
     public Product findProductDetail(int id) {
         List<Product> products = productDAO.findOne(id);
         if (!products.isEmpty()) {
             Product product = products.get(0);
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
-            product.updateBySize(product.getProductVariants().get(0).getSize());
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
             product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
             product.setCategory(CategoryService.getInstance().findOne(product.getCategoryId()));
@@ -74,7 +90,9 @@ public class ProductService {
         List<Product> products = productDAO.findAllProducts();
         for (Product product : products) {
           product.setCategory(CategoryService.getInstance().findOne(product.getCategoryId()));
-            product.updateBySize(product.getProductVariants().get(0).getSize());
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
             product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
 
@@ -97,7 +115,9 @@ public class ProductService {
         List<Product> result = new ArrayList<Product>();
         for (Product product : products) {
             product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
-            product.updateBySize(product.getProductVariants().get(0).getSize());
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
             product.setImages(ImageService.getInstance().findByProductId(product.getId()));
             product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
             product.getAverageRating();
@@ -108,6 +128,10 @@ public class ProductService {
         }
         return result;
     }
+
+
+
+
 
     public String totalItem() {
         return productDAO.totalItem();
@@ -126,6 +150,10 @@ public class ProductService {
 
     public void deleteProduct(int id) {
         productDAO.deleteProduct(id);
+    }
+
+    public void delete(int id) {
+        productDAO.delete(id);
     }
 
     public int getByName(String name) {

@@ -8,6 +8,7 @@ public class QUERIES {
         public static final String SAVE_POST = "INSERT INTO posts (userId, title, shortDescription, description, thumbnail, status, createdBy, createdDate) VALUES (:userId, :title, :shortDescription, :description, :thumbnail, :status, :createdBy, :createdDate)";
         public static final String UPDATE_POST = "UPDATE contacts SET name = :name, email = :email, phone = :phone, message = :message WHERE id = :id";
         public static final String DELETE_POST = "DELETE FROM contacts WHERE id = :id";
+        public static final String DELETE = "DELETE FROM posts WHERE userId = :userId";
         public static final String FIND_NEW_POST = "SELECT * FROM posts ORDER BY createdDate DESC LIMIT :limit";
 
         public static final String TOTAL_ITEM = "SELECT count(*) FROM posts";
@@ -47,11 +48,7 @@ public class QUERIES {
     public class PRODUCT {
 
         public static final String INSERT_PRODUCT = "INSERT INTO products (categoryId, name, price, description, status, discount) VALUES (:categoryId, :name, :price, :description, :status, :discount)";
-        public static final String SELECT_ALL_PRODUCT = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products." +
-                "status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url " +
-                "FROM products " +
-                "LEFT JOIN images ON products.id = images.productId " +
-                "ORDER BY products.createdDate DESC ";
+        public static final String SELECT_ALL_PRODUCT = "SELECT * FROM products";
 
         public static final String SELECT_ALL_PRODUCT_OFFSET = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products.status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url FROM products LEFT JOIN images ON products.id = images.productId LIMIT ? OFFSET ?";
         public static final String SELECT_PRODUCT_BY_ID = "SELECT * FROM products WHERE id = :id";
@@ -59,16 +56,20 @@ public class QUERIES {
         public static final String SELECT_PRODUCT_BY_NAME = "SELECT * FROM products WHERE name = :name";
         public static final String UPDATE_PRODUCT = "UPDATE products SET categoryId = :categoryId, name = :name, price = :price, description = :description, status = :status, discount = :discount WHERE id = :id";
         public static final String DELETE_PRODUCT = "DELETE FROM products WHERE id = :id";
+        public static final String DELETE = "DELETE FROM products WHERE categoryId = :categoryId";
         public static final String SELECT_PRODUCT_WITH_IMAGES = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products.status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url " +
                 "FROM products " +
                 "LEFT JOIN images ON products.id = images.productId " +
                 "WHERE products.id = :id";
         public static final String SELECT_PRODUCTS_NEWEST =
                 "SELECT * FROM products ORDER BY createdDate DESC LIMIT :limit";
+
+        public static final String SELECT_PRODUCTS_DISCOUNT = "SELECT * FROM products WHERE discount > 0 LIMIT :limit";
         public static final String SELECT_ALL_ATTRIBUTE = "SELECT products.id,products.categoryId, products.name,products.price,products.description,products.status,products.discount, products.createdDate, images.id AS image_id, images.productId, images.url" +
                 "FROM products " +
                 "LEFT JOIN images ON products.id = images.productId " +
                 "WHERE products.id = :id";
+
 
         // Phân trang menu
         public static final String SELECT_PRODUCT_PAGE_PRICE_DESC = "SELECT * FROM products " +
@@ -122,6 +123,7 @@ public class QUERIES {
         public static final String SELECT_REVIEW_BY_PRODUCT_ID = "SELECT * FROM reviews WHERE productId = :productId";
         public static final String SELECT_ALL_REVIEW = "SELECT * FROM reviews";
         public static final String DELETE_REVIEW = "DELETE FROM reviews WHERE id = :id";
+        public static final String DELETE = "DELETE FROM reviews WHERE userId = :userId";
     }
 
 
@@ -130,6 +132,7 @@ public class QUERIES {
         public static final String SELECT_ALL_AREA = "SELECT * FROM areas";
 
         public static final String SELECT_AREA_BY_ID = "SELECT * FROM areas WHERE id = :id";
+
     }
 
 
@@ -162,8 +165,9 @@ public class QUERIES {
         public static final String SELECT_PRODUCT_VARIANT_BY_PRODUCT_ID = "SELECT * FROM product_variants WHERE productId = :productId";
 
         public static final String INSERT_PRODUCT_VARIANT = "INSERT INTO product_variants (productId, size, pricePlus) VALUES (:productId, :size, :pricePlus)";
-        public static final String UPDATE_PRODUCT_VARIANT = "UPDATE product_variants SET productId = :productId, size = :size, pricePlus = :pricePlus WHERE id = :id";
-        public static final String DELETE_PRODUCT_VARIANT = "DELETE FROM product_variants WHERE productid = :id";
+        public static final String UPDATE_PRODUCT_VARIANT = "UPDATE product_variants SET pricePlus = :pricePlus WHERE productId = :productId AND size = :sizeChange";
+        public static final String DELETE_PRODUCT_VARIANT = "DELETE FROM product_variants WHERE id = :id";
+        public static final String DELETE = "DELETE FROM product_variants WHERE productId = :id";
     }
 
 
@@ -174,7 +178,7 @@ public class QUERIES {
 
         public static final String SELECT_IMAGE_BY_ID = "SELECT * FROM images WHERE id = :id";
         public static final String UPDATE_IMAGE = "UPDATE images SET productId = :productId, url = :url WHERE id = :id";
-        public static final String DELETE_IMAGE = "DELETE FROM images WHERE id = :id";
+        public static final String DELETE = "DELETE FROM images WHERE productId = :id";
     }
 
 
@@ -190,16 +194,21 @@ public class QUERIES {
         public static final String SAVE_RESERVATION = "INSERT INTO reservations (tableId, userId, contactName, contactPhone, contactEmail, startTime, endTime, status, paymentMethod, note, totalPrice, createdDate) VALUES (:tableId, :userId, :contactName, :contactPhone, :contactEmail, :startTime, :endTime, :status, :paymentMethod, :note, :totalPrice, :createdDate)";
         public static final String UPDATE_RESERVATION = "UPDATE reservations SET tableId = :tableId, userId = :userId, contactName = :contactName, contactPhone = :contactPhone, contactEmail = :contactEmail, startTime = :startTime, endTime = :endTime, status = :status, paymentMethod = :paymentMethod, note = :note, totalPrice = :totalPrice, createdDate = :createdDate WHERE id = :id";
         public static final String DELETE_RESERVATION = "DELETE FROM reservations WHERE id = :id";
+        public static final String DELETE_BY_USERID = "DELETE FROM reservations WHERE userId = :userId";
+        public static final String DELETE_BY_TABLEID = "DELETE FROM reservations WHERE tableId = :tableId";
 
         public static final String SAVE = "INSERT INTO reservations (tableId, userId, contactName, contactPhone, contactEmail, startTime, endTime, status, paymentMethod, note, totalPrice) VALUES (:tableId, :userId, :contactName, :contactPhone, :contactEmail, :startTime, :endTime, :status, :paymentMethod, :note, :totalPrice)";
         public static final String SELECT_RESERVATION_ID_BY_DETAILS = "SELECT id FROM reservations WHERE tableId = :tableId AND userId = :userId AND contactName = :contactName AND contactPhone = :contactPhone AND contactEmail = :contactEmail AND startTime = :startTime AND endTime = :endTime AND status = :status AND paymentMethod = :paymentMethod AND note = :note AND totalPrice = :totalPrice";
 
+        public static final String COUNT = "SELECT count(*) FROM reservations";
     }
 
     //RESERVATION PRODUCT
     public class RESERVATION_PRODUCT {
         public static final String SELECT_RESERVATION_PRODUCT_BY_RESERV_ID = "SELECT * FROM reservation_products WHERE reservId = :reservId";
         public static final String SAVE = "INSERT INTO reservation_products (productId, reservId, quantity, price, size) VALUES (:productId, :reservId, :quantity, :price, :size)";
+
+        public static final String DELETE = "DELETE FROM reservation_products WHERE reservId = :reservId";
     }
 
     //VERIFY EMAIL
@@ -207,6 +216,7 @@ public class QUERIES {
         public static final String INSERT_VERIFY_EMAIL = "INSERT INTO verifications (userId, code) VALUES (:userId, :code)";
         public static final String SELECT_VERIFY_EMAIL_BY_USER_ID = "SELECT * FROM verifications WHERE userId = :userId";
         public static final String SELECT_VERIFY_EMAIL_BY_CODE = "SELECT * FROM verifications WHERE code = :code";
+        public static final String DELETE = "DELETE FROM verifications WHERE id = :id";
     }
 
 }

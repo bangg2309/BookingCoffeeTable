@@ -30,6 +30,9 @@ public class Contact implements Serializable {
         this.content = content;
     }
 
+    public Contact() {
+    }
+
     public int getId() {
         return id;
     }

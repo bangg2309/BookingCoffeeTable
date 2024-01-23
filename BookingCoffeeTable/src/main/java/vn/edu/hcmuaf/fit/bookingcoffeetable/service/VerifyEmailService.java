@@ -43,4 +43,8 @@ public class VerifyEmailService {
         if (verifyEmails.isEmpty()) return null;
         return verifyEmails.get(0);
     }
+
+    public void delete(int id) {
+        verifyEmailDAO.delete(id);
+    }
 }

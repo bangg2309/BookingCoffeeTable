@@ -46,6 +46,9 @@ public class ReviewService {
     public void deleteReview(int id) {
         reviewDAO.deleteReview(id);
     }
+    public void delete(int id) {
+        reviewDAO.delete(id);
+    }
     public void save(Review review){
         reviewDAO.save(review.getProductId(), review.getUserId(), review.getStarRate(), review.getContent());
 

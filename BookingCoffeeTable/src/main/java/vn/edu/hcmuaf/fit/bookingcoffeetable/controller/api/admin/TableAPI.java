@@ -2,11 +2,10 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.api.admin;
 
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Area;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.AreaService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -23,10 +22,12 @@ import java.io.IOException;
 public class TableAPI extends HttpServlet {
     TableService tableService;
     AreaService areaService;
+    ReservationService reservationService;
 
     public TableAPI() {
         areaService = AreaService.getInstance();
         tableService = TableService.getInstance();
+        reservationService = ReservationService.getInstance();
     }
 
     @Override
@@ -101,6 +102,12 @@ public class TableAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Table table = gson.fromJson(request.getReader(), Table.class);
+        Area area = gson.fromJson(request.getReader(), Area.class);
+        Reservation reservation = gson.fromJson(request.getReader(), Reservation.class);
+        if (reservation != null){
+            reservationService.deleteByTableId(table.getId());
+        }
+
         tableService.deleteTable(table.getId());
         gson.toJson("{}", response.getWriter());
     }

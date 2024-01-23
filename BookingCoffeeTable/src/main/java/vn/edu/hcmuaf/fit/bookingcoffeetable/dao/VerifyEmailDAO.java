@@ -20,4 +20,6 @@ public interface VerifyEmailDAO {
     @SqlQuery(QUERIES.VERIFY_EMAIL.SELECT_VERIFY_EMAIL_BY_USER_ID)
     List<VerifyEmail> selectVerifyEmailByUserId(@Bind("userId") int userId);
 
+    @SqlUpdate(QUERIES.VERIFY_EMAIL.DELETE)
+    void delete(@Bind("id") int id);
 }

@@ -2,8 +2,10 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.api.admin;
 
 import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.ReservationProduct;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Table;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.AreaService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationProductService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.TableService;
 
@@ -22,10 +24,12 @@ import java.io.IOException;
 public class ReservationAPI extends HttpServlet {
     ReservationService reservationService;
     AreaService areaService;
+    ReservationProductService reservationProductService;
 
     public ReservationAPI() {
         areaService = AreaService.getInstance();
         reservationService = ReservationService.getInstance();
+        reservationProductService = ReservationProductService.getInstance();
     }
 
     @Override
@@ -103,7 +107,9 @@ public class ReservationAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Reservation reservation = gson.fromJson(request.getReader(), Reservation.class);
-        reservationService.delete(reservation.getId());
+        ReservationProduct reservationProduct = gson.fromJson(request.getReader(), ReservationProduct.class);
+        reservationProductService.delete(reservation.getId());
+        reservationService.deleteReservation(reservation.getId());
         gson.toJson("{}", response.getWriter());
     }
 }

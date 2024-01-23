@@ -1,8 +1,8 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.api.admin;
 
 import com.google.gson.Gson;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.*;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -18,9 +18,17 @@ import java.io.IOException;
 @WebServlet(name = "UserAPI", value = "/api/admin/user")
 public class UserAPI extends HttpServlet {
     UserService userService;
+    PostService postService;
+    VerifyEmailService verifyEmailService;
+    ReviewService reviewService;
+    ReservationService reservationService;
 
     public UserAPI() {
         userService = UserService.getInstance();
+        postService = PostService.getInstance();
+        verifyEmailService = VerifyEmailService.getInstance();
+        reviewService = ReviewService.getInstance();
+        reservationService = ReservationService.getInstance();
     }
 
     @Override
@@ -104,6 +112,22 @@ public class UserAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         User user = gson.fromJson(request.getReader(), User.class);
+        Post post = gson.fromJson(request.getReader(), Post.class);
+        VerifyEmail verifyEmail = gson.fromJson(request.getReader(), VerifyEmail.class);
+        Review review = gson.fromJson(request.getReader(), Review.class);
+        Reservation reservation = gson.fromJson(request.getReader(), Reservation.class);
+        if (reservation != null){
+            reservationService.deleteByUserId(user.getId());
+        }
+        if (review != null){
+            reviewService.delete(user.getId());
+        }
+        if (verifyEmail != null){
+            verifyEmailService.delete(user.getId());
+        }
+        if (post != null){
+            postService.delete(user.getId());
+        }
         userService.delete(user.getId());
         gson.toJson("{}", response.getWriter());
     }

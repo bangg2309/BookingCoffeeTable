@@ -34,13 +34,6 @@ public class AreaService{
         return areas.isEmpty() ? null : areas.get(0);
     }
 
-
-
-
-
-
-
-
     public List<Area> findAllArea() {
         return areaDAO.findAllArea();
     }

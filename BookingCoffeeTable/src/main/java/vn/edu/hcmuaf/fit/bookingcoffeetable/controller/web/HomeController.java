@@ -38,7 +38,9 @@ public class HomeController extends HttpServlet {
         List<Category> categories = categoryService.findCategory();
         List<Product> newProducts = productService.findProductNewest(limitProducts);
         List<Post> posts = postService.findNewPost(limitPost);
+        List<Product> discountProducts = productService.findProductDiscount(limitProducts);
         request.setAttribute("newProducts", newProducts);
+        request.setAttribute("discountProducts", discountProducts);
         request.setAttribute("categories", categories);
         request.setAttribute("posts", posts);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
