@@ -328,7 +328,7 @@
     let totalPages = ${totalPage};
     let currentPage = 1;
     let count = $('#filterPeople').val();
-    let categoryValue = ${categoryValue};
+    let categoryValue = ${category-value};
     let find = "";
     let orderBy = "";
     const limit = 9;
