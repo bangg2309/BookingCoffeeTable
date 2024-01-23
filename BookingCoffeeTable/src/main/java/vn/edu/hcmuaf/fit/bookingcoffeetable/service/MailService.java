@@ -43,12 +43,12 @@ public class MailService {
         };
         Session session = Session.getInstance(prop, auth);
 
-        Message msg = new MimeMessage(session);
+        MimeMessage msg = new MimeMessage(session);
         try {
             msg.setFrom(new InternetAddress(MailProperties.getMailUsername()));
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            msg.setSubject(subject);
-            msg.setText(content);
+            msg.setSubject(subject, "UTF-8");
+            msg.setText(content, "UTF-8");
             javax.mail.Transport.send(msg);
             System.out.println("Sent");
         } catch (Exception e) {

@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.auth;
 
+import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.VerifyEmail;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.VerifyEmailService;
 
@@ -24,14 +25,22 @@ public class VerifyEmailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String verificationCode = request.getParameter("code");
+        String type = "register";
         if (verificationCode == null) {
             request.getRequestDispatcher("/views/web/email-verify.jsp").forward(request, response);
         } else {
-            int userId = verifyEmailService.selectVerifyEmailByCode(verificationCode).getUserId();
-            userService.updateEmailVerifiedById(userId);
-            HttpSession registerSession = request.getSession();
-            registerSession.setAttribute("registerSession", "Register successfully");
-            response.sendRedirect(request.getContextPath() + "/login");
+            VerifyEmail verifyEmail = verifyEmailService.selectVerifyEmailByCode(verificationCode, type);
+            if (verifyEmail == null) {
+                request.setAttribute("error", "Verification code is invalid");
+                request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
+            } else {
+                int userId = verifyEmail.getUserId();
+                userService.updateEmailVerifiedById(userId);
+                verifyEmailService.deleteVerifyEmailByUserIdAndType(userId, type);
+                HttpSession registerSession = request.getSession();
+                registerSession.setAttribute("registerSession", "Register successfully");
+                response.sendRedirect(request.getContextPath() + "/login");
+            }
         }
     }
 

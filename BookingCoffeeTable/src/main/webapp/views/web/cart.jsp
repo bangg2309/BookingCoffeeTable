@@ -191,13 +191,24 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <fmt:parseDate var="parsedstartTime" value="${cart.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-                            <fmt:parseDate var="parsedendTime" value="${cart.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:parseDate var="parsedstartTime" value="${cart.startTime}"
+                                           pattern="yyyy-MM-dd HH:mm:ss"/>
+                            <fmt:parseDate var="parsedendTime" value="${cart.endTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
                             <span>Thời gian: </span>
-                            <span><fmt:formatDate value="${parsedstartTime}" pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate value="${parsedendTime}" pattern="HH:mm:ss"/></span>
+                            <span><fmt:formatDate value="${parsedstartTime}"
+                                                  pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate
+                                    value="${parsedendTime}" pattern="HH:mm:ss"/></span>
                         </div>
-                        <a class="btn btn-danger btn-rounded w-50 mt-2" href="${pageContext.request.contextPath}/table"
-                           style="color: whitesmoke">Thay đổi bàn</a>
+                        <c:if test="${cart.table != null}">
+                            <a class="btn btn-danger btn-rounded w-50 mt-2"
+                               href="${pageContext.request.contextPath}/table"
+                               style="color: whitesmoke">Thay đổi bàn</a>
+                        </c:if>
+                        <c:if test="${cart.table == null}">
+                            <a class="btn btn-info btn-rounded w-50 mt-2"
+                               href="${pageContext.request.contextPath}/table"
+                               style="color: whitesmoke">Chọn bàn</a>
+                        </c:if>
 
 
                         <hr class="my-4"/>

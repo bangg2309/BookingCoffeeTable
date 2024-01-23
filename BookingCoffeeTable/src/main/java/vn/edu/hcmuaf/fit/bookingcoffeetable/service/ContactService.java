@@ -27,7 +27,7 @@ public class ContactService {
     }
 
     public void save(Contact contact) {
-        contactDAO.save(contact);
+        contactDAO.save(contact.getFullName(), contact.getEmail(), contact.getPhone(), contact.getSubject(), contact.getContent());
     }
 
 
@@ -39,7 +39,4 @@ public class ContactService {
         contactDAO.deleteContact(id);
     }
 
-    public static void main(String[] args) {
-        ContactService rv = ContactService.getInstance();
-    }
 }

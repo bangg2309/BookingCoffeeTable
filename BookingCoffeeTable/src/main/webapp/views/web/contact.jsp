@@ -20,7 +20,8 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom css-->
-    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/contactUS.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/contact.css"/>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 </head>
 
 <body>
@@ -58,11 +59,12 @@
                                         <!-- Grid column -->
                                         <div class="col-lg-6">
 
-                                            <form action="/contact" method="post" >
+                                            <form action="/contact" method="post">
                                                 <div class="card-body form">
 
                                                     <!-- Header -->
-                                                    <h3 class="mt-4 mb-2"><i class="fas fa-envelope pr-2"></i>Gửi phản ánh
+                                                    <h3 class="mt-4 mb-2"><i class="fas fa-envelope pr-2"></i>Gửi phản
+                                                        ánh
                                                         cho chúng tôi:</h3>
 
                                                     <!-- Grid row -->
@@ -71,8 +73,10 @@
                                                         <div class="col-md-6">
 
                                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
-                                                                <input type="text" id="1" class="form-control"/>
-                                                                <label class="form-label" for="1">Họ và Tên</label>
+                                                                <input type="text" name="fullname" id="fullname"
+                                                                       class="form-control" required/>
+                                                                <label class="form-label" for="fullname">Họ và
+                                                                    Tên</label>
                                                             </div>
 
                                                         </div>
@@ -82,8 +86,9 @@
                                                         <div class="col-md-6">
 
                                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
-                                                                <input type="text" id="2" class="form-control"/>
-                                                                <label class="form-label" for="2">Email</label>
+                                                                <input type="email" name="email" id="email"
+                                                                       class="form-control" required/>
+                                                                <label class="form-label" for="email">Email</label>
                                                             </div>
 
                                                         </div>
@@ -99,8 +104,10 @@
                                                         <div class="col-md-6">
 
                                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
-                                                                <input type="text" id="3" class="form-control"/>
-                                                                <label class="form-label" for="3">Số điện thoại</label>
+                                                                <input type="number" name="phone" id="phone"
+                                                                       class="form-control" required/>
+                                                                <label class="form-label" for="phone">Số điện
+                                                                    thoại</label>
                                                             </div>
 
                                                         </div>
@@ -110,8 +117,9 @@
                                                         <div class="col-md-6">
 
                                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
-                                                                <input type="text" id="4" class="form-control"/>
-                                                                <label class="form-label" for="4">Chủ đề</label>
+                                                                <input type="text" name="subject" id="subject"
+                                                                       class="form-control" required/>
+                                                                <label class="form-label" for="subject">Chủ đề</label>
                                                             </div>
 
                                                         </div>
@@ -128,14 +136,13 @@
 
                                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
 
-                                                            <textarea class="form-control" id="textAreaExample"
-                                                                      rows="4"></textarea>
+                                                            <textarea class="form-control" name="content" id="content"
+                                                                      rows="4" required></textarea>
                                                                 <label class="form-label"
-                                                                       for="textAreaExample">Nội dung góp ý</label>
-
+                                                                       for="content">Nội dung góp ý</label>
 
                                                             </div>
-                                                            <button class="icon" type="submit">
+                                                            <button class="icon" id="submitButton" type="submit">
                                                                 <a class="btn-floating btn-lg blue">
                                                                     <i class="far fa-paper-plane"></i>
                                                                 </a>
@@ -297,10 +304,11 @@
 <%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
-
 <!-- Global Init -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 <script src="<c:url value="/views/template/assets/js/custom.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>

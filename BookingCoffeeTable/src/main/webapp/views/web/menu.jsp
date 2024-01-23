@@ -22,9 +22,10 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
     <!-- Custom css-->
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/menu.css"/>">
-
 </head>
 
 <body>
@@ -323,6 +324,7 @@
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 
 <script src="<c:url value="/views/template/paging/jquery.twbsPagination.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!---->
 <script type="text/javascript">
     let totalPages = ${totalPage};
@@ -733,10 +735,28 @@
             url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
             type: 'GET',
             success: function (data) {
-                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Thêm sản phẩm thành công!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             },
             error: function (data) {
-                alert('Bị lỗi! Không thêm được sản phẩm');
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Thêm sản phẩm thất bại!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             }
         });
     }

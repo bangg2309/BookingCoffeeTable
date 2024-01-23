@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.dao;
 
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.customizer.BindMethods;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
@@ -20,5 +21,5 @@ public interface ContactDAO {
     void deleteContact(@Bind("id") int id);
 
     @SqlUpdate(QUERIES.CONTACT.SAVE)
-    void save(@BindMethods Contact contact);
+    void save(@Bind("fullname") String fullname, @Bind("email") String email, @Bind("phone") String phone, @Bind("subject") String subject, @Bind("content") String content);
 }
