@@ -23,6 +23,9 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> "/>
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/home.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/contact.css"/> ">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
 </head>
 <body>
 
@@ -166,7 +169,8 @@
                                  style="animation-delay: 0.3s;"><a
                                     href="/about">DỊCH VỤ</a></div>
                             <div class="des w lazy-start fadeInUp" data-eff="fadeInUp" data-delay="0.5"
-                                 style="animation-delay: 0.5s; color: red"><p style="color: red">DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</p>
+                                 style="animation-delay: 0.5s; color: red"><p style="color: red">DỊCH VỤ NÀY LÀ CỦA
+                                CHÚNG MÌNH</p>
 
                                 <p><span style="font-size:16px;"><span style="font-family:Roboto,sans-serif;"><span
                                         style="line-height:115%"><span style="line-height:115%"><span
@@ -434,7 +438,8 @@
                                                 </h5>
                                             </c:otherwise>
                                         </c:choose>
-                                        <button type="button" onclick="addToCart('${product.id}', '${product.size}','1')"
+                                        <button type="button"
+                                                onclick="addToCart('${product.id}', '${product.size}','1')"
                                                 class="btn btn-primary btn-rounded w-100 color_btn">
                                             <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
                                         </button>
@@ -459,30 +464,30 @@
     <div class="container">
         <div class="row">
             <c:forEach items="${posts}" var="post">
-            <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
-                <div class="stArticleLoop">
-                    <div class="box-latest-news">
-                        <a href="/post?id=${post.id}" class="thumb-img">
-                            <div class="mask-plus">
-                                <div class="shape"></div>
+                <div class="col-md-4 col-sm-4 col-xs-6 articelItem">
+                    <div class="stArticleLoop">
+                        <div class="box-latest-news">
+                            <a href="/post?id=${post.id}" class="thumb-img">
+                                <div class="mask-plus">
+                                    <div class="shape"></div>
+                                </div>
+                                <img src="<c:url value='${post.thumbnail}'/>" alt="">
+                            </a>
+                            <div class="content-ln">
+                                <span>${post.createdDate}</span>
+                                <a href="">
+                                    <h3>${post.title}</h3>
+                                </a>
+                                <a href="">
+                                    "Xem thêm "
+                                    <i class="fa fa-long-arrow-right"></i>
+                                </a>
+
                             </div>
-                            <img src="<c:url value='${post.thumbnail}'/>" alt="">
-                        </a>
-                        <div class="content-ln">
-                            <span>${post.createdDate}</span>
-                            <a href="">
-                                <h3>${post.title}</h3>
-                            </a>
-                            <a href="">
-                                "Xem thêm "
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
             </c:forEach>
         </div>
     </div>
@@ -509,25 +514,26 @@
                     <div class="row">
 
                         <!-- Grid column -->
-                        <div class="col-lg-7">
-                            <form>
+                        <div class="col-lg-6">
+
+                            <form action="/contact" method="post">
                                 <div class="card-body form">
 
                                     <!-- Header -->
-                                    <h3 class="font-weight-bold dark-grey-text" style="font-size: 15px"><i
-                                            class="fa-solid fa-envelope fa-xl pr-2 mr-1"></i>Gửi phản ánh cho chúng tôi:
-                                    </h3>
+                                    <h3 class="mt-4 mb-2"><i class="fas fa-envelope pr-2"></i>Gửi phản
+                                        ánh
+                                        cho chúng tôi:</h3>
 
                                     <!-- Grid row -->
-                                    <div class="row mt-3">
-
+                                    <div class="row">
                                         <!-- Grid column -->
                                         <div class="col-md-6">
-                                            <div class="wrap-input100 validate-input"
-                                                 data-validate="Cần nhập tên đăng nhập">
-                                                <input class="input100" type="text" name="name">
-                                                <span class="focus-input100"></span>
-                                                <span class="label-input100">Họ và Tên</span>
+
+                                            <div class="md-form mb-0 form-outline" data-mdb-input-init>
+                                                <input type="text" name="fullname" id="fullname"
+                                                       class="form-control" required/>
+                                                <label class="form-label" for="fullname">Họ và
+                                                    Tên</label>
                                             </div>
 
                                         </div>
@@ -535,12 +541,13 @@
 
                                         <!-- Grid column -->
                                         <div class="col-md-6">
-                                            <div class="wrap-input100 validate-input"
-                                                 data-validate="Cần nhập tên đăng nhập">
-                                                <input class="input100" type="text" name="email">
-                                                <span class="focus-input100"></span>
-                                                <span class="label-input100">Email</span>
+
+                                            <div class="md-form mb-0 form-outline" data-mdb-input-init>
+                                                <input type="email" name="email" id="email"
+                                                       class="form-control" required/>
+                                                <label class="form-label" for="email">Email</label>
                                             </div>
+
                                         </div>
                                         <!-- Grid column -->
 
@@ -552,23 +559,26 @@
 
                                         <!-- Grid column -->
                                         <div class="col-md-6">
-                                            <div class="wrap-input100 validate-input"
-                                                 data-validate="Cần nhập tên đăng nhập">
-                                                <input class="input100" type="text" name="name">
-                                                <span class="focus-input100"></span>
-                                                <span class="label-input100">Số điện thoại</span>
+
+                                            <div class="md-form mb-0 form-outline" data-mdb-input-init>
+                                                <input type="number" name="phone" id="phone"
+                                                       class="form-control" required/>
+                                                <label class="form-label" for="phone">Số điện
+                                                    thoại</label>
                                             </div>
+
                                         </div>
                                         <!-- Grid column -->
 
                                         <!-- Grid column -->
                                         <div class="col-md-6">
-                                            <div class="wrap-input100 validate-input"
-                                                 data-validate="Cần nhập tên đăng nhập">
-                                                <input class="input100" type="text" name="name">
-                                                <span class="focus-input100"></span>
-                                                <span class="label-input100">Chủ đề</span>
+
+                                            <div class="md-form mb-0 form-outline" data-mdb-input-init>
+                                                <input type="text" name="subject" id="subject"
+                                                       class="form-control" required/>
+                                                <label class="form-label" for="subject">Chủ đề</label>
                                             </div>
+
                                         </div>
                                         <!-- Grid column -->
 
@@ -580,68 +590,97 @@
 
                                         <!-- Grid column -->
                                         <div class="col-md-12">
-                                            <div class="md-form mb-0">
-                                                <div class="text-input100 validate-input"
-                                                     data-validate="Cần nhập tên đăng nhập">
-                                                    <textarea class="input100 mt-2" type="text"
-                                                              name="textarea"> </textarea>
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Nội dung góp ý</span>
-                                                </div>
-                                            </div>
-                                        </div>
 
+                                            <div class="md-form mb-0 form-outline" data-mdb-input-init>
+
+                                                            <textarea class="form-control" name="content" id="content"
+                                                                      rows="4" required></textarea>
+                                                <label class="form-label"
+                                                       for="content">Nội dung góp ý</label>
+
+                                            </div>
+                                            <button class="icon" id="submitButton" type="submit">
+                                                <a class="btn-floating btn-lg blue">
+                                                    <i class="far fa-paper-plane"></i>
+                                                </a>
+                                            </button>
+
+                                        </div>
                                         <!-- Grid column -->
 
-                                    </div>
-                                    <div class="col-md-12 d-flex justify-content-end  pr-5 ">
-                                        <button type="submit" class="send bg-info p-4 rounded-circle">
-                                            <i class="fa-sharp fa-regular fa-paper-plane fa-2xl "></i>
-                                        </button>
                                     </div>
                                     <!-- Grid row -->
 
                                 </div>
                             </form>
+
                         </div>
                         <!-- Grid column -->
 
                         <!-- Grid column -->
-                        <div class="col-lg-5 ">
+                        <div class="col-lg-5">
 
-                            <div class="card-body contact text-center h-100 ">
+                            <div class="card-body contact text-center h-100 white-text">
 
-                                <h3 class="font-weight-bold my-4 pb-2">Thông Tin Liên Hệ</h3>
-                                <ul class="text-lg-left">
-                                    <li class="d-flex justify-content-center">
-                                        <p><i class="fas fa-map-marker-alt pr-2"></i>Trường Đại học Nông Lâm Tp.Hồ Chí
-                                            Minh
-                                        </p>
+                                <h3 class="my-4 pb-2">Thông Tin Liên Hệ</h3>
+
+                                <ul class="text-lg-left list-unstyled ">
+
+                                    <li>
+
+                                        <p><i class="fas fa-map-marker-alt pr-2 mb-4"></i>Trường Đại học
+                                            Nông Lâm Tp.Hồ Chí Minh</p>
+
                                     </li>
-                                    <li class="d-flex justify-content-center">
-                                        <p><i class="fas fa-phone pr-2"></i>0394707535</p>
+
+                                    <li>
+
+                                        <p><i class="fas fa-phone pr-2 mb-4"></i>0394 707 535</p>
+
                                     </li>
-                                    <li class="d-flex justify-content-center">
+
+                                    <li>
+
                                         <p><i class="fas fa-envelope pr-2"></i>coffeshop@gmail.com</p>
+
                                     </li>
+
                                 </ul>
+
                                 <hr class="hr-light my-4">
+
                                 <ul class="list-inline text-center list-unstyled">
+
                                     <li class="list-inline-item">
-                                        <a class="p-2 fa-lg li-ic">
-                                            <i class="fa-brands fa-twitter fa-xl"></i>
+
+                                        <a class="p-2 fa-lg tw-ic">
+
+                                            <i class="fab fa-twitter"></i>
+
                                         </a>
+
                                     </li>
+
                                     <li class="list-inline-item">
+
                                         <a class="p-2 fa-lg li-ic">
-                                            <i class="fa-brands fa-facebook fa-xl"></i>
+
+                                            <i class="fab fa-linkedin-in"> </i>
+
                                         </a>
+
                                     </li>
+
                                     <li class="list-inline-item">
+
                                         <a class="p-2 fa-lg ins-ic">
-                                            <i class="fa-brands fa-instagram fa-xl"></i>
+
+                                            <i class="fab fa-instagram"> </i>
+
                                         </a>
+
                                     </li>
+
                                 </ul>
 
                             </div>
@@ -717,6 +756,7 @@
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     function addToCart(id, size, quantity) {
@@ -724,10 +764,28 @@
             url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
             type: 'GET',
             success: function (data) {
-                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Thêm sản phẩm thành công!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             },
             error: function (data) {
-                alert('Bị lỗi! Không thêm được sản phẩm');
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Thêm sản phẩm thất bại!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             }
         });
     }

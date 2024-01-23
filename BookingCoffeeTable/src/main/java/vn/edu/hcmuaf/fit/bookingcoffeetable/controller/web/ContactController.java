@@ -14,18 +14,21 @@ public class ContactController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/web/contact-us.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/web/contact.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String fullName = request.getParameter("name");
+        request.setCharacterEncoding("UTF-8");
+
+        String fullName = request.getParameter("fullname");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String subject = request.getParameter("subject");
-        String content = request.getParameter("feedback");
+        String content = request.getParameter("content");
         Contact contact = new Contact(fullName, email, phone, subject, content);
         contactService.save(contact);
+
         response.sendRedirect(request.getContextPath() + "/contact");
     }
 }

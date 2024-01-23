@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.auth;
 
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.constant.Message;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.QUERIES;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
 
@@ -34,8 +35,7 @@ public class LoginController extends HttpServlet {
             request.setAttribute("error", error);
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
         } else if (user.getStatus() == 0) {
-            error = "Your account has been blocked";
-            request.setAttribute("error", error);
+            request.setAttribute("error", Message.ACCOUNT_BLOCKED);
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
         } else if (user.getEmailVerified() == 0) {
             response.sendRedirect(request.getContextPath() + "/verify");

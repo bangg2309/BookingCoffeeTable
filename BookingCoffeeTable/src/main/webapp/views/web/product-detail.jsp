@@ -22,6 +22,7 @@
     <!-- Custom styles -->
     <style></style>
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/productDetail.css"/>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 </head>
 
 <body>
@@ -128,18 +129,18 @@
                         <c:choose>
                             <c:when test="${product.discount != 0}">
                                 <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle"><fmt:formatNumber
+                                    <s class="text-muted me-2 small align-middle" id="defaultPrice"><fmt:formatNumber
                                             value="${product.price}" type="currency"
                                             currencyCode="VND"/> </s
                                     ><span
-                                        class="align-middle"><fmt:formatNumber
+                                        class="align-middle" id="salePrice"><fmt:formatNumber
                                         value="${product.salePrice}" type="currency"
                                         currencyCode="VND"/></span>
                                 </h5>
                             </c:when>
                             <c:otherwise>
                                 <h5 class="mb-3">
-                                                    <span class="align-middle"><fmt:formatNumber
+                                                    <span class="align-middle" id="price"><fmt:formatNumber
                                                             value="${product.price}" type="currency"
                                                             currencyCode="VND"/></span>
                                 </h5>
@@ -151,10 +152,10 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <input id="quantity"
-                                                type="number"
-                                                class="form-control"
-                                                value="1"
-                                                min="1"
+                                               type="number"
+                                               class="form-control"
+                                               value="1"
+                                               min="1"
                                         />
                                         <label class="form-label" for="quantity"
                                         >Số lượng</label
@@ -163,11 +164,10 @@
                                 </div>
                                 <!-- Size -->
                                 <div class="col-md-6 mb-4">
-                                    <select class="select" id="size">
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-
+                                    <select class="select" id="size" onchange="updatePrice()">
+                                        <c:forEach items="${product.productVariants}" var="productVariant">
+                                            <option value="${productVariant.size}">${productVariant.size}</option>
+                                        </c:forEach>
                                     </select>
                                     <label class="form-label select-label">Size</label>
                                 </div>
@@ -288,6 +288,10 @@
             </div>
         </section>
         <!-- Section: Reviews -->
+
+        <c:forEach var="variant" items="${product.productVariants}">
+            <input type="hidden" name="${variant.size}" id="${variant.size}" value="${variant.pricePlus}">
+        </c:forEach>
     </div>
 </main>
 <!--Main layout-->
@@ -303,15 +307,17 @@
 <script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Custom scripts -->
 <script>
+
+    // Xử lý đánh giá sao
     const ratingElement = document.querySelector('#rating');
     const ratingInput = document.getElementById('starRate');
     ratingElement.addEventListener('scoreSelect.mdb.rating', function (event) {
         const selectedValue = event.value;
         console.log('Selected value: ', selectedValue);
         ratingInput.value = selectedValue;
-
     });
 
 
@@ -324,13 +330,45 @@
             url: '/add-cart?id=' + id + '&size=' + size + '&quantity=' + quantity,
             type: 'GET',
             success: function (data) {
-                alert('Sản phẩm được thêm thành công vào đơn đặt bàn');
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Thêm sản phẩm thành công!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             },
             error: function (data) {
-                alert('Bị lỗi! Không thêm được sản phẩm');
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Thêm sản phẩm thất bại!",
+                    fontsize: 20,
+                    showConfirmButton: false,
+                    width: 300,
+                    height: 50,
+                    timer: 1000
+                });
             }
         });
     }
+
+    function updatePrice() {
+        let size = $('#size').val();
+        let pricePlus = parseFloat($('#' + size).val());
+        let price = parseFloat(${product.price});
+        let salePrice = parseFloat(${product.salePrice});
+
+        let newPrice = pricePlus + price;
+        $('#price').html(newPrice);
+        $('#defaultPrice').html(newPrice);
+        $('#salePrice').html(pricePlus + salePrice);
+        console.log(newPrice);
+    }
+
 </script>
 
 </body>

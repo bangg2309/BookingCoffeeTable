@@ -3,7 +3,6 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.service;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.VerifyEmail;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.UserDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.VerifyEmailDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
@@ -28,20 +27,18 @@ public class VerifyEmailService {
         return instance;
     }
 
-    public void insertVerifyEmail(int userId, String code) {
-        verifyEmailDAO.insertVerifyEmail(userId, code);
+    public void insertVerifyEmail(int userId, String code, String type) {
+        verifyEmailDAO.insertVerifyEmail(userId, code, type);
     }
 
-    public VerifyEmail selectVerifyEmailByCode(String code) {
-        List<VerifyEmail> verifyEmails = verifyEmailDAO.selectVerifyEmailByCode(code);
+    public VerifyEmail selectVerifyEmailByCode(String code, String type) {
+        List<VerifyEmail> verifyEmails = verifyEmailDAO.selectVerifyEmailByCode(code, type);
         if (verifyEmails.isEmpty()) return null;
         return verifyEmails.get(0);
     }
 
-    public VerifyEmail selectVerifyEmailByUserId(int userId) {
-        List<VerifyEmail> verifyEmails = verifyEmailDAO.selectVerifyEmailByUserId(userId);
-        if (verifyEmails.isEmpty()) return null;
-        return verifyEmails.get(0);
+    public void deleteVerifyEmailByUserIdAndType(int userId, String type) {
+        verifyEmailDAO.deleteVerifyEmailByUserIdAndType(userId, type);
     }
 
     public void delete(int id) {

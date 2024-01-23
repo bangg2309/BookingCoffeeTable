@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 
@@ -47,10 +47,22 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 row">
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" action="/forget-password" method="post">
 					<span class="login100-form-title p-b-43 mb-4">
 						Quên Mật Khẩu
 					</span>
+                    <c:if test="${error != null}">
+                        <div class="alert" role="alert" data-mdb-color="danger" data-mdb-alert-init>
+                            <i class="fas fa-times-circle me-3"></i>
+                                ${error}
+                        </div>
+                    </c:if>
+                    <c:if test="${message != null}">
+                        <div class="alert" role="alert" data-mdb-color="primary" data-mdb-alert-init>
+                            <i class="fas fa-exclamation-triangle me-3"></i>
+                                ${message}
+                        </div>
+                    </c:if>
 
                     <div class="wrap-input100 validate-input" data-validate="Cần có email hợp lệ: ex@abc.xyz">
                         <input class="input100" type="text" name="email">
@@ -58,7 +70,7 @@
                         <span class="label-input100">Email</span>
                     </div>
                     <div class="">
-                        <button class="login100-form-btn mt-4">
+                        <button type="submit" class="login100-form-btn mt-4">
                             Lấy lại mật khẩu
                         </button>
                     </div>
@@ -73,7 +85,7 @@
 </div>
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
@@ -83,9 +95,6 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
-
-
-<!--===============================================================================================-->
 <script src="<c:url value="/views/template/custom/js/login.js"/>"></script>
 </body>
 </html>

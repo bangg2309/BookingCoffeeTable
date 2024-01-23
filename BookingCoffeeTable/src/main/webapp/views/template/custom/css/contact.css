@@ -33,7 +33,7 @@ a:hover {
 }
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0px;
 }
 
@@ -65,30 +65,74 @@ textarea:focus, input:focus {
     border-color: transparent !important;
 }
 
-.fas.fa-map-marker-alt.pr-2, .fas.fa-phone.pr-2, .fas.fa-envelope.pr-2{
+.fas.fa-map-marker-alt.pr-2, .fas.fa-phone.pr-2, .fas.fa-envelope.pr-2 {
     padding-right: 10px;
 }
 
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
 
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder {
+    color: transparent;
+}
 
-input::-webkit-input-placeholder { color: #999999;}
-input:-moz-placeholder { color: #999999;}
-input::-moz-placeholder { color: #999999;}
-input:-ms-input-placeholder { color: #999999;}
+input:focus::-moz-placeholder {
+    color: transparent;
+}
 
-textarea::-webkit-input-placeholder { color: #999999;}
-textarea:-moz-placeholder { color: #999999;}
-textarea::-moz-placeholder { color: #999999;}
-textarea:-ms-input-placeholder { color: #999999;}
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus::-moz-placeholder {
+    color: transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+input::-webkit-input-placeholder {
+    color: #999999;
+}
+
+input:-moz-placeholder {
+    color: #999999;
+}
+
+input::-moz-placeholder {
+    color: #999999;
+}
+
+input:-ms-input-placeholder {
+    color: #999999;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #999999;
+}
+
+textarea:-moz-placeholder {
+    color: #999999;
+}
+
+textarea::-moz-placeholder {
+    color: #999999;
+}
+
+textarea:-ms-input-placeholder {
+    color: #999999;
+}
 
 
 label {
@@ -144,9 +188,17 @@ iframe {
 
 /*==================================================================
 [ Background ]*/
-.bg1 {background: #3b5998;}
-.bg2 {background: #1da1f2;}
-.bg3 {background: #cd201f;}
+.bg1 {
+    background: #3b5998;
+}
+
+.bg2 {
+    background: #1da1f2;
+}
+
+.bg3 {
+    background: #cd201f;
+}
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -206,9 +258,8 @@ iframe {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
-
 
 
 /*==================================================================
@@ -233,7 +284,6 @@ iframe {
 }
 
 
-
 /*------------------------------------------------------------------
 [ Input ]*/
 
@@ -252,6 +302,7 @@ iframe {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
 .text-input100 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -473,7 +524,6 @@ input.input100 {
 }
 
 
-
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -578,7 +628,6 @@ input.input100 {
 }
 
 
-
 /*==================================================================
 [ Social ]*/
 .login100-form-social-item {
@@ -593,23 +642,28 @@ input.input100 {
     background: #333333;
     color: #fff;
 }
-footer{
+
+footer {
     margin-top: 0px;
 }
-.main-login .container-login100 .wrap-login100 .flex-sb-m .txt1{
+
+.main-login .container-login100 .wrap-login100 .flex-sb-m .txt1 {
     padding-left: 25px;
 }
-.hidden-sn{
+
+.hidden-sn {
     background-image: url('../image/contactUS/backgroup.png');
     margin-top: -100px;
     padding-top: 100px;
     padding-bottom: 20px;
 
 }
-.text-lg-left p{
+
+.text-lg-left p {
     font-size: 15px;
 }
-.send:hover{
+
+.send:hover {
     color: white;
 }
 
@@ -628,11 +682,11 @@ li {
     list-style: none;
 }
 
-.navbar-brand{
+.navbar-brand {
     padding-right: 20px;
 }
 
-.navbar .scroll-to-section{
+.navbar .scroll-to-section {
     padding-right: 40px;
 }
 
@@ -640,55 +694,107 @@ li {
     padding-right: 0px;
 }
 
-.navbar a{
+.navbar a {
     font-size: 16px;
     font-weight: bold;
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-body-tertiary.fixed-top{
+.navbar.navbar-expand-lg.navbar-light.bg-body-tertiary.fixed-top {
     background-color: white;
 }
 
-.navbar div li a:hover{
+.navbar div li a:hover {
     color: #bf9369;
 }
 
-@media screen and (max-width:1200px) {
-    .navbar-brand{
+@media screen and (max-width: 1200px) {
+    .navbar-brand {
         padding-right: 10px;
     }
 
-    .navbar .scroll-to-section{
+    .navbar .scroll-to-section {
         padding-right: 20px;
     }
-    #top{
+
+    #top {
         margin-top: 0px;
     }
 
 }
 
-@media screen and (max-width:990px) {
-    .home{
+@media screen and (max-width: 990px) {
+    .home {
         margin-top: 20px;
     }
-    .login{
+
+    .login {
         display: flex;
         flex-direction: column;
 
     }
 
-    .login li{
+    .login li {
         width: 100%;
     }
 
-    .scroll-to-section{
+    .scroll-to-section {
         border-bottom: 1px solid;
         margin-bottom: 20px;
     }
 
 }
 
-.section-heading{
+.section-heading {
     margin: 50px;
+}
+
+main {
+    margin-top: 100px;
+}
+
+.main .form-control {
+    margin-bottom: 20px;
+}
+
+.main .contact {
+    background-color: #bf9369;
+}
+
+.main .list-inline-item .p-2:hover {
+    color: white;
+}
+
+.main .container .btn-floating {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 10px;
+    color: #fff;
+    background-color: #bf9369;
+    position: relative;
+    z-index: 1;
+    /*transition: all .3s ease-in-out;*/
+    /*-webkit-transition: all .3s ease-in-out;*/
+    /*-moz-transition: all .3s ease-in-out;*/
+}
+
+.main .icon {
+    float: right;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.main .container-fluid .card {
+    margin-top: 80px;
+}
+.main .container-fluid .fa-paper-plane:before {
+    font-size: 25px;
 }
 

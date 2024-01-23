@@ -18,7 +18,7 @@ public class QUERIES {
     public class CONTACT {
         public static final String FIND_ALL_CONTACT = "SELECT * FROM contacts";
         public static final String DELETE_CONTACT = "DELETE FROM contacts WHERE id = :id";
-        public static final String SAVE = "INSERT INTO contacts (fullname, email, phone, subject,content) VALUES (:fullname, :email, :phone, :subject,content)";
+        public static final String SAVE = "INSERT INTO contacts (fullname, email, phone, subject,content) VALUES (:fullname, :email, :phone, :subject, :content)";
     }
 
     //ROLE
@@ -213,10 +213,12 @@ public class QUERIES {
 
     //VERIFY EMAIL
     public class VERIFY_EMAIL {
-        public static final String INSERT_VERIFY_EMAIL = "INSERT INTO verifications (userId, code) VALUES (:userId, :code)";
-        public static final String SELECT_VERIFY_EMAIL_BY_USER_ID = "SELECT * FROM verifications WHERE userId = :userId";
-        public static final String SELECT_VERIFY_EMAIL_BY_CODE = "SELECT * FROM verifications WHERE code = :code";
-        public static final String DELETE = "DELETE FROM verifications WHERE id = :id";
+
+        public static final String INSERT_VERIFY_EMAIL = "INSERT INTO verifications (userId, code,type) VALUES (:userId, :code, :type)";
+        public static final String SELECT_VERIFY_EMAIL_BY_CODE = "SELECT * FROM verifications WHERE code = :code AND type = :type";
+        public static final String DELETE_VERIFY_EMAIL_BY_USER_ID_AND_TYPE = "DELETE FROM verifications WHERE userId = :userId AND type = :type";
+      public static final String DELETE = "DELETE FROM verifications WHERE id = :id";
+
     }
 
 }

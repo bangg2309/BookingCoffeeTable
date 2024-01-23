@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,12 +30,11 @@
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/>">
 
 
-
 </head>
 
 <body>
 <!-- ***** Header Area Start ***** -->
-<%@ include file="layout/header.jsp"%>
+<%@ include file="layout/header.jsp" %>
 <!-- ***** Header Area End ***** -->
 
 <div class="main_content" style="margin-top: 80px">
@@ -48,7 +47,7 @@
                             <div class="col-xl-6 d-none d-xl-block justify-content-center p-2">
                                 <img src="<c:url value="/views/template/custom/image/reservation/coffee%20shop%20(1).png"/>"
                                      alt="Sample photo" class="img-fluid"
-                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"/>
                             </div>
                             <div class="col-xl-6">
                                 <form action="${pageContext.request.contextPath}/reservation" method="post">
@@ -58,8 +57,10 @@
                                         <div class="row">
                                             <div class="col-md-12 mb-4">
                                                 <div class="form-outline">
-                                                    <input type="text" id="fullname" name="fullname" class="form-control form-control-lg" value="${userSession.fullname}" required />
-                                                    <label class="form-label"  for="fullname">Họ Và Tên Người Đặt</label>
+                                                    <input type="text" id="fullname" name="fullname"
+                                                           class="form-control form-control-lg"
+                                                           value="${userSession.fullname}" required/>
+                                                    <label class="form-label" for="fullname">Họ Và Tên Người Đặt</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,21 +68,26 @@
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
                                                 <div class="form-outline">
-                                                    <input type="text" id="phone" name="phone" class="form-control form-control-lg" value="${userSession.phone}" required />
-                                                    <label class="form-label"  for="phone">Số Điện Thoại</label>
+                                                    <input type="text" id="phone" name="phone"
+                                                           class="form-control form-control-lg"
+                                                           value="${userSession.phone}" required/>
+                                                    <label class="form-label" for="phone">Số Điện Thoại</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4">
                                                 <div class="form-outline">
-                                                    <input type="text" id="email" name="email" class="form-control form-control-lg" value="${userSession.email}"  />
-                                                    <label class="form-label"  for="email">Email</label>
+                                                    <input type="text" id="email" name="email"
+                                                           class="form-control form-control-lg"
+                                                           value="${userSession.email}"/>
+                                                    <label class="form-label" for="email">Email</label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="text" id="note" name="note" class="form-control form-control-lg" />
-                                            <label class="form-label"  for="note">Ghi Chú</label>
+                                            <input type="text" id="note" name="note"
+                                                   class="form-control form-control-lg"/>
+                                            <label class="form-label" for="note">Ghi Chú</label>
                                         </div>
 
                                         <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
@@ -89,16 +95,16 @@
                                             <h6 class="mb-0 me-4">Phương Thức Thanh Toán: </h6>
 
                                             <select name="paymentMethod" id="singleSelection" class="select" required>
-                                                <option value="1">Visa</option>
-                                                <option value="2">Mater Card</option>
-                                                <option value="3">Momo</option>
-                                                <option value="3" selected>Tiền Mặt</option>
+                                                <option value="VNPAY">VNPAY</option>
+                                                <option value="Tiền mặt" selected>Tiền Mặt</option>
                                             </select>
 
                                         </div>
                                         <div class="d-flex justify-content-end pt-3">
-                                            <a class="btn btn-warning btn-lg" href="${pageContext.request.contextPath}/cart">Quay lại</a>
-                                            <button type="submit" class="btn btn-success btn-lg ms-2" >Xác nhận</button>
+                                            <a class="btn btn-warning btn-lg"
+                                               href="${pageContext.request.contextPath}/cart">Quay lại và thanh toán
+                                                sau</a>
+                                            <button type="submit" class="btn btn-success btn-lg ms-2">Xác nhận</button>
                                         </div>
                                     </div>
                                 </form>
@@ -117,7 +123,7 @@
 <!-- ***** Main Banner Area End ***** -->
 
 <!-- ***** Footer Start ***** -->
-<%@ include file="layout/footer.jsp"%>
+<%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
 
 <!-- jQuery -->

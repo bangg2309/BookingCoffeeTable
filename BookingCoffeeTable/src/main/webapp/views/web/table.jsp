@@ -25,6 +25,8 @@
     <!-- Custom css-->
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/table.css"/>">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
 </head>
 
 <body>
@@ -160,6 +162,7 @@
 <!---->
 <!---->
 <script src="<c:url value="/views/template/paging/jquery.twbsPagination.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
     let totalPages = ${totalPage};
@@ -221,12 +224,29 @@
             if (parsedStartTime > currentDateTimePlus15Minutes) {
                 if (parsedEndTime > parsedStartTime) {
                     ajaxRun(count, text, startTime, endTime, areaValue);
-                } else alert('Thoi gian ket thuc phai lon hon thoi gian bat dau 15 phút.');
-            } else alert('Thoi gian bat dau phai lon hon thoi gian hien tai 15 phút.');
+                } else Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Thời gian kết thúc phải lớn hơn thời gian bắt đầu 15 phút!",
+                });
+
+
+            } else
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Thời gian bắt đầu phải lớn hơn thời gian kết thúc 15 phút!",
+                });
+            ;
 
 
         } else {
-            alert('Vui lòng chọn ngày đặt bàn.');
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Vui lòng chọn ngày đặt bàn!",
+            });
+
         }
     });
 
@@ -270,7 +290,11 @@
             window.location.href = 'home.html';
         } else {
             // Ngược lại, hiển thị cảnh báo hoặc thực hiện các hành động khác
-            alert('Vui lòng chọn thời gian hợp lệ!');
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Vui lòng chọn thời gian hợp lệ!",
+            });
         }
     }
 
@@ -314,7 +338,11 @@
     function checkTimeAndRedirect(tableId, startTime, endTime) {
         if (startTime === "0000-00-00 00:00:00" || endTime === "0000-00-00 00:00:00") {
             // Nếu có giá trị cho cả startTime và endTime, chuyển hướng trang
-            alert('Vui lòng chọn giờ trước khi chọn bàn.');
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Vui lòng chọn giờ trước khi đặt bàn!",
+            });
         } else {
             // Nếu thiếu giá trị, hiển thị thông báo hoặc thực hiện hành động khác
 
