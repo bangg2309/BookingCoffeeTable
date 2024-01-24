@@ -44,7 +44,13 @@
                     <div class="side-bar ">
                         <div class="user-info">
                             <img class="img-profile img-circle img-responsive center-block"
-                                 src="${userSession.avatar}" alt="avatar">
+                            <c:if test="${userSession.avatar != null}">
+                                 src="${userSession.avatar}"
+                            </c:if>
+                            <c:if test="${userSession.avatar == null}">
+                                 src="<c:url value="/views/template/custom/image/avatar/default.svg"/>"
+                            </c:if>
+                                 alt="Avatar">
                             <ul class="meta list list-unstyled">
                                 <li class="fullname"
                                     style="font-weight: bold; font-size: 20px">${userSession.fullname}</li>
@@ -68,7 +74,13 @@
                                 <div class="form-group avatar row">
                                     <figure class="figure col-md-2 col-sm-3 col-xs-12">
                                         <img class="img-rounded img-responsive"
-                                             src="${userSession.avatar}" alt="avatar">
+                                        <c:if test="${userSession.avatar != null}">
+                                             src="${userSession.avatar}"
+                                        </c:if>
+                                        <c:if test="${userSession.avatar == null}">
+                                             src="<c:url value="/views/template/custom/image/avatar/default.svg"/>"
+                                        </c:if>
+                                             alt="Avatar" id="imgProfile">
                                     </figure>
                                     <div class="form-inline col-md-10 col-sm-9 col-xs-12">
                                         <input type="file" class="file-uploader pull-left">
@@ -92,27 +104,31 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Và Tên</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" name="fullname" value="${userSession.fullname}">
+                                        <input type="text" class="form-control" name="fullname"
+                                               value="${userSession.fullname}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" name="email" value="${userSession.email}">
+                                        <input type="email" class="form-control" name="email"
+                                               value="${userSession.email}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="number" class="form-control" name="phone" value="${userSession.phone}">
+                                        <input type="number" class="form-control" name="phone"
+                                               value="${userSession.phone}">
                                     </div>
                                 </div>
                             </fieldset>
                             <hr>
                             <div class="form-group row">
                                 <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                    <input class="btn text-white" style="background-color: #bf9369" type="submit"
-                                           value="Cập nhật thông tin" style="background-color: #bf9369; color: white">
+                                    <button class="btn text-white" style="background-color: #bf9369" type="submit">
+                                        <span style="background-color: #bf9369; color: white">Cập nhật thông tin </span>
+                                    </button>
                                 </div>
                             </div>
                             <input type="hidden" name="userId" value="${userSession.id}">

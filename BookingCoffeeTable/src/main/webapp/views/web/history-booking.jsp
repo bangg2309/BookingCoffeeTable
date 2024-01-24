@@ -36,7 +36,13 @@
                     <div class="side-bar ">
                         <div class="user-info">
                             <img class="img-profile img-circle img-responsive center-block"
-                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            <c:if test="${userSession.avatar != null}">
+                                 src="${userSession.avatar}"
+                            </c:if>
+                            <c:if test="${userSession.avatar == null}">
+                                 src="<c:url value="/views/template/custom/image/avatar/default.svg"/>"
+                            </c:if>
+                                 alt="Avatar">
                             <ul class="meta list list-unstyled">
                                 <li class="name" style="font-weight: bold; font-size: 20px">${userSession.fullname}
                                 </li>
@@ -48,7 +54,6 @@
                                 <li><a href="/profile"><span class="fa fa-user"></span> Thông tin</a></li>
                                 <li><a href="/change-password"><span class="fa fa-cog"></span> Thay Đổi Mật Khẩu</a>
                                 </li>
-
                                 <li class="active"><a href="#"><span class="fa fa-clock-o"></span>
                                     Lịch Sử</a></li>
                             </ul>
@@ -60,35 +65,45 @@
                             <div class="d-md-flex justify-content-between mb-5">
                                 <div>
                                     <form action="${pageContext.request.contextPath}/history-booking" method="get">
-                                    <select class="select" name="sortOrder" id="sortOrder" onchange="this.form.submit()">
-                                        <option value="DESC" ${"DESC".equals(sortOrder) ? "selected" : ""}>Mới nhất</option>
-                                        <option value="ASC" ${"ASC".equals(sortOrder) ? "selected" : ""}>Cũ nhất</option>
-                                    </select>
+                                        <select class="select" name="sortOrder" id="sortOrder"
+                                                onchange="this.form.submit()">
+                                            <option value="DESC" ${"DESC".equals(sortOrder) ? "selected" : ""}>Mới
+                                                nhất
+                                            </option>
+                                            <option value="ASC" ${"ASC".equals(sortOrder) ? "selected" : ""}>Cũ nhất
+                                            </option>
+                                        </select>
                                     </form>
                                 </div>
                             </div>
                             <c:forEach items="${reservations}" var="reservation">
                                 <div class="mb-8">
                                     <div class="mb-4">
-                                        <fmt:parseDate var="parsedCreatedDate" value="${reservation.createdDate}" pattern="yyyy-MM-dd" />
-                                        <h4 class="border-bottom pb-3 mb-4"><fmt:formatDate value="${parsedCreatedDate}" pattern="dd/MM/yyyy"/></h4>
+                                        <fmt:parseDate var="parsedCreatedDate" value="${reservation.createdDate}"
+                                                       pattern="yyyy-MM-dd"/>
+                                        <h4 class="border-bottom pb-3 mb-4"><fmt:formatDate value="${parsedCreatedDate}"
+                                                                                            pattern="dd/MM/yyyy"/></h4>
                                         <div class="d-flex justify-content-end align-items-center">
-                                            <a href="/reservation-detail?id=${reservation.id}" class="text-primary">Xem chi tiết</a>
+                                            <a href="/reservation-detail?id=${reservation.id}" class="text-primary">Xem
+                                                chi tiết</a>
                                         </div>
                                     </div>
                                     <div class="d-md-flex mb-5">
                                         <div class="me-5">
-                                            <fmt:parseDate var="parsedDate" value="${reservation.startTime}" pattern="yyyy-MM-dd" />
+                                            <fmt:parseDate var="parsedDate" value="${reservation.startTime}"
+                                                           pattern="yyyy-MM-dd"/>
                                             <h6>Ngày đặt bàn</h6>
                                             <p><fmt:formatDate value="${parsedDate}" pattern="dd/MM/yyyy"/></p>
                                         </div>
                                         <div class="me-5">
-                                            <fmt:parseDate var="parsedstartTime" value="${reservation.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                            <fmt:parseDate var="parsedstartTime" value="${reservation.startTime}"
+                                                           pattern="yyyy-MM-dd HH:mm:ss"/>
                                             <h6>Thời gian đặt</h6>
                                             <p><fmt:formatDate value="${parsedstartTime}" pattern="HH:mm:ss"/></p>
                                         </div>
                                         <div class="me-5">
-                                            <fmt:parseDate var="parsedsendTime" value="${reservation.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                            <fmt:parseDate var="parsedsendTime" value="${reservation.endTime}"
+                                                           pattern="yyyy-MM-dd HH:mm:ss"/>
                                             <h6>Thời gian kết thúc</h6>
                                             <p><fmt:formatDate value="${parsedsendTime}" pattern="HH:mm:ss"/></p>
                                         </div>

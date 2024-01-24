@@ -37,11 +37,15 @@ public class CheckoutResultController extends HttpServlet {
                 System.out.println(cart.getProducts().get(key).getId());
                 reservationProductService.save(cart.getProducts().get(key).getId(), reservationId, cart.getProducts().get(key).getQuantity(), cart.getProducts().get(key).getTotalPrice(), cart.getProducts().get(key).getSize());
             }
+
             session.removeAttribute("cart");
             session.removeAttribute("reservation");
+
+            System.out.println("Thanh toán thành công!");
             request.setAttribute("checkoutSuccess", "Thanh toán thành công!");
             request.getRequestDispatcher("/views/web/checkout-result.jsp").forward(request, response);
         } else {
+            System.out.println("Thanh toán thất bại!");
             request.setAttribute("checkoutError", "Thanh toán thất bại!");
             request.getRequestDispatcher("/views/web/checkout-result.jsp").forward(request, response);
         }

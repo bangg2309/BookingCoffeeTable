@@ -23,8 +23,8 @@ public class ChangePasswordController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("userId");
-        User user = userService.findById(Integer.parseInt(id));
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("userSession");
 
         String oldPassword = request.getParameter("oldPassword");
         String newPassword = request.getParameter("newPassword");
@@ -34,16 +34,16 @@ public class ChangePasswordController extends HttpServlet {
 
         if (oldPassword.equals(user.getPassword())) {
             if (newPassword.equals(confirmPassword)) {
-                user.setPassword(newPassword);
-                userService.update(user);
-                request.setAttribute("message", "Đổi mật khẩu thành công");
+                userService.updatePassword(user.getId(), newPassword);
+
+                request.setAttribute("messageSuccess", "Đổi mật khẩu thành công");
                 request.getRequestDispatcher("/views/web/change-password.jsp").forward(request, response);
             } else {
-                request.setAttribute("message", "Mật khẩu mới không khớp");
+                request.setAttribute("messageError", "Mật khẩu mới không khớp");
                 request.getRequestDispatcher("/views/web/change-password.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("message", "Mật khẩu cũ không đúng");
+            request.setAttribute("messageError", "Mật khẩu cũ không đúng");
             request.getRequestDispatcher("/views/web/change-password.jsp").forward(request, response);
         }
 
