@@ -22,7 +22,7 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom css-->
-    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/emailVerify.css"/>">
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/checkout-result.css"/>">
 </head>
 <body>
 <div class="main row">
@@ -32,29 +32,38 @@
                  align="klassy cafe html template">
         </a>
     </div>
-    <div class="col-md-12 d-flex justify-content-center p-2 email">
-        <i class="fa fa-envelope fa-3x p-3 rounded-circle" aria-hidden="true"></i>
-    </div>
-    <div class="col-md-12 p-4 content">
-        <h2>Kết quả thanh toán</h2>
+    <div class="col-md-12 d-flex justify-content-center flex-column p-2 email">
+        <h2>Kết quả thanh toán!</h2>
         <c:if test="${not empty checkoutSuccess}">
-            <div class="alert alert-danger" role="alert">
-                <strong>${checkoutSuccess}</strong>
+            <div class="col-md-12 p-4 content d-flex flex-column">
+                <div class="alert" role="alert" data-mdb-color="success" data-mdb-alert-init>
+                    <i class="fas fa-check me-3"></i>
+                        ${checkoutSuccess}
+                </div>
+                <p class="mb-4">
+                    Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Chúc bạn sẽ có những giây phút thư giãn tuyệt vời tại
+                    Coffee Shop
+                </p>
+                <div class="d-flex justify-content-center button mt-4 pb-4">
+                    <a class="btn btn-primary  " href="/home"
+                       style="color: white">Quay lại trang chủ <i class="fa-solid fa-rotate-left ml-1"></i></a>
+                </div>
             </div>
         </c:if>
 
         <c:if test="${not empty checkoutError}">
-            <div class="alert alert-danger" role="alert">
-                <strong>${checkoutError}</strong>
+            <div class="alert" role="alert" data-mdb-color="danger" data-mdb-alert-init>
+                <i class="fas fa-times-circle me-3"></i>
+                    ${checkoutError}
+            </div>
+            <p class="mb-4">
+                Trong quá trình thanh toán đã xảy ra lỗi, vui lòng thanh toán lại!
+            </p>
+            <div class="d-flex justify-content-center button mt-4 pb-4">
+                <a class="btn btn-primary  " href="/cart"
+                   style="color: white">Quay lại trang thanh toán <i class="fa-solid fa-rotate-left ml-1"></i></a>
             </div>
         </c:if>
-
-
-        <div class="d-flex justify-content-center button mt-4 pb-4">
-            <a class="btn btn-primary  " href="https://mail.google.com/mail/u/1/#inbox"
-               style="color: white">Đến Hộp Thư</a>
-        </div>
-
     </div>
     <ul class="list-inline text-center list-unstyled">
         <li class="list-inline-item">

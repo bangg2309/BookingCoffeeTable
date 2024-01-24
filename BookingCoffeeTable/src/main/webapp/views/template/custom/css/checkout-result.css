@@ -1,0 +1,48 @@
+
+.main {
+    margin: auto;
+    width: 600px;
+    border: 1px silver solid;
+    margin-top: 30px;
+}
+
+.fa-thin {
+    height: 50px;
+}
+
+.email {
+    background-color: #bf9369;
+    text-align: center;
+}
+.email h2{
+    color: white;
+    font-size: 25px;
+}
+.email .logo i{
+    margin-top: -5px;
+    padding: 20px;
+    background: white;
+    border-radius: 50%;
+}
+
+
+.rounded-circle {
+    background-color: white;
+    color: #bf9369;
+}
+
+.button {
+    border-bottom: #bf9369 5px solid;
+
+}
+
+.fa-brands {
+    color: #bf9369;
+}
+.text-center :hover {
+    color: #3b71ca;
+    cursor: pointer;
+}
+.content{
+    text-align: center;
+}
