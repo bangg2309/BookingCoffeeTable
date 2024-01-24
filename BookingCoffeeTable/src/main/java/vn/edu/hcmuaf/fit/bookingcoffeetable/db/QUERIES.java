@@ -149,8 +149,23 @@ public class QUERIES {
                 "T.seatCount >= :seatCount AND\n" +
                 "(R.id ISNULL OR (R.endTime <= :endTime OR R.startTime >= :startTime));\n";
 
+        public static final String SELECT_TABLE_PAGE =
+                "SELECT DISTINCT t.* FROM tables t " +
+                        "LEFT JOIN reservations r ON t.id = r.tableId " +
+                        "WHERE " +
+                        "(areaId IS NULL OR areaId = :areaId OR :areaId IS NULL) AND " +
+                        "(r.id IS NULL OR r.endTime <= CURRENT_DATE) AND " +
+                        "NOT EXISTS (" +
+                        "SELECT 1 FROM reservations r2 " +
+                        "WHERE r2.tableId = t.id AND " +
+                        "(r2.startTime <= :endTime AND r2.endTime >= :startTime)" +
+                        ") AND " +
+                        "(r.id IS NULL OR (r.endTime <= :startTime OR r.startTime >= :endTime)) " +
+                        "AND t.seatCount >= :count AND " +
+                        "LOWER(t.location) LIKE LOWER(CONCAT('%', :find, '%')) " +
+                        "ORDER BY t.tableNum " +
+                        "LIMIT :limit OFFSET :offset";
 
-        public static final String SELECT_TABLE_PAGE = "SELECT DISTINCT t.* FROM tables t LEFT JOIN reservations r ON t.id = r.tableId WHERE (areaId IS NULL OR areaId = :areaId OR :areaId IS NULL) AND (r.id IS NULL OR (r.startTime > :startTime OR r.endTime < :endTime)) AND t.seatCount >= :count AND LOWER(t.location) LIKE LOWER(CONCAT('%', :find, '%')) LIMIT :limit OFFSET :offset";
         public static final String COUNT_TABLE = "SELECT count(*) FROM tables";
         public static final String SELECT_TABLE_BY_ID = "SELECT * FROM tables WHERE id = :id";
         public static final String SAVE_TABLE = "INSERT INTO tables (tableNum, areaId, seatCount, location, image, status) VALUES (:tableNum, :areaId, :seatCount, :location, :image, :status)";
@@ -190,6 +205,7 @@ public class QUERIES {
         public static final String SELECT_RESERVATION_LATEST_BY_USER_ID = "SELECT * FROM reservations WHERE userId = :userId ORDER BY createdDate ASC";
 
         public static final String SELECT_ALL_RESERVATION = "SELECT * FROM reservations";
+        public static final String SELECT_ALL_RESERVATION_BY_STATISTICAL = "SELECT * FROM reservations WHERE status = 1";
 
         public static final String SAVE_RESERVATION = "INSERT INTO reservations (tableId, userId, contactName, contactPhone, contactEmail, startTime, endTime, status, paymentMethod, note, totalPrice, createdDate) VALUES (:tableId, :userId, :contactName, :contactPhone, :contactEmail, :startTime, :endTime, :status, :paymentMethod, :note, :totalPrice, :createdDate)";
         public static final String UPDATE_RESERVATION = "UPDATE reservations SET tableId = :tableId, userId = :userId, contactName = :contactName, contactPhone = :contactPhone, contactEmail = :contactEmail, startTime = :startTime, endTime = :endTime, status = :status, paymentMethod = :paymentMethod, note = :note, totalPrice = :totalPrice, createdDate = :createdDate WHERE id = :id";

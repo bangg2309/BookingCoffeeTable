@@ -41,7 +41,6 @@ public class ListPostsJson extends HttpServlet {
         // Receive request page-index and per-page
         String pageIndex = request.getParameter("page-index");
         String perPage = request.getParameter("per-page");
-        System.out.println("pageIndex: " + pageIndex + " perPage: " + perPage);
         try {
             pageIndexNum = Integer.parseInt(pageIndex);
             perPageNum = Integer.parseInt(perPage);
@@ -52,9 +51,7 @@ public class ListPostsJson extends HttpServlet {
         }
 
         // Fetch tables directly without using a separate thread
-        System.out.println("pageRequest: " + pageRequest.getLimit() + " " + pageRequest.getOffset());
         posts = postService.getPosts(pageRequest.getLimit(), pageRequest.getOffset());
-        System.out.println("posts: " + posts);
 
         if (posts != null) {
             json = new Gson().toJson(posts);

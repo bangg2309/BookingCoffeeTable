@@ -493,7 +493,7 @@
     </div>
 </section>
 
-<div class="section" id="contact_Us">
+<div class="section" id="contact_Us" style="margin-top: 8rem">
     <div class="hidden-sn white-skin animated">
         <div class="container my-5">
 

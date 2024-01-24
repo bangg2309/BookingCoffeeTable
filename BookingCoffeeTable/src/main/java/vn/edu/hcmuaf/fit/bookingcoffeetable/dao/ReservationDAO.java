@@ -25,6 +25,9 @@ public interface ReservationDAO {
     @SqlQuery(QUERIES.RESERVATION.SELECT_ALL_RESERVATION)
     List<Reservation> findAllReservation();
 
+    @SqlQuery(QUERIES.RESERVATION.SELECT_ALL_RESERVATION_BY_STATISTICAL)
+    List<Reservation> findAllReservationByStatiscal();
+
     @SqlUpdate(QUERIES.RESERVATION.SAVE_RESERVATION)
     void saveReservation(@Bind("tableId") int tableId, @Bind("userId") int userId, @Bind("contactName") String contactName, @Bind("contactPhone") int contactPhone, @Bind("contactEmail") String contactEmail, @Bind("startTime") String startTime, @Bind("endTime") String endTime, @Bind("status") int status, @Bind("paymentMethod") String paymentMethod, @Bind("note") String note, @Bind("totalPrice") double totalPrice, @Bind("createdDate") String createdDate);
 
