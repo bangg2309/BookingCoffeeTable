@@ -66,7 +66,7 @@ public class ListTablesJson extends HttpServlet {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-
+        System.out.println(startTime + " " + endTime);
         // Fetch tables directly without using a separate thread
         tables = tableService.getTables(area, startTime, endTime, countNum, find, pageRequest.getLimit(), pageRequest.getOffset());
 

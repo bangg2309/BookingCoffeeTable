@@ -24,8 +24,6 @@
     <link rel="stylesheet" href="<c:url value="/views/admin/assets/css/home.css"/> ">
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/> ">
     <style></style>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../template/custom/css/userProfile.css">
 </head>
 
 <body>

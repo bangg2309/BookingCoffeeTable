@@ -72,7 +72,6 @@ public class ListProductsJson extends HttpServlet {
 
         // Fetch tables directly without using a separate thread
         products = productService.getProducts(category, find, pageRequest.getLimit(), pageRequest.getOffset(), orderBy, ratingValue, from, to);
-        System.out.println("product"+products);
 
         if (products != null) {
             json = new Gson().toJson(products);

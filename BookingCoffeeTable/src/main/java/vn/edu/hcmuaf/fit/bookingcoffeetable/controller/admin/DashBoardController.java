@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(name = "DashBoardController", value = "/admin/dashboard")
 public class DashBoardController extends HttpServlet {
@@ -24,7 +25,7 @@ public class DashBoardController extends HttpServlet {
         double cost = reservationService.getTotalPrice();
         int seatCount = reservationService.getPeople();
         int totalProduct = Integer.parseInt(productService.totalItem());
-        List<Statistical> statisticals = reservationService.getStatistical();
+        Set<Statistical> statisticals = reservationService.getStatistical();
         request.setAttribute("reservationCount", reservationCount);
         request.setAttribute("cost", cost);
         request.setAttribute("seatCount", seatCount);

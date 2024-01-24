@@ -13,14 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <!-- Google Fonts Roboto -->
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/bootstrap.min.css"/>">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/views/template/assets/css/font-awesome.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/templatemo-klassy-cafe.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/>">
-    <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/>">
-
     <!-- MDB ESSENTIAL -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/>"/>
     <!-- MDB PLUGINS -->
@@ -28,9 +20,7 @@
     <!-- Custom styles -->
 
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
-    <link rel="stylesheet"
-          href="<c:url value="/views/template/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css"/>">
-
+    <link rel="stylesheet" href="<c:url value="/views/template/custom/css/home.css"/>">
 </head>
 <body>
 <!-- ***** Header Area Start ***** -->
@@ -92,19 +82,22 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Họ Và Tên</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" name="fullname" value="${userSession.fullname}">
+                                        <input type="text" class="form-control" name="fullname"
+                                               value="${userSession.fullname}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" name="email" value="${userSession.email}">
+                                        <input type="email" class="form-control" name="email"
+                                               value="${userSession.email}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Số Điện Thoại</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="number" class="form-control" name="phone" value="${userSession.phone}">
+                                        <input type="number" class="form-control" name="phone"
+                                               value="${userSession.phone}">
                                     </div>
                                 </div>
                             </fieldset>

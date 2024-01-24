@@ -10,7 +10,9 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.dao.TableDAO;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.db.JDBIConnector;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ReservationService {
 
@@ -71,6 +73,15 @@ public class ReservationService {
         return reservations;
     }
 
+    public List<Reservation> findAllReservationByStatiscal() {
+        List<Reservation> reservations = reservationDAO.findAllReservationByStatiscal();
+        for (Reservation reservation : reservations) {
+            reservation.setReservationProducts(ReservationProductService.getInstance().findReservationProductByReservId(reservation.getId()));
+            reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
+        }
+        return reservations;
+    }
+
     public Reservation save(Reservation reservation) {
         reservationDAO.saveReservation(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
         return findById(reservation.getId());
@@ -84,9 +95,11 @@ public class ReservationService {
     public void deleteReservation(int id) {
         reservationDAO.deleteReservation(id);
     }
+
     public void deleteByUserId(int id) {
         reservationDAO.deleteByUserId(id);
     }
+
     public void deleteByTableId(int id) {
         reservationDAO.deleteByTableId(id);
     }
@@ -104,16 +117,17 @@ public class ReservationService {
         return reservationDAO.count();
     }
 
-    public List<Statistical> getStatistical() {
-        List<Statistical> statisticals = new ArrayList<Statistical>();
-        List<Reservation> reservations = findAllReservation();
+    public Set<Statistical> getStatistical() {
+        Set<Statistical> statisticals = new HashSet<>();
+        List<Reservation> reservations = findAllReservationByStatiscal();
         for (Reservation reservation : reservations) {
             List<Reservation> reservationParent = findReservationByUserId(reservation.getUserId(), "DESC");
+            // Tạo đối tượng Statistical từ Reservation
             Statistical statistical = new Statistical();
             statistical.setReservations(reservationParent);
+            // Thêm vào Set nếu không tồn tại
             statisticals.add(statistical);
         }
-
         return statisticals;
     }
 

@@ -235,7 +235,7 @@
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Thời gian bắt đầu phải lớn hơn thời gian kết thúc 15 phút!",
+                    text: "Thời gian bắt đầu phải lớn hơn thời gian hiện tại 15 phút!",
                 });
             ;
 
