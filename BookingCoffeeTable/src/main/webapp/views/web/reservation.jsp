@@ -96,7 +96,7 @@
 
                                             <select name="paymentMethod" id="singleSelection" class="select" required>
                                                 <option value="VNPAY">VNPAY</option>
-                                                <option value="Tiền mặt" selected>Tiền Mặt</option>
+                                                <option value="Tiền mặt" selected>Tiền mặt</option>
                                             </select>
 
                                         </div>

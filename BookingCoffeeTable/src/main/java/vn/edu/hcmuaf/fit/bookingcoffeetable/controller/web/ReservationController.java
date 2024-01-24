@@ -5,6 +5,7 @@ import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.config.VnPay;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.config.VnPayProperties;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.constant.Payment;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationProductService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationService;
 
@@ -50,6 +51,7 @@ public class ReservationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding(("UTF-8"));
         HttpSession session = request.getSession();
         String fullname = request.getParameter("fullname");
         String phone = request.getParameter("phone");
@@ -62,9 +64,9 @@ public class ReservationController extends HttpServlet {
 
         Reservation reservation = new Reservation(cart.getTable().getId(), userSession.getId(), fullname, Integer.parseInt(phone), email, cart.getStartTime(), cart.getEndTime(), 1, paymentMethod, note, cart.getTotalPrice());
         session.setAttribute("reservation", reservation);
-        if (paymentMethod.equals("Tiền Mặt")) {
+        if (paymentMethod.equals(Payment.CASH)) {
             response.sendRedirect(request.getContextPath() + "/checkout/result");
-        } else if (paymentMethod.equals("VNPAY")) {
+        } else if (paymentMethod.equals(Payment.VNPAY)) {
             int totalPrice = (int) (cart.getTotalPrice());
             String ipAddress = request.getRemoteAddr();
             String orderInfo = "Thanh toan hoa don ";
