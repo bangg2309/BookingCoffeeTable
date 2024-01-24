@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 public class Statistical implements Serializable {
     private User user;
@@ -70,5 +71,18 @@ public class Statistical implements Serializable {
                 "user=" + user +
                 ", reservations=" + reservations +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Statistical that = (Statistical) o;
+        return Objects.equals(user.getFullname(), that.user.getFullname()) &&
+                Objects.equals(reservations, that.reservations);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(user, reservations);
     }
 }
