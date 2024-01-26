@@ -73,17 +73,13 @@
                                 <div class="article-pages">
                                     ${post.shortDescription}
                                     <div>
-                                        <p style="text-align: center">
-                                            <img src="<c:url value='${post.thumbnail}'/>" alt="">
-
-                                        </p>
                                         ${post.description}
 
                                     </div>
                                 </div>
                                 <div class="post-navigation">
                                     <div class="right">
-                                        <a href="home.jsp">Bài sau →</a>
+                                        <a href="/post?id=${post.id + 1}">Bài sau →</a>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +159,7 @@
                         + "</div>"
                         + "<div class='post-content'>"
                         + "<h3><a href='/post?id=" + val.id + "'>" + val.title + "</a></h3>"
-                        + "<span class='author'><a href='home.jsp'>" + val.createdBy + "</a></span>"
+                        + "<span class='author'><a href='home.jsp'>" + val.createdBy + ' ' + "</a></span>"
                         + "<span class='date'>" + val.createdDate + "</span>"
                         + "</div>"
                         + "</li>";
