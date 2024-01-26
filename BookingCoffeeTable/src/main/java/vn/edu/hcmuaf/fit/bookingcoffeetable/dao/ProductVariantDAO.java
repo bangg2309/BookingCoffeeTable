@@ -24,7 +24,7 @@ public interface ProductVariantDAO {
     void deleteProductVariant(@Bind("id") int id);
 
     @SqlUpdate(QUERIES.PRODUCTVARIANT.DELETE)
-    void delete(@Bind("productId") int id);
+    void delete(@Bind("id") int id);
 
 
 }

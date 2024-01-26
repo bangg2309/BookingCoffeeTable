@@ -116,16 +116,17 @@ public class UserAPI extends HttpServlet {
         VerifyEmail verifyEmail = gson.fromJson(request.getReader(), VerifyEmail.class);
         Review review = gson.fromJson(request.getReader(), Review.class);
         Reservation reservation = gson.fromJson(request.getReader(), Reservation.class);
-        if (reservation != null){
+//        System.out.println(reservation.getUserId());
+        if (reservation == null){
             reservationService.deleteByUserId(user.getId());
         }
-        if (review != null){
+        if (review == null){
             reviewService.delete(user.getId());
         }
-        if (verifyEmail != null){
+        if (verifyEmail == null){
             verifyEmailService.delete(user.getId());
         }
-        if (post != null){
+        if (post == null){
             postService.delete(user.getId());
         }
         userService.delete(user.getId());
