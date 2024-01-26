@@ -56,7 +56,7 @@
                     <div class="mb-3">
                         <label for="fullname" class="form-label"><b>Người tạo</b></label>
                         <i class="fas fa-user"></i>
-                        <input type="text" class="form-control" id="fullname" name="fullname" value="${post.createdBy}"
+                        <input type="text" class="form-control" id="fullname" name="createdBy" value="${post.createdBy}"
                                placeholder="Nhập người tạo..." required>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <div class="mb-3">
                         <label for="avatar" class="form-label"><b>Ảnh bài viết</b></label>
                         <i class="fas fa-image"></i>
-                        <input class="form-control" type="file" id="avatar" name="avatar">
+                        <input class="form-control" type="file" id="avatar" name="avatar" value="${post.thumbnail}">
                     </div>
                 </div>
             </div>
@@ -117,7 +117,6 @@
             </button>
 
             <input type="hidden" name="id" id="id" value="${post.id}"/>
-            <input type="hidden" name="post" id="post" value="${post}"/>
         </form>
 
     </div>
@@ -132,6 +131,10 @@
 </body>
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
+<!-- Custom scripts -->
+<script type="text/javascript" src="<c:url value="/views/template/ckeditor/ckeditor.js"/> "></script>
 <script>
 
     var editor = '';
@@ -168,7 +171,7 @@
             success: function (formData) {
                 console.log("SUCCESS : ", formData);
                 alert("Thêm mới thành công");
-                // window.location.href = "/admin/post-management";
+                window.location.href = "/admin/post-management";
             },
             error: function (e) {
                 console.log("ERROR : ", e);
@@ -198,9 +201,6 @@
         })
     }
 </script>
-<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/> "></script>
-<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/> "></script>
-<!-- Custom scripts -->
-<script type="text/javascript" src="<c:url value="/views/template/ckeditor/ckeditor.js"/> "></script>
+
 
 </html>

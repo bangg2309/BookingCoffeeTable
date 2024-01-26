@@ -56,7 +56,6 @@
                     <th>STT</th>
                     <th>Tiêu đề</th>
                     <th>Mô tả ngắn</th>
-                    <th>Mô tả</th>
                     <th>Người tạo</th>
                     <th>Thời gian tạo</th>
                     <th>Trạng thái</th>
@@ -78,9 +77,6 @@
                         </td>
                         <td>
                             <span>${post.shortDescription}</span>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1">${post.description}</p>
                         </td>
                         <td>
                             <p class="fw-normal mb-1">${post.createdBy}</p>
