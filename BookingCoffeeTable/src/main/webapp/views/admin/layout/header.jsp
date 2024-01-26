@@ -76,9 +76,6 @@
           <i class="fas fa-clipboard-list fa-fw me-3 "></i><span>Quản lý đơn đặt bàn</span></a>
         <ul class="sidenav-collapse ">
           <li class="sidenav-item">
-            <a class="sidenav-link" href="/admin/reservation-management/edit">Thêm đơn đặt bàn</a>
-          </li>
-          <li class="sidenav-item">
             <a class="sidenav-link" href="/admin/reservation-management">Danh sách đơn đặt bàn</a>
           </li>
         </ul>

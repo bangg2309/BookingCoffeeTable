@@ -1,88 +1,56 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.bean;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Objects;
 
 public class Statistical implements Serializable {
-    private User user;
-    private List<Reservation> reservations;
-
-    private int reservationCount;
-    private double sumTotalPrice;
-    private int countProduct;
+    private String username;
+    private int phone;
+    private String email;
+    private int orderAmount;
+    ;
+    private double totalCost;
 
     public Statistical() {
     }
 
-    public int getReservationCount() {
-        return countReservation();
+
+    public String getUsername() {
+        return username;
     }
 
-    public double getSumTotalPrice() {
-        return sumTotalPrice();
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public int getCountProduct() {
-        return countProduct();
+    public int getPhone() {
+        return phone;
     }
 
-    public User getUser() {
-        return user;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public String getEmail() {
+        return email;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
+    public int getOrderAmount() {
+        return orderAmount;
     }
 
-    public int countReservation() {
-    	return reservations.size();
+    public void setOrderAmount(int orderAmount) {
+        this.orderAmount = orderAmount;
     }
 
-    public double sumTotalPrice() {
-        double sum = 0;
-        for (Reservation reservation : reservations) {
-            sum += reservation.getTotalPrice();
-        }
-        return sum;
+    public double getTotalCost() {
+        return totalCost;
     }
 
-    public int countProduct(){
-        int count = 0;
-        for (Reservation reservation : reservations) {
-            count += reservation.getReservationProducts().size();
-        }
-        return count;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Statistical{" +
-                "user=" + user +
-                ", reservations=" + reservations +
-                '}';
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Statistical that = (Statistical) o;
-        return Objects.equals(user.getFullname(), that.user.getFullname()) &&
-                Objects.equals(reservations, that.reservations);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(user, reservations);
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
     }
 }

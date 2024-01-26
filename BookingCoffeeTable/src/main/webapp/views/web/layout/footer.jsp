@@ -12,7 +12,8 @@
                 <h5 class="text-uppercase mb-4 ">Về chúng tôi</h5>
 
                 <div>
-                    <img src="<c:url value ="/views/template/custom/image/drink/logo2.png"/>" style="width: 60px;" class="mb-4" alt="">
+                    <img src="<c:url value ="/views/template/custom/image/drink/logo2.png"/>" style="width: 60px;"
+                         class="mb-4" alt="">
 
                     <p class="text-white">
                         Coffee Shop, là điểm hẹn lý tưởng cho những buổi gặp gỡ, những cuộc trò chuyện và những khoảnh

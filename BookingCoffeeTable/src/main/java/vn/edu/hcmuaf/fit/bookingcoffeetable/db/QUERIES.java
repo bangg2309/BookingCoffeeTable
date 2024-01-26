@@ -233,8 +233,13 @@ public class QUERIES {
         public static final String INSERT_VERIFY_EMAIL = "INSERT INTO verifications (userId, code,type) VALUES (:userId, :code, :type)";
         public static final String SELECT_VERIFY_EMAIL_BY_CODE = "SELECT * FROM verifications WHERE code = :code AND type = :type";
         public static final String DELETE_VERIFY_EMAIL_BY_USER_ID_AND_TYPE = "DELETE FROM verifications WHERE userId = :userId AND type = :type";
-      public static final String DELETE = "DELETE FROM verifications WHERE id = :id";
+        public static final String DELETE = "DELETE FROM verifications WHERE id = :id";
 
+    }
+
+    //Statistics
+    public class STATISTICAL {
+        public static final String findAll = "SELECT username, phone, email, COUNT(reservations.id) as orderAmount, SUM(totalPrice) as totalCost FROM users JOIN reservations ON users.id =reservations.userId GROUP BY username,phone,email";
     }
 
 }

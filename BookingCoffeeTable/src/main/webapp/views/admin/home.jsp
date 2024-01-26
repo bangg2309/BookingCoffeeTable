@@ -138,11 +138,10 @@
                         <table class="table table-hover table-borderless table-striped text-nowrap">
                             <thead>
                             <tr>
-                                <th scope="col">Tên khách hàng</th>
+                                <th scope="col">Tên người dùng</th>
                                 <th scope="col">Số điện thoại</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Đơn đã đặt</th>
-                                <th scope="col">Số sản phẩm</th>
                                 <th scope="col">Số tiền</th>
                             </tr>
                             </thead>
@@ -150,12 +149,11 @@
                             <c:forEach items="${statisticals}" var="statistical">
                                 <tr>
                                     <th scope="row"></th>
-                                    <td>${statistical.reservations.get(0).contactName}</td>
-                                    <td>${statistical.reservations.get(0).contactPhone}</td>
-                                    <td>${statistical.reservations.get(0).contactEmail}</td>
-                                    <td>${statistical.reservationCount}</td>
-                                    <td>${statistical.countProduct}</td>
-                                    <td>${statistical.sumTotalPrice}</td>
+                                    <td>${statistical.username}</td>
+                                    <td>${statistical.phone}</td>
+                                    <td>${statistical.email}</td>
+                                    <td>${statistical.orderAmount}</td>
+                                    <td>${statistical.totalCost}đ</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
@@ -173,9 +171,6 @@
 </main>
 <!--Main layout-->
 
-<!--Footer-->
-<footer></footer>
-<!--Footer-->
 <!-- End your project here-->
 </body>
 

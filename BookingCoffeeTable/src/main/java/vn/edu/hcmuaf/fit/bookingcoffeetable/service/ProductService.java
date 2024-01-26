@@ -130,9 +130,6 @@ public class ProductService {
     }
 
 
-
-
-
     public String totalItem() {
         return productDAO.totalItem();
     }
