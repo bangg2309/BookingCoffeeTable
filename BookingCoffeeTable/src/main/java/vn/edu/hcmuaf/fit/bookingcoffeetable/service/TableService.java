@@ -39,7 +39,7 @@ public class TableService {
     }
 
     public Table updateTable(Table table) {
-        tableDAO.updateTable(table.getId(), table.getTableNum(), table.getAreaId(), table.getSeatCount(), table.getLocation(), table.getImage(), table.getStatus());
+        tableDAO.updateTable(table.getId(), table.getTableNum(), table.getArea().getId(), table.getSeatCount(), table.getLocation(), table.getImage(), table.getStatus());
         return findTableById(table.getId());
     }
 
