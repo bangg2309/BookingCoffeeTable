@@ -41,7 +41,7 @@ public class PostAPI extends HttpServlet {
         System.out.println("des:" + description);
         String thumbnail = request.getParameter("thumbnail");
         String status = request.getParameter("status");
-        String createdBy = request.getParameter("fullname");
+        String createdBy = request.getParameter("createdBy");
         Post post = new Post();
         post.setTitle(title);
         post.setShortDescription(shortDescription);
@@ -73,7 +73,6 @@ public class PostAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         String id = request.getParameter("id");
-        String userId = request.getParameter("userId");
         String title = request.getParameter("title");
         String shortDescription = request.getParameter("shortDescription");
         String description = request.getParameter("description");
@@ -82,8 +81,10 @@ public class PostAPI extends HttpServlet {
         String createdBy = request.getParameter("createdBy");
         String createdDate = request.getParameter("createdDate");
         Post post = new Post();
+        HttpSession session = request.getSession();
+        User userSession = (User) session.getAttribute("userSession");
         post.setId(Integer.parseInt(id));
-        post.setUserId(Integer.parseInt(userId));
+        post.setUserId(userSession.getId());
         post.setTitle(title);
         post.setShortDescription(shortDescription);
         post.setDescription(description);

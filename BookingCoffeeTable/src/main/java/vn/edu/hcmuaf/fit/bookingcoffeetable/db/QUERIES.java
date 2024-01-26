@@ -6,8 +6,8 @@ public class QUERIES {
         public static final String FIND_ALL_POST = "SELECT * FROM posts";
         public static final String FIND_BY_ID = "SELECT * FROM posts WHERE id = :id";
         public static final String SAVE_POST = "INSERT INTO posts (userId, title, shortDescription, description, thumbnail, status, createdBy, createdDate) VALUES (:userId, :title, :shortDescription, :description, :thumbnail, :status, :createdBy, :createdDate)";
-        public static final String UPDATE_POST = "UPDATE contacts SET name = :name, email = :email, phone = :phone, message = :message WHERE id = :id";
-        public static final String DELETE_POST = "DELETE FROM contacts WHERE id = :id";
+        public static final String UPDATE_POST = "UPDATE posts SET userId = :userId, title = :title, shortDescription = :shortDescription, description = :description, thumbnail = :thumbnail, status = :status, createdBy = :createdBy, createdDate = :createdDate WHERE id = :id";
+        public static final String DELETE_POST = "DELETE FROM posts WHERE id = :id";
         public static final String DELETE = "DELETE FROM posts WHERE userId = :userId";
         public static final String FIND_NEW_POST = "SELECT * FROM posts ORDER BY createdDate DESC LIMIT :limit";
 
