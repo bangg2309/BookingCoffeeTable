@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
-    <title>Xác Nhận Gmail</title>
+    <title>Kết quả thanh toán</title>
 
     <!-- Additional CSS Files -->
 
@@ -36,9 +36,8 @@
         <h2>Kết quả thanh toán!</h2>
         <c:if test="${not empty checkoutSuccess}">
             <div class="col-md-12 p-4 content d-flex flex-column">
-                <div class="alert" role="alert" data-mdb-color="success" data-mdb-alert-init>
-                    <i class="fas fa-check me-3"></i>
-                        ${checkoutSuccess}
+                <div data-mdb-alert-init class="alert" role="alert" data-mdb-color="success">
+                    <i class="fas fa-check-circle me-3"></i>${checkoutSuccess}
                 </div>
                 <p class="mb-4">
                     Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Chúc bạn sẽ có những giây phút thư giãn tuyệt vời tại
@@ -52,9 +51,8 @@
         </c:if>
 
         <c:if test="${not empty checkoutError}">
-            <div class="alert" role="alert" data-mdb-color="danger" data-mdb-alert-init>
-                <i class="fas fa-times-circle me-3"></i>
-                    ${checkoutError}
+            <div data-mdb-alert-init class="alert" role="alert" data-mdb-color="danger">
+                <i class="fas fa-times-circle me-3"></i>${checkoutError}
             </div>
             <p class="mb-4">
                 Trong quá trình thanh toán đã xảy ra lỗi, vui lòng thanh toán lại!
@@ -85,5 +83,8 @@
     <h3 class="font-weight-bold pb-2 d-flex justify-content-center">Coffee Shop</h3>
 </div>
 
+<script type="text/javascript" src="<c:url value="/views/template/mdb/js/mdb.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
+<script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
 </body>
 </html>

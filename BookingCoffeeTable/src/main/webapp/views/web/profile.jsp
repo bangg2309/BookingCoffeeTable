@@ -18,7 +18,6 @@
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/>"/>
     <!-- Custom styles -->
-
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/userProfile.css"/>">
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/home.css"/>">
 </head>
@@ -62,22 +61,22 @@
                             <fieldset class="fieldset">
                                 <h3 class="fieldset-title">Thông Tin Cá Nhân</h3>
                                 <div class="form-group avatar row">
-                                    <figure class="figure col-md-2 col-sm-3 col-xs-12">
-                                        <img class="img-rounded img-responsive"
-                                        <c:if test="${userSession.avatar != null}">
-                                             src="${userSession.avatar}"
-                                        </c:if>
-                                        <c:if test="${userSession.avatar == null}">
-                                             src="<c:url value="/views/template/custom/image/avatar/default.svg"/>"
-                                        </c:if>
-                                             alt="Avatar" id="imgProfile">
-                                    </figure>
-                                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                        <input type="file" class="file-uploader pull-left">
-                                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Cập Nhật Hình
-                                            Ảnh
-                                        </button>
-                                    </div>
+                                    <%--                                    <figure class="figure col-md-2 col-sm-3 col-xs-12">--%>
+                                    <%--                                        <img class="img-rounded img-responsive"--%>
+                                    <%--                                        <c:if test="${userSession.avatar != null}">--%>
+                                    <%--                                             src="${userSession.avatar}"--%>
+                                    <%--                                        </c:if>--%>
+                                    <%--                                        <c:if test="${userSession.avatar == null}">--%>
+                                    <%--                                             src="<c:url value="/views/template/custom/image/avatar/default.svg"/>"--%>
+                                    <%--                                        </c:if>--%>
+                                    <%--                                             alt="Avatar" id="imgProfile">--%>
+                                    <%--                                    </figure>--%>
+                                    <%--                                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">--%>
+                                    <%--                                        <input type="file" class="file-uploader pull-left">--%>
+                                    <%--                                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Cập Nhật Hình--%>
+                                    <%--                                            Ảnh--%>
+                                    <%--                                        </button>--%>
+                                    <%--                                    </div>--%>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Tên Đăng Nhập</label>

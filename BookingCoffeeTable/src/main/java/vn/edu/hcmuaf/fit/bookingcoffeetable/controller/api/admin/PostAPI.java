@@ -38,6 +38,7 @@ public class PostAPI extends HttpServlet {
         String title = request.getParameter("title");
         String shortDescription = request.getParameter("shortDescription");
         String description = request.getParameter("description");
+        System.out.println("des:" + description);
         String thumbnail = request.getParameter("thumbnail");
         String status = request.getParameter("status");
         String createdBy = request.getParameter("fullname");
@@ -101,6 +102,7 @@ public class PostAPI extends HttpServlet {
         post = postService.updatePost(post);
         gson.toJson(post, response.getWriter());
     }
+
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Gson gson = new Gson();
