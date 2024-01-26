@@ -11,11 +11,12 @@
 }
 
 .email {
-    background-color: #bf9369;
+
     text-align: center;
 }
 .email h2{
     color: white;
+    background-color: #bf9369;
     font-size: 25px;
 }
 .email .logo i{

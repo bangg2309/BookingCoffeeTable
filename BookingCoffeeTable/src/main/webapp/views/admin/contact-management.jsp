@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,33 +51,34 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${contacts}" var="contact">
-                <tr>
-                    <td>
-                        <span>1</span>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <p class="fw-bold mb-1">${contact.fullName}</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span>${contact.phone}</span>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">${contact.email}</p>
-                    </td>
-                    <td>
-                        <span>${contact.subject}</span>
-                    </td>
-                    <td>
-                        <span>${contact.content}</span>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger btn-floating" onclick="deleteContact(${contact.id})">
-                            <i class="far fa-trash-can"></i>
-                        </button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <span>1</span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <p class="fw-bold mb-1">${contact.fullName}</p>
+                            </div>
+                        </td>
+                        <td>
+                            <span>${contact.phone}</span>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">${contact.email}</p>
+                        </td>
+                        <td>
+                            <span>${contact.subject}</span>
+                        </td>
+                        <td>
+                            <span>${contact.content}</span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-floating"
+                                    onclick="deleteContact(${contact.id})">
+                                <i class="far fa-trash-can"></i>
+                            </button>
+                        </td>
+                    </tr>
                 </c:forEach>
                 </tbody>
             </table>
@@ -87,21 +88,21 @@
         <div class="mb-3 bg-primary p-2">
             <span class="text-white">Trả lời tin nhắn</span>
         </div>
-        <form class="border p-2">
+        <form class="border p-2" action="/admin/contact-management" method="post">
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="name" class="form-label"><b>Gmail</b></label>
-                        <input type="text" class="form-control" id="name" name="name"
-                               placeholder="Nhập gmail..." required>
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <input type="text" class="form-control" id="email" name="email"
+                               placeholder="Nhập email..." required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="topic" class="form-label"><b>Chủ đề</b></label>
-                        <input type="text" class="form-control" id="topic" name="topic"
+                        <label for="subject" class="form-label"><b>Chủ đề</b></label>
+                        <input type="text" class="form-control" id="subject" name="subject"
                                placeholder="Nhập chủ đề..." required>
                     </div>
                 </div>
@@ -110,7 +111,7 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label class="form-label"><b>Nội dung</b></label>
-                        <textarea class="form-control" id="description" name="description" rows="7"
+                        <textarea class="form-control" id="content" name="content" rows="7"
                                   placeholder="Nội dung..."></textarea>
                     </div>
                 </div>
@@ -135,7 +136,7 @@
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
 <script>
-    function deleteContact(id){
+    function deleteContact(id) {
 
         $.ajax({
             url: '/api/admin/contact',

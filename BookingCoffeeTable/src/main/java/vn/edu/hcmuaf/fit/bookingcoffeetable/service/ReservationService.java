@@ -73,14 +73,6 @@ public class ReservationService {
         return reservations;
     }
 
-    public List<Reservation> findAllReservationByStatiscal() {
-        List<Reservation> reservations = reservationDAO.findAllReservationByStatiscal();
-        for (Reservation reservation : reservations) {
-            reservation.setReservationProducts(ReservationProductService.getInstance().findReservationProductByReservId(reservation.getId()));
-            reservation.setTable(TableService.getInstance().findById(reservation.getTableId()));
-        }
-        return reservations;
-    }
 
     public Reservation save(Reservation reservation) {
         reservationDAO.saveReservation(reservation.getTableId(), reservation.getUserId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), reservation.getStartTime(), reservation.getEndTime(), reservation.getStatus(), reservation.getPaymentMethod(), reservation.getNote(), reservation.getTotalPrice(), reservation.getCreatedDate());
@@ -117,20 +109,6 @@ public class ReservationService {
         return reservationDAO.count();
     }
 
-    public Set<Statistical> getStatistical() {
-        Set<Statistical> statisticals = new HashSet<>();
-        List<Reservation> reservations = findAllReservationByStatiscal();
-        for (Reservation reservation : reservations) {
-            List<Reservation> reservationParent = findReservationByUserId(reservation.getUserId(), "DESC");
-            // Tạo đối tượng Statistical từ Reservation
-            Statistical statistical = new Statistical();
-            statistical.setReservations(reservationParent);
-            // Thêm vào Set nếu không tồn tại
-            statisticals.add(statistical);
-        }
-        return statisticals;
-    }
-
     public double getTotalPrice() {
         List<Reservation> reservations = reservationDAO.findAllReservation();
         double totalPrice = 0;
@@ -148,20 +126,6 @@ public class ReservationService {
             people += reservation.getTable().getSeatCount();
         }
         return people;
-    }
-
-    public int countProduct() {
-        List<Reservation> reservations = findAllReservation();
-        int count = 0;
-        for (Reservation reservation : reservations) {
-            count += reservation.getReservationProducts().size();
-        }
-        return count;
-    }
-
-    public static void main(String[] args) {
-//        System.out.println(ReservationService.getInstance().findById(1));
-        System.out.println(ReservationService.getInstance().getStatistical());
     }
 
 }

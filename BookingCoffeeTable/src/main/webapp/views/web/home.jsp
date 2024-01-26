@@ -13,13 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <title>Home</title>
     <!-- Additional CSS Files -->
-
     <link rel="stylesheet" href="<c:url value="/views/template/assets/css/owl-carousel.css"/> ">
     <link rel="stylesheet" href="<c:url value="/views/template/assets/css/lightbox.css"/> ">
     <link rel="stylesheet" href="<c:url value="/views/template/assets/css/stylle.css"/> ">
     <link rel="stylesheet" href="<c:url value="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />"/>
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/css/mdb.min.css"/> "/>
-
     <!-- MDB PLUGINS -->
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> "/>
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/home.css"/> ">
@@ -237,11 +235,11 @@
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel">
                     <c:forEach items="${discountProducts}" var="discountProduct">
-                    <div class="item">
-                        <div>
-                            <!-- Product image -->
-                            <div
-                                    class="
+                        <div class="item">
+                            <div>
+                                <!-- Product image -->
+                                <div
+                                        class="
                       bg-image ripple
                       shadow-4-soft
                       rounded-6
@@ -249,87 +247,88 @@
                       overflow-hidden
                       d-block
                       "
-                                    data-ripple-color="light"
-                            >
-                                <img src="<c:url value='${discountProduct.images[0].url}'/>" class=" w-100" alt=""/>
+                                        data-ripple-color="light"
+                                >
+                                    <img src="<c:url value='${discountProduct.images[0].url}'/>" class=" w-100" alt=""/>
 
-                                <a href="/product-detail?id=${discountProduct.id}">
-                                    <div class="mask">
-                                        <div
-                                                class="
+                                    <a href="/product-detail?id=${discountProduct.id}">
+                                        <div class="mask">
+                                            <div
+                                                    class="
                             d-flex
                             justify-content-start
                             align-items-end
                             h-100
                             p-3
                             "
-                                        >
+                                            >
                   <span class="badge badge-danger rounded-pill me-2"
                   >${discountProduct.discount}%</span
                   >
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div
-                                                class="mask"
-                                                style="background-color: hsla(0, 0%, 98.4%, 0.15)"
-                                        ></div>
-                                    </div>
-                                </a>
-                            </div>
+                                        <div class="hover-overlay">
+                                            <div
+                                                    class="mask"
+                                                    style="background-color: hsla(0, 0%, 98.4%, 0.15)"
+                                            ></div>
+                                        </div>
+                                    </a>
+                                </div>
 
-                            <!-- Product content -->
-                            <div class="px-3 text-reset d-block">
-                                <p class="fw-bold mb-2">${discountProduct.name}</p>
-                                <ul
-                                        class="rating mb-2"
-                                        data-mdb-toggle="rating"
-                                        data-mdb-readonly="true"
-                                        data-mdb-value="${discountProduct.averageRating}"
-                                >
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far ps-0"
-                                                title="Bad"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Poor"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="OK"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Good"
-                                        ></i>
-                                    </li>
-                                    <li>
-                                        <i
-                                                class="far fa-star fa-sm color_far"
-                                                title="Excellent"
-                                        ></i>
-                                    </li>
-                                </ul>
-                                <h5 class="mb-3">
-                                    <s class="text-muted me-2 small align-middle">${discountProduct.price}</s
-                                    ><span class="align-middle">${discountProduct.salePrice}</span>
-                                </h5>
-                                <button type="button" onclick="addToCart('${discountProduct.id}', '${discountProduct.size}','1')"
-                                        class="btn btn-primary btn-rounded w-100 color_btn">
-                                    <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
-                                </button>
+                                <!-- Product content -->
+                                <div class="px-3 text-reset d-block">
+                                    <p class="fw-bold mb-2">${discountProduct.name}</p>
+                                    <ul
+                                            class="rating mb-2"
+                                            data-mdb-toggle="rating"
+                                            data-mdb-readonly="true"
+                                            data-mdb-value="${discountProduct.averageRating}"
+                                    >
+                                        <li>
+                                            <i
+                                                    class="far fa-star fa-sm color_far ps-0"
+                                                    title="Bad"
+                                            ></i>
+                                        </li>
+                                        <li>
+                                            <i
+                                                    class="far fa-star fa-sm color_far"
+                                                    title="Poor"
+                                            ></i>
+                                        </li>
+                                        <li>
+                                            <i
+                                                    class="far fa-star fa-sm color_far"
+                                                    title="OK"
+                                            ></i>
+                                        </li>
+                                        <li>
+                                            <i
+                                                    class="far fa-star fa-sm color_far"
+                                                    title="Good"
+                                            ></i>
+                                        </li>
+                                        <li>
+                                            <i
+                                                    class="far fa-star fa-sm color_far"
+                                                    title="Excellent"
+                                            ></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="mb-3">
+                                        <s class="text-muted me-2 small align-middle">${discountProduct.price}</s
+                                        ><span class="align-middle">${discountProduct.salePrice}</span>
+                                    </h5>
+                                    <button type="button"
+                                            onclick="addToCart('${discountProduct.id}', '${discountProduct.size}','1')"
+                                            class="btn btn-primary btn-rounded w-100 color_btn">
+                                        <i class="fas fa-cart-plus me-2"></i>Thêm vào bàn
+                                    </button>
+                                </div>
+                                <!-- Product content -->
                             </div>
-                            <!-- Product content -->
                         </div>
-                    </div>
                     </c:forEach>
                 </div>
             </div>
@@ -590,24 +589,19 @@
 
                                         <!-- Grid column -->
                                         <div class="col-md-12">
-
                                             <div class="md-form mb-0 form-outline" data-mdb-input-init>
-
                                                             <textarea class="form-control" name="content" id="content"
                                                                       rows="4" required></textarea>
                                                 <label class="form-label"
                                                        for="content">Nội dung góp ý</label>
-
                                             </div>
                                             <button class="icon" id="submitButton" type="submit">
                                                 <a class="btn-floating btn-lg blue">
                                                     <i class="far fa-paper-plane"></i>
                                                 </a>
                                             </button>
-
                                         </div>
                                         <!-- Grid column -->
-
                                     </div>
                                     <!-- Grid row -->
 
@@ -619,81 +613,45 @@
 
                         <!-- Grid column -->
                         <div class="col-lg-5">
-
                             <div class="card-body contact text-center h-100 white-text">
-
                                 <h3 class="my-4 pb-2">Thông Tin Liên Hệ</h3>
-
                                 <ul class="text-lg-left list-unstyled ">
-
                                     <li>
-
                                         <p><i class="fas fa-map-marker-alt pr-2 mb-4"></i>Trường Đại học
                                             Nông Lâm Tp.Hồ Chí Minh</p>
-
                                     </li>
-
                                     <li>
-
                                         <p><i class="fas fa-phone pr-2 mb-4"></i>0394 707 535</p>
-
                                     </li>
-
                                     <li>
-
                                         <p><i class="fas fa-envelope pr-2"></i>coffeshop@gmail.com</p>
-
                                     </li>
-
                                 </ul>
-
                                 <hr class="hr-light my-4">
-
                                 <ul class="list-inline text-center list-unstyled">
-
                                     <li class="list-inline-item">
-
                                         <a class="p-2 fa-lg tw-ic">
-
                                             <i class="fab fa-twitter"></i>
-
                                         </a>
-
                                     </li>
-
                                     <li class="list-inline-item">
-
                                         <a class="p-2 fa-lg li-ic">
-
                                             <i class="fab fa-linkedin-in"> </i>
-
                                         </a>
-
                                     </li>
-
                                     <li class="list-inline-item">
-
                                         <a class="p-2 fa-lg ins-ic">
-
                                             <i class="fab fa-instagram"> </i>
-
                                         </a>
-
                                     </li>
-
                                 </ul>
-
                             </div>
-
                         </div>
                         <!-- Grid column -->
-
                     </div>
                     <!-- Grid row -->
-
                 </div>
                 <!-- Form with header -->
-
             </section>
             <!--Section: Content-->
 

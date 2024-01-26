@@ -202,7 +202,7 @@
                         <div class="d-flex justify-content-betweemb-5">
                             <a class="btn btn-danger btn-rounded w-100 mr-4" href="reservation.jsp"
                                style="color: white">Hủy đơn</a>
-                            <a class="btn btn-success btn-rounded w-100" href="reservation.jsp"
+                            <a class="btn btn-success btn-rounded w-100" href="/contact"
                                style="color: white">Liên hệ</a>
                         </div>
                         </c:if>

@@ -39,6 +39,10 @@ public class ContactService {
         contactDAO.deleteContact(id);
     }
 
+    public void replyEmail(String email, String subject, String content) {
+        MailService.getInstance().sendMail(email, subject, content);
+    }
+
     public static void main(String[] args) {
         ContactService rv = ContactService.getInstance();
         System.out.println(rv.findAllContact());

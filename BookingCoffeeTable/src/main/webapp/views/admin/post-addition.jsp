@@ -100,8 +100,8 @@
                            placeholder="Nhập mô tả ngắn..." required>
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label"><b>Nội dung</b></label>
-                    <textarea class="form-control" id="content" name="description" rows="10"
+                    <label for="description" class="form-label"><b>Nội dung</b></label>
+                    <textarea class="form-control" id="description" name="description" rows="10"
                               placeholder="Nhập nội dung..."
                               required>${post.description}</textarea>
                 </div>
@@ -136,7 +136,7 @@
 
     var editor = '';
     $(document).ready(function () {
-        editor = CKEDITOR.replace('content');
+        editor = CKEDITOR.replace('description');
     });
 
     $('#addOrUpdate').click(function (e) {
@@ -147,7 +147,6 @@
         $.each(formData, function (index, v) {
             data["" + v.name + ""] = v.value;
         });
-        console.log(data);
         if (postId === "") {
             delete data.id;
             addPost();
@@ -158,9 +157,8 @@
 
     function addPost() {
         var formData = new FormData($("#formSubmit")[0]);
-        var content = CKEDITOR.instances['content'].getData(); // Lấy nội dung từ CKEditor\
-        formData.append("description",content);
-        console.log('description' + content);
+        var description = editor.getData(); // Lấy nội dung từ CKEditor\
+        formData.set("description", description);
         $.ajax({
             type: "POST",
             url: "/api/admin/post",
@@ -181,6 +179,8 @@
 
     function updatePost(data) {
         var formData = new FormData($("#formSubmit")[0]);
+        var description = editor.getData(); // Lấy nội dung từ CKEditor\
+        formData.set("description", description);
         $.ajax({
             type: "PUT",
             url: "/api/admin/post",
