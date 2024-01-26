@@ -11,9 +11,11 @@ import java.io.IOException;
 @WebServlet(name = "ReservationDetailController", value = "/reservation-detail")
 public class ReservationDetailController extends HttpServlet {
     ReservationService reservationService;
+
     public ReservationDetailController() {
         reservationService = ReservationService.getInstance();
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
@@ -24,6 +26,8 @@ public class ReservationDetailController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String id = request.getParameter("reservationId");
+        reservationService.cancel(Integer.parseInt(id));
+        response.sendRedirect(request.getContextPath() + "/reservation-detail?id=" + id);
     }
 }

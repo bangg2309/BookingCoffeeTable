@@ -128,4 +128,8 @@ public class ReservationService {
         return people;
     }
 
+    public void cancel(int id){
+        reservationDAO.cancel(id);
+    }
+
 }

@@ -41,7 +41,7 @@ public class QUERIES {
         public static final String delete = "DELETE FROM users WHERE id = :id";
         public static final String updatePassword = "UPDATE users SET password = :password WHERE id = :id";
         public static final String updateProfile = "UPDATE users SET fullname = :fullname, email = :email, phone = :phone WHERE id = :id";
-        public static final String insertByGoogle = "INSERT INTO users (username,fullname, email, roleId,emailVerified, status, avatar) VALUES (:username,:fullname, :email, :roleId,:emailVerified, :status, :avatar)";
+        public static final String insertByGoogle = "INSERT INTO users (username,password,fullname, email, roleId,emailVerified, status, avatar) VALUES (:username,:password,:fullname, :email, :roleId,:emailVerified, :status, :avatar)";
     }
 
     //PRODUCT
@@ -217,6 +217,7 @@ public class QUERIES {
         public static final String SELECT_RESERVATION_ID_BY_DETAILS = "SELECT id FROM reservations WHERE tableId = :tableId AND userId = :userId AND contactName = :contactName AND contactPhone = :contactPhone AND contactEmail = :contactEmail AND startTime = :startTime AND endTime = :endTime AND status = :status AND paymentMethod = :paymentMethod AND note = :note AND totalPrice = :totalPrice";
 
         public static final String COUNT = "SELECT count(*) FROM reservations";
+        public static final String CANCEL = "UPDATE reservations SET status = 0 WHERE id = :id";
     }
 
     //RESERVATION PRODUCT

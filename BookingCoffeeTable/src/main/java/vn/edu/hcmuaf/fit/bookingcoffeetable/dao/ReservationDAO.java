@@ -46,4 +46,7 @@ public interface ReservationDAO {
 
     @SqlQuery(QUERIES.RESERVATION.COUNT)
     int count();
+
+    @SqlUpdate(QUERIES.RESERVATION.CANCEL)
+    void cancel(@Bind("id") int id);
 }

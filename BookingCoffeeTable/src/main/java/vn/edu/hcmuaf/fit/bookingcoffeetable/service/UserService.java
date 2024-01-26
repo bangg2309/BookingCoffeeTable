@@ -94,7 +94,7 @@ public class UserService {
         return findByUserName(user.getUsername());
     }
     public void insertByGoogle(User user) {
-        userDao.insertByGoogle(user.getUsername(), user.getFullname(), user.getEmail(), user.getRoleId(), user.getEmailVerified(), user.getStatus(), user.getAvatar());
+        userDao.insertByGoogle(user.getUsername(),user.getPassword() , user.getFullname(), user.getEmail(), user.getRoleId(), user.getEmailVerified(), user.getStatus(), user.getAvatar());
     }
 
     public User update(User user) {

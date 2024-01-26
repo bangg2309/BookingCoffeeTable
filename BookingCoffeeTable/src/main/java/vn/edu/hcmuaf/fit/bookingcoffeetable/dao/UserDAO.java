@@ -51,6 +51,6 @@ public interface UserDAO {
     void updateEmailVerifiedById(@Bind("id") int id);
 
     @SqlUpdate(QUERIES.USER.insertByGoogle)
-    void insertByGoogle(@Bind("username") String username, @Bind("fullname") String fullname, @Bind("email") String email,
+    void insertByGoogle(@Bind("username") String username,@Bind("password") String password, @Bind("fullname") String fullname, @Bind("email") String email,
                         @Bind("roleId") int roleId, @Bind("emailVerified") int emailVerified, @Bind("status") int status, @Bind("avatar") String avatar);
 }

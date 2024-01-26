@@ -3,7 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -23,7 +22,7 @@
     <!-- Custom css-->
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/> ">
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/bill.css"/> ">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 
 </head>
 
@@ -33,6 +32,7 @@
 <!-- ***** Header Area End ***** -->
 
 <main class="mb-6" style="padding-top: 20px; margin-top: 80px">
+
     <div class="container ">
         <!-- Section: Cart -->
         <section class="">
@@ -240,6 +240,7 @@
         </section>
         <!-- Section: Cart -->
     </div>
+
 </main>
 
 <!-- ***** Footer Start ***** -->
@@ -252,6 +253,7 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
     function updateQuantity(productKey) {
@@ -295,6 +297,18 @@
                 console.error("Error during update size:", error);
             });
     }
+
+    function getErrorAlert() {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "${cartMessage}",
+        });
+    }
+
+    <c:if test="${not empty cartMessage}">
+    getErrorAlert();
+    </c:if>
 </script>
 </body>
 </html>
