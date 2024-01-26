@@ -251,7 +251,7 @@ public class ProductAPI extends HttpServlet {
         response.setContentType("application/json");
         Product product = gson.fromJson(request.getReader(), Product.class);
         Review review = gson.fromJson(request.getReader(), Review.class);
-        if (review != null) {
+        if (review == null) {
             reviewService.delete(product.getId());
         }
         imageService.delete(product.getId());

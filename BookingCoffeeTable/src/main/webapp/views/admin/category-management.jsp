@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<c:url value="/views/template/mdb/plugins/css/all.min.css"/> ">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<c:url value="/views/admin/assets/css/home.css"/> ">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
     <style></style>
 </head>
 
@@ -135,23 +136,51 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function deleteCategory(id){
-
-        $.ajax({
-            url: '/api/admin/category',
-            contentType: "application/json",
-            type: 'DELETE',
-            data: JSON.stringify({
-                id: id
-            }),
-            success: function (data) {
-                if (data) {
-                    alert('Xóa thành công');
-                    location.reload();
-                } else {
-                    alert('Xóa thất bại');
-                }
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Bạn sẽ không thể quay lại!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // User confirmed, proceed with the AJAX request
+                $.ajax({
+                    url: '/api/admin/category',
+                    contentType: 'application/json',
+                    type: 'DELETE',
+                    data: JSON.stringify({
+                        id: id
+                    }),
+                    success: function (data) {
+                        if (data) {
+                            Swal.fire({
+                                title: 'Deleted!',
+                                text: 'Đã xóa.',
+                                icon: 'success'
+                            }).then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Đã có chuyện gì đó xảy ra!",
+                            });
+                        }
+                    }, error: function (e) {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Dữ liệu nằm trong dữ liệu khác!",
+                        });
+                    }
+                });
             }
         });
     }

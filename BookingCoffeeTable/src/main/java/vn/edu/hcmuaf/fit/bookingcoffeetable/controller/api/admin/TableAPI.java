@@ -105,7 +105,7 @@ public class TableAPI extends HttpServlet {
         Table table = gson.fromJson(request.getReader(), Table.class);
         Area area = gson.fromJson(request.getReader(), Area.class);
         Reservation reservation = gson.fromJson(request.getReader(), Reservation.class);
-        if (reservation != null){
+        if (reservation == null){
             reservationService.deleteByTableId(table.getId());
         }
 

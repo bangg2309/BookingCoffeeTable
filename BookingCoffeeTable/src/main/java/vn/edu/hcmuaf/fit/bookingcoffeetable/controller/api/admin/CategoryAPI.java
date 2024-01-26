@@ -4,9 +4,7 @@ import com.google.gson.Gson;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Category;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Product;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.CategoryService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ProductService;
-import vn.edu.hcmuaf.fit.bookingcoffeetable.service.UserService;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.service.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -17,16 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @MultipartConfig
 @WebServlet(name = "CategoryAPI", value = "/api/admin/category")
 public class CategoryAPI extends HttpServlet {
     CategoryService categoryService;
     ProductService productService;
+    ImageService imageService;
+    ProductVariantService productVariantService;
 
     public CategoryAPI() {
         categoryService = CategoryService.getInstance();
         productService = ProductService.getInstance();
+        imageService = ImageService.getInstance();
+        productVariantService = ProductVariantService.getInstance();
     }
 
     @Override
@@ -95,6 +98,11 @@ public class CategoryAPI extends HttpServlet {
         response.setContentType("application/json");
         Category category = gson.fromJson(request.getReader(), Category.class);
         Product product = gson.fromJson(request.getReader(), Product.class);
+        List<Product> products = productService.findByCategoryId(category.getId());
+        for (Product product1 : products) {
+            imageService.delete(product1.getId());
+            productVariantService.delete(product1.getId());
+        }
         productService.delete(category.getId());
         categoryService.DELETE(category.getId());
         gson.toJson("{}", response.getWriter());
