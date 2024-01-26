@@ -14,6 +14,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet(name = "LoginGoogleController", value = "/login-google")
 public class LoginGoogleController extends HttpServlet {
@@ -49,14 +50,13 @@ public class LoginGoogleController extends HttpServlet {
         if (!userService.exists(user)) {
             user.setRoleId(1);
             user.setStatus(1);
+            user.setPassword(UUID.randomUUID().toString());
             userService.insertByGoogle(user);
         }
         user = userService.findByUserName(user.getUsername());
         HttpSession session = request.getSession();
         session.setAttribute("userSession", user);
         response.sendRedirect(request.getContextPath() + "/home");
-
-
     }
 
     @Override

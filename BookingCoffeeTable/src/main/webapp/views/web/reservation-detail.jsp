@@ -29,7 +29,7 @@
 
     <!-- Custom css-->
     <link rel="stylesheet" href="<c:url value="/views/template/custom/css/reservation.css"/>">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 
 </head>
 
@@ -66,19 +66,24 @@
                                     <p class="fw-bold">${reservationProduct.product.name}</p>
                                     <div class="row">
                                         <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                            <input type="number" id="1" class="form-control" value="${reservationProduct.quantity}" min="1" disabled
+                                            <input type="number" id="1" class="form-control"
+                                                   value="${reservationProduct.quantity}" min="1" disabled
                                                    style="background-color: white"/>
                                             <label class="form-label" for="1">Số Lượng</label>
                                         </div>
                                         <div class="form-outline mb-4 col-md-4 mr-2" style="width: 80px">
-                                            <input type="text" id="2" class="form-control" value="${reservationProduct.size}" min="1" disabled style="background-color: white"/>
+                                            <input type="text" id="2" class="form-control"
+                                                   value="${reservationProduct.size}" min="1" disabled
+                                                   style="background-color: white"/>
                                             <label class="form-label" for="2">Size</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-5 mb-4 mb-md-0">
                                     <h5 class="mb-2">
-                                        <span class="align-middle"><fmt:formatNumber value="${reservationProduct.price}" type="currency" currencyCode="VND"/></span>
+                                        <span class="align-middle"><fmt:formatNumber value="${reservationProduct.price}"
+                                                                                     type="currency"
+                                                                                     currencyCode="VND"/></span>
                                     </h5>
                                 </div>
                             </div>
@@ -86,7 +91,6 @@
                     </section>
                     <!-- Section: Product list -->
                 </div>
-
                 <div class="col-lg-4 mb-4 mb-md-0">
                     <!-- Section: Summary -->
                     <section class="shadow-4 p-4 rounded-5 ">
@@ -97,23 +101,19 @@
                                 <span>Người đặt: </span>
                                 <span>${reservation.contactName}</span>
                             </div>
-
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Email : </span>
                                 <span>${reservation.contactEmail}</span>
                             </div>
-
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Số điện thoại: </span>
                                 <span>${reservation.contactPhone}</span>
                             </div>
-
                         </div>
-
                         <div class="d-flex justify-content-between mb-2">
                             <div>
                                 <span>Ghi chú: </span>
@@ -161,10 +161,14 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <fmt:parseDate var="parsedstartTime" value="${reservation.startTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-                            <fmt:parseDate var="parsedendTime" value="${reservation.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:parseDate var="parsedstartTime" value="${reservation.startTime}"
+                                           pattern="yyyy-MM-dd HH:mm:ss"/>
+                            <fmt:parseDate var="parsedendTime" value="${reservation.endTime}"
+                                           pattern="yyyy-MM-dd HH:mm:ss"/>
                             <span>Thời gian: </span>
-                            <span><fmt:formatDate value="${parsedstartTime}" pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate value="${parsedendTime}" pattern="HH:mm:ss"/></span>
+                            <span><fmt:formatDate value="${parsedstartTime}"
+                                                  pattern="dd-MM-yyyy HH:mm:ss"/> - <fmt:formatDate
+                                    value="${parsedendTime}" pattern="HH:mm:ss"/></span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <c:if test="${reservation.status == 1}">
@@ -187,7 +191,8 @@
 
                         <div class="d-flex justify-content-between mb-3">
                             <span>Tiền tạm thời </span>
-                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency" currencyCode="VND"/></span>
+                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency"
+                                                    currencyCode="VND"/></span>
                         </div>
                         <div class="d-flex justify-content-between">
                             <span>Khuyến mãi: </span>
@@ -196,16 +201,27 @@
                         <hr class="my-4"/>
                         <div class="d-flex justify-content-between fw-bold mb-5">
                             <span> Tổng số tiền (bao gồm VAT)</span>
-                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency" currencyCode="VND"/></span>
+                            <span><fmt:formatNumber value="${reservation.totalPrice}" type="currency"
+                                                    currencyCode="VND"/></span>
                         </div>
-                        <c:if test="${reservation.status == 1}">
-                        <div class="d-flex justify-content-betweemb-5">
-                            <a class="btn btn-danger btn-rounded w-100 mr-4" href="reservation.jsp"
-                               style="color: white">Hủy đơn</a>
-                            <a class="btn btn-success btn-rounded w-100" href="/contact"
-                               style="color: white">Liên hệ</a>
+
+                        <div class="d-flex justify-content-between mb-5">
+                            <c:if test="${reservation.status ==1}">
+                                <div>
+                                    <form id="deleteForm" action="/reservation-detail" method="post">
+                                        <input type="hidden" name="reservationId" value="${reservation.id}">
+                                        <button class="btn btn-danger btn-rounded w-100 mr-4"
+                                                style="color: white" type="button"  onclick="btnDeleted()">Hủy đơn
+                                        </button>
+                                    </form>
+                                </div>
+                            </c:if>
+                            <div>
+                                <a class="btn btn-success btn-rounded w-100" href="/contact"
+                                   style="color: white">Liên hệ</a>
+                            </div>
                         </div>
-                        </c:if>
+
                     </section>
                 </div>
             </div>
@@ -215,14 +231,9 @@
 </main>
 
 
-<!-- ***** Main Banner Area Start ***** -->
-
-<!-- ***** Main Banner Area End ***** -->
-
 <!-- ***** Footer Start ***** -->
 <%@ include file="layout/footer.jsp" %>
 <!-- ***** Footer End ***** -->
-
 <!-- jQuery -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/>"></script>
 
@@ -231,5 +242,33 @@
 <!-- MDB PLUGINS -->
 <script type="text/javascript" src="<c:url value="/views/template/mdb/plugins/js/all.min.js"/>"></script>
 <script src="<c:url value="/views/template/mdb/js/mdb.umd.min.js"/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function btnDeleted() {
+        Swal.fire({
+                title: "Xác nhận hủy",
+                text: "Bạn có chắc chắn muốn hủy đơn hàng không",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-success",
+                cancelButtonClass: "btn-danger",
+                confirmButtonText: "Xác nhận",
+                cancelButtonText: "Hủy bỏ",
+            }
+        ).then(function (isConfirm) {
+            if (isConfirm.isConfirmed) {
+                Swal.fire({
+                    title: "Đã hủy",
+                    text: "Đơn hàng của bạn đã được hủy thành công",
+                    type: "success",
+                    confirmButtonClass: "btn-success",
+                }).then(function () {
+                    document.getElementById("deleteForm").submit();
+                });
+            }
+        });
+    }
+</script>
 </body>
 </html>
