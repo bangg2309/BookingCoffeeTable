@@ -55,4 +55,7 @@ public interface ProductDAO {
 
     @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCTID_BY_NAME)
     int getByName(@Bind("name") String name);
+
+    @SqlQuery(QUERIES.PRODUCT.SELECT_PRODUCT_BY_CATEGORY_ID)
+    List<Product> findByCategoryId(@Bind("categoryId") int categoryId);
 }

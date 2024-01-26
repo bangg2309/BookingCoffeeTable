@@ -157,6 +157,19 @@ public class ProductService {
         return productDAO.getByName(name);
     }
 
+    public List<Product> findByCategoryId(int categoryId) {
+        List<Product> products = productDAO.findByCategoryId(categoryId);
+        for (Product product : products) {
+            product.setProductVariants(ProductVariantService.getInstance().getProductVariantByProductId(product.getId()));
+            if (product.getProductVariants().size() > 0) {
+                product.updateBySize(product.getProductVariants().get(0).getSize());
+            }
+            product.setImages(ImageService.getInstance().findByProductId(product.getId()));
+            product.setReviews(ReviewService.getInstance().findReviewByProductId(product.getId()));
+        }
+        return products;
+    }
+
     public static void main(String[] args) {
         ProductService productService = ProductService.getInstance();
         List<Product> products = productService.findProductNewest(20);
