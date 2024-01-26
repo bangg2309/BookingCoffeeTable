@@ -136,6 +136,7 @@
             startPage: currentPage,
             onPageClick: function (event, page) {
                 if (currentPage != page) {
+                    currentPage = page;
                     ajaxRun();
                 }
             }

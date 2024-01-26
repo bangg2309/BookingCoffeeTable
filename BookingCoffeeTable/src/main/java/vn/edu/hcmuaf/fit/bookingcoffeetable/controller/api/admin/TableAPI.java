@@ -80,6 +80,7 @@ public class TableAPI extends HttpServlet {
         String status = request.getParameter("status");
         table.setTableNum(Integer.parseInt(numberTable));
         table.setSeatCount(Integer.parseInt(seatCount));
+        table.setLocation(location);
         table.setArea(areaService.findById(Integer.parseInt(areaId)));
         table.setStatus(Integer.parseInt(status));
         table.setId(Integer.parseInt(tableId));

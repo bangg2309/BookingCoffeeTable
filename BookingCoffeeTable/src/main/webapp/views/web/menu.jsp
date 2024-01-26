@@ -439,7 +439,7 @@
                 break;
             case '2':
                 // Xử lý khi chọn "Giá cao nhất"
-                currentPage = 1
+                currentPage = 1;
                 console.log('Chọn theo giá cao nhất');
                 orderBy = "price_DESC"
                 window.pagObj.twbsPagination('destroy'); // Hủy bỏ phân trang hiện tại
@@ -458,7 +458,7 @@
                 break;
             case '3':
                 // Xử lý khi chọn "Giá thấp nhất"
-                currentPage = 1
+                currentPage = 1;
                 console.log('Chọn theo giá thấp nhất');
                 orderBy = "price_ASC"
                 window.pagObj.twbsPagination('destroy'); // Hủy bỏ phân trang hiện tại
@@ -467,7 +467,7 @@
                     visiblePages: 5,
                     startPage: currentPage,
                     onPageClick: function (event, page) {
-                        if (currentPage != 1) {
+                        if (currentPage != page) {
                             currentPage = page;
                             ajaxRun(categoryValue, find, orderBy, ratingValue, firstPrice, secondPrice);
                         }
