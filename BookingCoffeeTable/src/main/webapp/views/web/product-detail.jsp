@@ -363,10 +363,9 @@
         let salePrice = parseFloat(${product.salePrice});
 
         let newPrice = pricePlus + price;
-        $('#price').html(newPrice);
-        $('#defaultPrice').html(newPrice);
-        $('#salePrice').html(pricePlus + salePrice);
-        console.log(newPrice);
+        $('#price').html(newPrice + 'đ');
+        $('#defaultPrice').html(newPrice + 'đ');
+        $('#salePrice').html((pricePlus + salePrice) + 'đ');
     }
 
 </script>

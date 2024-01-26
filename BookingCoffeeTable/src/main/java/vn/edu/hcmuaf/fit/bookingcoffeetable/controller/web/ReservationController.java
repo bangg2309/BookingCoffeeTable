@@ -32,16 +32,12 @@ public class ReservationController extends HttpServlet {
         if (userSession == null) {
             request.setAttribute("message", "Bạn cần đăng nhập để đặt bàn");
             request.getRequestDispatcher("/views/web/login.jsp").forward(request, response);
-        } else if (cart == null) {
-            session.setAttribute("cartMessage", "Bạn cần chọn bàn và món trước khi đặt bàn");
-            response.sendRedirect(request.getContextPath() + "/cart");
-        } else if (cart.getProducts() == null) {
-            session.setAttribute("cartMessage", "Bạn cần chọn món trước khi đặt bàn");
-            request.setAttribute("message", "Bạn cần chọn món trước khi đặt bàn");
-            response.sendRedirect(request.getContextPath() + "/cart");
         } else if (cart.getTable() == null) {
-            session.setAttribute("cartMessage", "Bạn cần chọn bàn trước khi đặt bàn");
-            response.sendRedirect(request.getContextPath() + "/cart");
+            request.setAttribute("cartMessage", "Bạn cần chọn bàn trước khi đặt bàn");
+            request.getRequestDispatcher("/views/web/cart.jsp").forward(request, response);
+        } else if (cart.getProducts().isEmpty()) {
+            request.setAttribute("cartMessage", "Bạn cần chọn món trước khi đặt bàn");
+            request.getRequestDispatcher("/views/web/cart.jsp").forward(request, response);
         } else {
             request.setAttribute("userSession", userSession);
             request.getRequestDispatcher("/views/web/reservation.jsp").forward(request, response);

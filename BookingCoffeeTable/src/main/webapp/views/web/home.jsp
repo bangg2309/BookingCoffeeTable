@@ -317,8 +317,12 @@
                                         </li>
                                     </ul>
                                     <h5 class="mb-3">
-                                        <s class="text-muted me-2 small align-middle">${discountProduct.price}</s
-                                        ><span class="align-middle">${discountProduct.salePrice}</span>
+                                        <s class="text-muted me-2 small align-middle"><fmt:formatNumber
+                                                value="${discountProduct.price}" type="currency"
+                                                currencyCode="VND"/> </s
+                                        ><span class="align-middle"> <fmt:formatNumber
+                                            value="${discountProduct.salePrice}" type="currency"
+                                            currencyCode="VND"/></span>
                                     </h5>
                                     <button type="button"
                                             onclick="addToCart('${discountProduct.id}', '${discountProduct.size}','1')"
