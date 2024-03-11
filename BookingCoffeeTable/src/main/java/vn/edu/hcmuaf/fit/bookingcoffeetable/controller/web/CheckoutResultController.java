@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.fit.bookingcoffeetable.controller.web;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Cart;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.Reservation;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.bean.User;
+import vn.edu.hcmuaf.fit.bookingcoffeetable.constant.Payment;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationProductService;
 import vn.edu.hcmuaf.fit.bookingcoffeetable.service.ReservationService;
 
@@ -28,8 +29,10 @@ public class CheckoutResultController extends HttpServlet {
         Cart cart = (Cart) session.getAttribute("cart");
         User userSession = (User) session.getAttribute("userSession");
         Reservation reservation = (Reservation) session.getAttribute("reservation");
-
-        if (responseCode.equals("00") || reservation.getPaymentMethod().equals("Tiền Mặt")) {
+        if (responseCode == null) {
+            responseCode = "";
+        }
+        if (responseCode.equals("00") || reservation.getPaymentMethod().equals(Payment.CASH)) {
             reservationService.save(reservation);
             int reservationId = reservationService.findIdByDetails(cart.getTable().getId(), userSession.getId(), reservation.getContactName(), reservation.getContactPhone(), reservation.getContactEmail(), cart.getStartTime(), cart.getEndTime(), 1, reservation.getPaymentMethod(), reservation.getNote(), cart.getTotalPrice());
 
@@ -40,8 +43,6 @@ public class CheckoutResultController extends HttpServlet {
 
             session.removeAttribute("cart");
             session.removeAttribute("reservation");
-
-            System.out.println("Thanh toán thành công!");
             request.setAttribute("checkoutSuccess", "Thanh toán thành công!");
             request.getRequestDispatcher("/views/web/checkout-result.jsp").forward(request, response);
         } else {

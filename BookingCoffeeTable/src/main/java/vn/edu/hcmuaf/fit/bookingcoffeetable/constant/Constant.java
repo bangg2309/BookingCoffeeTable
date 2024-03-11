@@ -1,7 +1,7 @@
 package vn.edu.hcmuaf.fit.bookingcoffeetable.constant;
 
 public class Constant {
-    public static final String  GOOGLE_CLIENT_ID = "37788005886-d97gv9runl8duup9ko6kohklp2s32u3a.apps.googleusercontent.com";
+    public static final String GOOGLE_CLIENT_ID = "37788005886-d97gv9runl8duup9ko6kohklp2s32u3a.apps.googleusercontent.com";
 
     public static final String GOOGLE_CLIENT_SECRET = "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";
 
@@ -13,5 +13,5 @@ public class Constant {
 
     public static final String GOOGLE_GRANT_TYPE = "authorization_code";
 
-    public static final String DOMAIN =  "http://localhost:8080";
+    public static final String DOMAIN = "http://localhost:8080";
 }

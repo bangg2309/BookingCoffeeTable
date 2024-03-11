@@ -49,7 +49,7 @@
                 <thead class="bg-light">
                 <tr>
                     <th>Số thứ tự</th>
-                    <th>Tên món</th>
+                    <th>Id món</th>
                     <th>Người đánh giá</th>
                     <th>Số sao</th>
                     <th>Nội dung</th>
@@ -64,7 +64,7 @@
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
-                                <p class="fw-bold mb-1">Cà phê sữa</p>
+                                <p class="fw-bold mb-1">${review.productId}</p>
                             </div>
                         </td>
                         <td>
@@ -98,7 +98,8 @@
                             <span>${review.content}</span>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger btn-floating" onclick="deleteReview(${review.id})">
+                            <button type="button" class="btn btn-danger btn-floating"
+                                    onclick="deleteReview(${review.id})">
                                 <i class="far fa-trash-can"></i>
                             </button>
                         </td>
@@ -120,6 +121,8 @@
 
 <!-- MDB ESSENTIAL -->
 <script src="<c:url value="/views/template/assets/js/jquery-2.1.0.min.js"/> "></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 
     function deleteReview(id) {
