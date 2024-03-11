@@ -10,6 +10,7 @@ import java.io.IOException;
 
 @WebServlet(name = "ProfileController", value = "/profile")
 public class ProfileController extends HttpServlet {
+
     UserService userService;
 
     public ProfileController() {
@@ -23,6 +24,8 @@ public class ProfileController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding( "UTF-8");
         String id = request.getParameter("userId");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");

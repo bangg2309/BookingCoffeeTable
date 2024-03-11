@@ -46,7 +46,5 @@ public class ChangePasswordController extends HttpServlet {
             request.setAttribute("messageError", "Mật khẩu cũ không đúng");
             request.getRequestDispatcher("/views/web/change-password.jsp").forward(request, response);
         }
-
-
     }
 }
